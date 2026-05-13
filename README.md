@@ -14,6 +14,17 @@ The extracted package is about 3.5 GB. Full reruns require substantially more
 disk for generated outputs, CodeQL databases, Maven caches, and optional
 BenchmarkJava checkouts, which are not included in this package.
 
+## Getting The Artifact
+
+You can use this artifact either by cloning the GitHub repository or by
+downloading the release `.zip` archive. The release archive is the recommended
+path for artifact evaluation because it is the exact packaged tree verified by
+the commands below.
+
+If you clone the repository, expect a large checkout. The source tree includes
+selected LILO outputs, CyberSTITCH results, caches, and bundled solver artifacts;
+the checked-out tree is about 3.5 GB before any rerun-generated files.
+
 ## Quick Start
 
 From the package root:
@@ -479,36 +490,6 @@ For the full list of included paths and expected package boundaries, see
   BenchmarkJava source checkout are not bundled. The package includes
   CyberSTITCH query source, BenchmarkJava manifests, derived result artifacts,
   and the BenchmarkJava commit identifier needed to reconstruct full runs.
-
-## Exclusions
-
-The package excludes:
-
-- API secrets and shell histories;
-- `.git` directories/files;
-- Python bytecode and `__pycache__`;
-- conda, opam, pytest, mypy, ruff, and local cache directories;
-- DreamCoder OCaml `_opam` and `_build` directories;
-- CodeQL databases and CodeQL caches;
-- Maven repository cache;
-- OWASP BenchmarkJava source checkout;
-- generated CodeQL database bundles and archives;
-- unsuccessful or superseded live API attempts;
-- optional calibration/probe outputs outside this release.
-
-The package verifier checks these boundaries:
-
-```bash
-./artifact package-verify
-```
-
-The staged package was last verified with:
-
-```text
-Inputs checked: 68
-Missing required: 0
-Excluded children present: 0
-```
 
 ## Known Deviations And Caveats
 
