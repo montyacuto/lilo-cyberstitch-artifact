@@ -1,0 +1,135 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/official-cwe089-query-flow.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Official CodeQL SQL injection source to sink flow",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/official-cwe089-query-flow",
+    "tags": "security external/cwe/cwe-089"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.security.QueryInjection",
+    "semmle.code.java.security.SqlInjectionQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "CyberStitchOfficialSqlConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ActiveThreatModelSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "5a7bb5986b56dd3561cf6a43ffdbaaaf4aa34b3bf24cb01239885038d3ca68ca"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "QueryInjectionSink",
+                "name": "query"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "sink"
+              },
+              "right": {
+                "kind": "var",
+                "name": "query"
+              }
+            }
+          },
+          "source_hash": "7dd3fc795b14053e4a844355eb780c4e98a84a1ee8aa949dac8ccf1e52d0bd5d"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "CyberStitchOfficialSqlFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "CyberStitchOfficialSqlConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "CyberStitchOfficialSqlFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "CyberStitchOfficialSqlFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "CyberStitchOfficialSqlFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "Official CodeQL source reaches query-injection sink."
+    },
+    "message": "Official CodeQL source reaches query-injection sink."
+  },
+  "provenance_hash": "a49c3845bb1b5a55b2b989b553a7fc2479f19c1742b94f645b5d47e9090d9196",
+  "version": "sqir-v2"
+}

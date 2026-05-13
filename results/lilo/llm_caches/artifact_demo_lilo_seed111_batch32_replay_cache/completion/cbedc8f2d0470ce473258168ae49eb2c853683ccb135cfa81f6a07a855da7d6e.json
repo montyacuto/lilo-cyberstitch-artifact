@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T10:16:57Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\ncount_objects_related_to_given_relation :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\ndescription: Counts the number of objects related to a given relation with the first object in the list.\n\ncount_objects_related_to_behind_relation :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\ndescription: Counts the number of objects that are related to the 'behind' relation with the first object in the list.\n\ndetermine_shape_based_on_query :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\ndescription: Determines a value based on whether the shape of the first object in the list matches a specified shape.\n\ndetermine_shape_based_on_material_count :: list(tclevrobject) -> tclevrshape\n\n(lambda (clevr_if (clevr_eq_material (clevr_if (clevr_gt? (clevr_count $0) 7) (clevr_query_material (clevr_car $0)) clevr_rubber) clevr_metal) clevr_sphere clevr_cylinder))\ndescription: Determines the shape of an object based on the material count of the objects in the list. If the material count is greater than 7, it compares the material of the first object in the list with 'metal' and returns 'sphere' if they match, otherwise returns 'cylinder'. If the material count is not greater than 7, it compares the material of the first object with 'rubber' and returns 'sphere' if they match, otherwise returns 'cylinder'.\n\ndetermine_size_based_on_relation_count :: list(tclevrobject) -> tclevrrelation -> tclevrsize\n\n(lambda (lambda (clevr_if (clevr_lt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2) clevr_large clevr_small)))\ndescription: Determines the size of an object based on the count of objects related to a given relation with the first object in the list. If the count is less than 2, returns 'large'; otherwise, returns 'small'.\n\nretrieve_object_relative_to_relation :: tclevrrelation -> list(tclevrobject) -> tclevrobject\n\n(lambda (lambda (clevr_car (clevr_fold $0 $0 (lambda (lambda (clevr_difference $0 (clevr_relate $1 $3 $0))))))))\ndescription: Retrieves an object based on its relation to other objects in the list.\n\nfilter_objects_by_small_size :: list(tclevrobject) -> list(tclevrobject)\n\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size (clevr_query_size $1) clevr_small) (clevr_add $1 $0) $0)))))\ndescription: Filters a list of objects to only include objects that have a size of 'small'.\n\nfn_61 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_lt? (clevr_count (clevr_relate (clevr_car $0) clevr_left $0)) 2) $1 $2))))\n\nfn_62 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (count_objects_related_to_given_relation $0 clevr_front) $1 $2))))\n\nfn_63 :: t0 -> t0 -> tclevrobject -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $0) clevr_blue) $1 $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_61 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_lt? (clevr_count (clevr_relate (clevr_car $0) clevr_left $0)) 2) $1 $2))))\n\nHere are some examples of its usage:\n\n-- the large thing left the small rubber thing is what color\n(lambda (fn_61 clevr_red (clevr_query_color (clevr_car $0)) $0))\n\n-- what is the shape of the large rubber thing that is left the small red metal thing\n(lambda (fn_61 (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_sphere) clevr_cylinder clevr_cube) (clevr_query_shape (clevr_car $0)) $0))\n\n-- how many metal objects are either green thing s or large thing s\n(lambda (fn_61 0 (clevr_if (clevr_gt? (count_objects_related_to_behind_relation $0) 0) 3 2) $0))\n\nPlease write a human-readable name and description for `fn_61` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "cbedc8f2d0470ce473258168ae49eb2c853683ccb135cfa81f6a07a855da7d6e",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_61\",\n    \"readable_name\": \"determine_output_based_on_left_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related to the 'left' relation with the first object in the list. If the count is less than 2, returns the first argument; otherwise, returns the second argument.\"\n}"
+      }
+    ],
+    "created": 1778235415,
+    "id": "chatcmpl-DdCYJP5EzukMUuqaWDXmfjnJS3sJW",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 395,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1292,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1687
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "abstractions": [
+    {
+      "id": "candidate:java_active_threat_model_source",
+      "name": "java_active_threat_model_source"
+    },
+    {
+      "id": "candidate:java_barrier_kind_barrier_node_command_injection_75be8832",
+      "name": "java_barrier_kind_barrier_node_command_injection_75be8832"
+    },
+    {
+      "id": "candidate:java_barrier_kind_command_injection_sanitizer_54fe9f81",
+      "name": "java_barrier_kind_command_injection_sanitizer_54fe9f81"
+    },
+    {
+      "id": "candidate:java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50",
+      "name": "java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50"
+    },
+    {
+      "id": "candidate:java_barrier_kind_simple_type_sanitizer_0a047631",
+      "name": "java_barrier_kind_simple_type_sanitizer_0a047631"
+    },
+    {
+      "id": "candidate:java_barrier_kind_simple_type_sanitizer_f70cdda5",
+      "name": "java_barrier_kind_simple_type_sanitizer_f70cdda5"
+    },
+    {
+      "id": "candidate:java_command_injection_sanitizer_barrier",
+      "name": "java_command_injection_sanitizer_barrier"
+    },
+    {
+      "id": "candidate:java_command_injection_sink_sink",
+      "name": "java_command_injection_sink_sink"
+    },
+    {
+      "id": "candidate:java_java_lang_runtime_exec_sink",
+      "name": "java_java_lang_runtime_exec_sink"
+    },
+    {
+      "id": "candidate:java_method_call_sink_java_lang_runtime_exec_d636a205",
+      "name": "java_method_call_sink_java_lang_runtime_exec_d636a205"
+    },
+    {
+      "id": "candidate:java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866",
+      "name": "java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866"
+    },
+    {
+      "id": "candidate:java_method_names_execute_execute_query_execute_update_sink",
+      "name": "java_method_names_execute_execute_query_execute_update_sink"
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_command_injection_sink_2da17f01",
+      "name": "java_modeled_sink_type_command_injection_sink_2da17f01"
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "name": "java_modeled_sink_type_default_command_injection_sink_c9373329"
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996"
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159",
+      "name": "java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159"
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8"
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_query_injection_sink_acd681bc",
+      "name": "java_modeled_sink_type_query_injection_sink_acd681bc"
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_query_injection_sink_fba18fca",
+      "name": "java_modeled_sink_type_query_injection_sink_fba18fca"
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4"
+    },
+    {
+      "id": "candidate:java_query_injection_sink_sink",
+      "name": "java_query_injection_sink_sink"
+    },
+    {
+      "id": "candidate:java_remote_flow_source",
+      "name": "java_remote_flow_source"
+    },
+    {
+      "id": "candidate:java_sink_kind_sink_node_command_injection_058dd9c5",
+      "name": "java_sink_kind_sink_node_command_injection_058dd9c5"
+    },
+    {
+      "id": "candidate:java_sink_kind_sink_node_environment_injection_32bdea5f",
+      "name": "java_sink_kind_sink_node_environment_injection_32bdea5f"
+    },
+    {
+      "id": "candidate:java_sink_kind_sink_node_sql_injection_e532ab40",
+      "name": "java_sink_kind_sink_node_sql_injection_e532ab40"
+    },
+    {
+      "id": "candidate:java_source_kind_android_external_storage_source_edf149a9",
+      "name": "java_source_kind_android_external_storage_source_edf149a9"
+    },
+    {
+      "id": "candidate:java_source_kind_android_javascript_interface_method_parameter_01e51fdb",
+      "name": "java_source_kind_android_javascript_interface_method_parameter_01e51fdb"
+    },
+    {
+      "id": "candidate:java_source_kind_exported_android_content_provider_input_1c741880",
+      "name": "java_source_kind_exported_android_content_provider_input_1c741880"
+    },
+    {
+      "id": "candidate:java_source_kind_exported_android_intent_input_5afd578a",
+      "name": "java_source_kind_exported_android_intent_input_5afd578a"
+    },
+    {
+      "id": "candidate:java_source_kind_external_remote_flow_source_c97357e4",
+      "name": "java_source_kind_external_remote_flow_source_c97357e4"
+    },
+    {
+      "id": "candidate:java_source_kind_guice_request_parameter_source_d5e556b9",
+      "name": "java_source_kind_guice_request_parameter_source_d5e556b9"
+    },
+    {
+      "id": "candidate:java_source_kind_jax_rs_method_parameter_source_de780bd2",
+      "name": "java_source_kind_jax_rs_method_parameter_source_de780bd2"
+    },
+    {
+      "id": "candidate:java_source_kind_jax_ws_method_parameter_source_4c05ab0a",
+      "name": "java_source_kind_jax_ws_method_parameter_source_4c05ab0a"
+    },
+    {
+      "id": "candidate:java_source_kind_local_user_input_66e9bccd",
+      "name": "java_source_kind_local_user_input_66e9bccd"
+    },
+    {
+      "id": "candidate:java_source_kind_message_body_reader_parameter_source_810ff54e",
+      "name": "java_source_kind_message_body_reader_parameter_source_810ff54e"
+    },
+    {
+      "id": "candidate:java_source_kind_on_activity_result_intent_source_6be87d9c",
+      "name": "java_source_kind_on_activity_result_intent_source_6be87d9c"
+    },
+    {
+      "id": "candidate:java_source_kind_play_parameter_source_ea212a10",
+      "name": "java_source_kind_play_parameter_source_ea212a10"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_3dbd0ce5",
+      "name": "java_source_kind_remote_flow_source_3dbd0ce5"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_7bbaf778",
+      "name": "java_source_kind_remote_flow_source_7bbaf778"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228",
+      "name": "java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24",
+      "name": "java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f",
+      "name": "java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928",
+      "name": "java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b",
+      "name": "java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "name": "java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+      "name": "java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+      "name": "java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881"
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+      "name": "java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8"
+    },
+    {
+      "id": "candidate:java_threat_model_active_threat_model_source_3c0f2e2d",
+      "name": "java_threat_model_active_threat_model_source_3c0f2e2d"
+    },
+    {
+      "id": "candidate:java_threat_model_active_threat_model_source_473aa43e",
+      "name": "java_threat_model_active_threat_model_source_473aa43e"
+    }
+  ],
+  "condition": "raw_names",
+  "constraints": [
+    "Return one JSON object only.",
+    "Do not return Markdown, headings, prose, or fenced code blocks.",
+    "The top-level JSON keys must match the required output shape.",
+    "Use only candidate ids from the provided abstraction inventory.",
+    "Do not write CodeQL, QL predicate bodies, imports, select clauses, or source code.",
+    "If the task asks for a rewrite candidate, use schema rewrite_candidate_reference_v1."
+  ],
+  "instruction": "Select exactly one abstraction for a command-injection sanitizer or barrier.",
+  "required_output_shape": {
+    "selected": [
+      "candidate:<name>"
+    ]
+  },
+  "role": "You are evaluating reusable CodeQL security abstractions for a LILO reproduction artifact.",
+  "sample_index": 1,
+  "task_id": "select_command_sanitizer",
+  "task_type": "helper_selection"
+}

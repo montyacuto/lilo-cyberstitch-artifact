@@ -1,0 +1,14 @@
+<original-workspace>/lilo_sec/.conda/envs/lilo/bin/python run_iterative_experiment.py \
+  --experiment_name "dev_logo_batch96_4gb_overnight_gpt35_instruct_original_completion_20260511" \
+  --experiment_type "lilo_original_completion" \
+  --domain "logo" \
+  --encoder "LOGO" \
+  --iterations "10" \
+  --global_batch_sizes "96" \
+  --enumeration_timeout "1800" \
+  --recognition_train_steps "10000" \
+  --random_seeds "111" \
+  --init_frontiers_from_checkpoint \
+  --resume_checkpoint_directory "experiments_iterative/outputs/paperfaithful_init_seed111_20260507/domains/logo/dreamcoder/seed_111/dreamcoder_32" \
+  --max_mem_per_enumeration_thread "4000000000" \
+  --no_s3_sync

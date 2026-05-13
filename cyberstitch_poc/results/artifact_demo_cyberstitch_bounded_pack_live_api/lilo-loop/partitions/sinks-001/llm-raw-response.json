@@ -1,0 +1,40 @@
+{
+  "response": {
+    "id": "chatcmpl-DeioMzUouZaVTLWQPouvksrRbF67r",
+    "object": "chat.completion",
+    "created": 1778597746,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 11729,
+      "completion_tokens": 228,
+      "total_tokens": 11957,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": null
+  },
+  "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+}

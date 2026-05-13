@@ -1,0 +1,104 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_active_threat_model_source",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isActiveThreatModelSource",
+        "display_name": "java_active_threat_model_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isActiveThreatModelSource(DataFlow::Node source) {\n  exists(ActiveThreatModelSource remote | source = remote)\n}",
+        "use_sites": [
+          {
+            "query": "threat-command-argument-to-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q21:predicate:ThreatCommandArgumentToExecConfig:isSource"
+          },
+          {
+            "query": "threat-command-modeled.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q22:predicate:ThreatCommandModeledConfig:isSource"
+          },
+          {
+            "query": "threat-command-runtime-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q23:predicate:ThreatCommandRuntimeExecConfig:isSource"
+          },
+          {
+            "query": "threat-command-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q24:predicate:ThreatCommandSinkNodeConfig:isSource"
+          },
+          {
+            "query": "threat-environment-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q25:predicate:ThreatEnvironmentSinkNodeConfig:isSource"
+          },
+          {
+            "query": "threat-sql-execute-query.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q26:predicate:ThreatSqlExecuteQueryConfig:isSource"
+          },
+          {
+            "query": "threat-sql-execute-update.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q27:predicate:ThreatSqlExecuteUpdateConfig:isSource"
+          },
+          {
+            "query": "threat-sql-execute.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q28:predicate:ThreatSqlExecuteConfig:isSource"
+          },
+          {
+            "query": "threat-sql-mongo-parse.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q29:predicate:ThreatSqlMongoParseConfig:isSource"
+          },
+          {
+            "query": "threat-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q30:predicate:ThreatSqlQueryModelConfig:isSource"
+          },
+          {
+            "query": "threat-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q31:predicate:ThreatSqlSinkNodeConfig:isSource"
+          },
+          {
+            "query": "threat-sql-statement-execute-all.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q32:predicate:ThreatSqlStatementExecuteAllConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "f80425e59f587c82254588247dbf4abc9abbed4fb404b3220cc28ae20a05f4f7",
+        "semantic_role": "Source",
+        "semantic_target": "ActiveThreatModelSource",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q21:predicate:ThreatCommandArgumentToExecConfig:isSource",
+            "role": "Source",
+            "target": "ActiveThreatModelSource",
+            "num_exact_matches": 12
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

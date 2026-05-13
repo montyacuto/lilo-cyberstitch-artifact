@@ -1,0 +1,12 @@
+language: java
+query_dir: queries
+query_glob: "**/*.ql"
+benchmark_dir: benchmarks/js
+owasp_root: benchmarks/owasp-fixture
+curated_subset_manifest: benchmarks/owasp_curated_subset.json
+results_dir: results
+stitch_mode: offline
+selected_cwes: 78, 89
+codeql_build_mode: none
+codeql_database_dir: results/codeql-dbs
+sarif_dir: results/sarif

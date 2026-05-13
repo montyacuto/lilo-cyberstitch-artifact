@@ -1,0 +1,1458 @@
+{
+  "format": "cyberstitch-lilo-loop-input-v1",
+  "created_at": "2026-05-12T13:39:02.781146+00:00",
+  "domain": "codeql-java-security",
+  "backend": "cyberstitch-codeql",
+  "strategy": {
+    "lilo_role": "LLM search, grouping, naming, and autodoc over semantic abstraction objects.",
+    "cyberstitch_role": "SQIR/FCIR semantics, deterministic CodeQL rewrites, syntax checks, and SARIF equivalence gates.",
+    "raw_codeql_policy": "LLM-authored raw CodeQL is not executable in this milestone."
+  },
+  "source_files": {
+    "provenance": [
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/fcir/provenance.json",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/fcir/codeql-pack/provenance.json"
+    ],
+    "candidates": [
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/semantic/candidates.json"
+    ],
+    "decisions": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/validation/decisions.json"
+  },
+  "partition": {
+    "id": "sources-002",
+    "role_family": "sources",
+    "role_family_label": "Sources"
+  },
+  "prompt_options": {
+    "max_use_site_examples": 2,
+    "compact_fields_only": true
+  },
+  "summary": {
+    "programs": 27,
+    "semantic_nodes": 270,
+    "concepts": 52,
+    "library_items": 4,
+    "rewrite_eligible_items": 0,
+    "accepted_items": 0,
+    "accepted_for_lilo_items": 4,
+    "rejected_items": 90
+  },
+  "scores": {},
+  "comparisons": {},
+  "library_items": [
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "display_name": "java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "4fbc8cd3541862bebbc999217eefb672ac147fee6053fed5f689c6b0285ee419",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Guice request parameter",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "RemoteFlowSource.getSourceType:Guice request parameter",
+          "semantic_node_id": "codeql_lib14:concept:25:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource.getSourceType:Guice request parameter",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "SourceKind",
+          "cwe": null
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+        "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.",
+        "body": "(SemanticConcept SourceKind (Target RemoteFlowSource_getSourceType_Guice_request_parameter) (Uses (Use FlowSources_qll codeql_lib14_concept_25_SourceKind)))",
+        "use_sites": [
+          {
+            "query": "FlowSources.qll",
+            "predicate": "RemoteFlowSource.getSourceType:Guice request parameter",
+            "semantic_node_id": "codeql_lib14:concept:25:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource.getSourceType:Guice request parameter",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "4fbc8cd3541862bebbc999217eefb672ac147fee6053fed5f689c6b0285ee419",
+        "semantic_role": "SourceKind",
+        "semantic_target": "RemoteFlowSource.getSourceType:Guice request parameter",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "SourceKind",
+            "cwe": null
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+      "display_name": "java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "eef3e93a8dd075d55d66fad33c90365c5c29b4dd9ff5bd69c5f48aa406ae37ce",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Jax Rs method parameter.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+          "semantic_node_id": "codeql_lib14:concept:26:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "SourceKind",
+          "cwe": null
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+        "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Jax Rs method parameter.",
+        "body": "(SemanticConcept SourceKind (Target RemoteFlowSource_getSourceType_Jax_Rs_method_parameter) (Uses (Use FlowSources_qll codeql_lib14_concept_26_SourceKind)))",
+        "use_sites": [
+          {
+            "query": "FlowSources.qll",
+            "predicate": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+            "semantic_node_id": "codeql_lib14:concept:26:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "eef3e93a8dd075d55d66fad33c90365c5c29b4dd9ff5bd69c5f48aa406ae37ce",
+        "semantic_role": "SourceKind",
+        "semantic_target": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "SourceKind",
+            "cwe": null
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+      "display_name": "java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "60a8f8812d3aa256d6d77087e4d0579b01f9b173732b555886b6e450623c4bf3",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Jax WS method parameter.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+          "semantic_node_id": "codeql_lib14:concept:27:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "SourceKind",
+          "cwe": null
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+        "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Jax WS method parameter.",
+        "body": "(SemanticConcept SourceKind (Target RemoteFlowSource_getSourceType_Jax_WS_method_parameter) (Uses (Use FlowSources_qll codeql_lib14_concept_27_SourceKind)))",
+        "use_sites": [
+          {
+            "query": "FlowSources.qll",
+            "predicate": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+            "semantic_node_id": "codeql_lib14:concept:27:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "60a8f8812d3aa256d6d77087e4d0579b01f9b173732b555886b6e450623c4bf3",
+        "semantic_role": "SourceKind",
+        "semantic_target": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "SourceKind",
+            "cwe": null
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+      "display_name": "java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "91ac6ff8f81e38b0745d2d6863a22bfb4cd43b579f2d691e338ba809eff69874",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:MessageBodyReader parameter.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+          "semantic_node_id": "codeql_lib14:concept:28:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "SourceKind",
+          "cwe": null
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+        "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:MessageBodyReader parameter.",
+        "body": "(SemanticConcept SourceKind (Target RemoteFlowSource_getSourceType_MessageBodyReader_parameter) (Uses (Use FlowSources_qll codeql_lib14_concept_28_SourceKind)))",
+        "use_sites": [
+          {
+            "query": "FlowSources.qll",
+            "predicate": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+            "semantic_node_id": "codeql_lib14:concept:28:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "91ac6ff8f81e38b0745d2d6863a22bfb4cd43b579f2d691e338ba809eff69874",
+        "semantic_role": "SourceKind",
+        "semantic_target": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "SourceKind",
+            "cwe": null
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:codeql_lib5:concept:0:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "InputToArgumentToExecFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib5:concept:4:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "LocalUserInput",
+      "name": "isSource",
+      "attributes": {
+        "config": "LocalUserInputToArgumentToExecFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:10:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "AndroidExternalStorageSource",
+      "name": "AndroidExternalStorageSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:15:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "AndroidJavascriptInterfaceMethodParameter",
+      "name": "AndroidJavascriptInterfaceMethodParameter",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:13:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ExportedAndroidContentProviderInput",
+      "name": "ExportedAndroidContentProviderInput",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:12:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ExportedAndroidIntentInput",
+      "name": "ExportedAndroidIntentInput",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:0:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ExternalRemoteFlowSource",
+      "name": "ExternalRemoteFlowSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:7:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "GuiceRequestParameterSource",
+      "name": "GuiceRequestParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:3:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "JaxRsMethodParameterSource",
+      "name": "JaxRsMethodParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:2:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "JaxWsMethodParameterSource",
+      "name": "JaxWsMethodParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:4:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "MessageBodyReaderParameterSource",
+      "name": "MessageBodyReaderParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:14:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "OnActivityResultIntentSource",
+      "name": "OnActivityResultIntentSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:5:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "PlayParameterSource",
+      "name": "PlayParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:21:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Android external storage",
+      "name": "RemoteFlowSource.getSourceType:Android external storage",
+      "attributes": {
+        "source_type": "Android external storage",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:22:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+      "name": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+      "attributes": {
+        "source_type": "Android onActivityResult incoming Intent",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:23:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+      "name": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+      "attributes": {
+        "source_type": "Exported Android content provider source",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:24:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Exported Android intent source",
+      "name": "RemoteFlowSource.getSourceType:Exported Android intent source",
+      "attributes": {
+        "source_type": "Exported Android intent source",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:25:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Guice request parameter",
+      "name": "RemoteFlowSource.getSourceType:Guice request parameter",
+      "attributes": {
+        "source_type": "Guice request parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:26:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+      "name": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+      "attributes": {
+        "source_type": "Jax Rs method parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:27:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+      "name": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+      "attributes": {
+        "source_type": "Jax WS method parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:28:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+      "name": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+      "attributes": {
+        "source_type": "MessageBodyReader parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:29:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Parameter of method with JavascriptInterface annotation",
+      "name": "RemoteFlowSource.getSourceType:Parameter of method with JavascriptInterface annotation",
+      "attributes": {
+        "source_type": "Parameter of method with JavascriptInterface annotation",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:30:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Play Query Parameters",
+      "name": "RemoteFlowSource.getSourceType:Play Query Parameters",
+      "attributes": {
+        "source_type": "Play Query Parameters",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:31:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:RMI method parameter",
+      "name": "RemoteFlowSource.getSourceType:RMI method parameter",
+      "attributes": {
+        "source_type": "RMI method parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:32:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Spring servlet input parameter",
+      "name": "RemoteFlowSource.getSourceType:Spring servlet input parameter",
+      "attributes": {
+        "source_type": "Spring servlet input parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:33:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Struts2 ActionSupport field",
+      "name": "RemoteFlowSource.getSourceType:Struts2 ActionSupport field",
+      "attributes": {
+        "source_type": "Struts2 ActionSupport field",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:34:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Thrift Iface parameter",
+      "name": "RemoteFlowSource.getSourceType:Thrift Iface parameter",
+      "attributes": {
+        "source_type": "Thrift Iface parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:35:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:external",
+      "name": "RemoteFlowSource.getSourceType:external",
+      "attributes": {
+        "source_type": "external",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:11:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteUserInput",
+      "name": "RemoteUserInput",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RmiMethodParameterSource",
+      "name": "RmiMethodParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:6:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "SpringServletInputParameterSource",
+      "name": "SpringServletInputParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:8:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "Struts2ActionSupportClassFieldSource",
+      "name": "Struts2ActionSupportClassFieldSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:9:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ThriftIfaceParameterSource",
+      "name": "ThriftIfaceParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:20:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:contentprovider",
+      "name": "sourceNode:contentprovider",
+      "attributes": {
+        "model_kind": "contentprovider"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:19:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:database",
+      "name": "sourceNode:database",
+      "attributes": {
+        "model_kind": "database"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:17:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:environment",
+      "name": "sourceNode:environment",
+      "attributes": {
+        "model_kind": "environment"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:18:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:file",
+      "name": "sourceNode:file",
+      "attributes": {
+        "model_kind": "file"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:16:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:remote",
+      "name": "sourceNode:remote",
+      "attributes": {
+        "model_kind": "remote"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib12:concept:0:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib12",
+      "query": "SqlConcatenatedQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "SqlConcatenatedQuery",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "UncontrolledStringBuilderSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "UncontrolledStringBuilderSourceFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlConcatenatedQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib11:concept:0:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib11",
+      "query": "SqlInjectionQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "SqlInjectionQuery",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "QueryInjectionFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlInjectionQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib7:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib7",
+      "query": "TaintedEnvironmentVariableQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "TaintedEnvironmentVariableQuery",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ExecTaintedEnvironmentConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/TaintedEnvironmentVariableQuery.qll"
+    },
+    {
+      "id": "concept:q0:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q0",
+      "query": "official-cwe078-command-flow.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-cwe078-command-flow",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "CyberStitchOfficialCommandConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/official-cwe078-command-flow.ql"
+    },
+    {
+      "id": "concept:q1:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q1",
+      "query": "official-cwe078-environment-flow.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-cwe078-environment-flow",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "CyberStitchOfficialEnvironmentConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/official-cwe078-environment-flow.ql"
+    },
+    {
+      "id": "concept:q2:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q2",
+      "query": "official-cwe089-query-flow.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/official-cwe089-query-flow",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "CyberStitchOfficialSqlConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/official-cwe089-query-flow.ql"
+    },
+    {
+      "id": "concept:q3:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q3",
+      "query": "owasp-cwe078-command.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/owasp-cwe078-command",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "OwaspCommandInjectionConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/owasp-cwe078-command.ql"
+    },
+    {
+      "id": "concept:q4:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q4",
+      "query": "owasp-cwe089-sql.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/owasp-cwe089-sql",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "OwaspSqlInjectionConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/owasp-cwe089-sql.ql"
+    },
+    {
+      "id": "concept:q5:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q5",
+      "query": "remote-cwe078-command-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/remote-cwe078-command-model",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteCommandModelConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/remote-cwe078-command-model.ql"
+    },
+    {
+      "id": "concept:q6:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q6",
+      "query": "remote-cwe089-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/remote-cwe089-query-model",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteQueryModelConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/remote-cwe089-query-model.ql"
+    },
+    {
+      "id": "concept:q7:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q7",
+      "query": "remote-cwe089-sql-sinkmodel.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/remote-cwe089-sql-sinkmodel",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteSqlSinkModelConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/remote-cwe089-sql-sinkmodel.ql"
+    },
+    {
+      "id": "concept:q8:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q8",
+      "query": "threat-cwe078-runtime-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/threat-cwe078-runtime-exec",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatRuntimeExecConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/threat-cwe078-runtime-exec.ql"
+    },
+    {
+      "id": "concept:q9:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q9",
+      "query": "threat-cwe089-statement-execute.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/threat-cwe089-statement-execute",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatSqlStatementConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/threat-cwe089-statement-execute.ql"
+    },
+    {
+      "id": "concept:codeql_lib12:concept:3:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib12",
+      "query": "SqlConcatenatedQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "SqlConcatenatedQuery",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "UncontrolledStringBuilderSourceFlowConfig",
+      "attributes": {
+        "source_targets": "UncontrolledStringBuilderSource",
+        "sink_targets": "QueryInjectionSink",
+        "barrier_targets": "SimpleTypeSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlConcatenatedQuery.qll"
+    }
+  ],
+  "validation_gates": [
+    "cyberstitch candidate schema validation",
+    "SQIR/FCIR semantic validation",
+    "deterministic CodeQL rewrite",
+    "CodeQL syntax check",
+    "SARIF equivalence against baseline unless explicitly marked as a delta experiment"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T14:27:51Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\ncreate_concentric_squares :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Creates concentric squares using a turtle by looping through a specified number of squares and adjusting the length and rotation angle\n\ncreate_snowflake_with_polygon_arms :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop 9 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $2) (logo_get_set_function_pen (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_divide_angle logo_unit_angle $4) (logo_for_loop $4 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_subtract_angles (logo_divide_angle logo_unit_angle $6) logo_zero_angle) $0))) $0))) $0)))) $2))))\ndescription: Creates a snowflake pattern with arms in the shape of a polygon, where the number of sides of the polygon and the total number of arms can be specified\n\ncreate_concentric_shapes_in_row :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (create_concentric_squares (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0) $3 logo_unit_line))) $2))))\ndescription: Creates a row of concentric shapes using a turtle, where the number of shapes, type of shape, and total number of shapes can be specified\n\ndraw_multiple_lines_in_row :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))) $1)))\ndescription: Draws multiple lines in a row using a turtle, with the number of lines and length specified\n\ncreate_semicircle_with_variable_size :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop logo_IFTY (lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line logo_epsilon_line $2) logo_epsilon_angle $0))) $1)))\ndescription: Creates a semicircle with a variable size using a turtle by looping through a specified number of segments and adjusting the length and rotation angle\n\ncreate_concentric_polygon :: int -> turtle -> turtle\n\n(lambda (lambda (create_concentric_squares $0 $1 (logo_multiply_line logo_unit_line 2))))\ndescription: Creates a concentric polygon with a specified number of sides and size using a turtle\n\nfn_33 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 7 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 6) (logo_get_set_function_pen $2 $0)))) $1)))\n\nfn_34 :: int -> turtle -> turtle\n\n(lambda (lambda (create_concentric_squares $0 $1 logo_unit_line)))\n\nfn_35 :: turtle -> turtle\n\n(lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))\n\nfn_36 :: turtle -> turtle\n\n(lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 4) $0))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_33 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 7 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 6) (logo_get_set_function_pen $2 $0)))) $1)))\n\nHere are some examples of its usage:\n\n-- 6 sided snowflake with a short line as arms\n(lambda (fn_33 $0 (lambda (fn_35 $0))))\n\nPlease write a human-readable name and description for `fn_33` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "c4af82bff285f229561ab7255057a473fa1248f3f4cc5078b7cb2637994af60f",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_33\",\n    \"readable_name\": \"create_snowflake_with_polygon_arms_and_custom_function\",\n    \"description\": \"Creates a snowflake pattern with polygon arms using a custom function to define the arm shape and behavior\"\n}"
+      }
+    ],
+    "created": 1778250470,
+    "id": "chatcmpl-DdGT8uVzRk3QusvGHT4IUCpyOYzYv",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 280,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 922,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1202
+    }
+  }
+}

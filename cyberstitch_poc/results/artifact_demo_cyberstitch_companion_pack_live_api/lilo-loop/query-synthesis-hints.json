@@ -1,0 +1,24 @@
+[
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "concept:codeql_lib5:concept:0:ThreatModel"
+    ],
+    "hint": "future query-synthesis guidance; not executable in this milestone"
+  },
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "concept:codeql_lib5:concept:1:ModeledSinkType"
+    ],
+    "hint": "Provide additional query-synthesis guidance for ModeledSinkType concepts related to SQL injection sinks.",
+    "rationale": "This hint helps guide future query synthesis efforts for ModeledSinkType concepts in the context of SQL injection sinks."
+  },
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "concept:codeql_lib5:concept:2:BarrierKind"
+    ],
+    "hint": "Future query-synthesis guidance; not executable in this milestone"
+  }
+]

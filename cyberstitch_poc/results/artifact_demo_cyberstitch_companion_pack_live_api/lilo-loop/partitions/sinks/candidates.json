@@ -1,0 +1,135 @@
+{
+  "format": "cyberstitch-candidates-v2",
+  "source": "lilo-openai-compat",
+  "raw_output": {
+    "response": {
+      "id": "chatcmpl-DeiAjZFClOdznyHOgvWaVI86WYrVi",
+      "object": "chat.completion",
+      "created": 1778595289,
+      "model": "gpt-3.5-turbo-0125",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink predicate semantics for SQL injection sinks.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing sink predicate for SQL injection sinks.\",\n      \"rationale\": \"Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Provide additional query-synthesis guidance for ModeledSinkType concepts related to SQL injection sinks.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for ModeledSinkType concepts in the context of SQL injection sinks.\"\n    }\n  ]\n}",
+            "refusal": null,
+            "annotations": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink predicate semantics for SQL injection sinks.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing sink predicate for SQL injection sinks.\",\n      \"rationale\": \"Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Provide additional query-synthesis guidance for ModeledSinkType concepts related to SQL injection sinks.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for ModeledSinkType concepts in the context of SQL injection sinks.\"\n    }\n  ]\n}"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 9857,
+        "completion_tokens": 261,
+        "total_tokens": 10118,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": null
+    },
+    "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink predicate semantics for SQL injection sinks.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing sink predicate for SQL injection sinks.\",\n      \"rationale\": \"Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Provide additional query-synthesis guidance for ModeledSinkType concepts related to SQL injection sinks.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for ModeledSinkType concepts in the context of SQL injection sinks.\"\n    }\n  ]\n}"
+  },
+  "lilo_input": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/sinks/input.json",
+  "autodoc": [
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_sink_node_sql_injection_sink",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL sink predicate semantics for SQL injection sinks.",
+      "rationale": "This proposal provides a clear and descriptive name for the existing sink predicate."
+    }
+  ],
+  "groupings": [],
+  "query_synthesis_hints": [
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "concept:codeql_lib5:concept:1:ModeledSinkType"
+      ],
+      "hint": "Provide additional query-synthesis guidance for ModeledSinkType concepts related to SQL injection sinks.",
+      "rationale": "This hint helps guide future query synthesis efforts for ModeledSinkType concepts in the context of SQL injection sinks."
+    }
+  ],
+  "ignored_outputs": [],
+  "candidates": [
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "java_sink_node_sql_injection_sink",
+      "kind": "codeql_helper",
+      "origin": "lilo-loop",
+      "schema": "java_sink_predicate_helper_v1",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isSinkNodeSqlInjectionSink",
+      "display_name": "remote_flow_source",
+      "description": "Existing sink predicate for SQL injection sinks.",
+      "body": "predicate isSinkNodeSqlInjectionSink(DataFlow::Node sink) {\n  sinkNode(sink, \"sql-injection\")\n}",
+      "use_sites": [
+        {
+          "query": "remote-cwe089-sql-sinkmodel.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q8:predicate:RemoteSqlSinkModelConfig:isSink"
+        },
+        {
+          "query": "remote-cwe089-sql-sinknode.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q9:predicate:RemoteSqlSinkNodeConfig:isSink"
+        },
+        {
+          "query": "source-database-cwe089-sql-sinknode.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q11:predicate:SourceDatabaseSqlSinkNodeConfig:isSink"
+        },
+        {
+          "query": "source-remote-cwe089-sql-sinknode.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q17:predicate:SourceRemoteSqlSinkNodeConfig:isSink"
+        },
+        {
+          "query": "threat-cwe089-sql-sinknode.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q20:predicate:ThreatSqlSinkNodeConfig:isSink"
+        }
+      ],
+      "rewrite_eligible": true,
+      "semantic_hash": "f683376e9702ec33bb3cbb93a5b620beab74dea43d45143be7abdd36df07b485",
+      "semantic_role": "Sink",
+      "semantic_target": "sinkNode:sql-injection",
+      "semantic_usefulness": "semantic",
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q8:predicate:RemoteSqlSinkModelConfig:isSink",
+          "role": "Sink",
+          "target": "sinkNode:sql-injection",
+          "num_exact_matches": 5,
+          "lilo_loop_reference": "candidate:java_sink_node_sql_injection_sink",
+          "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+        }
+      },
+      "mapping_status": "semantic-mine-exact-predicate",
+      "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "rationale": "Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries.",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_sink_node_sql_injection_sink",
+        "display_name": "remote_flow_source",
+        "description": "Existing sink predicate for SQL injection sinks.",
+        "rationale": "Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries."
+      }
+    }
+  ]
+}

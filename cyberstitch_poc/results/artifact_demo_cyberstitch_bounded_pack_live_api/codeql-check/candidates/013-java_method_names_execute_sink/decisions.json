@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_method_names_execute_sink",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isMethodNamesExecuteSink",
+        "display_name": "java_method_names_execute_sink",
+        "description": "Deterministically mined complete Java sink predicate semantics.",
+        "body": "predicate isMethodNamesExecuteSink(DataFlow::Node sink) {\n  exists(MethodCall call | call.getMethod().hasName(\"execute\") and sink.asExpr() = call.getArgument(0))\n}",
+        "use_sites": [
+          {
+            "query": "remote-sql-execute.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q7:predicate:RemoteSqlExecuteConfig:isSink"
+          },
+          {
+            "query": "threat-sql-execute.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q28:predicate:ThreatSqlExecuteConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "a525f6c2f30bc2422f492b470489bb25fd82932932964f9efe37112786ca6ca6",
+        "semantic_role": "Sink",
+        "semantic_target": "method-names:execute",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q7:predicate:RemoteSqlExecuteConfig:isSink",
+            "role": "Sink",
+            "target": "method-names:execute",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

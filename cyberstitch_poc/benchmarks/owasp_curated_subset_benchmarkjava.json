@@ -1,0 +1,53 @@
+{
+  "schema_version": "cyberstitch-owasp-curated-subset-v1",
+  "benchmark": {
+    "name": "OWASP Benchmark Java",
+    "release": "Benchmark v1.2",
+    "source": "https://github.com/OWASP-Benchmark/BenchmarkJava",
+    "commit": "b06d6efaebd577a327514364951916e7df3290b4",
+    "expected_results": "expectedresults-1.2.csv"
+  },
+  "selection_policy": "Manual subset for validating Java CodeQL SQIR/FCIR abstraction over real OWASP Benchmark source. Cases are selected for narrow CodeQL helper reuse over RemoteFlowSource plus Runtime.exec and java.sql.Statement execution sinks, not broad benchmark coverage.",
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00017",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": ["java/cyberstitch/owasp-cwe078-command"],
+      "rationale": "Header-derived servlet input flows through URL decoding into Runtime.exec argument 0, matching the narrow command sink abstraction.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00090.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": ["java/cyberstitch/owasp-cwe078-command"],
+      "rationale": "Cookie input is present, but the feasible branch assigns a constant before Runtime.exec, exercising a safe command-injection control without list-index taint imprecision.",
+      "abstraction_target": "Safe Runtime.exec constant-branch control"
+    },
+    {
+      "test_id": "BenchmarkTest00018",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "expected_rule_ids": ["java/cyberstitch/owasp-cwe089-sql"],
+      "rationale": "Header-derived servlet input is concatenated into SQL and passed to Statement.executeUpdate argument 0.",
+      "abstraction_target": "RemoteFlowSource plus java.sql.Statement executeUpdate argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00107",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00107.java",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "expected_rule_ids": ["java/cyberstitch/owasp-cwe089-sql"],
+      "rationale": "Cookie input is assigned locally, but the SQL string uses a reflected constant before Statement.execute, exercising a safe SQL control.",
+      "abstraction_target": "Safe Statement.execute control"
+    }
+  ]
+}

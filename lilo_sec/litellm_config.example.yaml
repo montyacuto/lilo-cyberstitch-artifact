@@ -1,0 +1,39 @@
+# LiteLLM proxy config for LILO reproduction.
+#
+# Run LiteLLM outside the Python 3.7 LILO conda environment, then point LILO at
+# the OpenAI-compatible proxy:
+#
+#   export LILO_OPENAI_API_BASE=http://127.0.0.1:4000/v1
+#   export OPENAI_API_KEY="$LITELLM_MASTER_KEY"
+#
+# Keep the left-hand model_name aliases stable for LILO templates. Pin the
+# right-hand provider models for each reproduction run. The proxy process uses
+# LITELLM_OPENAI_API_KEY for the upstream provider key; the LILO process uses
+# OPENAI_API_KEY for the proxy key.
+
+model_list:
+  - model_name: gpt-3.5-turbo
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+  - model_name: gpt-4
+    litellm_params:
+      model: openai/gpt-4.1
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+  - model_name: code-davinci-002
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+  - model_name: text-embedding-ada-002
+    litellm_params:
+      model: openai/text-embedding-3-small
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+
+litellm_settings:
+  drop_params: true

@@ -1,0 +1,57 @@
+{
+  "format": "cyberstitch-autodoc-eval-v1",
+  "scores": {
+    "autodoc_docstrings": {
+      "aggregate_score": 1.0,
+      "candidate_reference_valid_rate": 1.0,
+      "grouping_macro_f1": 1.0,
+      "helper_selection_accuracy": 1.0,
+      "parse_rate": 1.0,
+      "raw_codeql_rejection_success_rate": 1.0,
+      "raw_codeql_violation_rate": 0.0,
+      "rewrite_reference_rate": 1.0,
+      "role_accuracy": 1.0,
+      "samples": 33,
+      "task_success_rate": 1.0
+    },
+    "autodoc_names": {
+      "aggregate_score": 1.0,
+      "candidate_reference_valid_rate": 1.0,
+      "grouping_macro_f1": 1.0,
+      "helper_selection_accuracy": 1.0,
+      "parse_rate": 1.0,
+      "raw_codeql_rejection_success_rate": 1.0,
+      "raw_codeql_violation_rate": 0.0,
+      "rewrite_reference_rate": 1.0,
+      "role_accuracy": 1.0,
+      "samples": 33,
+      "task_success_rate": 1.0
+    },
+    "raw_names": {
+      "aggregate_score": 0.021251475796930343,
+      "candidate_reference_valid_rate": 1.0,
+      "grouping_macro_f1": 0.23376623376623376,
+      "helper_selection_accuracy": 0.0,
+      "parse_rate": 1.0,
+      "raw_codeql_rejection_success_rate": 0.0,
+      "raw_codeql_violation_rate": 0.8181818181818182,
+      "rewrite_reference_rate": 0.0,
+      "role_accuracy": 0.0,
+      "samples": 33,
+      "task_success_rate": 0.0
+    },
+    "typed_names": {
+      "aggregate_score": 1.0,
+      "candidate_reference_valid_rate": 1.0,
+      "grouping_macro_f1": 1.0,
+      "helper_selection_accuracy": 1.0,
+      "parse_rate": 1.0,
+      "raw_codeql_rejection_success_rate": 1.0,
+      "raw_codeql_violation_rate": 0.0,
+      "rewrite_reference_rate": 1.0,
+      "role_accuracy": 1.0,
+      "samples": 33,
+      "task_success_rate": 1.0
+    }
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "schema": "autodoc_v1",
+    "target_id": "candidate:java_active_threat_model_source",
+    "display_name": "remote_flow_source",
+    "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+    "rationale": "This proposal provides a clear and descriptive name for the candidate java_active_threat_model_source, preserving its ThreatModel semantics."
+  },
+  {
+    "schema": "autodoc_v1",
+    "target_id": "candidate:java_source_kind_guice_request_parameter_source_d5e556b9",
+    "display_name": "remote_flow_source",
+    "description": "Recognizes Java CodeQL SourceKind semantics for GuiceRequestParameterSource.",
+    "rationale": "This candidate provides a semantic template for identifying remote flow sources related to Guice request parameter sources."
+  },
+  {
+    "schema": "autodoc_v1",
+    "target_id": "candidate:java_sink_node_sql_injection_sink",
+    "display_name": "remote_flow_source",
+    "description": "Recognizes Java CodeQL sink predicate semantics for SQL injection sinks.",
+    "rationale": "This proposal provides a clear and descriptive name for the existing sink predicate."
+  },
+  {
+    "schema": "autodoc_v1",
+    "target_id": "candidate:java_command_injection_sanitizer_barrier",
+    "display_name": "remote_flow_source",
+    "description": "Recognizes Java CodeQL Barrier semantics for CommandInjectionSanitizer.",
+    "rationale": "This proposal preserves the existing candidate's semantics for CommandInjectionSanitizer."
+  }
+]

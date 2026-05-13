@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_method_names_execute_query_sink",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isMethodNamesExecuteQuerySink",
+        "display_name": "java_method_names_execute_query_sink",
+        "description": "Deterministically mined complete Java sink predicate semantics.",
+        "body": "predicate isMethodNamesExecuteQuerySink(DataFlow::Node sink) {\n  exists(MethodCall call | call.getMethod().hasName(\"executeQuery\") and sink.asExpr() = call.getArgument(0))\n}",
+        "use_sites": [
+          {
+            "query": "remote-sql-execute-query.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q5:predicate:RemoteSqlExecuteQueryConfig:isSink"
+          },
+          {
+            "query": "threat-sql-execute-query.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q26:predicate:ThreatSqlExecuteQueryConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "a95ce425b75380e17cecd1529c3ea78bb1fa9a7b0ca7f165702b245ee537477d",
+        "semantic_role": "Sink",
+        "semantic_target": "method-names:executeQuery",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q5:predicate:RemoteSqlExecuteQueryConfig:isSink",
+            "role": "Sink",
+            "target": "method-names:executeQuery",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

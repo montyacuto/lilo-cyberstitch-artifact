@@ -1,0 +1,845 @@
+{
+  "task": "Run the LILO loop over CyberSTITCH CodeQL semantic abstraction objects.",
+  "goal": "Propose names, documentation, groupings, and provenance-backed rewrite references that preserve CodeQL semantics. Do not write executable CodeQL.",
+  "constraints": [
+    "Return one JSON object only.",
+    "Do not return Markdown, headings, prose, bullet lists, or fenced code blocks.",
+    "The JSON object must contain a top-level proposals array.",
+    "Every proposal must use one of the allowed schemas.",
+    "Use only target_id, target_ids, candidate_ref, or concept ids present in this prompt.",
+    "Do not reference candidates or concepts from outside this prompt partition.",
+    "Do not write executable CodeQL, QL predicate bodies, imports, select clauses, or source code."
+  ],
+  "domain": "codeql-java-security",
+  "partition": {
+    "id": "sinks-002",
+    "role_family": "sinks",
+    "role_family_label": "Sinks"
+  },
+  "summary": {
+    "programs": 50,
+    "semantic_nodes": 561,
+    "concepts": 59,
+    "library_items": 7,
+    "rewrite_eligible_items": 0,
+    "accepted_items": 0,
+    "accepted_for_lilo_items": 7,
+    "rejected_items": 99
+  },
+  "validation_policy": [
+    "cyberstitch candidate schema validation",
+    "SQIR/FCIR semantic validation",
+    "deterministic CodeQL rewrite",
+    "CodeQL syntax check",
+    "SARIF equivalence against baseline unless explicitly marked as a delta experiment"
+  ],
+  "raw_codeql_policy": "Raw QL, predicate bodies, or handwritten CodeQL snippets are advisory only and will be rejected for execution.",
+  "allowed_schemas": [
+    "autodoc_v1",
+    "candidate_grouping_v1",
+    "rewrite_candidate_reference_v1",
+    "query_synthesis_hint_v1",
+    "java_source_predicate_helper_v1",
+    "java_sink_predicate_helper_v1"
+  ],
+  "response_format": {
+    "proposals": [
+      {
+        "schema": "autodoc_v1",
+        "target_id": "candidate:java_method_call_sink_method_names_execute_query_486e5c11",
+        "display_name": "remote_flow_source",
+        "description": "one sentence",
+        "rationale": "why this is semantically reusable"
+      },
+      {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_method_call_sink_method_names_execute_query_486e5c11",
+        "display_name": "remote_flow_source",
+        "description": "one sentence",
+        "rationale": "why this existing candidate should stay rewrite-enabled"
+      },
+      {
+        "schema": "query_synthesis_hint_v1",
+        "target_ids": [
+          "concept:codeql_lib5:concept:1:ModeledSinkType"
+        ],
+        "hint": "future query-synthesis guidance; not executable in this milestone"
+      }
+    ]
+  },
+  "library_items": [
+    {
+      "id": "candidate:java_method_call_sink_method_names_execute_query_486e5c11",
+      "name": "java_method_call_sink_method_names_execute_query_486e5c11",
+      "schema": "java_modeled_sink_helper_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "MethodCallSink",
+      "semantic_target": "method-names:executeQuery",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 4,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.",
+      "use_site_count": 2,
+      "use_site_examples": [
+        {
+          "query": "remote-sql-execute-query.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q5:concept:2:MethodCallSink",
+          "concept_kind": "MethodCallSink",
+          "target": "method-names:executeQuery",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-execute-query.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q26:concept:2:MethodCallSink",
+          "concept_kind": "MethodCallSink",
+          "target": "method-names:executeQuery",
+          "official_codeql": false
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_method_call_sink_method_names_execute_update_f78d58ad",
+      "name": "java_method_call_sink_method_names_execute_update_f78d58ad",
+      "schema": "java_modeled_sink_helper_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "MethodCallSink",
+      "semantic_target": "method-names:executeUpdate",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 4,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL MethodCallSink semantics for method-names:executeUpdate.",
+      "use_site_count": 2,
+      "use_site_examples": [
+        {
+          "query": "remote-sql-execute-update.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q6:concept:2:MethodCallSink",
+          "concept_kind": "MethodCallSink",
+          "target": "method-names:executeUpdate",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-execute-update.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q27:concept:2:MethodCallSink",
+          "concept_kind": "MethodCallSink",
+          "target": "method-names:executeUpdate",
+          "official_codeql": false
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "name": "java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "schema": "java_modeled_sink_helper_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "DefaultCommandInjectionSink",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for DefaultCommandInjectionSink.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "CommandLineQuery.qll",
+          "predicate": "DefaultCommandInjectionSink",
+          "semantic_node_id": "codeql_lib5:concept:8:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "DefaultCommandInjectionSink",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "schema": "java_modeled_sink_helper_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "MongoDbInjectionSink",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for MongoDbInjectionSink.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "QueryInjection.qll",
+          "predicate": "MongoDbInjectionSink",
+          "semantic_node_id": "codeql_lib16:concept:3:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "MongoDbInjectionSink",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "schema": "java_modeled_sink_helper_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "PersistenceQueryInjectionSink",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for PersistenceQueryInjectionSink.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "QueryInjection.qll",
+          "predicate": "PersistenceQueryInjectionSink",
+          "semantic_node_id": "codeql_lib16:concept:2:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "PersistenceQueryInjectionSink",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_query_injection_sink_fba18fca",
+      "name": "java_modeled_sink_type_query_injection_sink_fba18fca",
+      "schema": "java_modeled_sink_helper_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "QueryInjectionSink",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for QueryInjectionSink.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "SqlConcatenatedQuery.qll",
+          "predicate": "isSink",
+          "semantic_node_id": "codeql_lib12:concept:1:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "QueryInjectionSink",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "schema": "java_modeled_sink_helper_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "SqlInjectionSink",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for SqlInjectionSink.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "QueryInjection.qll",
+          "predicate": "SqlInjectionSink",
+          "semantic_node_id": "codeql_lib16:concept:1:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "SqlInjectionSink",
+          "official_codeql": true
+        }
+      ]
+    }
+  ],
+  "semantic_concepts": [
+    {
+      "id": "concept:codeql_lib5:concept:1:ModeledSinkType",
+      "query": "CommandLineQuery.qll",
+      "cwe": 78,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib5:concept:5:ModeledSinkType",
+      "query": "CommandLineQuery.qll",
+      "cwe": 78,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib5:concept:8:ModeledSinkType",
+      "query": "CommandLineQuery.qll",
+      "cwe": 78,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "DefaultCommandInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib5:concept:9:SinkKind",
+      "query": "CommandLineQuery.qll",
+      "cwe": 78,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:command-injection",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib16:concept:3:ModeledSinkType",
+      "query": "QueryInjection.qll",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "MongoDbInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib16:concept:5:ModeledSinkType",
+      "query": "QueryInjection.qll",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "MyBatisSqlInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib16:concept:6:ModeledSinkType",
+      "query": "QueryInjection.qll",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "MyBatisSqlInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib16:concept:2:ModeledSinkType",
+      "query": "QueryInjection.qll",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "PersistenceQueryInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib16:concept:0:ModeledSinkType",
+      "query": "QueryInjection.qll",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib16:concept:1:ModeledSinkType",
+      "query": "QueryInjection.qll",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "SqlInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib16:concept:7:SinkKind",
+      "query": "QueryInjection.qll",
+      "cwe": 89,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib12:concept:1:ModeledSinkType",
+      "query": "SqlConcatenatedQuery.qll",
+      "cwe": null,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib11:concept:1:ModeledSinkType",
+      "query": "SqlInjectionQuery.qll",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib7:concept:4:SinkKind",
+      "query": "TaintedEnvironmentVariableQuery.qll",
+      "cwe": 78,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:environment-injection",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:q0:concept:2:ModeledSinkType",
+      "query": "remote-command-argument-to-exec.ql",
+      "cwe": 78,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q1:concept:2:ModeledSinkType",
+      "query": "remote-command-modeled.ql",
+      "cwe": 78,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q2:concept:2:MethodCallSink",
+      "query": "remote-command-runtime-exec.ql",
+      "cwe": 78,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "java.lang.Runtime.exec",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q3:concept:2:SinkKind",
+      "query": "remote-command-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:command-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q4:concept:2:SinkKind",
+      "query": "remote-environment-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:environment-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q5:concept:2:MethodCallSink",
+      "query": "remote-sql-execute-query.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:executeQuery",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q6:concept:2:MethodCallSink",
+      "query": "remote-sql-execute-update.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:executeUpdate",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q7:concept:2:MethodCallSink",
+      "query": "remote-sql-execute.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:execute",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q8:concept:2:MethodCallSink",
+      "query": "remote-sql-mongo-parse.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "com.mongodb.BasicDBObject.parse",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q9:concept:2:ModeledSinkType",
+      "query": "remote-sql-query-model.ql",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q10:concept:2:SinkKind",
+      "query": "remote-sql-sink-node.ql",
+      "cwe": 89,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q11:concept:2:MethodCallSink",
+      "query": "remote-sql-statement-execute-all.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:execute|executeQuery|executeUpdate",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q12:concept:2:ModeledSinkType",
+      "query": "source-node-database-sql-query-model.ql",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q13:concept:2:SinkKind",
+      "query": "source-node-database-sql-sink-node.ql",
+      "cwe": 89,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q14:concept:2:ModeledSinkType",
+      "query": "source-node-environment-command-modeled.ql",
+      "cwe": 78,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q15:concept:2:SinkKind",
+      "query": "source-node-environment-env-sink.ql",
+      "cwe": 78,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:environment-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q16:concept:2:ModeledSinkType",
+      "query": "source-node-remote-command-modeled.ql",
+      "cwe": 78,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q17:concept:2:SinkKind",
+      "query": "source-node-remote-command-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:command-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q18:concept:2:MethodCallSink",
+      "query": "source-node-remote-sql-mongo-parse.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "com.mongodb.BasicDBObject.parse",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q19:concept:2:ModeledSinkType",
+      "query": "source-node-remote-sql-query-model.ql",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q20:concept:2:SinkKind",
+      "query": "source-node-remote-sql-sink-node.ql",
+      "cwe": 89,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q21:concept:2:ModeledSinkType",
+      "query": "threat-command-argument-to-exec.ql",
+      "cwe": 78,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q22:concept:2:ModeledSinkType",
+      "query": "threat-command-modeled.ql",
+      "cwe": 78,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q23:concept:2:MethodCallSink",
+      "query": "threat-command-runtime-exec.ql",
+      "cwe": 78,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "java.lang.Runtime.exec",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q24:concept:2:SinkKind",
+      "query": "threat-command-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:command-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q25:concept:2:SinkKind",
+      "query": "threat-environment-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:environment-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q26:concept:2:MethodCallSink",
+      "query": "threat-sql-execute-query.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:executeQuery",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q27:concept:2:MethodCallSink",
+      "query": "threat-sql-execute-update.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:executeUpdate",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q28:concept:2:MethodCallSink",
+      "query": "threat-sql-execute.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:execute",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q29:concept:2:MethodCallSink",
+      "query": "threat-sql-mongo-parse.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "com.mongodb.BasicDBObject.parse",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q30:concept:2:ModeledSinkType",
+      "query": "threat-sql-query-model.ql",
+      "cwe": 89,
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q31:concept:2:SinkKind",
+      "query": "threat-sql-sink-node.ql",
+      "cwe": 89,
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q32:concept:2:MethodCallSink",
+      "query": "threat-sql-statement-execute-all.ql",
+      "cwe": 89,
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:execute|executeQuery|executeUpdate",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q3:concept:4:FlowConfigTemplate",
+      "query": "remote-command-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q3:concept:0:FlowConfigTemplate",
+      "query": "remote-command-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<RemoteCommandSinkNodeConfig>",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q4:concept:4:FlowConfigTemplate",
+      "query": "remote-environment-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q4:concept:0:FlowConfigTemplate",
+      "query": "remote-environment-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<RemoteEnvironmentSinkNodeConfig>",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q10:concept:4:FlowConfigTemplate",
+      "query": "remote-sql-sink-node.ql",
+      "cwe": 89,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q10:concept:0:FlowConfigTemplate",
+      "query": "remote-sql-sink-node.ql",
+      "cwe": 89,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<RemoteSqlSinkNodeConfig>",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q24:concept:4:FlowConfigTemplate",
+      "query": "threat-command-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q24:concept:0:FlowConfigTemplate",
+      "query": "threat-command-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<ThreatCommandSinkNodeConfig>",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q25:concept:4:FlowConfigTemplate",
+      "query": "threat-environment-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q25:concept:0:FlowConfigTemplate",
+      "query": "threat-environment-sink-node.ql",
+      "cwe": 78,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<ThreatEnvironmentSinkNodeConfig>",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q31:concept:4:FlowConfigTemplate",
+      "query": "threat-sql-sink-node.ql",
+      "cwe": 89,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q31:concept:0:FlowConfigTemplate",
+      "query": "threat-sql-sink-node.ql",
+      "cwe": 89,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<ThreatSqlSinkNodeConfig>",
+      "official_codeql": false
+    }
+  ]
+}

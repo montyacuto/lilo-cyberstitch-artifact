@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_node_database_source",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSourceNodeDatabaseSource",
+        "display_name": "java_source_node_database_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isSourceNodeDatabaseSource(DataFlow::Node source) {\n  sourceNode(source, \"database\")\n}",
+        "use_sites": [
+          {
+            "query": "source-database-cwe089-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q10:predicate:SourceDatabaseQueryModelConfig:isSource"
+          },
+          {
+            "query": "source-database-cwe089-sql-sinknode.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q11:predicate:SourceDatabaseSqlSinkNodeConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "10fb2aad868280fee345822e11d478cad185e629744bacdb24a3b5abc0cb1b98",
+        "semantic_role": "Source",
+        "semantic_target": "sourceNode:database",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q10:predicate:SourceDatabaseQueryModelConfig:isSource",
+            "role": "Source",
+            "target": "sourceNode:database",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

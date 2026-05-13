@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T05:36:47Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_or_add_characters_based_on_conditions :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that takes a full string and two substrings as input. It checks specific conditions in the full string and replaces or adds characters in the substrings accordingly. The result is a modified full string.\n\nreplace_vowels_with_s :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') and replaces it with the letter 's'.\n\nreplace_concat_with_cdr_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that takes a full string and two substrings as input. It concatenates the first two substrings and then splits the result by a delimiter '.'. It returns the modified full string.\n\nmodify_string_based_on_delimiter_split :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that takes a full string and a function that modifies substrings as input. It applies the modification function to each substring split by a delimiter '.' and returns the modified full string.\n\nreplace_last_characters_based_on_conditions :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that takes a full string and a substring as input. It appends the modified substring to the full string after replacing or adding characters based on specific conditions related to the last characters of the full string.\n\nreplace_consonants_with_modified_substring :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_conditions $0 (regex_concat $1 $2) (regex_not replace_vowels_with_s)))))\ndescription: A function that takes three substrings as input. It replaces or adds characters in the second substring based on specific conditions related to consonants in the first and third substrings. The result is a modified full string.\n\nreplace_concat_with_reversed_last_characters :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\ndescription: A function that takes a full string and two substrings as input. It concatenates the first two substrings and then replaces the last characters of the result with the reversed characters of the third substring.\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_50 :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (modify_string_based_on_delimiter_split $0 (lambda (regex_if (regex_match replace_vowels_with_s $0) (regex_concat $0 $2) $0)))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_conditions $0 (regex_concat $1 $2) replace_vowels_with_s))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nHere are some examples of its usage:\n\n-- if the word ends with any letter add q after that\n(lambda (fn_49 $0 'q'))\n\n-- if the word ends with consonant replace that with a o\n(lambda (fn_49 (replace_last_characters_based_on_conditions $0 'a') 'o'))\n\n-- if the word ends with any letter any letter add a after that\n(lambda (fn_49 $0 'a'))\n\n-- if the word ends with any letter any letter add f after that\n(lambda (fn_49 $0 'f'))\n\n-- if the word ends with any letter add u after that\n(lambda (fn_49 $0 'u'))\n\n-- if the word ends with any letter add k after that\n(lambda (fn_49 $0 'k'))\n\n-- if the word ends with any letter add w after that\n(lambda (fn_49 $0 'w'))\n\n-- if the word ends with any letter add d after that\n(lambda (fn_49 $0 'd'))\n\nPlease write a human-readable name and description for `fn_49` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "e92372320a57ad3e2159f638ae506be6f59ad8c7c87a917373fd8ccde15bb4d0",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty_string\",\n    \"description\": \"A function that appends the second substring to the full string after splitting it by an empty string delimiter.\"\n}"
+      }
+    ],
+    "created": 1778218605,
+    "id": "chatcmpl-Dd8BBXWID8WlYtpdkkSe7pw1n8Z2x",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 250,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1163,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1413
+    }
+  }
+}

@@ -1,0 +1,6815 @@
+{
+  "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/sarif/roundtrip.sarif",
+  "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_cmdi_sqli_all_benchmarkjava.json",
+  "totals": {
+    "78": {
+      "TP": 0,
+      "FN": 126,
+      "TN": 125,
+      "FP": 0
+    },
+    "89": {
+      "TP": 0,
+      "FN": 272,
+      "TN": 232,
+      "FP": 0
+    }
+  },
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00006",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00007",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00008",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00015",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00017",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00018",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00024",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00025",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00026",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00027",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00032",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00033",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00034",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00037",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00038",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00039",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00043",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00051",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00052",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00077",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00091",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00092",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00093",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00100",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00101",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00102",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00103",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00104",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00105",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00106",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00107",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00108",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00109",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00110",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00111",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00112",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00113",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00114",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00115",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00158",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00159",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00171",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00172",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00173",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00174",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00175",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00176",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00177",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00190",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00191",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00192",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00193",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00194",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00195",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00196",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00197",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00198",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00199",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00200",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00201",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00202",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00203",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00204",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00205",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00206",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00293",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00294",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00295",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00302",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00303",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00304",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00305",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00306",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00307",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00308",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00309",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00310",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00311",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00328",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00329",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00330",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00331",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00332",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00333",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00334",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00335",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00336",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00337",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00338",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00339",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00340",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00341",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00342",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00343",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00344",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00396",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00406",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00407",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00408",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00409",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00410",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00411",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00412",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00428",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00429",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00430",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00431",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00432",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00433",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00434",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00435",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00436",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00437",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00438",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00439",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00440",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00441",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00480",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00481",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00494",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00495",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00496",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00497",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00498",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00499",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00500",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00509",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00510",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00511",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00512",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00513",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00514",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00515",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00516",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00517",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00518",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00519",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00558",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00559",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00567",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00568",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00569",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00570",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00571",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00572",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00573",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00574",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00575",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00576",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00589",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00590",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00591",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00592",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00593",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00594",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00595",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00596",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00597",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00598",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00599",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00600",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00601",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00602",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00603",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00604",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00605",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00606",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00657",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00658",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00659",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00672",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00673",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00674",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00675",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00676",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00677",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00678",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00679",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00680",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00681",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00682",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00731",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00732",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00738",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00739",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00740",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00741",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00742",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00743",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00760",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00761",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00762",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00763",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00764",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00765",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00766",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00767",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00768",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00769",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00770",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00771",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00772",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00773",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00774",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00814",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00815",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00816",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00823",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00824",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00825",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00826",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00827",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00837",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00838",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00839",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00840",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00841",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00842",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00843",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00844",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00845",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00846",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00847",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00848",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00849",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00850",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00851",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00895",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00896",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00897",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00905",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00906",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00907",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00908",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00909",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00910",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00924",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00925",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00926",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00927",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00928",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00929",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00930",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00931",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00932",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00933",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00934",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00935",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00936",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00937",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00938",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00939",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00940",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00968",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00969",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00970",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00978",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00979",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00980",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00981",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00982",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00983",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00996",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00997",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00998",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00999",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01000",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01001",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01002",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01003",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01004",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01005",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01006",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01007",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01008",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01009",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01010",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01011",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01012",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01064",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01065",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01066",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01067",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01068",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01083",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01084",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01085",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01086",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01087",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01088",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01089",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01090",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01091",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01092",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01093",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01094",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01095",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01096",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01097",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01098",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01182",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01189",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01190",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01191",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01192",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01193",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01194",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01208",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01209",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01210",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01211",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01212",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01213",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01214",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01215",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01216",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01217",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01218",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01219",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01220",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01221",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01222",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01269",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01270",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01285",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01286",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01287",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01288",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01289",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01290",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01301",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01302",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01303",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01304",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01305",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01306",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01307",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01308",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01309",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01310",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01311",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01312",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01313",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01314",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01315",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01353",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01360",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01361",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01362",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01363",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01364",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01365",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01378",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01379",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01380",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01381",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01382",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01383",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01384",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01385",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01386",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01387",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01388",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01389",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01390",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01391",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01392",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01393",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01394",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01395",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01396",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01430",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01440",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01441",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01442",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01443",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01444",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01445",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01446",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01459",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01460",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01461",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01462",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01463",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01464",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01465",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01466",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01467",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01468",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01469",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01470",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01471",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01472",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01473",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01474",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01475",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01476",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01477",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01516",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01517",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01526",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01527",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01528",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01529",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01530",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01531",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01532",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01533",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01552",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01553",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01554",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01555",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01556",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01557",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01558",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01559",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01560",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01600",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01601",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01606",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01607",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01608",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01609",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01610",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01620",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01621",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01622",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01623",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01624",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01625",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01626",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01627",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01628",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01629",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01630",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01631",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01672",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01673",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01674",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01685",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01686",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01687",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01688",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01689",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01690",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01691",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01692",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01693",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01712",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01713",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01714",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01715",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01716",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01717",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01718",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01719",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01720",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01721",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01722",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01723",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01724",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01725",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01726",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01727",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01728",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01729",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01730",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01731",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01732",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01733",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01778",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01779",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01780",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01791",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01792",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01793",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01794",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01795",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01796",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01803",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01804",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01805",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01806",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01807",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01808",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01809",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01810",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01811",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01812",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01813",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01814",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01815",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01816",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01817",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01818",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01819",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01820",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01850",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01851",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01852",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01864",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01865",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01877",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01878",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01879",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01880",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01881",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01882",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01883",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01884",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01885",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01886",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01887",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01888",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01889",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01890",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01891",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01928",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01929",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01936",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01937",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01938",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01939",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01940",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01941",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01942",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01943",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01944",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01961",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01962",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01963",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01964",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01965",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01966",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01967",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01968",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01969",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01970",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01971",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01972",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest01973",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02058",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02059",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02067",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02068",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02069",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02070",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02087",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02088",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02089",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02090",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02091",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02092",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02093",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02094",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02095",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02096",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02097",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02098",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02099",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02137",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02146",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02147",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02148",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02149",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02150",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02151",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02152",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02153",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02154",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02155",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02156",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02169",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02170",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02171",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02172",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02173",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02174",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02175",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02176",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02177",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02178",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02179",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02180",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02181",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02182",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02183",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02184",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02185",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02186",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02187",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02188",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02242",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02243",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02244",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02249",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02250",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02251",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02252",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02253",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02264",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02265",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02266",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02267",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02268",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02269",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02270",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02271",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02272",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02273",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02274",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02275",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02276",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02277",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02278",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02279",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02280",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02281",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02282",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02283",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02284",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02285",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02286",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02287",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02288",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02333",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02334",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02335",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02336",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02340",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02341",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02342",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02343",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02344",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02353",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02354",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02355",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02356",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02357",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02358",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02359",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02360",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02361",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02362",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02363",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02364",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02365",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02366",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02367",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02368",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02369",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02411",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02412",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02413",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02414",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02428",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02429",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02430",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02431",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02432",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02433",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02449",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02450",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02451",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02452",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02453",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02454",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02455",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02456",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02496",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02510",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02511",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02512",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02513",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02514",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02515",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02516",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02517",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02518",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02528",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02529",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02530",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02531",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02532",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02533",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02534",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02535",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02536",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02537",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02538",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02539",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02540",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02541",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02542",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02543",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02544",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02545",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02546",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02610",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02611",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02612",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02613",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02625",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02626",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02627",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02628",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02629",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02630",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02631",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02632",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02633",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02634",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02635",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02636",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02637",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02638",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02639",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02640",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02641",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02642",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02643",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02644",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02645",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02646",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02647",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02648",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02649",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02650",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02651",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02652",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02653",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02654",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02655",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02656",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": false,
+      "verdict": "FN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02657",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02697",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02698",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02699",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02713",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02714",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02727",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02728",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02729",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02730",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02731",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02732",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02733",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02734",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02735",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02736",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02737",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02738",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02739",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest02740",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    }
+  ]
+}

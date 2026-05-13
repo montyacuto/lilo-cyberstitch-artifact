@@ -1,0 +1,9 @@
+[
+  {
+    "schema": "autodoc_v1",
+    "target_id": "candidate:java_remote_flow_source",
+    "display_name": "remote_flow_source",
+    "description": "Recognizes Java remote-flow source nodes used as user-controlled inputs in path queries.",
+    "rationale": "This documents a stable CodeQL source role while leaving executable QL generation to CyberSTITCH."
+  }
+]

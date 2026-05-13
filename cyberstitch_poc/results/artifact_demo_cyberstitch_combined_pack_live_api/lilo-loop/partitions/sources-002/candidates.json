@@ -1,0 +1,94 @@
+{
+  "format": "cyberstitch-candidates-v2",
+  "source": "lilo-openai-compat",
+  "raw_output": {
+    "response": {
+      "id": "chatcmpl-DehcEL6lLLWNzDZN0OvosGXofEfGM",
+      "object": "chat.completion",
+      "created": 1778593150,
+      "model": "gpt-3.5-turbo-0125",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.\",\n      \"rationale\": \"This semantic template identifies a specific kind of source in Java CodeQL related to Guice request parameters, providing valuable context for security analysis.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.\",\n      \"rationale\": \"This existing candidate should remain rewrite-enabled to maintain consistency and compatibility with other related semantic templates.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}",
+            "refusal": null,
+            "annotations": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.\",\n      \"rationale\": \"This semantic template identifies a specific kind of source in Java CodeQL related to Guice request parameters, providing valuable context for security analysis.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.\",\n      \"rationale\": \"This existing candidate should remain rewrite-enabled to maintain consistency and compatibility with other related semantic templates.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 6004,
+        "completion_tokens": 286,
+        "total_tokens": 6290,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": null
+    },
+    "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.\",\n      \"rationale\": \"This semantic template identifies a specific kind of source in Java CodeQL related to Guice request parameters, providing valuable context for security analysis.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.\",\n      \"rationale\": \"This existing candidate should remain rewrite-enabled to maintain consistency and compatibility with other related semantic templates.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+  },
+  "lilo_input": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/sources-002/input.json",
+  "autodoc": [
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.",
+      "rationale": "This semantic template identifies a specific kind of source in Java CodeQL related to Guice request parameters, providing valuable context for security analysis."
+    }
+  ],
+  "groupings": [],
+  "query_synthesis_hints": [
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "concept:codeql_lib5:concept:0:ThreatModel"
+      ],
+      "hint": "future query-synthesis guidance; not executable in this milestone"
+    }
+  ],
+  "ignored_outputs": [],
+  "candidates": [
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "remote_flow_source",
+      "kind": "llm_schema_proposal",
+      "origin": "llm",
+      "schema": "rewrite_candidate_reference_v1",
+      "language": "unknown",
+      "body": "",
+      "use_sites": [],
+      "rewrite_eligible": false,
+      "semantic_hash": "782df02555057b3f21da6fd259d809fff7df0cc3b77cdb2daa1b5acaef7f2055",
+      "semantic_validation": {
+        "ok": false,
+        "reasons": [
+          "referenced item is not a rewrite-eligible CodeQL helper"
+        ],
+        "evidence": {}
+      },
+      "mapping_status": "invalid",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+        "display_name": "remote_flow_source",
+        "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.",
+        "rationale": "This existing candidate should remain rewrite-enabled to maintain consistency and compatibility with other related semantic templates."
+      }
+    }
+  ]
+}

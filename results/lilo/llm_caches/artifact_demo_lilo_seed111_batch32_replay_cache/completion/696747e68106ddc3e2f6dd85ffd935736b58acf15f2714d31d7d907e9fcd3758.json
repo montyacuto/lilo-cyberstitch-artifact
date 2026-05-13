@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T09:41:16Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_or_add_characters :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\n\nvowel_replacer :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') and replaces it with the letter 's'.\n\nfn_44 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\n\nfn_45 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_46 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_47 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters $0 (regex_concat $1 $2) (regex_not vowel_replacer)))))\n\nfn_48 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nfn_49 :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (fn_46 $0 (lambda (regex_if (regex_match vowel_replacer $0) (regex_concat $0 $2) $0)))))\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters $0 (regex_concat $1 $2) vowel_replacer))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_44 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\n\nHere are some examples of its usage:\n\n-- if the word starts with any letter replace that with y w\n(lambda (fn_44 $0 'w' 'y'))\n\n-- if the word starts with any letter replace that with r m\n(lambda (fn_44 $0 'm' 'r'))\n\n-- if the word starts with any letter replace that with w i\n(lambda (fn_44 $0 'i' 'w'))\n\n-- if the word starts with any letter replace that with x i\n(lambda (fn_44 $0 'i' 'x'))\n\n-- if the word starts with any letter replace that with i r\n(lambda (fn_44 $0 'r' 'i'))\n\n-- if the word starts with consonant any letter replace that with e a\n(lambda (fn_44 (regex_flatten (regex_cdr (regex_split empty_string $0))) 'a' 'e'))\n\n-- if the word starts with any letter replace that with e s\n(lambda (fn_44 $0 's' 'e'))\n\n-- if the word starts with consonant replace that with i s\n(lambda (fn_44 $0 's' 'i'))\n\n-- if the word starts with any letter replace that with g b\n(lambda (fn_44 $0 'b' 'g'))\n\n-- if the word starts with any letter replace that with a\n(lambda (fn_44 $0 'a' empty_string))\n\nPlease write a human-readable name and description for `fn_44` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "696747e68106ddc3e2f6dd85ffd935736b58acf15f2714d31d7d907e9fcd3758",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"replace_concat_with_cdr_split\",\n    \"description\": \"A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\"\n}"
+      }
+    ],
+    "created": 1778233275,
+    "id": "chatcmpl-DdBznqXyqSGZPnhQisDcXQKD519V2",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 270,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1024,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1294
+    }
+  }
+}

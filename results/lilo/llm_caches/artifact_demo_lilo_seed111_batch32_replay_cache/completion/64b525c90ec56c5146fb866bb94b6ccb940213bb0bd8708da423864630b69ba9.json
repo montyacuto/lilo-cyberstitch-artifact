@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T12:34:38Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nfind_objects_by_color :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $3) (clevr_add $1 $0) $0))))))\ndescription: A function that takes a color and a list of objects, and returns a list of objects that have the specified color.\n\nfilter_objects_by_material_and_shape :: tclevrmaterial -> tclevrshape -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape $1) $3) (clevr_if (clevr_eq_material (clevr_query_material $1) $4) (clevr_add $1 $0) $0) $0)))))))\ndescription: A function that filters a list of objects based on their material and shape, returning a new list of objects that match the specified material and shape criteria.\n\nfilter_small_objects_by_size :: list(tclevrobject) -> list(tclevrobject)\n\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size (clevr_query_size $1) clevr_small) (clevr_add $1 $0) $0)))))\ndescription: A function that filters a list of objects to only include small-sized objects.\n\ncheck_relation_count_greater_than_2 :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\ndescription: A function that checks if the count of objects related in a specified way to the first object in a list is greater than 2.\n\nfind_object_in_relation :: tclevrrelation -> list(tclevrobject) -> tclevrobject\n\n(lambda (lambda (clevr_car (clevr_fold $0 $0 (lambda (lambda (clevr_difference $0 (clevr_relate $1 $3 $0))))))))\ndescription: A function that finds an object in a specified relation to a list of objects by performing a set difference operation based on the relation.\n\nadd_object_if_condition_true :: list(tclevrobject) -> tclevrobject -> bool -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_if $0 (clevr_add $1 $2) $2))))\ndescription: A function that adds an object to a list if a specified condition is true, otherwise returns the original list.\n\nfilter_objects_by_color_and_material :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (add_object_if_condition_true $0 $1 (clevr_eq_color (clevr_if (clevr_eq_material (clevr_query_material $1) clevr_metal) clevr_red (clevr_query_color $1)) $3)))))))\ndescription: A function that filters a list of objects based on their color and material, returning a new list of objects that match the specified color and material criteria.\n\ncount_objects_with_matching_color_and_shape :: tclevrshape -> tclevrcolor -> list(tclevrobject) -> int\n\n(lambda (lambda (lambda (clevr_count (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color $3 (clevr_query_color $1)) $0 (add_object_if_condition_true $0 $1 (clevr_eq_shape (clevr_query_shape $1) $4))))))))))\ndescription: A function that counts the number of objects in a list that have both a specified color and shape.\n\nfn_62 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\n\nfn_63 :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_62 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\n\nHere are some examples of its usage:\n\n-- what is the material of the cylinder that is left the small cube\n(lambda (fn_62 clevr_rubber (clevr_query_material (find_object_in_relation clevr_front $0)) $0))\n\n-- how many thing s are either small thing s or cylinder s\n(lambda (clevr_if (check_relation_count_greater_than_2 $0 clevr_behind) (clevr_if (check_relation_count_greater_than_2 $0 clevr_front) 8 3) (fn_62 6 3 $0)))\n\n-- what number of small objects are either rubber cylinder s or green metal thing s\n(lambda (fn_62 1 3 $0))\n\n-- what is the shape of the large rubber thing that is left the small red metal thing\n(lambda (clevr_if (check_relation_count_greater_than_2 (clevr_relate (clevr_car $0) clevr_right $0) clevr_behind) (clevr_query_shape (clevr_car $0)) (fn_62 clevr_cylinder clevr_cube $0)))\n\n-- what is the material of the sphere right the small sphere\n(lambda (clevr_if (clevr_eq_size (clevr_query_size (clevr_car $0)) (fn_62 clevr_large clevr_small $0)) clevr_metal clevr_rubber))\n\n-- what number of small thing s are rubber thing s or cylinder s\n(lambda (clevr_if (check_relation_count_greater_than_2 $0 clevr_behind) 3 (fn_62 1 2 $0)))\n\n-- what number of small objects are either metal cube s or red rubber thing s\n(lambda (clevr_count (find_objects_by_color (fn_62 clevr_red (clevr_query_color (clevr_car $0)) $0) $0)))\n\n-- the large metal thing has what color\n(lambda (fn_62 (clevr_query_color (clevr_car $0)) clevr_yellow $0))\n\n-- how many thing s are large metal cylinder s or small gray thing s\n(lambda (fn_62 2 3 $0))\n\n-- what color is the small metal thing behind the small purple metal thing\n(lambda (clevr_query_color (find_object_in_relation (fn_62 clevr_front clevr_right $0) (filter_small_objects_by_size $0))))\n\nPlease write a human-readable name and description for `fn_62` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "64b525c90ec56c5146fb866bb94b6ccb940213bb0bd8708da423864630b69ba9",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_shape_match\",\n    \"description\": \"A function that determines if the shape of the first object in a list matches a specified shape, returning one of two specified values based on the match result.\"\n}"
+      }
+    ],
+    "created": 1778243677,
+    "id": "chatcmpl-DdEhZW4G1OsUFND3gwIsjsf2lSYCo",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 300,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1699,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1999
+    }
+  }
+}

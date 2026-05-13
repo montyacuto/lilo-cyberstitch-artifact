@@ -1,0 +1,10 @@
+{
+  "data": {
+    "no_raw_codeql": true,
+    "selected": [
+      "candidate:java_command_injection_sanitizer_barrier"
+    ]
+  },
+  "source": "fixture",
+  "text": "{\n  \"selected\": [\n    \"candidate:java_command_injection_sanitizer_barrier\"\n  ],\n  \"no_raw_codeql\": true\n}"
+}

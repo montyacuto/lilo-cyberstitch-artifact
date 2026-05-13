@@ -1,0 +1,17 @@
+{
+  "id": "barriers",
+  "role_family": "barriers",
+  "prompt_bytes": 23978,
+  "library_items": 11,
+  "concepts": 29,
+  "proposals": 1,
+  "candidates": 1,
+  "autodoc": 1,
+  "groupings": 0,
+  "query_synthesis_hints": 1,
+  "ignored_outputs": 0,
+  "input": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/barriers/input.json",
+  "prompt": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/barriers/llm-prompt.txt",
+  "raw_response": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/barriers/llm-raw-response.json",
+  "output": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/barriers/candidates.json"
+}

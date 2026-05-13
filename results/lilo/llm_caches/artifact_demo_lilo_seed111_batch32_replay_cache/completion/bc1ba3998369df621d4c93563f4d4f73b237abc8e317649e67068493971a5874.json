@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T05:36:52Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_or_add_characters_based_on_conditions :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that takes a full string and two substrings as input. It checks specific conditions in the full string and replaces or adds characters in the substrings accordingly. The result is a modified full string.\n\nreplace_vowels_with_s :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') and replaces it with the letter 's'.\n\nreplace_concat_with_cdr_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that takes a full string and two substrings as input. It concatenates the first two substrings and then splits the result by a delimiter '.'. It returns the modified full string.\n\nmodify_string_based_on_delimiter_split :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that takes a full string and a function that modifies substrings as input. It applies the modification function to each substring split by a delimiter '.' and returns the modified full string.\n\nreplace_last_characters_based_on_conditions :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that takes a full string and a substring as input. It appends the modified substring to the full string after replacing or adding characters based on specific conditions related to the last characters of the full string.\n\nreplace_consonants_with_modified_substring :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_conditions $0 (regex_concat $1 $2) (regex_not replace_vowels_with_s)))))\ndescription: A function that takes three substrings as input. It replaces or adds characters in the second substring based on specific conditions related to consonants in the first and third substrings. The result is a modified full string.\n\nreplace_concat_with_reversed_last_characters :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\ndescription: A function that takes a full string and two substrings as input. It concatenates the first two substrings and then replaces the last characters of the result with the reversed characters of the third substring.\n\nappend_split_empty_string :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\ndescription: A function that appends the second substring to the full string after splitting it by an empty string delimiter.\n\nadd_character_after_vowel :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (modify_string_based_on_delimiter_split $0 (lambda (regex_if (regex_match replace_vowels_with_s $0) (regex_concat $0 $2) $0)))))\ndescription: A function that takes a substring and a full string as input. It modifies the full string by adding a specific character after each vowel in the substrings split by a delimiter '.'.\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_conditions $0 (regex_concat $1 $2) replace_vowels_with_s))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_conditions $0 (regex_concat $1 $2) replace_vowels_with_s))))\n\nHere are some examples of its usage:\n\n-- if there is vowel replace that with a f\n(lambda (fn_51 'f' 'a' $0))\n\n-- if there is vowel replace that with u q\n(lambda (fn_51 'q' 'u' $0))\n\n-- if there is vowel replace that with q f\n(lambda (fn_51 'f' 'q' $0))\n\n-- if there is vowel replace that with a c\n(lambda (fn_51 'c' 'a' $0))\n\n-- if there is vowel replace that with d b\n(lambda (fn_51 'b' 'd' $0))\n\n-- if there is vowel replace that with p v\n(lambda (fn_51 'v' 'p' $0))\n\n-- if there is vowel replace that with b t\n(lambda (fn_51 't' 'b' $0))\n\n-- if there is vowel replace that with n p\n(lambda (fn_51 'p' 'n' $0))\n\nPlease write a human-readable name and description for `fn_51` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "bc1ba3998369df621d4c93563f4d4f73b237abc8e317649e67068493971a5874",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_51\",\n    \"readable_name\": \"replace_vowels_with_concatenated_substrings\",\n    \"description\": \"A function that takes three substrings as input. It concatenates the second and third substrings and then replaces any vowels in the first substring with the concatenated result.\"\n}"
+      }
+    ],
+    "created": 1778218610,
+    "id": "chatcmpl-Dd8BGTEAM5Yd1PBwnvgEkpTR0u3mp",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 340,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1238,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1578
+    }
+  }
+}

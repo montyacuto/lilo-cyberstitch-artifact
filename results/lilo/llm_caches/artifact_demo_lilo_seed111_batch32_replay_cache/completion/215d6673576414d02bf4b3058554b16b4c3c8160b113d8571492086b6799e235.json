@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T10:59:42Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\ncheck_relation_count_greater_than_2 :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\ndescription: Checks if the count of objects related in a specific way is greater than 2.\n\ncount_objects_related_behind :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\ndescription: Counts the number of objects that are related behind the specified object in the list of objects.\n\nfind_objects_with_relation_difference :: tclevrrelation -> list(tclevrobject) -> tclevrobject\n\n(lambda (lambda (clevr_car (clevr_fold $0 $0 (lambda (lambda (clevr_difference $0 (clevr_relate $1 $3 $0))))))))\ndescription: Finds objects with a specific relation difference based on the provided relation and list of objects.\n\nfilter_objects_by_color :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $3) (clevr_add $1 $0) $0))))))\ndescription: Filters a list of objects by the specified color.\n\nfilter_objects_by_small_size :: list(tclevrobject) -> list(tclevrobject)\n\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size (clevr_query_size $1) clevr_small) (clevr_add $1 $0) $0)))))\ndescription: Filters a list of objects to only include those with a small size.\n\ndetermine_shape_based_on_material_count :: list(tclevrobject) -> tclevrshape\n\n(lambda (clevr_if (clevr_eq_material (clevr_if (clevr_gt? (clevr_count $0) 7) (clevr_query_material (clevr_car $0)) clevr_rubber) clevr_metal) clevr_sphere clevr_cylinder))\ndescription: Determines the shape of an object based on the material count and type of material present in the list of objects.\n\ndetermine_shape_based_on_cylinder_condition :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\ndescription: Determines a value based on whether the shape of the first object in a list is a cylinder or not.\n\ndetermine_object_size_based_on_relation_count :: list(tclevrobject) -> tclevrrelation -> tclevrsize\n\n(lambda (lambda (clevr_if (clevr_lt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2) clevr_large clevr_small)))\ndescription: Determines the size of an object based on the count of objects related in a specific way.\n\nfn_62 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (check_relation_count_greater_than_2 $0 clevr_front) $1 $2))))\n\nfn_63 :: list(tclevrobject) -> tclevrcolor -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $1 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $2) (clevr_map (lambda $2) $3) $0))))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_62 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (check_relation_count_greater_than_2 $0 clevr_front) $1 $2))))\n\nHere are some examples of its usage:\n\n-- there is a large thing front the small metal cube what is its shape\n(lambda (fn_62 (clevr_if (check_relation_count_greater_than_2 $0 clevr_right) clevr_sphere clevr_cylinder) clevr_cube $0))\n\n-- the brown thing is what size\n(lambda (fn_62 (determine_shape_based_on_cylinder_condition clevr_large clevr_small $0) clevr_large $0))\n\n-- the rubber cube is what color\n(lambda (fn_62 (determine_shape_based_on_cylinder_condition clevr_cyan clevr_red $0) (clevr_query_color (clevr_car $0)) $0))\n\n-- there is a cube front the gray rubber thing how big is it\n(lambda (fn_62 clevr_small (clevr_query_size (find_objects_with_relation_difference clevr_behind $0)) $0))\n\n-- what number of sphere s are small gray thing s or small metal thing s\n(lambda (fn_62 0 (clevr_if (clevr_eq_size clevr_large (clevr_query_size (find_objects_with_relation_difference clevr_behind $0))) 1 2) $0))\n\n-- how many thing s are either small thing s or cylinder s\n(lambda (clevr_if (check_relation_count_greater_than_2 $0 clevr_behind) (fn_62 3 8 $0) (determine_shape_based_on_cylinder_condition 6 3 $0)))\n\n-- how many thing s are right the large cylinder\n(lambda (clevr_if (check_relation_count_greater_than_2 $0 clevr_behind) (fn_62 2 4 $0) (count_objects_related_behind $0)))\n\n-- there is a thing that is right the cube what shape is it\n(lambda (fn_62 clevr_cylinder clevr_sphere $0))\n\n-- what is the shape of the brown thing\n(lambda (clevr_if (check_relation_count_greater_than_2 $0 clevr_right) (fn_62 clevr_cylinder clevr_sphere $0) clevr_cube))\n\n-- how many red objects are either large metal thing s or small rubber cylinder s\n(lambda (count_objects_related_behind (clevr_difference $0 (clevr_relate (clevr_car $0) (fn_62 clevr_right clevr_left $0) $0))))\n\nPlease write a human-readable name and description for `fn_62` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "215d6673576414d02bf4b3058554b16b4c3c8160b113d8571492086b6799e235",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_62\",\n    \"readable_name\": \"determine_value_based_on_relation_count\",\n    \"description\": \"Determines a value based on the count of objects related in a specific way.\"\n}"
+      }
+    ],
+    "created": 1778237981,
+    "id": "chatcmpl-DdDDhnwF6fXjiiZcK9NFg5QhPlxtW",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 240,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1567,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1807
+    }
+  }
+}

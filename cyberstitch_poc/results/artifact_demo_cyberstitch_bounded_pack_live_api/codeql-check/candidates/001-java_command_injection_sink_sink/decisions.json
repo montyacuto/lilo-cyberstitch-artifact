@@ -1,0 +1,72 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_command_injection_sink_sink",
+        "kind": "codeql_helper",
+        "origin": "lilo-loop",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isCommandInjectionSink",
+        "display_name": "remote_flow_source",
+        "description": "Recognizes Java CodeQL sink semantics for command injection.",
+        "body": "predicate isCommandInjectionSink(DataFlow::Node sink) {\n  exists(CommandInjectionSink command | sink = command)\n}",
+        "use_sites": [
+          {
+            "query": "remote-command-modeled.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q1:predicate:RemoteCommandModeledConfig:isSink"
+          },
+          {
+            "query": "source-node-environment-command-modeled.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q14:predicate:SourceNodeEnvironmentCommandModeledConfig:isSink"
+          },
+          {
+            "query": "source-node-remote-command-modeled.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q16:predicate:SourceNodeRemoteCommandModeledConfig:isSink"
+          },
+          {
+            "query": "threat-command-modeled.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q22:predicate:ThreatCommandModeledConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "23b9c0d462a159dfa7ef92c592a06bfc33e4f906b8d802928d636144b9f9bf82",
+        "semantic_role": "Sink",
+        "semantic_target": "CommandInjectionSink",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q1:predicate:RemoteCommandModeledConfig:isSink",
+            "role": "Sink",
+            "target": "CommandInjectionSink",
+            "num_exact_matches": 4,
+            "lilo_loop_reference": "candidate:java_command_injection_sink_sink",
+            "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/semantic/candidates.json",
+        "rationale": "Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction.",
+        "llm_proposal": {
+          "schema": "rewrite_candidate_reference_v1",
+          "candidate_ref": "candidate:java_command_injection_sink_sink",
+          "display_name": "remote_flow_source",
+          "description": "Recognizes Java CodeQL sink semantics for command injection.",
+          "rationale": "Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction."
+        }
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

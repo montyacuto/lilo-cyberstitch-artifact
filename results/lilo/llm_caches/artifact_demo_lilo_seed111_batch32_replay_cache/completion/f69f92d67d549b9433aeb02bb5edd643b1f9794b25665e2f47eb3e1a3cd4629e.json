@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T21:09:24Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_or_add_characters_based_on_conditions :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: This function takes a full string, a substring to add or replace, and a substring to search for. It checks each character in the full string and performs the following actions based on conditions: if the search substring is found, it replaces it with the specified substring; if not found, it adds the specified substring before the search substring.\n\nadd_or_replace_characters_after_first_letter :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\n\nvowel_or_consonant_check :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: Checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') and returns true if it is a vowel, false otherwise.\n\nfn_45 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nfn_46 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_47 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_48 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_49 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_conditions $0 (regex_concat 'a' $1) $2))))\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match 'p' $0) $1 $0)) (regex_split empty_string $1)))))\n\nfn_51 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_45 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nHere are some examples of its usage:\n\n-- if the word ends with any letter consonant replace that with d t\n(lambda (fn_45 $0 't' 'd'))\n\n-- if the word ends with any letter any letter replace that with b j\n(lambda (fn_45 $0 'j' 'b'))\n\n-- if the word ends with any letter any letter replace that with r q\n(lambda (fn_45 $0 'q' 'r'))\n\n-- if the word ends with any letter any letter replace that with j\n(lambda (fn_45 $0 'j' empty_string))\n\n-- if the word ends with any letter any letter replace that with o u\n(lambda (fn_45 $0 'u' 'o'))\n\nPlease write a human-readable name and description for `fn_45` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "f69f92d67d549b9433aeb02bb5edd643b1f9794b25665e2f47eb3e1a3cd4629e",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_45\",\n    \"readable_name\": \"replace_end_letter_based_on_conditions\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\"\n}"
+      }
+    ],
+    "created": 1778188163,
+    "id": "chatcmpl-Dd0GBCGEcGsxqF02lunEJysxfArea",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 450,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 966,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1416
+    }
+  }
+}

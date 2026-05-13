@@ -1,0 +1,31 @@
+{
+  "format": "cyberstitch-lilo-loop-output-v1",
+  "source": "lilo-loop-partitioned",
+  "proposals": 4,
+  "candidates": 4,
+  "autodoc": 4,
+  "groupings": 0,
+  "query_synthesis_hints": 3,
+  "ignored_outputs": 0,
+  "candidates_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/candidates.json",
+  "sidecars": {
+    "autodoc": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/autodoc.json",
+    "groupings": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/groupings.json",
+    "query_synthesis_hints": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/query-synthesis-hints.json",
+    "ignored_outputs": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/ignored.json"
+  },
+  "partitions_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/partitions.json",
+  "partition_mode": "auto",
+  "partition_count": 4,
+  "prompt_byte_budget": 45000,
+  "prompt_bytes": [
+    42193,
+    44354,
+    27597,
+    23978
+  ],
+  "selected_item_count": 50,
+  "selected_concept_count": 181,
+  "model": "gpt-3.5-turbo",
+  "cache_mode": "record"
+}

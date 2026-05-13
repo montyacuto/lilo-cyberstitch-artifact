@@ -1,0 +1,165 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/remote-cwe078-command-model.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Remote input reaches modeled command execution",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/remote-cwe078-command-model",
+    "tags": "security external/cwe/cwe-078"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.security.CommandLineQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "RemoteCommandModelConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "RemoteFlowSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "77d5e6e4442609be97c0a6cfec158c7c77905df7e6d3359e203ff8b110762256"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "CommandInjectionSink",
+                "name": "command"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "sink"
+              },
+              "right": {
+                "kind": "var",
+                "name": "command"
+              }
+            }
+          },
+          "source_hash": "365897d882d08bd6657c1a05d2e7aff266615fc1282b0dc98b9dbc107079cd04"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "CommandInjectionSanitizer",
+                "name": "sanitizer"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "node"
+              },
+              "right": {
+                "kind": "var",
+                "name": "sanitizer"
+              }
+            }
+          },
+          "source_hash": "d53b9ab54929ee61270337f54f4d0ff47c2e33d249326e8bafcf583e043aadec"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "RemoteCommandModelFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "RemoteCommandModelConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "RemoteCommandModelFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "RemoteCommandModelFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "RemoteCommandModelFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "Remote input reaches a modeled command-injection sink."
+    },
+    "message": "Remote input reaches a modeled command-injection sink."
+  },
+  "provenance_hash": "8b04b52695592f33375e27ee6b6612367b90ae0373e41cc4e5233dbf90213dc9",
+  "version": "sqir-v2"
+}

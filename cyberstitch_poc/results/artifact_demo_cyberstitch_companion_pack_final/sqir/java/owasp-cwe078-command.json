@@ -1,0 +1,164 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/owasp-cwe078-command.ql",
+  "language": "java",
+  "metadata": {
+    "name": "OWASP remote input reaches command execution",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/owasp-cwe078-command",
+    "tags": "security external/cwe/cwe-078"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources"
+  ],
+  "config_modules": [
+    {
+      "name": "OwaspCommandInjectionConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "RemoteFlowSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "77d5e6e4442609be97c0a6cfec158c7c77905df7e6d3359e203ff8b110762256"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "MethodCall",
+                "name": "call"
+              }
+            ],
+            "body": {
+              "kind": "and",
+              "terms": [
+                {
+                  "kind": "qualified_name_check",
+                  "receiver": {
+                    "kind": "method_call",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "call"
+                    },
+                    "method": "getMethod",
+                    "args": []
+                  },
+                  "name_parts": [
+                    "java.lang",
+                    "Runtime",
+                    "exec"
+                  ]
+                },
+                {
+                  "kind": "eq",
+                  "left": {
+                    "kind": "method_call",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "sink"
+                    },
+                    "method": "asExpr",
+                    "args": []
+                  },
+                  "right": {
+                    "kind": "argument_selection",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "call"
+                    },
+                    "index": 0
+                  }
+                }
+              ]
+            }
+          },
+          "source_hash": "951ee47fdb64c19d1ba8c9028fd27be080637c66f2a5db63a9c991d901155c55"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "OwaspCommandInjectionFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "OwaspCommandInjectionConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "OwaspCommandInjectionFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "OwaspCommandInjectionFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "OwaspCommandInjectionFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "Remote input reaches Runtime.exec."
+    },
+    "message": "Remote input reaches Runtime.exec."
+  },
+  "provenance_hash": "3d05f52e1fb6309628abd66d403f7b139a58463e32b8e8b81917638f71bd63db",
+  "version": "sqir-v2"
+}

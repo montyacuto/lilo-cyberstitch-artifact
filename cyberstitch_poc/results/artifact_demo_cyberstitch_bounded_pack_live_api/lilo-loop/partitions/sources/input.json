@@ -1,0 +1,3584 @@
+{
+  "format": "cyberstitch-lilo-loop-input-v1",
+  "created_at": "2026-05-12T14:55:38.280265+00:00",
+  "domain": "codeql-java-security",
+  "backend": "cyberstitch-codeql",
+  "strategy": {
+    "lilo_role": "LLM search, grouping, naming, and autodoc over semantic abstraction objects.",
+    "cyberstitch_role": "SQIR/FCIR semantics, deterministic CodeQL rewrites, syntax checks, and SARIF equivalence gates.",
+    "raw_codeql_policy": "LLM-authored raw CodeQL is not executable in this milestone."
+  },
+  "source_files": {
+    "provenance": [
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/fcir/provenance.json",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/fcir/codeql-pack/provenance.json"
+    ],
+    "candidates": [
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/semantic/candidates.json"
+    ],
+    "decisions": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/validation/decisions.json"
+  },
+  "partition": {
+    "id": "sources",
+    "role_family": "sources",
+    "role_family_label": "Sources"
+  },
+  "prompt_options": {
+    "max_use_site_examples": 2,
+    "compact_fields_only": true
+  },
+  "summary": {
+    "programs": 50,
+    "semantic_nodes": 561,
+    "concepts": 93,
+    "library_items": 11,
+    "rewrite_eligible_items": 5,
+    "accepted_items": 5,
+    "accepted_for_lilo_items": 11,
+    "rejected_items": 99
+  },
+  "scores": {},
+  "comparisons": {},
+  "library_items": [
+    {
+      "id": "candidate:java_active_threat_model_source",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_active_threat_model_source",
+      "display_name": "java_active_threat_model_source",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "schema": "java_source_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "f80425e59f587c82254588247dbf4abc9abbed4fb404b3220cc28ae20a05f4f7",
+      "semantic_role": "Source",
+      "semantic_target": "ActiveThreatModelSource",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "reasons": [],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Deterministically mined complete Java source predicate semantics.",
+      "predicate": "isActiveThreatModelSource",
+      "helper_module": "CyberStitchJavaHelpers",
+      "use_sites": [
+        {
+          "query": "threat-command-argument-to-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q21:predicate:ThreatCommandArgumentToExecConfig:isSource"
+        },
+        {
+          "query": "threat-command-modeled.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q22:predicate:ThreatCommandModeledConfig:isSource"
+        },
+        {
+          "query": "threat-command-runtime-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q23:predicate:ThreatCommandRuntimeExecConfig:isSource"
+        },
+        {
+          "query": "threat-command-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q24:predicate:ThreatCommandSinkNodeConfig:isSource"
+        },
+        {
+          "query": "threat-environment-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q25:predicate:ThreatEnvironmentSinkNodeConfig:isSource"
+        },
+        {
+          "query": "threat-sql-execute-query.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q26:predicate:ThreatSqlExecuteQueryConfig:isSource"
+        },
+        {
+          "query": "threat-sql-execute-update.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q27:predicate:ThreatSqlExecuteUpdateConfig:isSource"
+        },
+        {
+          "query": "threat-sql-execute.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q28:predicate:ThreatSqlExecuteConfig:isSource"
+        },
+        {
+          "query": "threat-sql-mongo-parse.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q29:predicate:ThreatSqlMongoParseConfig:isSource"
+        },
+        {
+          "query": "threat-sql-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q30:predicate:ThreatSqlQueryModelConfig:isSource"
+        },
+        {
+          "query": "threat-sql-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q31:predicate:ThreatSqlSinkNodeConfig:isSource"
+        },
+        {
+          "query": "threat-sql-statement-execute-all.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q32:predicate:ThreatSqlStatementExecuteAllConfig:isSource"
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q21:predicate:ThreatCommandArgumentToExecConfig:isSource",
+          "role": "Source",
+          "target": "ActiveThreatModelSource",
+          "num_exact_matches": 12
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_active_threat_model_source",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isActiveThreatModelSource",
+        "display_name": "java_active_threat_model_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isActiveThreatModelSource(DataFlow::Node source) {\n  exists(ActiveThreatModelSource remote | source = remote)\n}",
+        "use_sites": [
+          {
+            "query": "threat-command-argument-to-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q21:predicate:ThreatCommandArgumentToExecConfig:isSource"
+          },
+          {
+            "query": "threat-command-modeled.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q22:predicate:ThreatCommandModeledConfig:isSource"
+          },
+          {
+            "query": "threat-command-runtime-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q23:predicate:ThreatCommandRuntimeExecConfig:isSource"
+          },
+          {
+            "query": "threat-command-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q24:predicate:ThreatCommandSinkNodeConfig:isSource"
+          },
+          {
+            "query": "threat-environment-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q25:predicate:ThreatEnvironmentSinkNodeConfig:isSource"
+          },
+          {
+            "query": "threat-sql-execute-query.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q26:predicate:ThreatSqlExecuteQueryConfig:isSource"
+          },
+          {
+            "query": "threat-sql-execute-update.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q27:predicate:ThreatSqlExecuteUpdateConfig:isSource"
+          },
+          {
+            "query": "threat-sql-execute.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q28:predicate:ThreatSqlExecuteConfig:isSource"
+          },
+          {
+            "query": "threat-sql-mongo-parse.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q29:predicate:ThreatSqlMongoParseConfig:isSource"
+          },
+          {
+            "query": "threat-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q30:predicate:ThreatSqlQueryModelConfig:isSource"
+          },
+          {
+            "query": "threat-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q31:predicate:ThreatSqlSinkNodeConfig:isSource"
+          },
+          {
+            "query": "threat-sql-statement-execute-all.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q32:predicate:ThreatSqlStatementExecuteAllConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "f80425e59f587c82254588247dbf4abc9abbed4fb404b3220cc28ae20a05f4f7",
+        "semantic_role": "Source",
+        "semantic_target": "ActiveThreatModelSource",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q21:predicate:ThreatCommandArgumentToExecConfig:isSource",
+            "role": "Source",
+            "target": "ActiveThreatModelSource",
+            "num_exact_matches": 12
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_remote_flow_source",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_remote_flow_source",
+      "display_name": "java_remote_flow_source",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "schema": "java_source_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "a9eb398e68bfa3ad289637ca3decdd3ce8a50206e1d457ecaf6499e6963f8930",
+      "semantic_role": "Source",
+      "semantic_target": "RemoteFlowSource",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "reasons": [],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Deterministically mined complete Java source predicate semantics.",
+      "predicate": "isRemoteFlowSource",
+      "helper_module": "CyberStitchJavaHelpers",
+      "use_sites": [
+        {
+          "query": "remote-command-argument-to-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q0:predicate:RemoteCommandArgumentToExecConfig:isSource"
+        },
+        {
+          "query": "remote-command-modeled.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q1:predicate:RemoteCommandModeledConfig:isSource"
+        },
+        {
+          "query": "remote-command-runtime-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q2:predicate:RemoteCommandRuntimeExecConfig:isSource"
+        },
+        {
+          "query": "remote-command-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q3:predicate:RemoteCommandSinkNodeConfig:isSource"
+        },
+        {
+          "query": "remote-environment-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q4:predicate:RemoteEnvironmentSinkNodeConfig:isSource"
+        },
+        {
+          "query": "remote-sql-execute-query.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q5:predicate:RemoteSqlExecuteQueryConfig:isSource"
+        },
+        {
+          "query": "remote-sql-execute-update.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q6:predicate:RemoteSqlExecuteUpdateConfig:isSource"
+        },
+        {
+          "query": "remote-sql-execute.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q7:predicate:RemoteSqlExecuteConfig:isSource"
+        },
+        {
+          "query": "remote-sql-mongo-parse.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q8:predicate:RemoteSqlMongoParseConfig:isSource"
+        },
+        {
+          "query": "remote-sql-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q9:predicate:RemoteSqlQueryModelConfig:isSource"
+        },
+        {
+          "query": "remote-sql-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q10:predicate:RemoteSqlSinkNodeConfig:isSource"
+        },
+        {
+          "query": "remote-sql-statement-execute-all.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q11:predicate:RemoteSqlStatementExecuteAllConfig:isSource"
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q0:predicate:RemoteCommandArgumentToExecConfig:isSource",
+          "role": "Source",
+          "target": "RemoteFlowSource",
+          "num_exact_matches": 12
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_remote_flow_source",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isRemoteFlowSource",
+        "display_name": "java_remote_flow_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isRemoteFlowSource(DataFlow::Node source) {\n  exists(RemoteFlowSource remote | source = remote)\n}",
+        "use_sites": [
+          {
+            "query": "remote-command-argument-to-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q0:predicate:RemoteCommandArgumentToExecConfig:isSource"
+          },
+          {
+            "query": "remote-command-modeled.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q1:predicate:RemoteCommandModeledConfig:isSource"
+          },
+          {
+            "query": "remote-command-runtime-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q2:predicate:RemoteCommandRuntimeExecConfig:isSource"
+          },
+          {
+            "query": "remote-command-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q3:predicate:RemoteCommandSinkNodeConfig:isSource"
+          },
+          {
+            "query": "remote-environment-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q4:predicate:RemoteEnvironmentSinkNodeConfig:isSource"
+          },
+          {
+            "query": "remote-sql-execute-query.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q5:predicate:RemoteSqlExecuteQueryConfig:isSource"
+          },
+          {
+            "query": "remote-sql-execute-update.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q6:predicate:RemoteSqlExecuteUpdateConfig:isSource"
+          },
+          {
+            "query": "remote-sql-execute.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q7:predicate:RemoteSqlExecuteConfig:isSource"
+          },
+          {
+            "query": "remote-sql-mongo-parse.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q8:predicate:RemoteSqlMongoParseConfig:isSource"
+          },
+          {
+            "query": "remote-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q9:predicate:RemoteSqlQueryModelConfig:isSource"
+          },
+          {
+            "query": "remote-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q10:predicate:RemoteSqlSinkNodeConfig:isSource"
+          },
+          {
+            "query": "remote-sql-statement-execute-all.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q11:predicate:RemoteSqlStatementExecuteAllConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "a9eb398e68bfa3ad289637ca3decdd3ce8a50206e1d457ecaf6499e6963f8930",
+        "semantic_role": "Source",
+        "semantic_target": "RemoteFlowSource",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q0:predicate:RemoteCommandArgumentToExecConfig:isSource",
+            "role": "Source",
+            "target": "RemoteFlowSource",
+            "num_exact_matches": 12
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/semantic/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_node_remote_source",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_node_remote_source",
+      "display_name": "java_source_node_remote_source",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "schema": "java_source_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "969378149184ffd7626dd527c8068893306f7606673a36c6da2d4297cb263748",
+      "semantic_role": "Source",
+      "semantic_target": "sourceNode:remote",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "reasons": [],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Deterministically mined complete Java source predicate semantics.",
+      "predicate": "isSourceNodeRemoteSource",
+      "helper_module": "CyberStitchJavaHelpers",
+      "use_sites": [
+        {
+          "query": "source-node-remote-command-modeled.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q16:predicate:SourceNodeRemoteCommandModeledConfig:isSource"
+        },
+        {
+          "query": "source-node-remote-command-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q17:predicate:SourceNodeRemoteCommandSinkNodeConfig:isSource"
+        },
+        {
+          "query": "source-node-remote-sql-mongo-parse.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q18:predicate:SourceNodeRemoteSqlMongoParseConfig:isSource"
+        },
+        {
+          "query": "source-node-remote-sql-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q19:predicate:SourceNodeRemoteSqlQueryModelConfig:isSource"
+        },
+        {
+          "query": "source-node-remote-sql-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q20:predicate:SourceNodeRemoteSqlSinkNodeConfig:isSource"
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q16:predicate:SourceNodeRemoteCommandModeledConfig:isSource",
+          "role": "Source",
+          "target": "sourceNode:remote",
+          "num_exact_matches": 5
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_node_remote_source",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSourceNodeRemoteSource",
+        "display_name": "java_source_node_remote_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isSourceNodeRemoteSource(DataFlow::Node source) {\n  sourceNode(source, \"remote\")\n}",
+        "use_sites": [
+          {
+            "query": "source-node-remote-command-modeled.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q16:predicate:SourceNodeRemoteCommandModeledConfig:isSource"
+          },
+          {
+            "query": "source-node-remote-command-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q17:predicate:SourceNodeRemoteCommandSinkNodeConfig:isSource"
+          },
+          {
+            "query": "source-node-remote-sql-mongo-parse.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q18:predicate:SourceNodeRemoteSqlMongoParseConfig:isSource"
+          },
+          {
+            "query": "source-node-remote-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q19:predicate:SourceNodeRemoteSqlQueryModelConfig:isSource"
+          },
+          {
+            "query": "source-node-remote-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q20:predicate:SourceNodeRemoteSqlSinkNodeConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "969378149184ffd7626dd527c8068893306f7606673a36c6da2d4297cb263748",
+        "semantic_role": "Source",
+        "semantic_target": "sourceNode:remote",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q16:predicate:SourceNodeRemoteCommandModeledConfig:isSource",
+            "role": "Source",
+            "target": "sourceNode:remote",
+            "num_exact_matches": 5
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_node_database_source",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_node_database_source",
+      "display_name": "java_source_node_database_source",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "schema": "java_source_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "10fb2aad868280fee345822e11d478cad185e629744bacdb24a3b5abc0cb1b98",
+      "semantic_role": "Source",
+      "semantic_target": "sourceNode:database",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "reasons": [],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Deterministically mined complete Java source predicate semantics.",
+      "predicate": "isSourceNodeDatabaseSource",
+      "helper_module": "CyberStitchJavaHelpers",
+      "use_sites": [
+        {
+          "query": "source-node-database-sql-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q12:predicate:SourceNodeDatabaseSqlQueryModelConfig:isSource"
+        },
+        {
+          "query": "source-node-database-sql-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q13:predicate:SourceNodeDatabaseSqlSinkNodeConfig:isSource"
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q12:predicate:SourceNodeDatabaseSqlQueryModelConfig:isSource",
+          "role": "Source",
+          "target": "sourceNode:database",
+          "num_exact_matches": 2
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_node_database_source",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSourceNodeDatabaseSource",
+        "display_name": "java_source_node_database_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isSourceNodeDatabaseSource(DataFlow::Node source) {\n  sourceNode(source, \"database\")\n}",
+        "use_sites": [
+          {
+            "query": "source-node-database-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q12:predicate:SourceNodeDatabaseSqlQueryModelConfig:isSource"
+          },
+          {
+            "query": "source-node-database-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q13:predicate:SourceNodeDatabaseSqlSinkNodeConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "10fb2aad868280fee345822e11d478cad185e629744bacdb24a3b5abc0cb1b98",
+        "semantic_role": "Source",
+        "semantic_target": "sourceNode:database",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q12:predicate:SourceNodeDatabaseSqlQueryModelConfig:isSource",
+            "role": "Source",
+            "target": "sourceNode:database",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_node_environment_source",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_node_environment_source",
+      "display_name": "java_source_node_environment_source",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "schema": "java_source_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "2f0d793e77adbd3ffaa33754055a9f1eb3f438da73957751bcd89334a21d9155",
+      "semantic_role": "Source",
+      "semantic_target": "sourceNode:environment",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "reasons": [],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Deterministically mined complete Java source predicate semantics.",
+      "predicate": "isSourceNodeEnvironmentSource",
+      "helper_module": "CyberStitchJavaHelpers",
+      "use_sites": [
+        {
+          "query": "source-node-environment-command-modeled.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q14:predicate:SourceNodeEnvironmentCommandModeledConfig:isSource"
+        },
+        {
+          "query": "source-node-environment-env-sink.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q15:predicate:SourceNodeEnvironmentEnvSinkConfig:isSource"
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q14:predicate:SourceNodeEnvironmentCommandModeledConfig:isSource",
+          "role": "Source",
+          "target": "sourceNode:environment",
+          "num_exact_matches": 2
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_node_environment_source",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSourceNodeEnvironmentSource",
+        "display_name": "java_source_node_environment_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isSourceNodeEnvironmentSource(DataFlow::Node source) {\n  sourceNode(source, \"environment\")\n}",
+        "use_sites": [
+          {
+            "query": "source-node-environment-command-modeled.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q14:predicate:SourceNodeEnvironmentCommandModeledConfig:isSource"
+          },
+          {
+            "query": "source-node-environment-env-sink.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q15:predicate:SourceNodeEnvironmentEnvSinkConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "2f0d793e77adbd3ffaa33754055a9f1eb3f438da73957751bcd89334a21d9155",
+        "semantic_role": "Source",
+        "semantic_target": "sourceNode:environment",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q14:predicate:SourceNodeEnvironmentCommandModeledConfig:isSource",
+            "role": "Source",
+            "target": "sourceNode:environment",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_threat_model_active_threat_model_source_108d2db0",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_threat_model_active_threat_model_source_108d2db0",
+      "display_name": "java_threat_model_active_threat_model_source_108d2db0",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "108d2db0d8bfba82b88eeb3eed6f3dd488d244862f1b9e77c1d6352602c4e4c1",
+      "semantic_role": "ThreatModel",
+      "semantic_target": "ActiveThreatModelSource",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "threat-sql-execute-query.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q26:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-execute-update.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q27:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-execute.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q28:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-mongo-parse.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q29:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q30:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q31:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-statement-execute-all.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q32:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "SqlInjectionQuery.qll",
+          "predicate": "isSource",
+          "semantic_node_id": "codeql_lib11:concept:0:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 8,
+          "official_codeql_backing": true,
+          "concept_kind": "ThreatModel",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_threat_model_active_threat_model_source_108d2db0",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_threat_model_active_threat_model_source_108d2db0",
+        "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+        "body": "(SemanticConcept ThreatModel (Target ActiveThreatModelSource) (Uses (Use threat_sql_execute_query_ql q26_concept_1_ThreatModel) (Use threat_sql_execute_update_ql q27_concept_1_ThreatModel) (Use threat_sql_execute_ql q28_concept_1_ThreatModel) (Use threat_sql_mongo_parse_ql q29_concept_1_ThreatModel) (Use threat_sql_query_model_ql q30_concept_1_ThreatModel) (Use threat_sql_sink_node_ql q31_concept_1_ThreatModel) (Use threat_sql_statement_execute_all_ql q32_concept_1_ThreatModel) (Use SqlInjectionQuery_qll codeql_lib11_concept_0_ThreatModel)))",
+        "use_sites": [
+          {
+            "query": "threat-sql-execute-query.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q26:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-sql-execute-update.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q27:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-sql-execute.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q28:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-sql-mongo-parse.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q29:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q30:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q31:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-sql-statement-execute-all.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q32:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "SqlInjectionQuery.qll",
+            "predicate": "isSource",
+            "semantic_node_id": "codeql_lib11:concept:0:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "108d2db0d8bfba82b88eeb3eed6f3dd488d244862f1b9e77c1d6352602c4e4c1",
+        "semantic_role": "ThreatModel",
+        "semantic_target": "ActiveThreatModelSource",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 8,
+            "official_codeql_backing": true,
+            "concept_kind": "ThreatModel",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_threat_model_active_threat_model_source_92de60e7",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_threat_model_active_threat_model_source_92de60e7",
+      "display_name": "java_threat_model_active_threat_model_source_92de60e7",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "92de60e72ebf2b4b9a63e6a1063baec199c60c4404bfbd5116395ee454856795",
+      "semantic_role": "ThreatModel",
+      "semantic_target": "ActiveThreatModelSource",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "threat-command-argument-to-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q21:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-command-modeled.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q22:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-command-runtime-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q23:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-command-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q24:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-environment-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q25:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "CommandLineQuery.qll",
+          "predicate": "isSource",
+          "semantic_node_id": "codeql_lib5:concept:0:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": true
+        },
+        {
+          "query": "TaintedEnvironmentVariableQuery.qll",
+          "predicate": "isSource",
+          "semantic_node_id": "codeql_lib7:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 7,
+          "official_codeql_backing": true,
+          "concept_kind": "ThreatModel",
+          "cwe": 78
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_threat_model_active_threat_model_source_92de60e7",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_threat_model_active_threat_model_source_92de60e7",
+        "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+        "body": "(SemanticConcept ThreatModel (Target ActiveThreatModelSource) (Uses (Use threat_command_argument_to_exec_ql q21_concept_1_ThreatModel) (Use threat_command_modeled_ql q22_concept_1_ThreatModel) (Use threat_command_runtime_exec_ql q23_concept_1_ThreatModel) (Use threat_command_sink_node_ql q24_concept_1_ThreatModel) (Use threat_environment_sink_node_ql q25_concept_1_ThreatModel) (Use CommandLineQuery_qll codeql_lib5_concept_0_ThreatModel) (Use TaintedEnvironmentVariableQuery_qll codeql_lib7_concept_1_ThreatModel)))",
+        "use_sites": [
+          {
+            "query": "threat-command-argument-to-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q21:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-command-modeled.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q22:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-command-runtime-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q23:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-command-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q24:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-environment-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q25:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": false
+          },
+          {
+            "query": "CommandLineQuery.qll",
+            "predicate": "isSource",
+            "semantic_node_id": "codeql_lib5:concept:0:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": true
+          },
+          {
+            "query": "TaintedEnvironmentVariableQuery.qll",
+            "predicate": "isSource",
+            "semantic_node_id": "codeql_lib7:concept:1:ThreatModel",
+            "concept_kind": "ThreatModel",
+            "target": "ActiveThreatModelSource",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "92de60e72ebf2b4b9a63e6a1063baec199c60c4404bfbd5116395ee454856795",
+        "semantic_role": "ThreatModel",
+        "semantic_target": "ActiveThreatModelSource",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 7,
+            "official_codeql_backing": true,
+            "concept_kind": "ThreatModel",
+            "cwe": 78
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_c58b87ad",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_kind_remote_flow_source_c58b87ad",
+      "display_name": "java_source_kind_remote_flow_source_c58b87ad",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "c58b87ad16d225851fc0e03816100cd3087b100362ba79a63355c5701409ea63",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "remote-sql-execute-query.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q5:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-sql-execute-update.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q6:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-sql-execute.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q7:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-sql-mongo-parse.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q8:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-sql-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q9:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-sql-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q10:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-sql-statement-execute-all.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q11:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 7,
+          "official_codeql_backing": false,
+          "concept_kind": "SourceKind",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_kind_remote_flow_source_c58b87ad",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_source_kind_remote_flow_source_c58b87ad",
+        "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.",
+        "body": "(SemanticConcept SourceKind (Target RemoteFlowSource) (Uses (Use remote_sql_execute_query_ql q5_concept_1_SourceKind) (Use remote_sql_execute_update_ql q6_concept_1_SourceKind) (Use remote_sql_execute_ql q7_concept_1_SourceKind) (Use remote_sql_mongo_parse_ql q8_concept_1_SourceKind) (Use remote_sql_query_model_ql q9_concept_1_SourceKind) (Use remote_sql_sink_node_ql q10_concept_1_SourceKind) (Use remote_sql_statement_execute_all_ql q11_concept_1_SourceKind)))",
+        "use_sites": [
+          {
+            "query": "remote-sql-execute-query.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q5:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-sql-execute-update.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q6:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-sql-execute.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q7:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-sql-mongo-parse.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q8:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q9:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q10:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-sql-statement-execute-all.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q11:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "c58b87ad16d225851fc0e03816100cd3087b100362ba79a63355c5701409ea63",
+        "semantic_role": "SourceKind",
+        "semantic_target": "RemoteFlowSource",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 7,
+            "official_codeql_backing": false,
+            "concept_kind": "SourceKind",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_44d61157",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_kind_remote_flow_source_44d61157",
+      "display_name": "java_source_kind_remote_flow_source_44d61157",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "44d611573ce44ddea90d26c3586f6b03eab9313b29787b8636347506074eee99",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "remote-command-argument-to-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q0:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-command-modeled.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q1:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-command-runtime-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q2:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-command-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q3:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-environment-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q4:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 5,
+          "official_codeql_backing": false,
+          "concept_kind": "SourceKind",
+          "cwe": 78
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_kind_remote_flow_source_44d61157",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_source_kind_remote_flow_source_44d61157",
+        "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.",
+        "body": "(SemanticConcept SourceKind (Target RemoteFlowSource) (Uses (Use remote_command_argument_to_exec_ql q0_concept_1_SourceKind) (Use remote_command_modeled_ql q1_concept_1_SourceKind) (Use remote_command_runtime_exec_ql q2_concept_1_SourceKind) (Use remote_command_sink_node_ql q3_concept_1_SourceKind) (Use remote_environment_sink_node_ql q4_concept_1_SourceKind)))",
+        "use_sites": [
+          {
+            "query": "remote-command-argument-to-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q0:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-command-modeled.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q1:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-command-runtime-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q2:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-command-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q3:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-environment-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q4:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "RemoteFlowSource",
+            "official_codeql": false
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "44d611573ce44ddea90d26c3586f6b03eab9313b29787b8636347506074eee99",
+        "semantic_role": "SourceKind",
+        "semantic_target": "RemoteFlowSource",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 5,
+            "official_codeql_backing": false,
+            "concept_kind": "SourceKind",
+            "cwe": 78
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_kind_source_node_remote_eb073f7a",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_kind_source_node_remote_eb073f7a",
+      "display_name": "java_source_kind_source_node_remote_eb073f7a",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "eb073f7a88f7c3e9c77625ac61b060f77eba046e6ce62829c84a018be856c840",
+      "semantic_role": "SourceKind",
+      "semantic_target": "sourceNode:remote",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for sourceNode:remote.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "source-node-remote-sql-mongo-parse.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q18:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "sourceNode:remote",
+          "official_codeql": false
+        },
+        {
+          "query": "source-node-remote-sql-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q19:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "sourceNode:remote",
+          "official_codeql": false
+        },
+        {
+          "query": "source-node-remote-sql-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q20:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "sourceNode:remote",
+          "official_codeql": false
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 3,
+          "official_codeql_backing": false,
+          "concept_kind": "SourceKind",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_kind_source_node_remote_eb073f7a",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_source_kind_source_node_remote_eb073f7a",
+        "description": "Recognizes Java CodeQL SourceKind semantics for sourceNode:remote.",
+        "body": "(SemanticConcept SourceKind (Target sourceNode_remote) (Uses (Use source_node_remote_sql_mongo_parse_ql q18_concept_1_SourceKind) (Use source_node_remote_sql_query_model_ql q19_concept_1_SourceKind) (Use source_node_remote_sql_sink_node_ql q20_concept_1_SourceKind)))",
+        "use_sites": [
+          {
+            "query": "source-node-remote-sql-mongo-parse.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q18:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "sourceNode:remote",
+            "official_codeql": false
+          },
+          {
+            "query": "source-node-remote-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q19:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "sourceNode:remote",
+            "official_codeql": false
+          },
+          {
+            "query": "source-node-remote-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q20:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "sourceNode:remote",
+            "official_codeql": false
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "eb073f7a88f7c3e9c77625ac61b060f77eba046e6ce62829c84a018be856c840",
+        "semantic_role": "SourceKind",
+        "semantic_target": "sourceNode:remote",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 3,
+            "official_codeql_backing": false,
+            "concept_kind": "SourceKind",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_source_kind_source_node_database_43415ec4",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_source_kind_source_node_database_43415ec4",
+      "display_name": "java_source_kind_source_node_database_43415ec4",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_remote_source_kind_template_v1",
+      "language": "java",
+      "semantic_hash": "43415ec4b862a7aca9013de425a981a86f3c47211e592d7b451b710f6449d8ac",
+      "semantic_role": "SourceKind",
+      "semantic_target": "sourceNode:database",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for sourceNode:database.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "source-node-database-sql-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q12:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "sourceNode:database",
+          "official_codeql": false
+        },
+        {
+          "query": "source-node-database-sql-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q13:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "sourceNode:database",
+          "official_codeql": false
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 2,
+          "official_codeql_backing": false,
+          "concept_kind": "SourceKind",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_kind_source_node_database_43415ec4",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_remote_source_kind_template_v1",
+        "language": "java",
+        "display_name": "java_source_kind_source_node_database_43415ec4",
+        "description": "Recognizes Java CodeQL SourceKind semantics for sourceNode:database.",
+        "body": "(SemanticConcept SourceKind (Target sourceNode_database) (Uses (Use source_node_database_sql_query_model_ql q12_concept_1_SourceKind) (Use source_node_database_sql_sink_node_ql q13_concept_1_SourceKind)))",
+        "use_sites": [
+          {
+            "query": "source-node-database-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q12:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "sourceNode:database",
+            "official_codeql": false
+          },
+          {
+            "query": "source-node-database-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q13:concept:1:SourceKind",
+            "concept_kind": "SourceKind",
+            "target": "sourceNode:database",
+            "official_codeql": false
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "43415ec4b862a7aca9013de425a981a86f3c47211e592d7b451b710f6449d8ac",
+        "semantic_role": "SourceKind",
+        "semantic_target": "sourceNode:database",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 2,
+            "official_codeql_backing": false,
+            "concept_kind": "SourceKind",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:codeql_lib5:concept:0:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "InputToArgumentToExecFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib5:concept:4:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "LocalUserInput",
+      "name": "isSource",
+      "attributes": {
+        "config": "LocalUserInputToArgumentToExecFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:10:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "AndroidExternalStorageSource",
+      "name": "AndroidExternalStorageSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:15:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "AndroidJavascriptInterfaceMethodParameter",
+      "name": "AndroidJavascriptInterfaceMethodParameter",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:13:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ExportedAndroidContentProviderInput",
+      "name": "ExportedAndroidContentProviderInput",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:12:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ExportedAndroidIntentInput",
+      "name": "ExportedAndroidIntentInput",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:0:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ExternalRemoteFlowSource",
+      "name": "ExternalRemoteFlowSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:7:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "GuiceRequestParameterSource",
+      "name": "GuiceRequestParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:3:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "JaxRsMethodParameterSource",
+      "name": "JaxRsMethodParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:2:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "JaxWsMethodParameterSource",
+      "name": "JaxWsMethodParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:4:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "MessageBodyReaderParameterSource",
+      "name": "MessageBodyReaderParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:14:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "OnActivityResultIntentSource",
+      "name": "OnActivityResultIntentSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:5:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "PlayParameterSource",
+      "name": "PlayParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:21:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Android external storage",
+      "name": "RemoteFlowSource.getSourceType:Android external storage",
+      "attributes": {
+        "source_type": "Android external storage",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:22:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+      "name": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+      "attributes": {
+        "source_type": "Android onActivityResult incoming Intent",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:23:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+      "name": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+      "attributes": {
+        "source_type": "Exported Android content provider source",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:24:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Exported Android intent source",
+      "name": "RemoteFlowSource.getSourceType:Exported Android intent source",
+      "attributes": {
+        "source_type": "Exported Android intent source",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:25:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Guice request parameter",
+      "name": "RemoteFlowSource.getSourceType:Guice request parameter",
+      "attributes": {
+        "source_type": "Guice request parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:26:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+      "name": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+      "attributes": {
+        "source_type": "Jax Rs method parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:27:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+      "name": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+      "attributes": {
+        "source_type": "Jax WS method parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:28:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+      "name": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+      "attributes": {
+        "source_type": "MessageBodyReader parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:29:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Parameter of method with JavascriptInterface annotation",
+      "name": "RemoteFlowSource.getSourceType:Parameter of method with JavascriptInterface annotation",
+      "attributes": {
+        "source_type": "Parameter of method with JavascriptInterface annotation",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:30:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Play Query Parameters",
+      "name": "RemoteFlowSource.getSourceType:Play Query Parameters",
+      "attributes": {
+        "source_type": "Play Query Parameters",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:31:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:RMI method parameter",
+      "name": "RemoteFlowSource.getSourceType:RMI method parameter",
+      "attributes": {
+        "source_type": "RMI method parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:32:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Spring servlet input parameter",
+      "name": "RemoteFlowSource.getSourceType:Spring servlet input parameter",
+      "attributes": {
+        "source_type": "Spring servlet input parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:33:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Struts2 ActionSupport field",
+      "name": "RemoteFlowSource.getSourceType:Struts2 ActionSupport field",
+      "attributes": {
+        "source_type": "Struts2 ActionSupport field",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:34:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Thrift Iface parameter",
+      "name": "RemoteFlowSource.getSourceType:Thrift Iface parameter",
+      "attributes": {
+        "source_type": "Thrift Iface parameter",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:35:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:external",
+      "name": "RemoteFlowSource.getSourceType:external",
+      "attributes": {
+        "source_type": "external",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:11:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteUserInput",
+      "name": "RemoteUserInput",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RmiMethodParameterSource",
+      "name": "RmiMethodParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:6:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "SpringServletInputParameterSource",
+      "name": "SpringServletInputParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:8:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "Struts2ActionSupportClassFieldSource",
+      "name": "Struts2ActionSupportClassFieldSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:9:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ThriftIfaceParameterSource",
+      "name": "ThriftIfaceParameterSource",
+      "attributes": {
+        "extends": "RemoteFlowSource",
+        "source_family": "RemoteFlowSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:20:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:contentprovider",
+      "name": "sourceNode:contentprovider",
+      "attributes": {
+        "model_kind": "contentprovider"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:19:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:database",
+      "name": "sourceNode:database",
+      "attributes": {
+        "model_kind": "database"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:17:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:environment",
+      "name": "sourceNode:environment",
+      "attributes": {
+        "model_kind": "environment"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:18:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:file",
+      "name": "sourceNode:file",
+      "attributes": {
+        "model_kind": "file"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib14:concept:16:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib14",
+      "query": "FlowSources.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "FlowSources",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:remote",
+      "name": "sourceNode:remote",
+      "attributes": {
+        "model_kind": "remote"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/dataflow/FlowSources.qll"
+    },
+    {
+      "id": "concept:codeql_lib12:concept:0:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib12",
+      "query": "SqlConcatenatedQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "SqlConcatenatedQuery",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "UncontrolledStringBuilderSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "UncontrolledStringBuilderSourceFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlConcatenatedQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib11:concept:0:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib11",
+      "query": "SqlInjectionQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "SqlInjectionQuery",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "QueryInjectionFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlInjectionQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib7:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib7",
+      "query": "TaintedEnvironmentVariableQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "TaintedEnvironmentVariableQuery",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ExecTaintedEnvironmentConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSource"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/TaintedEnvironmentVariableQuery.qll"
+    },
+    {
+      "id": "concept:q0:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q0",
+      "query": "remote-command-argument-to-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-argument-to-exec",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteCommandArgumentToExecConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-argument-to-exec.ql"
+    },
+    {
+      "id": "concept:q1:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q1",
+      "query": "remote-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-modeled",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteCommandModeledConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-modeled.ql"
+    },
+    {
+      "id": "concept:q2:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q2",
+      "query": "remote-command-runtime-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-runtime-exec",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteCommandRuntimeExecConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-runtime-exec.ql"
+    },
+    {
+      "id": "concept:q3:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q3",
+      "query": "remote-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-sink-node",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteCommandSinkNodeConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q4:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q4",
+      "query": "remote-environment-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-environment-sink-node",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteEnvironmentSinkNodeConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-environment-sink-node.ql"
+    },
+    {
+      "id": "concept:q5:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q5",
+      "query": "remote-sql-execute-query.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-execute-query",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteSqlExecuteQueryConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute-query.ql"
+    },
+    {
+      "id": "concept:q6:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q6",
+      "query": "remote-sql-execute-update.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-execute-update",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteSqlExecuteUpdateConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute-update.ql"
+    },
+    {
+      "id": "concept:q7:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q7",
+      "query": "remote-sql-execute.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-execute",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteSqlExecuteConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute.ql"
+    },
+    {
+      "id": "concept:q8:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q8",
+      "query": "remote-sql-mongo-parse.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-mongo-parse",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteSqlMongoParseConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-mongo-parse.ql"
+    },
+    {
+      "id": "concept:q9:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q9",
+      "query": "remote-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-query-model",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteSqlQueryModelConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q10:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q10",
+      "query": "remote-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-sink-node",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteSqlSinkNodeConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q11:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q11",
+      "query": "remote-sql-statement-execute-all.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-statement-execute-all",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "RemoteSqlStatementExecuteAllConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-statement-execute-all.ql"
+    },
+    {
+      "id": "concept:q12:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q12",
+      "query": "source-node-database-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-query-model",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:database",
+      "name": "isSource",
+      "attributes": {
+        "config": "SourceNodeDatabaseSqlQueryModelConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q13:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q13",
+      "query": "source-node-database-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-sink-node",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:database",
+      "name": "isSource",
+      "attributes": {
+        "config": "SourceNodeDatabaseSqlSinkNodeConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q14:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q14",
+      "query": "source-node-environment-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-command-modeled",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:environment",
+      "name": "isSource",
+      "attributes": {
+        "config": "SourceNodeEnvironmentCommandModeledConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-environment-command-modeled.ql"
+    },
+    {
+      "id": "concept:q15:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q15",
+      "query": "source-node-environment-env-sink.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-env-sink",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:environment",
+      "name": "isSource",
+      "attributes": {
+        "config": "SourceNodeEnvironmentEnvSinkConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-environment-env-sink.ql"
+    },
+    {
+      "id": "concept:q16:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q16",
+      "query": "source-node-remote-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-modeled",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:remote",
+      "name": "isSource",
+      "attributes": {
+        "config": "SourceNodeRemoteCommandModeledConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-modeled.ql"
+    },
+    {
+      "id": "concept:q17:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q17",
+      "query": "source-node-remote-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-sink-node",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:remote",
+      "name": "isSource",
+      "attributes": {
+        "config": "SourceNodeRemoteCommandSinkNodeConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q18:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q18",
+      "query": "source-node-remote-sql-mongo-parse.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-mongo-parse",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:remote",
+      "name": "isSource",
+      "attributes": {
+        "config": "SourceNodeRemoteSqlMongoParseConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-mongo-parse.ql"
+    },
+    {
+      "id": "concept:q19:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q19",
+      "query": "source-node-remote-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-query-model",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:remote",
+      "name": "isSource",
+      "attributes": {
+        "config": "SourceNodeRemoteSqlQueryModelConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q20:concept:1:SourceKind",
+      "type": "semantic_concept",
+      "program_id": "q20",
+      "query": "source-node-remote-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-sink-node",
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:remote",
+      "name": "isSource",
+      "attributes": {
+        "config": "SourceNodeRemoteSqlSinkNodeConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q21:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q21",
+      "query": "threat-command-argument-to-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-argument-to-exec",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatCommandArgumentToExecConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-argument-to-exec.ql"
+    },
+    {
+      "id": "concept:q22:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q22",
+      "query": "threat-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-modeled",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatCommandModeledConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-modeled.ql"
+    },
+    {
+      "id": "concept:q23:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q23",
+      "query": "threat-command-runtime-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-runtime-exec",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatCommandRuntimeExecConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-runtime-exec.ql"
+    },
+    {
+      "id": "concept:q24:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q24",
+      "query": "threat-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-sink-node",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatCommandSinkNodeConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q25:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q25",
+      "query": "threat-environment-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-environment-sink-node",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatEnvironmentSinkNodeConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-environment-sink-node.ql"
+    },
+    {
+      "id": "concept:q26:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q26",
+      "query": "threat-sql-execute-query.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-execute-query",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatSqlExecuteQueryConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-execute-query.ql"
+    },
+    {
+      "id": "concept:q27:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q27",
+      "query": "threat-sql-execute-update.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-execute-update",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatSqlExecuteUpdateConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-execute-update.ql"
+    },
+    {
+      "id": "concept:q28:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q28",
+      "query": "threat-sql-execute.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-execute",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatSqlExecuteConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-execute.ql"
+    },
+    {
+      "id": "concept:q29:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q29",
+      "query": "threat-sql-mongo-parse.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-mongo-parse",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatSqlMongoParseConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-mongo-parse.ql"
+    },
+    {
+      "id": "concept:q30:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q30",
+      "query": "threat-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-query-model",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatSqlQueryModelConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q31:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q31",
+      "query": "threat-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-sink-node",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatSqlSinkNodeConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q32:concept:1:ThreatModel",
+      "type": "semantic_concept",
+      "program_id": "q32",
+      "query": "threat-sql-statement-execute-all.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-statement-execute-all",
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "name": "isSource",
+      "attributes": {
+        "config": "ThreatSqlStatementExecuteAllConfig",
+        "predicate": "isSource",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-statement-execute-all.ql"
+    },
+    {
+      "id": "concept:codeql_lib12:concept:3:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib12",
+      "query": "SqlConcatenatedQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "SqlConcatenatedQuery",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "UncontrolledStringBuilderSourceFlowConfig",
+      "attributes": {
+        "source_targets": "UncontrolledStringBuilderSource",
+        "sink_targets": "QueryInjectionSink",
+        "barrier_targets": "SimpleTypeSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlConcatenatedQuery.qll"
+    },
+    {
+      "id": "concept:q12:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q12",
+      "query": "source-node-database-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-query-model",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "SourceNodeDatabaseSqlQueryModelConfig",
+      "attributes": {
+        "source_targets": "sourceNode:database",
+        "sink_targets": "QueryInjectionSink",
+        "barrier_targets": "SimpleTypeSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q12:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q12",
+      "query": "source-node-database-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-query-model",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<SourceNodeDatabaseSqlQueryModelConfig>",
+      "name": "SourceNodeDatabaseSqlQueryModelFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "SourceNodeDatabaseSqlQueryModelConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q13:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q13",
+      "query": "source-node-database-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "SourceNodeDatabaseSqlSinkNodeConfig",
+      "attributes": {
+        "source_targets": "sourceNode:database",
+        "sink_targets": "sinkNode:sql-injection",
+        "barrier_targets": "barrierNode:sql-injection",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q13:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q13",
+      "query": "source-node-database-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<SourceNodeDatabaseSqlSinkNodeConfig>",
+      "name": "SourceNodeDatabaseSqlSinkNodeFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "SourceNodeDatabaseSqlSinkNodeConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q14:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q14",
+      "query": "source-node-environment-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-command-modeled",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "SourceNodeEnvironmentCommandModeledConfig",
+      "attributes": {
+        "source_targets": "sourceNode:environment",
+        "sink_targets": "CommandInjectionSink",
+        "barrier_targets": "CommandInjectionSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-environment-command-modeled.ql"
+    },
+    {
+      "id": "concept:q14:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q14",
+      "query": "source-node-environment-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-command-modeled",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<SourceNodeEnvironmentCommandModeledConfig>",
+      "name": "SourceNodeEnvironmentCommandModeledFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "SourceNodeEnvironmentCommandModeledConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-environment-command-modeled.ql"
+    },
+    {
+      "id": "concept:q15:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q15",
+      "query": "source-node-environment-env-sink.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-env-sink",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "SourceNodeEnvironmentEnvSinkConfig",
+      "attributes": {
+        "source_targets": "sourceNode:environment",
+        "sink_targets": "sinkNode:environment-injection",
+        "barrier_targets": "ExecTaintedEnvironmentSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-environment-env-sink.ql"
+    },
+    {
+      "id": "concept:q15:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q15",
+      "query": "source-node-environment-env-sink.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-env-sink",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<SourceNodeEnvironmentEnvSinkConfig>",
+      "name": "SourceNodeEnvironmentEnvSinkFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "SourceNodeEnvironmentEnvSinkConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-environment-env-sink.ql"
+    },
+    {
+      "id": "concept:q16:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q16",
+      "query": "source-node-remote-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-modeled",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "SourceNodeRemoteCommandModeledConfig",
+      "attributes": {
+        "source_targets": "sourceNode:remote",
+        "sink_targets": "CommandInjectionSink",
+        "barrier_targets": "CommandInjectionSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-modeled.ql"
+    },
+    {
+      "id": "concept:q16:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q16",
+      "query": "source-node-remote-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-modeled",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<SourceNodeRemoteCommandModeledConfig>",
+      "name": "SourceNodeRemoteCommandModeledFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "SourceNodeRemoteCommandModeledConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-modeled.ql"
+    },
+    {
+      "id": "concept:q17:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q17",
+      "query": "source-node-remote-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "SourceNodeRemoteCommandSinkNodeConfig",
+      "attributes": {
+        "source_targets": "sourceNode:remote",
+        "sink_targets": "sinkNode:command-injection",
+        "barrier_targets": "barrierNode:command-injection",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q17:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q17",
+      "query": "source-node-remote-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<SourceNodeRemoteCommandSinkNodeConfig>",
+      "name": "SourceNodeRemoteCommandSinkNodeFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "SourceNodeRemoteCommandSinkNodeConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q18:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q18",
+      "query": "source-node-remote-sql-mongo-parse.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-mongo-parse",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "SourceNodeRemoteSqlMongoParseConfig",
+      "attributes": {
+        "source_targets": "sourceNode:remote",
+        "sink_targets": "com.mongodb.BasicDBObject.parse",
+        "barrier_targets": "SimpleTypeSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-mongo-parse.ql"
+    },
+    {
+      "id": "concept:q18:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q18",
+      "query": "source-node-remote-sql-mongo-parse.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-mongo-parse",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<SourceNodeRemoteSqlMongoParseConfig>",
+      "name": "SourceNodeRemoteSqlMongoParseFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "SourceNodeRemoteSqlMongoParseConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-mongo-parse.ql"
+    },
+    {
+      "id": "concept:q19:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q19",
+      "query": "source-node-remote-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-query-model",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "SourceNodeRemoteSqlQueryModelConfig",
+      "attributes": {
+        "source_targets": "sourceNode:remote",
+        "sink_targets": "QueryInjectionSink",
+        "barrier_targets": "SimpleTypeSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q19:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q19",
+      "query": "source-node-remote-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-query-model",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<SourceNodeRemoteSqlQueryModelConfig>",
+      "name": "SourceNodeRemoteSqlQueryModelFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "SourceNodeRemoteSqlQueryModelConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q20:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q20",
+      "query": "source-node-remote-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "SourceNodeRemoteSqlSinkNodeConfig",
+      "attributes": {
+        "source_targets": "sourceNode:remote",
+        "sink_targets": "sinkNode:sql-injection",
+        "barrier_targets": "barrierNode:sql-injection",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q20:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q20",
+      "query": "source-node-remote-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<SourceNodeRemoteSqlSinkNodeConfig>",
+      "name": "SourceNodeRemoteSqlSinkNodeFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "SourceNodeRemoteSqlSinkNodeConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-sink-node.ql"
+    }
+  ],
+  "validation_gates": [
+    "cyberstitch candidate schema validation",
+    "SQIR/FCIR semantic validation",
+    "deterministic CodeQL rewrite",
+    "CodeQL syntax check",
+    "SARIF equivalence against baseline unless explicitly marked as a delta experiment"
+  ]
+}

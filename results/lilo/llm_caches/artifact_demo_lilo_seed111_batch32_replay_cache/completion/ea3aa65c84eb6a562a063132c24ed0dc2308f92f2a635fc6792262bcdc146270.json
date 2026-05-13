@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T09:41:21Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_or_add_characters :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\n\nvowel_replacer :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') and replaces it with the letter 's'.\n\nreplace_concat_with_cdr_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\n\nreplace_end_of_string :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that replaces the end of a full string with a specified substring after splitting the string by a delimiter.\n\nfn_46 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_47 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters $0 (regex_concat $1 $2) (regex_not vowel_replacer)))))\n\nfn_48 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nfn_49 :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (fn_46 $0 (lambda (regex_if (regex_match vowel_replacer $0) (regex_concat $0 $2) $0)))))\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters $0 (regex_concat $1 $2) vowel_replacer))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_46 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nHere are some examples of its usage:\n\n-- if there is any letter replace that with w t\n(lambda (fn_46 $0 (lambda (regex_concat 'w' 't'))))\n\n-- if there is any letter replace that with y t\n(lambda (fn_46 $0 (lambda (regex_concat 'y' 't'))))\n\n-- if there is any letter replace that with h r\n(lambda (fn_46 $0 (lambda (regex_concat 'h' 'r'))))\n\n-- if there is i replace that with m\n(lambda (fn_46 $0 (lambda (regex_if (regex_match $0 'i') 'm' $0))))\n\n-- if there is any letter replace that with n g\n(lambda (fn_46 $0 (lambda (regex_concat 'n' 'g'))))\n\n-- if there is any letter add v after that\n(lambda (fn_46 $0 (lambda (regex_concat $0 'v'))))\n\n-- if there is any letter replace that with l\n(lambda (fn_46 $0 (lambda 'l')))\n\n-- if there is any letter replace that with h x\n(lambda (fn_46 $0 (lambda (regex_concat 'h' 'x'))))\n\n-- if there is any letter replace that with p\n(lambda (fn_46 $0 (lambda 'p')))\n\n-- if there is any letter replace that with h s\n(lambda (fn_46 $0 (lambda (regex_concat 'h' 's'))))\n\nPlease write a human-readable name and description for `fn_46` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "ea3aa65c84eb6a562a063132c24ed0dc2308f92f2a635fc6792262bcdc146270",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_46\",\n    \"readable_name\": \"replace_with_transformed_substring\",\n    \"description\": \"A function that takes a full string and a transformation function for substrings. It applies the transformation function to each substring of the full string after splitting by a delimiter.\"\n}"
+      }
+    ],
+    "created": 1778233280,
+    "id": "chatcmpl-DdBzs4el0cT0gCF5ZGc1ogsdqyrNo",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 320,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1081,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1401
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "totals": {
+    "78": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 0,
+      "FP": 1
+    }
+  },
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00017",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    }
+  ]
+}

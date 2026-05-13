@@ -1,0 +1,1709 @@
+{
+  "format": "cyberstitch-lilo-loop-input-v1",
+  "created_at": "2026-05-12T14:14:38.179310+00:00",
+  "domain": "codeql-java-security",
+  "backend": "cyberstitch-codeql",
+  "strategy": {
+    "lilo_role": "LLM search, grouping, naming, and autodoc over semantic abstraction objects.",
+    "cyberstitch_role": "SQIR/FCIR semantics, deterministic CodeQL rewrites, syntax checks, and SARIF equivalence gates.",
+    "raw_codeql_policy": "LLM-authored raw CodeQL is not executable in this milestone."
+  },
+  "source_files": {
+    "provenance": [
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/fcir/provenance.json",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/fcir/codeql-pack/provenance.json"
+    ],
+    "candidates": [
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/semantic/candidates.json"
+    ],
+    "decisions": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/validation/decisions.json"
+  },
+  "partition": {
+    "id": "barriers",
+    "role_family": "barriers",
+    "role_family_label": "Barriers"
+  },
+  "prompt_options": {
+    "max_use_site_examples": 2,
+    "compact_fields_only": true
+  },
+  "summary": {
+    "programs": 39,
+    "semantic_nodes": 426,
+    "concepts": 22,
+    "library_items": 10,
+    "rewrite_eligible_items": 4,
+    "accepted_items": 4,
+    "accepted_for_lilo_items": 10,
+    "rejected_items": 94
+  },
+  "scores": {},
+  "comparisons": {},
+  "library_items": [
+    {
+      "id": "candidate:java_command_injection_sanitizer_barrier",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_command_injection_sanitizer_barrier",
+      "display_name": "java_command_injection_sanitizer_barrier",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "9ba0d6c35dcf55322e3a1c7bc2f9cf8af1156b4ab355865e770a700c45ca8111",
+      "semantic_role": "Barrier",
+      "semantic_target": "CommandInjectionSanitizer",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "reasons": [],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Deterministically mined complete Java barrier predicate semantics.",
+      "predicate": "isCommandInjectionSanitizerBarrier",
+      "helper_module": "CyberStitchJavaHelpers",
+      "use_sites": [
+        {
+          "query": "official-cwe078-command-flow.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isBarrier"
+        },
+        {
+          "query": "remote-cwe078-argument-to-exec.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q5:predicate:RemoteArgumentToExecConfig:isBarrier"
+        },
+        {
+          "query": "remote-cwe078-command-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q6:predicate:RemoteCommandModelConfig:isBarrier"
+        },
+        {
+          "query": "source-remote-cwe078-command-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q13:predicate:SourceRemoteCommandModelConfig:isBarrier"
+        },
+        {
+          "query": "threat-cwe078-argument-to-exec.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q18:predicate:ThreatArgumentToExecConfig:isBarrier"
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isBarrier",
+          "role": "Barrier",
+          "target": "CommandInjectionSanitizer",
+          "num_exact_matches": 5
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_command_injection_sanitizer_barrier",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isCommandInjectionSanitizerBarrier",
+        "display_name": "java_command_injection_sanitizer_barrier",
+        "description": "Deterministically mined complete Java barrier predicate semantics.",
+        "body": "predicate isCommandInjectionSanitizerBarrier(DataFlow::Node node) {\n  exists(CommandInjectionSanitizer sanitizer | node = sanitizer)\n}",
+        "use_sites": [
+          {
+            "query": "official-cwe078-command-flow.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isBarrier"
+          },
+          {
+            "query": "remote-cwe078-argument-to-exec.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q5:predicate:RemoteArgumentToExecConfig:isBarrier"
+          },
+          {
+            "query": "remote-cwe078-command-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q6:predicate:RemoteCommandModelConfig:isBarrier"
+          },
+          {
+            "query": "source-remote-cwe078-command-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q13:predicate:SourceRemoteCommandModelConfig:isBarrier"
+          },
+          {
+            "query": "threat-cwe078-argument-to-exec.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q18:predicate:ThreatArgumentToExecConfig:isBarrier"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "9ba0d6c35dcf55322e3a1c7bc2f9cf8af1156b4ab355865e770a700c45ca8111",
+        "semantic_role": "Barrier",
+        "semantic_target": "CommandInjectionSanitizer",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isBarrier",
+            "role": "Barrier",
+            "target": "CommandInjectionSanitizer",
+            "num_exact_matches": 5
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_barrier_node_sql_injection_barrier",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_barrier_node_sql_injection_barrier",
+      "display_name": "java_barrier_node_sql_injection_barrier",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "23abf95b67bf8ea0cd6c5bf42a501935e6ce592790995e1ec48fb3915c63bbc7",
+      "semantic_role": "Barrier",
+      "semantic_target": "barrierNode:sql-injection",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "reasons": [],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Deterministically mined complete Java barrier predicate semantics.",
+      "predicate": "isBarrierNodeSqlInjectionBarrier",
+      "helper_module": "CyberStitchJavaHelpers",
+      "use_sites": [
+        {
+          "query": "remote-cwe089-sql-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q9:predicate:RemoteSqlSinkNodeConfig:isBarrier"
+        },
+        {
+          "query": "source-database-cwe089-sql-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q11:predicate:SourceDatabaseSqlSinkNodeConfig:isBarrier"
+        },
+        {
+          "query": "source-remote-cwe089-sql-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q17:predicate:SourceRemoteSqlSinkNodeConfig:isBarrier"
+        },
+        {
+          "query": "threat-cwe089-sql-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q20:predicate:ThreatSqlSinkNodeConfig:isBarrier"
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q9:predicate:RemoteSqlSinkNodeConfig:isBarrier",
+          "role": "Barrier",
+          "target": "barrierNode:sql-injection",
+          "num_exact_matches": 4
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_barrier_node_sql_injection_barrier",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isBarrierNodeSqlInjectionBarrier",
+        "display_name": "java_barrier_node_sql_injection_barrier",
+        "description": "Deterministically mined complete Java barrier predicate semantics.",
+        "body": "predicate isBarrierNodeSqlInjectionBarrier(DataFlow::Node node) {\n  barrierNode(node, \"sql-injection\")\n}",
+        "use_sites": [
+          {
+            "query": "remote-cwe089-sql-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q9:predicate:RemoteSqlSinkNodeConfig:isBarrier"
+          },
+          {
+            "query": "source-database-cwe089-sql-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q11:predicate:SourceDatabaseSqlSinkNodeConfig:isBarrier"
+          },
+          {
+            "query": "source-remote-cwe089-sql-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q17:predicate:SourceRemoteSqlSinkNodeConfig:isBarrier"
+          },
+          {
+            "query": "threat-cwe089-sql-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q20:predicate:ThreatSqlSinkNodeConfig:isBarrier"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "23abf95b67bf8ea0cd6c5bf42a501935e6ce592790995e1ec48fb3915c63bbc7",
+        "semantic_role": "Barrier",
+        "semantic_target": "barrierNode:sql-injection",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q9:predicate:RemoteSqlSinkNodeConfig:isBarrier",
+            "role": "Barrier",
+            "target": "barrierNode:sql-injection",
+            "num_exact_matches": 4
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_exec_tainted_environment_sanitizer_barrier",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_exec_tainted_environment_sanitizer_barrier",
+      "display_name": "java_exec_tainted_environment_sanitizer_barrier",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "c325b833962e46521574422ff2c89efc5ec9bf35273db68e52f6625290c19e4e",
+      "semantic_role": "Barrier",
+      "semantic_target": "ExecTaintedEnvironmentSanitizer",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "reasons": [],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Deterministically mined complete Java barrier predicate semantics.",
+      "predicate": "isExecTaintedEnvironmentSanitizerBarrier",
+      "helper_module": "CyberStitchJavaHelpers",
+      "use_sites": [
+        {
+          "query": "official-cwe078-environment-flow.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q1:predicate:CyberStitchOfficialEnvironmentConfig:isBarrier"
+        },
+        {
+          "query": "source-environment-cwe078-environment-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q12:predicate:SourceEnvironmentInjectionConfig:isBarrier"
+        },
+        {
+          "query": "source-remote-cwe078-environment-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q15:predicate:SourceRemoteEnvironmentInjectionConfig:isBarrier"
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q1:predicate:CyberStitchOfficialEnvironmentConfig:isBarrier",
+          "role": "Barrier",
+          "target": "ExecTaintedEnvironmentSanitizer",
+          "num_exact_matches": 3
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_exec_tainted_environment_sanitizer_barrier",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isExecTaintedEnvironmentSanitizerBarrier",
+        "display_name": "java_exec_tainted_environment_sanitizer_barrier",
+        "description": "Deterministically mined complete Java barrier predicate semantics.",
+        "body": "predicate isExecTaintedEnvironmentSanitizerBarrier(DataFlow::Node node) {\n  exists(ExecTaintedEnvironmentSanitizer sanitizer | node = sanitizer)\n}",
+        "use_sites": [
+          {
+            "query": "official-cwe078-environment-flow.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q1:predicate:CyberStitchOfficialEnvironmentConfig:isBarrier"
+          },
+          {
+            "query": "source-environment-cwe078-environment-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q12:predicate:SourceEnvironmentInjectionConfig:isBarrier"
+          },
+          {
+            "query": "source-remote-cwe078-environment-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q15:predicate:SourceRemoteEnvironmentInjectionConfig:isBarrier"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "c325b833962e46521574422ff2c89efc5ec9bf35273db68e52f6625290c19e4e",
+        "semantic_role": "Barrier",
+        "semantic_target": "ExecTaintedEnvironmentSanitizer",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q1:predicate:CyberStitchOfficialEnvironmentConfig:isBarrier",
+            "role": "Barrier",
+            "target": "ExecTaintedEnvironmentSanitizer",
+            "num_exact_matches": 3
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_simple_type_sanitizer_barrier",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_simple_type_sanitizer_barrier",
+      "display_name": "java_simple_type_sanitizer_barrier",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "45ce32f0e3006d4b6457a3f63377b590571b81481619d40bd5c16c821dfee973",
+      "semantic_role": "Barrier",
+      "semantic_target": "SimpleTypeSanitizer",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "reasons": [],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Deterministically mined complete Java barrier predicate semantics.",
+      "predicate": "isSimpleTypeSanitizerBarrier",
+      "helper_module": "CyberStitchJavaHelpers",
+      "use_sites": [
+        {
+          "query": "remote-cwe089-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q7:predicate:RemoteQueryModelConfig:isBarrier"
+        },
+        {
+          "query": "source-database-cwe089-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q10:predicate:SourceDatabaseQueryModelConfig:isBarrier"
+        },
+        {
+          "query": "source-remote-cwe089-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q16:predicate:SourceRemoteQueryModelConfig:isBarrier"
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q7:predicate:RemoteQueryModelConfig:isBarrier",
+          "role": "Barrier",
+          "target": "SimpleTypeSanitizer",
+          "num_exact_matches": 3
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_simple_type_sanitizer_barrier",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSimpleTypeSanitizerBarrier",
+        "display_name": "java_simple_type_sanitizer_barrier",
+        "description": "Deterministically mined complete Java barrier predicate semantics.",
+        "body": "predicate isSimpleTypeSanitizerBarrier(DataFlow::Node node) {\n  exists(SimpleTypeSanitizer sanitizer | node = sanitizer)\n}",
+        "use_sites": [
+          {
+            "query": "remote-cwe089-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q7:predicate:RemoteQueryModelConfig:isBarrier"
+          },
+          {
+            "query": "source-database-cwe089-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q10:predicate:SourceDatabaseQueryModelConfig:isBarrier"
+          },
+          {
+            "query": "source-remote-cwe089-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q16:predicate:SourceRemoteQueryModelConfig:isBarrier"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "45ce32f0e3006d4b6457a3f63377b590571b81481619d40bd5c16c821dfee973",
+        "semantic_role": "Barrier",
+        "semantic_target": "SimpleTypeSanitizer",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q7:predicate:RemoteQueryModelConfig:isBarrier",
+            "role": "Barrier",
+            "target": "SimpleTypeSanitizer",
+            "num_exact_matches": 3
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_barrier_kind_command_injection_sanitizer_b03bb180",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_barrier_kind_command_injection_sanitizer_b03bb180",
+      "display_name": "java_barrier_kind_command_injection_sanitizer_b03bb180",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "b03bb1803a111ac0534585b06f11f11e7ba4cdc1387a44d05bc66b95fdf56ef4",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "CommandInjectionSanitizer",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL BarrierKind semantics for CommandInjectionSanitizer.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "official-cwe078-command-flow.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q0:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "CommandInjectionSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-cwe078-argument-to-exec.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q5:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "CommandInjectionSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-cwe078-command-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q6:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "CommandInjectionSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "source-remote-cwe078-command-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q13:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "CommandInjectionSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-cwe078-argument-to-exec.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q18:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "CommandInjectionSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "CommandLineQuery.qll",
+          "predicate": "isBarrier",
+          "semantic_node_id": "codeql_lib5:concept:2:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "CommandInjectionSanitizer",
+          "official_codeql": true
+        },
+        {
+          "query": "CommandLineQuery.qll",
+          "predicate": "isBarrier",
+          "semantic_node_id": "codeql_lib5:concept:6:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "CommandInjectionSanitizer",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 7,
+          "official_codeql_backing": true,
+          "concept_kind": "BarrierKind",
+          "cwe": 78
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_barrier_kind_command_injection_sanitizer_b03bb180",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "display_name": "java_barrier_kind_command_injection_sanitizer_b03bb180",
+        "description": "Recognizes Java CodeQL BarrierKind semantics for CommandInjectionSanitizer.",
+        "body": "(SemanticConcept BarrierKind (Target CommandInjectionSanitizer) (Uses (Use official_cwe078_command_flow_ql q0_concept_3_BarrierKind) (Use remote_cwe078_argument_to_exec_ql q5_concept_3_BarrierKind) (Use remote_cwe078_command_model_ql q6_concept_3_BarrierKind) (Use source_remote_cwe078_command_model_ql q13_concept_3_BarrierKind) (Use threat_cwe078_argument_to_exec_ql q18_concept_3_BarrierKind) (Use CommandLineQuery_qll codeql_lib5_concept_2_BarrierKind) (Use CommandLineQuery_qll codeql_lib5_concept_6_BarrierKind)))",
+        "use_sites": [
+          {
+            "query": "official-cwe078-command-flow.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q0:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "CommandInjectionSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-cwe078-argument-to-exec.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q5:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "CommandInjectionSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "remote-cwe078-command-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q6:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "CommandInjectionSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "source-remote-cwe078-command-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q13:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "CommandInjectionSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-cwe078-argument-to-exec.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q18:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "CommandInjectionSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "CommandLineQuery.qll",
+            "predicate": "isBarrier",
+            "semantic_node_id": "codeql_lib5:concept:2:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "CommandInjectionSanitizer",
+            "official_codeql": true
+          },
+          {
+            "query": "CommandLineQuery.qll",
+            "predicate": "isBarrier",
+            "semantic_node_id": "codeql_lib5:concept:6:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "CommandInjectionSanitizer",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "b03bb1803a111ac0534585b06f11f11e7ba4cdc1387a44d05bc66b95fdf56ef4",
+        "semantic_role": "BarrierKind",
+        "semantic_target": "CommandInjectionSanitizer",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 7,
+            "official_codeql_backing": true,
+            "concept_kind": "BarrierKind",
+            "cwe": 78
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_barrier_kind_exec_tainted_environment_sanitizer_6351f096",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_barrier_kind_exec_tainted_environment_sanitizer_6351f096",
+      "display_name": "java_barrier_kind_exec_tainted_environment_sanitizer_6351f096",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "6351f0963cee00bc1ab9d53ba82c159404a55a66e76be31048b2cd5cb5a874bd",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "ExecTaintedEnvironmentSanitizer",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL BarrierKind semantics for ExecTaintedEnvironmentSanitizer.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "official-cwe078-environment-flow.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q1:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "ExecTaintedEnvironmentSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "source-environment-cwe078-environment-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q12:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "ExecTaintedEnvironmentSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "source-remote-cwe078-environment-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q15:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "ExecTaintedEnvironmentSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "TaintedEnvironmentVariableQuery.qll",
+          "predicate": "isBarrier",
+          "semantic_node_id": "codeql_lib7:concept:2:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "ExecTaintedEnvironmentSanitizer",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 4,
+          "official_codeql_backing": true,
+          "concept_kind": "BarrierKind",
+          "cwe": 78
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_barrier_kind_exec_tainted_environment_sanitizer_6351f096",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "display_name": "java_barrier_kind_exec_tainted_environment_sanitizer_6351f096",
+        "description": "Recognizes Java CodeQL BarrierKind semantics for ExecTaintedEnvironmentSanitizer.",
+        "body": "(SemanticConcept BarrierKind (Target ExecTaintedEnvironmentSanitizer) (Uses (Use official_cwe078_environment_flow_ql q1_concept_3_BarrierKind) (Use source_environment_cwe078_environment_sinknode_ql q12_concept_3_BarrierKind) (Use source_remote_cwe078_environment_sinknode_ql q15_concept_3_BarrierKind) (Use TaintedEnvironmentVariableQuery_qll codeql_lib7_concept_2_BarrierKind)))",
+        "use_sites": [
+          {
+            "query": "official-cwe078-environment-flow.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q1:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "ExecTaintedEnvironmentSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "source-environment-cwe078-environment-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q12:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "ExecTaintedEnvironmentSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "source-remote-cwe078-environment-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q15:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "ExecTaintedEnvironmentSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "TaintedEnvironmentVariableQuery.qll",
+            "predicate": "isBarrier",
+            "semantic_node_id": "codeql_lib7:concept:2:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "ExecTaintedEnvironmentSanitizer",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "6351f0963cee00bc1ab9d53ba82c159404a55a66e76be31048b2cd5cb5a874bd",
+        "semantic_role": "BarrierKind",
+        "semantic_target": "ExecTaintedEnvironmentSanitizer",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 4,
+            "official_codeql_backing": true,
+            "concept_kind": "BarrierKind",
+            "cwe": 78
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_barrier_kind_simple_type_sanitizer_e32259cd",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_barrier_kind_simple_type_sanitizer_e32259cd",
+      "display_name": "java_barrier_kind_simple_type_sanitizer_e32259cd",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "e32259cdc03b203ebe227058265cccfa608a495e6f4925e4463a7cfc039f72f0",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "SimpleTypeSanitizer",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL BarrierKind semantics for SimpleTypeSanitizer.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "remote-cwe089-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q7:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "SimpleTypeSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "source-database-cwe089-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q10:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "SimpleTypeSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "source-remote-cwe089-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q16:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "SimpleTypeSanitizer",
+          "official_codeql": false
+        },
+        {
+          "query": "SqlInjectionQuery.qll",
+          "predicate": "isBarrier",
+          "semantic_node_id": "codeql_lib11:concept:2:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "SimpleTypeSanitizer",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 4,
+          "official_codeql_backing": true,
+          "concept_kind": "BarrierKind",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_barrier_kind_simple_type_sanitizer_e32259cd",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "display_name": "java_barrier_kind_simple_type_sanitizer_e32259cd",
+        "description": "Recognizes Java CodeQL BarrierKind semantics for SimpleTypeSanitizer.",
+        "body": "(SemanticConcept BarrierKind (Target SimpleTypeSanitizer) (Uses (Use remote_cwe089_query_model_ql q7_concept_3_BarrierKind) (Use source_database_cwe089_query_model_ql q10_concept_3_BarrierKind) (Use source_remote_cwe089_query_model_ql q16_concept_3_BarrierKind) (Use SqlInjectionQuery_qll codeql_lib11_concept_2_BarrierKind)))",
+        "use_sites": [
+          {
+            "query": "remote-cwe089-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q7:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "SimpleTypeSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "source-database-cwe089-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q10:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "SimpleTypeSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "source-remote-cwe089-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q16:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "SimpleTypeSanitizer",
+            "official_codeql": false
+          },
+          {
+            "query": "SqlInjectionQuery.qll",
+            "predicate": "isBarrier",
+            "semantic_node_id": "codeql_lib11:concept:2:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "SimpleTypeSanitizer",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "e32259cdc03b203ebe227058265cccfa608a495e6f4925e4463a7cfc039f72f0",
+        "semantic_role": "BarrierKind",
+        "semantic_target": "SimpleTypeSanitizer",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 4,
+            "official_codeql_backing": true,
+            "concept_kind": "BarrierKind",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_barrier_kind_barrier_node_sql_injection_3b968d0e",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_barrier_kind_barrier_node_sql_injection_3b968d0e",
+      "display_name": "java_barrier_kind_barrier_node_sql_injection_3b968d0e",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "3b968d0e006e88cb79e516958ad6524664aeb7c4b4a973545b5dc605cee9ddd8",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "barrierNode:sql-injection",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL BarrierKind semantics for barrierNode:sql-injection.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "remote-cwe089-sql-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q9:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "barrierNode:sql-injection",
+          "official_codeql": false
+        },
+        {
+          "query": "source-database-cwe089-sql-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q11:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "barrierNode:sql-injection",
+          "official_codeql": false
+        },
+        {
+          "query": "source-remote-cwe089-sql-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q17:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "barrierNode:sql-injection",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-cwe089-sql-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q20:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "barrierNode:sql-injection",
+          "official_codeql": false
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 4,
+          "official_codeql_backing": false,
+          "concept_kind": "BarrierKind",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_barrier_kind_barrier_node_sql_injection_3b968d0e",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "display_name": "java_barrier_kind_barrier_node_sql_injection_3b968d0e",
+        "description": "Recognizes Java CodeQL BarrierKind semantics for barrierNode:sql-injection.",
+        "body": "(SemanticConcept BarrierKind (Target barrierNode_sql_injection) (Uses (Use remote_cwe089_sql_sinknode_ql q9_concept_3_BarrierKind) (Use source_database_cwe089_sql_sinknode_ql q11_concept_3_BarrierKind) (Use source_remote_cwe089_sql_sinknode_ql q17_concept_3_BarrierKind) (Use threat_cwe089_sql_sinknode_ql q20_concept_3_BarrierKind)))",
+        "use_sites": [
+          {
+            "query": "remote-cwe089-sql-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q9:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "barrierNode:sql-injection",
+            "official_codeql": false
+          },
+          {
+            "query": "source-database-cwe089-sql-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q11:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "barrierNode:sql-injection",
+            "official_codeql": false
+          },
+          {
+            "query": "source-remote-cwe089-sql-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q17:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "barrierNode:sql-injection",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-cwe089-sql-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q20:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "barrierNode:sql-injection",
+            "official_codeql": false
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "3b968d0e006e88cb79e516958ad6524664aeb7c4b4a973545b5dc605cee9ddd8",
+        "semantic_role": "BarrierKind",
+        "semantic_target": "barrierNode:sql-injection",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 4,
+            "official_codeql_backing": false,
+            "concept_kind": "BarrierKind",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_barrier_kind_barrier_node_command_injection_13af40c7",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_barrier_kind_barrier_node_command_injection_13af40c7",
+      "display_name": "java_barrier_kind_barrier_node_command_injection_13af40c7",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "13af40c73e934e52f2de856ffc8aca6a59b33929bdbf68175800b41f52e51bd4",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "barrierNode:command-injection",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL BarrierKind semantics for barrierNode:command-injection.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "source-remote-cwe078-command-sinknode.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q14:concept:3:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "barrierNode:command-injection",
+          "official_codeql": false
+        },
+        {
+          "query": "CommandLineQuery.qll",
+          "predicate": "barrierNode:command-injection",
+          "semantic_node_id": "codeql_lib5:concept:10:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "barrierNode:command-injection",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 2,
+          "official_codeql_backing": true,
+          "concept_kind": "BarrierKind",
+          "cwe": 78
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_barrier_kind_barrier_node_command_injection_13af40c7",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "display_name": "java_barrier_kind_barrier_node_command_injection_13af40c7",
+        "description": "Recognizes Java CodeQL BarrierKind semantics for barrierNode:command-injection.",
+        "body": "(SemanticConcept BarrierKind (Target barrierNode_command_injection) (Uses (Use source_remote_cwe078_command_sinknode_ql q14_concept_3_BarrierKind) (Use CommandLineQuery_qll codeql_lib5_concept_10_BarrierKind)))",
+        "use_sites": [
+          {
+            "query": "source-remote-cwe078-command-sinknode.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q14:concept:3:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "barrierNode:command-injection",
+            "official_codeql": false
+          },
+          {
+            "query": "CommandLineQuery.qll",
+            "predicate": "barrierNode:command-injection",
+            "semantic_node_id": "codeql_lib5:concept:10:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "barrierNode:command-injection",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "13af40c73e934e52f2de856ffc8aca6a59b33929bdbf68175800b41f52e51bd4",
+        "semantic_role": "BarrierKind",
+        "semantic_target": "barrierNode:command-injection",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 2,
+            "official_codeql_backing": true,
+            "concept_kind": "BarrierKind",
+            "cwe": 78
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_barrier_kind_simple_type_sanitizer_0a047631",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_barrier_kind_simple_type_sanitizer_0a047631",
+      "display_name": "java_barrier_kind_simple_type_sanitizer_0a047631",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "semantic_hash": "0a047631a86152405c1f6d2b69cb8b61cc3d8313137f39538757977e7aaa02c0",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "SimpleTypeSanitizer",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL BarrierKind semantics for SimpleTypeSanitizer.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "SqlConcatenatedQuery.qll",
+          "predicate": "isBarrier",
+          "semantic_node_id": "codeql_lib12:concept:2:BarrierKind",
+          "concept_kind": "BarrierKind",
+          "target": "SimpleTypeSanitizer",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "BarrierKind",
+          "cwe": null
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_barrier_kind_simple_type_sanitizer_0a047631",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "display_name": "java_barrier_kind_simple_type_sanitizer_0a047631",
+        "description": "Recognizes Java CodeQL BarrierKind semantics for SimpleTypeSanitizer.",
+        "body": "(SemanticConcept BarrierKind (Target SimpleTypeSanitizer) (Uses (Use SqlConcatenatedQuery_qll codeql_lib12_concept_2_BarrierKind)))",
+        "use_sites": [
+          {
+            "query": "SqlConcatenatedQuery.qll",
+            "predicate": "isBarrier",
+            "semantic_node_id": "codeql_lib12:concept:2:BarrierKind",
+            "concept_kind": "BarrierKind",
+            "target": "SimpleTypeSanitizer",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "0a047631a86152405c1f6d2b69cb8b61cc3d8313137f39538757977e7aaa02c0",
+        "semantic_role": "BarrierKind",
+        "semantic_target": "SimpleTypeSanitizer",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "BarrierKind",
+            "cwe": null
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:codeql_lib5:concept:2:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "CommandInjectionSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "InputToArgumentToExecFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isBarrier"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib5:concept:6:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "CommandInjectionSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "LocalUserInputToArgumentToExecFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isBarrier"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib5:concept:10:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "barrierNode:command-injection",
+      "name": "barrierNode:command-injection",
+      "attributes": {
+        "model_kind": "command-injection"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib12:concept:2:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib12",
+      "query": "SqlConcatenatedQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "SqlConcatenatedQuery",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "SimpleTypeSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "UncontrolledStringBuilderSourceFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isBarrier"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlConcatenatedQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib11:concept:2:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib11",
+      "query": "SqlInjectionQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "SqlInjectionQuery",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "SimpleTypeSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "QueryInjectionFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isBarrier"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlInjectionQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib7:concept:2:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib7",
+      "query": "TaintedEnvironmentVariableQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "TaintedEnvironmentVariableQuery",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "ExecTaintedEnvironmentSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "ExecTaintedEnvironmentConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isBarrier"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/TaintedEnvironmentVariableQuery.qll"
+    },
+    {
+      "id": "concept:q0:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q0",
+      "query": "official-cwe078-command-flow.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-cwe078-command-flow",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "CommandInjectionSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "CyberStitchOfficialCommandConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/official-cwe078-command-flow.ql"
+    },
+    {
+      "id": "concept:q1:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q1",
+      "query": "official-cwe078-environment-flow.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-cwe078-environment-flow",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "ExecTaintedEnvironmentSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "CyberStitchOfficialEnvironmentConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/official-cwe078-environment-flow.ql"
+    },
+    {
+      "id": "concept:q5:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q5",
+      "query": "remote-cwe078-argument-to-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-expanded/remote-cwe078-argument-to-exec",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "CommandInjectionSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "RemoteArgumentToExecConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/remote-cwe078-argument-to-exec.ql"
+    },
+    {
+      "id": "concept:q6:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q6",
+      "query": "remote-cwe078-command-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/remote-cwe078-command-model",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "CommandInjectionSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "RemoteCommandModelConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/remote-cwe078-command-model.ql"
+    },
+    {
+      "id": "concept:q7:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q7",
+      "query": "remote-cwe089-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/remote-cwe089-query-model",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "SimpleTypeSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "RemoteQueryModelConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/remote-cwe089-query-model.ql"
+    },
+    {
+      "id": "concept:q9:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q9",
+      "query": "remote-cwe089-sql-sinknode.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/official-expanded/remote-cwe089-sql-sinknode",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "barrierNode:sql-injection",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "RemoteSqlSinkNodeConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/remote-cwe089-sql-sinknode.ql"
+    },
+    {
+      "id": "concept:q10:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q10",
+      "query": "source-database-cwe089-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/official-expanded/source-database-cwe089-query-model",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "SimpleTypeSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "SourceDatabaseQueryModelConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-database-cwe089-query-model.ql"
+    },
+    {
+      "id": "concept:q11:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q11",
+      "query": "source-database-cwe089-sql-sinknode.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/official-expanded/source-database-cwe089-sql-sinknode",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "barrierNode:sql-injection",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "SourceDatabaseSqlSinkNodeConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-database-cwe089-sql-sinknode.ql"
+    },
+    {
+      "id": "concept:q12:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q12",
+      "query": "source-environment-cwe078-environment-sinknode.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-expanded/source-environment-cwe078-environment-sinknode",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "ExecTaintedEnvironmentSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "SourceEnvironmentInjectionConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-environment-cwe078-environment-sinknode.ql"
+    },
+    {
+      "id": "concept:q13:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q13",
+      "query": "source-remote-cwe078-command-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-expanded/source-remote-cwe078-command-model",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "CommandInjectionSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "SourceRemoteCommandModelConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-remote-cwe078-command-model.ql"
+    },
+    {
+      "id": "concept:q14:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q14",
+      "query": "source-remote-cwe078-command-sinknode.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-expanded/source-remote-cwe078-command-sinknode",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "barrierNode:command-injection",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "SourceRemoteCommandSinkNodeConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-remote-cwe078-command-sinknode.ql"
+    },
+    {
+      "id": "concept:q15:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q15",
+      "query": "source-remote-cwe078-environment-sinknode.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-expanded/source-remote-cwe078-environment-sinknode",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "ExecTaintedEnvironmentSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "SourceRemoteEnvironmentInjectionConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-remote-cwe078-environment-sinknode.ql"
+    },
+    {
+      "id": "concept:q16:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q16",
+      "query": "source-remote-cwe089-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/official-expanded/source-remote-cwe089-query-model",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "SimpleTypeSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "SourceRemoteQueryModelConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-remote-cwe089-query-model.ql"
+    },
+    {
+      "id": "concept:q17:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q17",
+      "query": "source-remote-cwe089-sql-sinknode.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/official-expanded/source-remote-cwe089-sql-sinknode",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "barrierNode:sql-injection",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "SourceRemoteSqlSinkNodeConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-remote-cwe089-sql-sinknode.ql"
+    },
+    {
+      "id": "concept:q18:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q18",
+      "query": "threat-cwe078-argument-to-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-expanded/threat-cwe078-argument-to-exec",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "CommandInjectionSanitizer",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "ThreatArgumentToExecConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/threat-cwe078-argument-to-exec.ql"
+    },
+    {
+      "id": "concept:q20:concept:3:BarrierKind",
+      "type": "semantic_concept",
+      "program_id": "q20",
+      "query": "threat-cwe089-sql-sinknode.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/official-expanded/threat-cwe089-sql-sinknode",
+      "concept_kind": "BarrierKind",
+      "semantic_role": "Barrier",
+      "target": "barrierNode:sql-injection",
+      "name": "isBarrier",
+      "attributes": {
+        "config": "ThreatSqlSinkNodeConfig",
+        "predicate": "isBarrier",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/threat-cwe089-sql-sinknode.ql"
+    }
+  ],
+  "validation_gates": [
+    "cyberstitch candidate schema validation",
+    "SQIR/FCIR semantic validation",
+    "deterministic CodeQL rewrite",
+    "CodeQL syntax check",
+    "SARIF equivalence against baseline unless explicitly marked as a delta experiment"
+  ]
+}

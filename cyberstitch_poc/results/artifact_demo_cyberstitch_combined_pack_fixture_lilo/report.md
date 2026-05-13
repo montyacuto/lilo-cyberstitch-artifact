@@ -1,0 +1,1122 @@
+# CyberSTITCH CodeQL/OWASP PoC Report
+
+Language: `java`
+OWASP root: `<original-workspace>/cyberstitch_poc/benchmarks/BenchmarkJava`
+Curated manifest: `<original-workspace>/cyberstitch_poc/benchmarks/owasp_cmdi_sqli_all_benchmarkjava.json`
+
+## Tooling
+- `java`: available openjdk version "25.0.3" 2026-04-21
+- `mvn`: available Apache Maven 3.9.11 (Red Hat 3.9.11-5)
+- `codeql`: available CodeQL command-line toolchain release 2.25.3.
+
+## Curated Cases
+- `BenchmarkTest00006` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00007` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00008` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00015` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00017` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00018` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00024` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00025` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00026` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00027` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00032` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00033` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00034` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00037` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00038` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00039` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00043` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00051` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00052` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00077` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00090` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00091` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00092` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00093` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00100` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00101` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00102` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00103` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00104` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00105` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00106` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00107` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00108` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00109` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00110` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00111` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00112` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00113` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00114` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00115` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00158` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00159` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00171` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00172` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00173` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00174` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00175` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00176` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00177` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00190` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00191` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00192` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00193` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00194` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00195` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00196` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00197` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00198` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00199` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00200` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00201` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00202` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00203` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00204` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00205` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00206` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00293` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00294` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00295` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00302` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00303` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00304` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00305` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00306` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00307` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00308` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00309` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00310` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00311` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00328` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00329` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00330` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00331` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00332` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00333` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00334` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00335` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00336` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00337` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00338` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00339` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00340` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00341` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00342` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00343` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00344` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00396` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00406` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00407` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00408` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00409` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00410` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00411` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00412` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00428` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00429` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00430` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00431` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00432` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00433` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00434` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00435` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00436` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00437` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00438` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00439` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00440` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00441` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00480` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00481` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00494` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00495` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00496` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00497` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00498` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00499` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00500` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00509` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00510` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00511` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00512` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00513` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00514` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00515` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00516` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00517` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00518` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00519` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00558` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00559` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00567` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00568` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00569` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00570` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00571` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00572` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00573` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00574` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00575` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00576` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00589` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00590` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00591` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00592` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00593` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00594` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00595` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00596` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00597` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00598` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00599` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00600` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00601` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00602` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00603` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00604` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00605` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00606` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00657` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00658` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00659` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00672` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00673` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00674` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00675` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00676` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00677` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00678` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00679` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00680` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00681` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00682` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00731` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00732` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00738` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00739` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00740` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00741` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00742` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00743` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00760` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00761` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00762` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00763` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00764` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00765` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00766` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00767` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00768` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00769` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00770` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00771` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00772` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00773` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00774` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00814` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00815` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00816` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00823` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00824` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00825` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00826` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00827` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00837` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00838` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00839` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00840` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00841` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00842` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00843` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00844` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00845` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00846` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00847` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00848` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00849` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00850` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00851` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00895` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00896` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00897` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00905` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00906` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00907` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00908` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00909` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00910` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00924` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00925` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00926` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00927` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00928` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00929` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00930` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00931` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00932` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00933` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00934` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00935` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00936` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00937` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00938` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00939` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00940` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00968` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00969` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00970` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00978` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00979` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00980` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00981` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00982` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00983` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00996` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00997` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00998` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest00999` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01000` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01001` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01002` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01003` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01004` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01005` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01006` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01007` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01008` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01009` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01010` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01011` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01012` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01064` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01065` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01066` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01067` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01068` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01083` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01084` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01085` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01086` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01087` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01088` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01089` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01090` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01091` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01092` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01093` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01094` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01095` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01096` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01097` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01098` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01182` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01189` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01190` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01191` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01192` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01193` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01194` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01208` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01209` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01210` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01211` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01212` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01213` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01214` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01215` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01216` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01217` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01218` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01219` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01220` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01221` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01222` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01269` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01270` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01285` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01286` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01287` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01288` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01289` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01290` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01301` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01302` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01303` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01304` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01305` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01306` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01307` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01308` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01309` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01310` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01311` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01312` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01313` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01314` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01315` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01353` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01360` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01361` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01362` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01363` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01364` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01365` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01378` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01379` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01380` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01381` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01382` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01383` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01384` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01385` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01386` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01387` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01388` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01389` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01390` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01391` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01392` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01393` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01394` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01395` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01396` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01430` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01440` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01441` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01442` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01443` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01444` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01445` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01446` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01459` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01460` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01461` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01462` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01463` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01464` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01465` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01466` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01467` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01468` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01469` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01470` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01471` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01472` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01473` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01474` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01475` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01476` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01477` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01516` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01517` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01526` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01527` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01528` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01529` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01530` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01531` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01532` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01533` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01552` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01553` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01554` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01555` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01556` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01557` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01558` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01559` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01560` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01600` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01601` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01606` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01607` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01608` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01609` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01610` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01620` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01621` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01622` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01623` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01624` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01625` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01626` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01627` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01628` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01629` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01630` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01631` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01672` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01673` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01674` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01685` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01686` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01687` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01688` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01689` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01690` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01691` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01692` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01693` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01712` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01713` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01714` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01715` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01716` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01717` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01718` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01719` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01720` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01721` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01722` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01723` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01724` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01725` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01726` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01727` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01728` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01729` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01730` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01731` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01732` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01733` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01778` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01779` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01780` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01791` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01792` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01793` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01794` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01795` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01796` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01803` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01804` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01805` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01806` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01807` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01808` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01809` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01810` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01811` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01812` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01813` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01814` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01815` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01816` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01817` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01818` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01819` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01820` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01850` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01851` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01852` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01864` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01865` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01877` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01878` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01879` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01880` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01881` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01882` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01883` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01884` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01885` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01886` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01887` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01888` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01889` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01890` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01891` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01928` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01929` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01936` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01937` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01938` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01939` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01940` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01941` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01942` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01943` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01944` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01961` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01962` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01963` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01964` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01965` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01966` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01967` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01968` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01969` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01970` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01971` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01972` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest01973` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02058` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02059` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02067` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02068` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02069` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02070` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02087` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02088` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02089` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02090` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02091` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02092` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02093` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02094` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02095` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02096` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02097` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02098` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02099` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02137` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02146` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02147` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02148` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02149` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02150` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02151` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02152` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02153` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02154` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02155` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02156` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02169` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02170` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02171` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02172` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02173` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02174` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02175` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02176` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02177` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02178` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02179` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02180` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02181` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02182` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02183` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02184` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02185` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02186` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02187` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02188` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02242` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02243` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02244` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02249` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02250` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02251` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02252` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02253` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02264` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02265` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02266` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02267` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02268` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02269` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02270` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02271` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02272` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02273` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02274` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02275` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02276` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02277` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02278` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02279` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02280` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02281` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02282` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02283` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02284` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02285` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02286` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02287` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02288` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02333` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02334` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02335` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02336` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02340` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02341` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02342` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02343` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02344` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02353` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02354` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02355` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02356` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02357` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02358` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02359` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02360` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02361` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02362` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02363` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02364` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02365` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02366` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02367` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02368` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02369` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02411` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02412` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02413` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02414` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02428` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02429` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02430` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02431` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02432` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02433` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02449` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02450` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02451` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02452` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02453` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02454` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02455` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02456` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02496` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02510` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02511` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02512` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02513` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02514` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02515` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02516` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02517` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02518` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02528` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02529` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02530` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02531` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02532` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02533` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02534` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02535` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02536` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02537` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02538` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02539` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02540` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02541` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02542` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02543` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02544` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02545` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02546` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02610` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02611` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02612` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02613` CWE-78 vulnerable `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02625` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02626` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02627` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02628` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02629` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02630` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02631` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02632` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02633` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02634` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02635` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02636` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02637` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02638` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02639` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02640` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02641` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02642` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02643` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02644` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02645` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02646` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02647` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02648` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02649` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02650` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02651` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02652` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02653` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02654` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02655` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02656` CWE-89 vulnerable `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02657` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02697` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02698` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02699` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02713` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02714` CWE-78 safe `cmdi`: Full expected-results expansion for CWE-78 command injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02727` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02728` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02729` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02730` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02731` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02732` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02733` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02734` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02735` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02736` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02737` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02738` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02739` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+- `BenchmarkTest02740` CWE-89 safe `sqli`: Full expected-results expansion for CWE-89 SQL injection; used to evaluate CodeQL scoring and CyberSTITCH semantic equivalence.
+
+## Abstractions
+Accepted rewrite helpers: 7
+Accepted LILO candidates: 50
+LILO-only semantic candidates: 43
+Rejected for rewrite: 90
+Rejected for LILO inventory: 47
+Final rewritten query syntax: `True`
+
+Rewrite helpers:
+- `java_remote_flow_source` `java_source_predicate_helper_v1`: 5 use sites, CodeQL syntax `True`
+- `java_active_threat_model_source` `java_source_predicate_helper_v1`: 5 use sites, CodeQL syntax `True`
+- `java_command_injection_sink_sink` `java_sink_predicate_helper_v1`: 2 use sites, CodeQL syntax `True`
+- `java_command_injection_sanitizer_barrier` `java_barrier_predicate_helper_v1`: 2 use sites, CodeQL syntax `True`
+- `java_query_injection_sink_sink` `java_sink_predicate_helper_v1`: 2 use sites, CodeQL syntax `True`
+- `java_java_lang_runtime_exec_sink` `java_sink_predicate_helper_v1`: 2 use sites, CodeQL syntax `True`
+- `java_method_names_execute_execute_query_execute_update_sink` `java_sink_predicate_helper_v1`: 2 use sites, CodeQL syntax `True`
+
+LILO-only semantic candidates:
+- `java_barrier_kind_command_injection_sanitizer_54fe9f81` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`CommandInjectionSanitizer`
+- `java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`ExecTaintedEnvironmentSanitizer`
+- `java_barrier_kind_simple_type_sanitizer_0a047631` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`SimpleTypeSanitizer`
+- `java_barrier_kind_simple_type_sanitizer_f70cdda5` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`SimpleTypeSanitizer`
+- `java_barrier_kind_barrier_node_command_injection_75be8832` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`barrierNode:command-injection`
+- `java_method_call_sink_java_lang_runtime_exec_d636a205` `java_modeled_sink_helper_v1` role=`MethodCallSink` target=`java.lang.Runtime.exec`
+- `java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866` `java_modeled_sink_helper_v1` role=`MethodCallSink` target=`method-names:execute|executeQuery|executeUpdate`
+- `java_modeled_sink_type_command_injection_sink_2da17f01` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`CommandInjectionSink`
+- `java_modeled_sink_type_default_command_injection_sink_c9373329` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`DefaultCommandInjectionSink`
+- `java_modeled_sink_type_mongo_db_injection_sink_c4849996` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`MongoDbInjectionSink`
+- `java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`MyBatisSqlInjectionSink`
+- `java_modeled_sink_type_persistence_query_injection_sink_41d858c8` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`PersistenceQueryInjectionSink`
+- `java_modeled_sink_type_query_injection_sink_fba18fca` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`QueryInjectionSink`
+- `java_modeled_sink_type_query_injection_sink_acd681bc` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`QueryInjectionSink`
+- `java_modeled_sink_type_sql_injection_sink_a7f7cdd4` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`SqlInjectionSink`
+- `java_sink_kind_sink_node_command_injection_058dd9c5` `java_modeled_sink_helper_v1` role=`SinkKind` target=`sinkNode:command-injection`
+- `java_sink_kind_sink_node_environment_injection_32bdea5f` `java_modeled_sink_helper_v1` role=`SinkKind` target=`sinkNode:environment-injection`
+- `java_sink_kind_sink_node_sql_injection_e532ab40` `java_modeled_sink_helper_v1` role=`SinkKind` target=`sinkNode:sql-injection`
+- `java_source_kind_android_external_storage_source_edf149a9` `java_remote_source_kind_template_v1` role=`SourceKind` target=`AndroidExternalStorageSource`
+- `java_source_kind_android_javascript_interface_method_parameter_01e51fdb` `java_remote_source_kind_template_v1` role=`SourceKind` target=`AndroidJavascriptInterfaceMethodParameter`
+- `java_source_kind_exported_android_content_provider_input_1c741880` `java_remote_source_kind_template_v1` role=`SourceKind` target=`ExportedAndroidContentProviderInput`
+- `java_source_kind_exported_android_intent_input_5afd578a` `java_remote_source_kind_template_v1` role=`SourceKind` target=`ExportedAndroidIntentInput`
+- `java_source_kind_external_remote_flow_source_c97357e4` `java_remote_source_kind_template_v1` role=`SourceKind` target=`ExternalRemoteFlowSource`
+- `java_source_kind_guice_request_parameter_source_d5e556b9` `java_remote_source_kind_template_v1` role=`SourceKind` target=`GuiceRequestParameterSource`
+- `java_source_kind_jax_rs_method_parameter_source_de780bd2` `java_remote_source_kind_template_v1` role=`SourceKind` target=`JaxRsMethodParameterSource`
+- `java_source_kind_jax_ws_method_parameter_source_4c05ab0a` `java_remote_source_kind_template_v1` role=`SourceKind` target=`JaxWsMethodParameterSource`
+- `java_source_kind_local_user_input_66e9bccd` `java_remote_source_kind_template_v1` role=`SourceKind` target=`LocalUserInput`
+- `java_source_kind_message_body_reader_parameter_source_810ff54e` `java_remote_source_kind_template_v1` role=`SourceKind` target=`MessageBodyReaderParameterSource`
+- `java_source_kind_on_activity_result_intent_source_6be87d9c` `java_remote_source_kind_template_v1` role=`SourceKind` target=`OnActivityResultIntentSource`
+- `java_source_kind_play_parameter_source_ea212a10` `java_remote_source_kind_template_v1` role=`SourceKind` target=`PlayParameterSource`
+- `java_source_kind_remote_flow_source_3dbd0ce5` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource`
+- `java_source_kind_remote_flow_source_7bbaf778` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource`
+- `java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Android external storage`
+- `java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent`
+- `java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Exported Android content provider source`
+- `java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Exported Android intent source`
+- `java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Guice request parameter`
+- `java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Jax Rs method parameter`
+- `java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Jax WS method parameter`
+- `java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:MessageBodyReader parameter`
+- `java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:external`
+- `java_threat_model_active_threat_model_source_3c0f2e2d` `java_remote_source_kind_template_v1` role=`ThreatModel` target=`ActiveThreatModelSource`
+- `java_threat_model_active_threat_model_source_473aa43e` `java_remote_source_kind_template_v1` role=`ThreatModel` target=`ActiveThreatModelSource`
+
+Rewrite rejection reasons:
+- `single_sql_sink`: `['requires at least two use sites']`
+- `java_additional_flow_step_mongo_json_step_2a94fedc`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_barrier_kind_command_injection_sanitizer_54fe9f81`: `['unsupported kind', 'not rewrite eligible', 'helper body must be a CodeQL predicate']`
+- `java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50`: `['unsupported kind', 'not rewrite eligible', 'helper body must be a CodeQL predicate']`
+- `java_barrier_kind_simple_type_sanitizer_0a047631`: `['unsupported kind', 'not rewrite eligible', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_barrier_kind_simple_type_sanitizer_f70cdda5`: `['unsupported kind', 'not rewrite eligible', 'helper body must be a CodeQL predicate']`
+- `java_barrier_kind_barrier_node_command_injection_75be8832`: `['unsupported kind', 'not rewrite eligible', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_flow_config_template_data_flow_config_sig_041e8064`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_flow_config_template_data_flow_config_sig_a179cc3c`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_flow_config_template_data_flow_config_sig_754b88b3`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_argument_to_exec_e0026a4d`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_array_starting_with_relative_5f4700a2`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_array_starting_with_relative_6b62f527`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_array_var_write_23605328`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_as_expr_73d53280`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_built_from_uncontrolled_concat_bbd4acb7`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_built_from_uncontrolled_concat_9be8b9d4`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_built_from_uncontrolled_concat_b215e9cf`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_exec_is_tainted_cd986973`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_exists_a963cb31`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_expr_node_f44c1849`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_flow_71710f22`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_get_to_string_call_fd136cb2`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_is_safe_command_argument_014fc590`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_is_shell_76418667`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_observe_diff_informed_incremental_mode_a3aa1f34`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_observe_diff_informed_incremental_mode_70022ea9`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_query_is_tainted_by_e65d05d8`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_relative_path_05def52b`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_relative_path_a83b954f`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_shell_builtin_4f9b65cc`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_shell_builtin_a2be99dd`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_uncontrolled_string_builder_query_64e97e59`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_uncontrolled_string_builder_query_5e9866dd`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_helper_predicate_variable_step_984b7036`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_method_call_sink_java_lang_runtime_exec_d636a205`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_modeled_sink_type_command_injection_sink_2da17f01`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_modeled_sink_type_default_command_injection_sink_c9373329`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_modeled_sink_type_mongo_db_injection_sink_c4849996`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_modeled_sink_type_persistence_query_injection_sink_41d858c8`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_modeled_sink_type_query_injection_sink_fba18fca`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_modeled_sink_type_query_injection_sink_acd681bc`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_modeled_sink_type_sql_injection_sink_a7f7cdd4`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_sink_kind_sink_node_command_injection_058dd9c5`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_sink_kind_sink_node_environment_injection_32bdea5f`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_sink_kind_sink_node_sql_injection_e532ab40`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_android_external_storage_source_edf149a9`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_android_javascript_interface_method_parameter_01e51fdb`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_exported_android_content_provider_input_1c741880`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_exported_android_intent_input_5afd578a`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_external_remote_flow_source_c97357e4`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_guice_request_parameter_source_d5e556b9`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_jax_rs_method_parameter_source_de780bd2`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_jax_ws_method_parameter_source_4c05ab0a`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_local_user_input_66e9bccd`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_message_body_reader_parameter_source_810ff54e`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_on_activity_result_intent_source_6be87d9c`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_play_parameter_source_ea212a10`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_3dbd0ce5`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_7bbaf778`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_parameter_of_method_with_javascript_interface_annotation_0fe0f3ff`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_play_query_parameters_ac319954`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_rmi_method_parameter_281dfa33`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_spring_servlet_input_parameter_9a9a04ab`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_struts2_action_support_field_d2cd07c5`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_thrift_iface_parameter_5252f793`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_remote_user_input_f3189813`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_rmi_method_parameter_source_a5bfaf1b`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_spring_servlet_input_parameter_source_72b0425c`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_struts2_action_support_class_field_source_eb3d855b`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_thrift_iface_parameter_source_79e4535a`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_uncontrolled_string_builder_source_76477073`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_source_node_contentprovider_231325d9`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_source_node_database_13ebec9b`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_source_node_environment_9b46f350`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_source_node_file_9f1d7ae0`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_source_kind_source_node_remote_5aafd1a4`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'requires at least two use sites', 'helper body must be a CodeQL predicate']`
+- `java_threat_model_active_threat_model_source_3c0f2e2d`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+- `java_threat_model_active_threat_model_source_473aa43e`: `['unsupported kind', 'not rewrite eligible', 'unsupported rewrite schema', 'helper body must be a CodeQL predicate']`
+
+LILO inventory rejection reasons:
+- `single_sql_sink`: `['requires at least two use sites or official CodeQL backing']`
+- `java_additional_flow_step_mongo_json_step_2a94fedc`: `['outside bounded LILO inventory cap']`
+- `java_flow_config_template_data_flow_config_sig_041e8064`: `['structural syntax-compression template']`
+- `java_flow_config_template_data_flow_config_sig_a179cc3c`: `['structural syntax-compression template']`
+- `java_flow_config_template_data_flow_config_sig_754b88b3`: `['structural syntax-compression template']`
+- `java_helper_predicate_argument_to_exec_e0026a4d`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_array_starting_with_relative_5f4700a2`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_array_starting_with_relative_6b62f527`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_array_var_write_23605328`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_as_expr_73d53280`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_built_from_uncontrolled_concat_bbd4acb7`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_built_from_uncontrolled_concat_9be8b9d4`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_built_from_uncontrolled_concat_b215e9cf`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_exec_is_tainted_cd986973`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_exists_a963cb31`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_expr_node_f44c1849`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_flow_71710f22`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_get_to_string_call_fd136cb2`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_is_safe_command_argument_014fc590`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_is_shell_76418667`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_observe_diff_informed_incremental_mode_a3aa1f34`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_observe_diff_informed_incremental_mode_70022ea9`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_query_is_tainted_by_e65d05d8`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_relative_path_05def52b`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_relative_path_a83b954f`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_shell_builtin_4f9b65cc`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_shell_builtin_a2be99dd`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_uncontrolled_string_builder_query_64e97e59`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_uncontrolled_string_builder_query_5e9866dd`: `['outside bounded LILO inventory cap']`
+- `java_helper_predicate_variable_step_984b7036`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_remote_flow_source_get_source_type_parameter_of_method_with_javascript_interface_annotation_0fe0f3ff`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_remote_flow_source_get_source_type_play_query_parameters_ac319954`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_remote_flow_source_get_source_type_rmi_method_parameter_281dfa33`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_remote_flow_source_get_source_type_spring_servlet_input_parameter_9a9a04ab`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_remote_flow_source_get_source_type_struts2_action_support_field_d2cd07c5`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_remote_flow_source_get_source_type_thrift_iface_parameter_5252f793`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_remote_user_input_f3189813`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_rmi_method_parameter_source_a5bfaf1b`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_spring_servlet_input_parameter_source_72b0425c`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_struts2_action_support_class_field_source_eb3d855b`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_thrift_iface_parameter_source_79e4535a`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_uncontrolled_string_builder_source_76477073`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_source_node_contentprovider_231325d9`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_source_node_database_13ebec9b`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_source_node_environment_9b46f350`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_source_node_file_9f1d7ae0`: `['outside bounded LILO inventory cap']`
+- `java_source_kind_source_node_remote_5aafd1a4`: `['outside bounded LILO inventory cap']`
+
+## Semantic Concept Mining
+Extracted concepts: `160`
+Mined candidates: `96`
+Rewrite eligible: `7`
+Semantic-only: `89`
+- `java_active_threat_model_source` `java_source_predicate_helper_v1` role=`Source` target=`ActiveThreatModelSource` rewrite=`True` usefulness=`semantic`
+- `java_command_injection_sink_sink` `java_sink_predicate_helper_v1` role=`Sink` target=`CommandInjectionSink` rewrite=`True` usefulness=`semantic`
+- `java_command_injection_sanitizer_barrier` `java_barrier_predicate_helper_v1` role=`Barrier` target=`CommandInjectionSanitizer` rewrite=`True` usefulness=`semantic`
+- `java_query_injection_sink_sink` `java_sink_predicate_helper_v1` role=`Sink` target=`QueryInjectionSink` rewrite=`True` usefulness=`semantic`
+- `java_remote_flow_source` `java_source_predicate_helper_v1` role=`Source` target=`RemoteFlowSource` rewrite=`True` usefulness=`semantic`
+- `java_java_lang_runtime_exec_sink` `java_sink_predicate_helper_v1` role=`Sink` target=`java.lang.Runtime.exec` rewrite=`True` usefulness=`semantic`
+- `java_method_names_execute_execute_query_execute_update_sink` `java_sink_predicate_helper_v1` role=`Sink` target=`method-names:execute|executeQuery|executeUpdate` rewrite=`True` usefulness=`semantic`
+- `java_additional_flow_step_mongo_json_step_2a94fedc` `java_additional_flow_step_template_v1` role=`AdditionalFlowStep` target=`MongoJsonStep` rewrite=`False` usefulness=`semantic`
+- `java_barrier_kind_command_injection_sanitizer_54fe9f81` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`CommandInjectionSanitizer` rewrite=`False` usefulness=`semantic`
+- `java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`ExecTaintedEnvironmentSanitizer` rewrite=`False` usefulness=`semantic`
+- `java_barrier_kind_simple_type_sanitizer_0a047631` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`SimpleTypeSanitizer` rewrite=`False` usefulness=`semantic`
+- `java_barrier_kind_simple_type_sanitizer_f70cdda5` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`SimpleTypeSanitizer` rewrite=`False` usefulness=`semantic`
+- `java_barrier_kind_barrier_node_command_injection_75be8832` `java_barrier_predicate_helper_v1` role=`BarrierKind` target=`barrierNode:command-injection` rewrite=`False` usefulness=`semantic`
+- `java_flow_config_template_data_flow_config_sig_041e8064` `java_flow_config_template_v1` role=`FlowConfigTemplate` target=`DataFlow::ConfigSig` rewrite=`False` usefulness=`semantic`
+- `java_flow_config_template_data_flow_config_sig_a179cc3c` `java_flow_config_template_v1` role=`FlowConfigTemplate` target=`DataFlow::ConfigSig` rewrite=`False` usefulness=`semantic`
+- `java_flow_config_template_data_flow_config_sig_754b88b3` `java_flow_config_template_v1` role=`FlowConfigTemplate` target=`DataFlow::ConfigSig` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_argument_to_exec_e0026a4d` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`argumentToExec` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_array_starting_with_relative_5f4700a2` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`arrayStartingWithRelative` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_array_starting_with_relative_6b62f527` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`arrayStartingWithRelative` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_array_var_write_23605328` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`arrayVarWrite` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_as_expr_73d53280` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`asExpr` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_built_from_uncontrolled_concat_bbd4acb7` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`builtFromUncontrolledConcat` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_built_from_uncontrolled_concat_9be8b9d4` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`builtFromUncontrolledConcat` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_built_from_uncontrolled_concat_b215e9cf` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`builtFromUncontrolledConcat` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_exec_is_tainted_cd986973` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`execIsTainted` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_exists_a963cb31` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`exists` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_expr_node_f44c1849` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`exprNode` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_flow_71710f22` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`flow` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_get_to_string_call_fd136cb2` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`getToStringCall` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_is_safe_command_argument_014fc590` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`isSafeCommandArgument` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_is_shell_76418667` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`isShell` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_observe_diff_informed_incremental_mode_a3aa1f34` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`observeDiffInformedIncrementalMode` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_observe_diff_informed_incremental_mode_70022ea9` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`observeDiffInformedIncrementalMode` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_query_is_tainted_by_e65d05d8` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`queryIsTaintedBy` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_relative_path_05def52b` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`relativePath` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_relative_path_a83b954f` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`relativePath` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_shell_builtin_4f9b65cc` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`shellBuiltin` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_shell_builtin_a2be99dd` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`shellBuiltin` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_uncontrolled_string_builder_query_64e97e59` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`uncontrolledStringBuilderQuery` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_uncontrolled_string_builder_query_5e9866dd` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`uncontrolledStringBuilderQuery` rewrite=`False` usefulness=`semantic`
+- `java_helper_predicate_variable_step_984b7036` `java_codeql_helper_predicate_template_v1` role=`HelperPredicate` target=`variableStep` rewrite=`False` usefulness=`semantic`
+- `java_method_call_sink_java_lang_runtime_exec_d636a205` `java_modeled_sink_helper_v1` role=`MethodCallSink` target=`java.lang.Runtime.exec` rewrite=`False` usefulness=`semantic`
+- `java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866` `java_modeled_sink_helper_v1` role=`MethodCallSink` target=`method-names:execute|executeQuery|executeUpdate` rewrite=`False` usefulness=`semantic`
+- `java_modeled_sink_type_command_injection_sink_2da17f01` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`CommandInjectionSink` rewrite=`False` usefulness=`semantic`
+- `java_modeled_sink_type_default_command_injection_sink_c9373329` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`DefaultCommandInjectionSink` rewrite=`False` usefulness=`semantic`
+- `java_modeled_sink_type_mongo_db_injection_sink_c4849996` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`MongoDbInjectionSink` rewrite=`False` usefulness=`semantic`
+- `java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`MyBatisSqlInjectionSink` rewrite=`False` usefulness=`semantic`
+- `java_modeled_sink_type_persistence_query_injection_sink_41d858c8` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`PersistenceQueryInjectionSink` rewrite=`False` usefulness=`semantic`
+- `java_modeled_sink_type_query_injection_sink_fba18fca` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`QueryInjectionSink` rewrite=`False` usefulness=`semantic`
+- `java_modeled_sink_type_query_injection_sink_acd681bc` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`QueryInjectionSink` rewrite=`False` usefulness=`semantic`
+- `java_modeled_sink_type_sql_injection_sink_a7f7cdd4` `java_modeled_sink_helper_v1` role=`ModeledSinkType` target=`SqlInjectionSink` rewrite=`False` usefulness=`semantic`
+- `java_sink_kind_sink_node_command_injection_058dd9c5` `java_modeled_sink_helper_v1` role=`SinkKind` target=`sinkNode:command-injection` rewrite=`False` usefulness=`semantic`
+- `java_sink_kind_sink_node_environment_injection_32bdea5f` `java_modeled_sink_helper_v1` role=`SinkKind` target=`sinkNode:environment-injection` rewrite=`False` usefulness=`semantic`
+- `java_sink_kind_sink_node_sql_injection_e532ab40` `java_modeled_sink_helper_v1` role=`SinkKind` target=`sinkNode:sql-injection` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_android_external_storage_source_edf149a9` `java_remote_source_kind_template_v1` role=`SourceKind` target=`AndroidExternalStorageSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_android_javascript_interface_method_parameter_01e51fdb` `java_remote_source_kind_template_v1` role=`SourceKind` target=`AndroidJavascriptInterfaceMethodParameter` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_exported_android_content_provider_input_1c741880` `java_remote_source_kind_template_v1` role=`SourceKind` target=`ExportedAndroidContentProviderInput` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_exported_android_intent_input_5afd578a` `java_remote_source_kind_template_v1` role=`SourceKind` target=`ExportedAndroidIntentInput` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_external_remote_flow_source_c97357e4` `java_remote_source_kind_template_v1` role=`SourceKind` target=`ExternalRemoteFlowSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_guice_request_parameter_source_d5e556b9` `java_remote_source_kind_template_v1` role=`SourceKind` target=`GuiceRequestParameterSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_jax_rs_method_parameter_source_de780bd2` `java_remote_source_kind_template_v1` role=`SourceKind` target=`JaxRsMethodParameterSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_jax_ws_method_parameter_source_4c05ab0a` `java_remote_source_kind_template_v1` role=`SourceKind` target=`JaxWsMethodParameterSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_local_user_input_66e9bccd` `java_remote_source_kind_template_v1` role=`SourceKind` target=`LocalUserInput` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_message_body_reader_parameter_source_810ff54e` `java_remote_source_kind_template_v1` role=`SourceKind` target=`MessageBodyReaderParameterSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_on_activity_result_intent_source_6be87d9c` `java_remote_source_kind_template_v1` role=`SourceKind` target=`OnActivityResultIntentSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_play_parameter_source_ea212a10` `java_remote_source_kind_template_v1` role=`SourceKind` target=`PlayParameterSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_3dbd0ce5` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_7bbaf778` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Android external storage` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Exported Android content provider source` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Exported Android intent source` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Guice request parameter` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Jax Rs method parameter` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Jax WS method parameter` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:MessageBodyReader parameter` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_parameter_of_method_with_javascript_interface_annotation_0fe0f3ff` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Parameter of method with JavascriptInterface annotation` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_play_query_parameters_ac319954` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Play Query Parameters` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_rmi_method_parameter_281dfa33` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:RMI method parameter` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_spring_servlet_input_parameter_9a9a04ab` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Spring servlet input parameter` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_struts2_action_support_field_d2cd07c5` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Struts2 ActionSupport field` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_thrift_iface_parameter_5252f793` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:Thrift Iface parameter` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteFlowSource.getSourceType:external` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_remote_user_input_f3189813` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RemoteUserInput` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_rmi_method_parameter_source_a5bfaf1b` `java_remote_source_kind_template_v1` role=`SourceKind` target=`RmiMethodParameterSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_spring_servlet_input_parameter_source_72b0425c` `java_remote_source_kind_template_v1` role=`SourceKind` target=`SpringServletInputParameterSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_struts2_action_support_class_field_source_eb3d855b` `java_remote_source_kind_template_v1` role=`SourceKind` target=`Struts2ActionSupportClassFieldSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_thrift_iface_parameter_source_79e4535a` `java_remote_source_kind_template_v1` role=`SourceKind` target=`ThriftIfaceParameterSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_uncontrolled_string_builder_source_76477073` `java_remote_source_kind_template_v1` role=`SourceKind` target=`UncontrolledStringBuilderSource` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_source_node_contentprovider_231325d9` `java_remote_source_kind_template_v1` role=`SourceKind` target=`sourceNode:contentprovider` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_source_node_database_13ebec9b` `java_remote_source_kind_template_v1` role=`SourceKind` target=`sourceNode:database` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_source_node_environment_9b46f350` `java_remote_source_kind_template_v1` role=`SourceKind` target=`sourceNode:environment` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_source_node_file_9f1d7ae0` `java_remote_source_kind_template_v1` role=`SourceKind` target=`sourceNode:file` rewrite=`False` usefulness=`semantic`
+- `java_source_kind_source_node_remote_5aafd1a4` `java_remote_source_kind_template_v1` role=`SourceKind` target=`sourceNode:remote` rewrite=`False` usefulness=`semantic`
+- `java_threat_model_active_threat_model_source_3c0f2e2d` `java_remote_source_kind_template_v1` role=`ThreatModel` target=`ActiveThreatModelSource` rewrite=`False` usefulness=`semantic`
+- `java_threat_model_active_threat_model_source_473aa43e` `java_remote_source_kind_template_v1` role=`ThreatModel` target=`ActiveThreatModelSource` rewrite=`False` usefulness=`semantic`
+
+## Scores
+- `original.json`: `{'78': {'TP': 50, 'FN': 76, 'TN': 103, 'FP': 22}, '89': {'TP': 94, 'FN': 178, 'TN': 200, 'FP': 32}}`
+- `rewritten.json`: `{'78': {'TP': 50, 'FN': 76, 'TN': 103, 'FP': 22}, '89': {'TP': 94, 'FN': 178, 'TN': 200, 'FP': 32}}`
+- `roundtrip.json`: `{'78': {'TP': 50, 'FN': 76, 'TN': 103, 'FP': 22}, '89': {'TP': 94, 'FN': 178, 'TN': 200, 'FP': 32}}`
+
+## Seed Query Discovery
+Java query pack: `<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1`
+Include experimental: `False`
+Selection policy: `all`
+Resolved specs: `2`
+Resolved queries: `6`
+Selected seeds: `6`
+Discovery score: `{'78': {'TP': 126, 'FN': 0, 'TN': 61, 'FP': 64}, '89': {'TP': 272, 'FN': 0, 'TN': 25, 'FP': 207}}`
+- `java/relative-path-command` CWE-78 `Security/CWE/CWE-078/ExecRelative.ql` alerts=`0` experimental=`False`
+- `java/command-line-injection` CWE-78 `Security/CWE/CWE-078/ExecTainted.ql` alerts=`112` experimental=`False`
+- `java/exec-tainted-environment` CWE-78 `Security/CWE/CWE-078/ExecTaintedEnvironment.ql` alerts=`59` experimental=`False`
+- `java/concatenated-command-line` CWE-78 `Security/CWE/CWE-078/ExecUnescaped.ql` alerts=`19` experimental=`False`
+- `java/concatenated-sql-query` CWE-89 `Security/CWE/CWE-089/SqlConcatenated.ql` alerts=`120` experimental=`False`
+- `java/sql-injection` CWE-89 `Security/CWE/CWE-089/SqlTainted.ql` alerts=`359` experimental=`False`
+
+## Bundle Policy
+Policy: `opt-in only`
+Bundle mode: `none`
+Bundle created: `False`
+CodeQL database bundles are restricted/source-containing troubleshooting artifacts and are excluded from package output by default.
+
+## Commands
+```bash
+python -m cyberstitch.cli doctor
+python -m cyberstitch.cli sqir
+python -m cyberstitch.cli roundtrip
+python -m cyberstitch.cli fcir
+# Optional official pack FCIR mining corpus:
+# python -m cyberstitch.cli codeql-pack-fcir --include-experimental
+python -m cyberstitch.cli stitch --mode offline
+python -m cyberstitch.cli semantic-mine --merge
+# Optional schema-only LILO LLM proposals:
+# python -m cyberstitch.cli llm-propose --merge
+python -m cyberstitch.cli validate
+python -m cyberstitch.cli rewrite
+python -m cyberstitch.cli codeql-check
+python -m cyberstitch.cli db-create
+# Optional official CodeQL seed discovery after db-create:
+# python -m cyberstitch.cli codeql-discover --database results/codeql-dbs/java
+python -m cyberstitch.cli analyze --queries original
+python -m cyberstitch.cli score --sarif results/sarif/original.sarif
+# Optional restricted troubleshooting bundle only:
+# python -m cyberstitch.cli db-bundle --output results/bundles/java-codeql-debug-artifacts.zip
+```

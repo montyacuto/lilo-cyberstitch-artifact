@@ -1,0 +1,9 @@
+[
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "candidate:java_remote_flow_source"
+    ],
+    "hint": "Future synthesis should combine a remote source abstraction with a vulnerability-family-specific sink abstraction and then require CodeQL syntax plus SARIF equivalence checks."
+  }
+]

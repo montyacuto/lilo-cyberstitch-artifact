@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_command_injection_sink_sink",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isCommandInjectionSink",
+        "display_name": "java_command_injection_sink_sink",
+        "description": "Deterministically mined complete Java sink predicate semantics.",
+        "body": "predicate isCommandInjectionSink(DataFlow::Node sink) {\n  exists(CommandInjectionSink command | argumentToExec(sink.asExpr(), command))\n}",
+        "use_sites": [
+          {
+            "query": "remote-command-argument-to-exec.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q0:predicate:RemoteCommandArgumentToExecConfig:isSink"
+          },
+          {
+            "query": "threat-command-argument-to-exec.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q21:predicate:ThreatCommandArgumentToExecConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "c6fadfd3868f576040c7ed03a8ee078898d98d4898d8479fee3f5a9ae50594a7",
+        "semantic_role": "Sink",
+        "semantic_target": "CommandInjectionSink",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q0:predicate:RemoteCommandArgumentToExecConfig:isSink",
+            "role": "Sink",
+            "target": "CommandInjectionSink",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

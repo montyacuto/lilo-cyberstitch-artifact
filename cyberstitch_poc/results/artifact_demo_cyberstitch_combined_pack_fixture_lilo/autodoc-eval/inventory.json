@@ -1,0 +1,1996 @@
+{
+  "format": "cyberstitch-autodoc-eval-v1",
+  "items": [
+    {
+      "autodoc_description": "Deterministically mined complete Java source predicate semantics.",
+      "autodoc_name": "java_active_threat_model_source",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "CyberStitchJavaHelpers",
+      "id": "candidate:java_active_threat_model_source",
+      "kind": "codeql_helper",
+      "language": "java",
+      "name": "java_active_threat_model_source",
+      "predicate": "isActiveThreatModelSource",
+      "raw_name": "java_active_threat_model_source",
+      "rewrite_eligible": true,
+      "schema": "java_source_predicate_helper_v1",
+      "semantic_hash": "f80425e59f587c82254588247dbf4abc9abbed4fb404b3220cc28ae20a05f4f7",
+      "semantic_role": "Source",
+      "semantic_target": "ActiveThreatModelSource",
+      "typed_name": "java_active_threat_model_source [Source ActiveThreatModelSource]",
+      "use_sites": [
+        {
+          "predicate": "isSource",
+          "query": "official-cwe078-command-flow.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "official-cwe078-environment-flow.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "official-cwe089-query-flow.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "threat-cwe078-runtime-exec.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "threat-cwe089-statement-execute.ql"
+        }
+      ],
+      "validation": {
+        "accepted": true,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": []
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL BarrierKind semantics for barrierNode:command-injection.",
+      "autodoc_name": "java_barrier_kind_barrier_node_command_injection_75be8832",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "barriers",
+      "helper_module": "",
+      "id": "candidate:java_barrier_kind_barrier_node_command_injection_75be8832",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_barrier_kind_barrier_node_command_injection_75be8832",
+      "predicate": "",
+      "raw_name": "java_barrier_kind_barrier_node_command_injection_75be8832",
+      "rewrite_eligible": false,
+      "schema": "java_barrier_predicate_helper_v1",
+      "semantic_hash": "75be883271744d271b593d886e11dff89d392bba33e7c3a057a74a72142a7c8b",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "barrierNode:command-injection",
+      "typed_name": "java_barrier_kind_barrier_node_command_injection_75be8832 [BarrierKind barrierNode:command-injection]",
+      "use_sites": [
+        {
+          "predicate": "barrierNode:command-injection",
+          "query": "CommandLineQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL BarrierKind semantics for CommandInjectionSanitizer.",
+      "autodoc_name": "java_barrier_kind_command_injection_sanitizer_54fe9f81",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "barriers",
+      "helper_module": "",
+      "id": "candidate:java_barrier_kind_command_injection_sanitizer_54fe9f81",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_barrier_kind_command_injection_sanitizer_54fe9f81",
+      "predicate": "",
+      "raw_name": "java_barrier_kind_command_injection_sanitizer_54fe9f81",
+      "rewrite_eligible": false,
+      "schema": "java_barrier_predicate_helper_v1",
+      "semantic_hash": "54fe9f812431ccbdfae2165ee9e8764b309665b3dd5a8fba87d4e648b2fb83ea",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "CommandInjectionSanitizer",
+      "typed_name": "java_barrier_kind_command_injection_sanitizer_54fe9f81 [BarrierKind CommandInjectionSanitizer]",
+      "use_sites": [
+        {
+          "predicate": "isBarrier",
+          "query": "official-cwe078-command-flow.ql"
+        },
+        {
+          "predicate": "isBarrier",
+          "query": "remote-cwe078-command-model.ql"
+        },
+        {
+          "predicate": "isBarrier",
+          "query": "CommandLineQuery.qll"
+        },
+        {
+          "predicate": "isBarrier",
+          "query": "CommandLineQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL BarrierKind semantics for ExecTaintedEnvironmentSanitizer.",
+      "autodoc_name": "java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "barriers",
+      "helper_module": "",
+      "id": "candidate:java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50",
+      "predicate": "",
+      "raw_name": "java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50",
+      "rewrite_eligible": false,
+      "schema": "java_barrier_predicate_helper_v1",
+      "semantic_hash": "64e8ff50995c8fe9e1ca3d84736eb6b94bb0c9d81c3c7cd9790107afa456343e",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "ExecTaintedEnvironmentSanitizer",
+      "typed_name": "java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50 [BarrierKind ExecTaintedEnvironmentSanitizer]",
+      "use_sites": [
+        {
+          "predicate": "isBarrier",
+          "query": "official-cwe078-environment-flow.ql"
+        },
+        {
+          "predicate": "isBarrier",
+          "query": "TaintedEnvironmentVariableQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL BarrierKind semantics for SimpleTypeSanitizer.",
+      "autodoc_name": "java_barrier_kind_simple_type_sanitizer_0a047631",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "barriers",
+      "helper_module": "",
+      "id": "candidate:java_barrier_kind_simple_type_sanitizer_0a047631",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_barrier_kind_simple_type_sanitizer_0a047631",
+      "predicate": "",
+      "raw_name": "java_barrier_kind_simple_type_sanitizer_0a047631",
+      "rewrite_eligible": false,
+      "schema": "java_barrier_predicate_helper_v1",
+      "semantic_hash": "0a047631a86152405c1f6d2b69cb8b61cc3d8313137f39538757977e7aaa02c0",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "SimpleTypeSanitizer",
+      "typed_name": "java_barrier_kind_simple_type_sanitizer_0a047631 [BarrierKind SimpleTypeSanitizer]",
+      "use_sites": [
+        {
+          "predicate": "isBarrier",
+          "query": "SqlConcatenatedQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL BarrierKind semantics for SimpleTypeSanitizer.",
+      "autodoc_name": "java_barrier_kind_simple_type_sanitizer_f70cdda5",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "barriers",
+      "helper_module": "",
+      "id": "candidate:java_barrier_kind_simple_type_sanitizer_f70cdda5",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_barrier_kind_simple_type_sanitizer_f70cdda5",
+      "predicate": "",
+      "raw_name": "java_barrier_kind_simple_type_sanitizer_f70cdda5",
+      "rewrite_eligible": false,
+      "schema": "java_barrier_predicate_helper_v1",
+      "semantic_hash": "f70cdda5d26a4a13634a4c1b192d576c6c7b15bed2d04fd37ba74126c1feff8a",
+      "semantic_role": "BarrierKind",
+      "semantic_target": "SimpleTypeSanitizer",
+      "typed_name": "java_barrier_kind_simple_type_sanitizer_f70cdda5 [BarrierKind SimpleTypeSanitizer]",
+      "use_sites": [
+        {
+          "predicate": "isBarrier",
+          "query": "remote-cwe089-query-model.ql"
+        },
+        {
+          "predicate": "isBarrier",
+          "query": "SqlInjectionQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Deterministically mined complete Java barrier predicate semantics.",
+      "autodoc_name": "java_command_injection_sanitizer_barrier",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "barriers",
+      "helper_module": "CyberStitchJavaHelpers",
+      "id": "candidate:java_command_injection_sanitizer_barrier",
+      "kind": "codeql_helper",
+      "language": "java",
+      "name": "java_command_injection_sanitizer_barrier",
+      "predicate": "isCommandInjectionSanitizerBarrier",
+      "raw_name": "java_command_injection_sanitizer_barrier",
+      "rewrite_eligible": true,
+      "schema": "java_barrier_predicate_helper_v1",
+      "semantic_hash": "9ba0d6c35dcf55322e3a1c7bc2f9cf8af1156b4ab355865e770a700c45ca8111",
+      "semantic_role": "Barrier",
+      "semantic_target": "CommandInjectionSanitizer",
+      "typed_name": "java_command_injection_sanitizer_barrier [Barrier CommandInjectionSanitizer]",
+      "use_sites": [
+        {
+          "predicate": "isBarrier",
+          "query": "official-cwe078-command-flow.ql"
+        },
+        {
+          "predicate": "isBarrier",
+          "query": "remote-cwe078-command-model.ql"
+        }
+      ],
+      "validation": {
+        "accepted": true,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": []
+      }
+    },
+    {
+      "autodoc_description": "Deterministically mined complete Java sink predicate semantics.",
+      "autodoc_name": "java_command_injection_sink_sink",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "CyberStitchJavaHelpers",
+      "id": "candidate:java_command_injection_sink_sink",
+      "kind": "codeql_helper",
+      "language": "java",
+      "name": "java_command_injection_sink_sink",
+      "predicate": "isCommandInjectionSink",
+      "raw_name": "java_command_injection_sink_sink",
+      "rewrite_eligible": true,
+      "schema": "java_sink_predicate_helper_v1",
+      "semantic_hash": "23b9c0d462a159dfa7ef92c592a06bfc33e4f906b8d802928d636144b9f9bf82",
+      "semantic_role": "Sink",
+      "semantic_target": "CommandInjectionSink",
+      "typed_name": "java_command_injection_sink_sink [Sink CommandInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "official-cwe078-command-flow.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "remote-cwe078-command-model.ql"
+        }
+      ],
+      "validation": {
+        "accepted": true,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": []
+      }
+    },
+    {
+      "autodoc_description": "Deterministically mined complete Java sink predicate semantics.",
+      "autodoc_name": "java_java_lang_runtime_exec_sink",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "CyberStitchJavaHelpers",
+      "id": "candidate:java_java_lang_runtime_exec_sink",
+      "kind": "codeql_helper",
+      "language": "java",
+      "name": "java_java_lang_runtime_exec_sink",
+      "predicate": "isJavaLangRuntimeExecSink",
+      "raw_name": "java_java_lang_runtime_exec_sink",
+      "rewrite_eligible": true,
+      "schema": "java_sink_predicate_helper_v1",
+      "semantic_hash": "4030af563c8dab0703a8e7a36635fbca581adaf17db84a8a85eb68cc9aa4fe87",
+      "semantic_role": "Sink",
+      "semantic_target": "java.lang.Runtime.exec",
+      "typed_name": "java_java_lang_runtime_exec_sink [Sink java.lang.Runtime.exec]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "owasp-cwe078-command.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "threat-cwe078-runtime-exec.ql"
+        }
+      ],
+      "validation": {
+        "accepted": true,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": []
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL MethodCallSink semantics for java.lang.Runtime.exec.",
+      "autodoc_name": "java_method_call_sink_java_lang_runtime_exec_d636a205",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_method_call_sink_java_lang_runtime_exec_d636a205",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_method_call_sink_java_lang_runtime_exec_d636a205",
+      "predicate": "",
+      "raw_name": "java_method_call_sink_java_lang_runtime_exec_d636a205",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "d636a20511834d7a78189a9509914f3c2853a1d991b048d48fc4856571d1bc88",
+      "semantic_role": "MethodCallSink",
+      "semantic_target": "java.lang.Runtime.exec",
+      "typed_name": "java_method_call_sink_java_lang_runtime_exec_d636a205 [MethodCallSink java.lang.Runtime.exec]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "owasp-cwe078-command.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "threat-cwe078-runtime-exec.ql"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL MethodCallSink semantics for method-names:execute|executeQuery|executeUpdate.",
+      "autodoc_name": "java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866",
+      "predicate": "",
+      "raw_name": "java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "2d9cf866f617f292a8d8769a8c8998304392121fc0fe87169a6ecdf2624d65d1",
+      "semantic_role": "MethodCallSink",
+      "semantic_target": "method-names:execute|executeQuery|executeUpdate",
+      "typed_name": "java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866 [MethodCallSink method-names:execute|executeQuery|executeUpdate]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "owasp-cwe089-sql.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "threat-cwe089-statement-execute.ql"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Deterministically mined complete Java sink predicate semantics.",
+      "autodoc_name": "java_method_names_execute_execute_query_execute_update_sink",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "CyberStitchJavaHelpers",
+      "id": "candidate:java_method_names_execute_execute_query_execute_update_sink",
+      "kind": "codeql_helper",
+      "language": "java",
+      "name": "java_method_names_execute_execute_query_execute_update_sink",
+      "predicate": "isMethodNamesExecuteExecuteQueryExecuteUpdateSink",
+      "raw_name": "java_method_names_execute_execute_query_execute_update_sink",
+      "rewrite_eligible": true,
+      "schema": "java_sink_predicate_helper_v1",
+      "semantic_hash": "8086de3f59d7a93d47fd45d05cffb425fce11cf92ab6820ab352164ffd36c391",
+      "semantic_role": "Sink",
+      "semantic_target": "method-names:execute|executeQuery|executeUpdate",
+      "typed_name": "java_method_names_execute_execute_query_execute_update_sink [Sink method-names:execute|executeQuery|executeUpdate]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "owasp-cwe089-sql.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "threat-cwe089-statement-execute.ql"
+        }
+      ],
+      "validation": {
+        "accepted": true,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": []
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ModeledSinkType semantics for CommandInjectionSink.",
+      "autodoc_name": "java_modeled_sink_type_command_injection_sink_2da17f01",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_modeled_sink_type_command_injection_sink_2da17f01",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_modeled_sink_type_command_injection_sink_2da17f01",
+      "predicate": "",
+      "raw_name": "java_modeled_sink_type_command_injection_sink_2da17f01",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "2da17f01f77805e4538a686445feeaba01ed7fed4bf7c60acd3f06842d168878",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "CommandInjectionSink",
+      "typed_name": "java_modeled_sink_type_command_injection_sink_2da17f01 [ModeledSinkType CommandInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "official-cwe078-command-flow.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "remote-cwe078-command-model.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "CommandLineQuery.qll"
+        },
+        {
+          "predicate": "isSink",
+          "query": "CommandLineQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ModeledSinkType semantics for DefaultCommandInjectionSink.",
+      "autodoc_name": "java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "predicate": "",
+      "raw_name": "java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "c937332945b56a75ae64db5c1748cfaff4b3cc369522b5e25b24c92f80c0609b",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "DefaultCommandInjectionSink",
+      "typed_name": "java_modeled_sink_type_default_command_injection_sink_c9373329 [ModeledSinkType DefaultCommandInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "DefaultCommandInjectionSink",
+          "query": "CommandLineQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ModeledSinkType semantics for MongoDbInjectionSink.",
+      "autodoc_name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "predicate": "",
+      "raw_name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "c48499964302254ef174cd1a0f3fe1f2b302479df84dc7c4dd71a581136a9e75",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "MongoDbInjectionSink",
+      "typed_name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996 [ModeledSinkType MongoDbInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "MongoDbInjectionSink",
+          "query": "QueryInjection.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ModeledSinkType semantics for MyBatisSqlInjectionSink.",
+      "autodoc_name": "java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159",
+      "predicate": "",
+      "raw_name": "java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "7b7ec159ff5d39fad4b73b1455c4f0ada37582c55e002a04080a489c04a745f5",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "MyBatisSqlInjectionSink",
+      "typed_name": "java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159 [ModeledSinkType MyBatisSqlInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "MyBatisSqlInjectionSink",
+          "query": "QueryInjection.qll"
+        },
+        {
+          "predicate": "MyBatisSqlInjectionSink",
+          "query": "QueryInjection.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ModeledSinkType semantics for PersistenceQueryInjectionSink.",
+      "autodoc_name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "predicate": "",
+      "raw_name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "41d858c805c096a6438dfc2e28a34ac510b580aca8b0343907dacd87320a9856",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "PersistenceQueryInjectionSink",
+      "typed_name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8 [ModeledSinkType PersistenceQueryInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "PersistenceQueryInjectionSink",
+          "query": "QueryInjection.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ModeledSinkType semantics for QueryInjectionSink.",
+      "autodoc_name": "java_modeled_sink_type_query_injection_sink_acd681bc",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_modeled_sink_type_query_injection_sink_acd681bc",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_modeled_sink_type_query_injection_sink_acd681bc",
+      "predicate": "",
+      "raw_name": "java_modeled_sink_type_query_injection_sink_acd681bc",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "acd681bcad3d8288f84ad3abc9d0282920478b8666a47ba0efb241b3f71861d1",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "QueryInjectionSink",
+      "typed_name": "java_modeled_sink_type_query_injection_sink_acd681bc [ModeledSinkType QueryInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "official-cwe089-query-flow.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "remote-cwe089-query-model.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "SqlInjectionQuery.qll"
+        },
+        {
+          "predicate": "QueryInjectionSink",
+          "query": "QueryInjection.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ModeledSinkType semantics for QueryInjectionSink.",
+      "autodoc_name": "java_modeled_sink_type_query_injection_sink_fba18fca",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_modeled_sink_type_query_injection_sink_fba18fca",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_modeled_sink_type_query_injection_sink_fba18fca",
+      "predicate": "",
+      "raw_name": "java_modeled_sink_type_query_injection_sink_fba18fca",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "fba18fcafd5cd37eca6c1ec13a0d7e32bd7cfe30f6c345ad36b2bf5fbf5cbc66",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "QueryInjectionSink",
+      "typed_name": "java_modeled_sink_type_query_injection_sink_fba18fca [ModeledSinkType QueryInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "SqlConcatenatedQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ModeledSinkType semantics for SqlInjectionSink.",
+      "autodoc_name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "predicate": "",
+      "raw_name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "a7f7cdd4ded49cb51962f608d78f361fd585e672a87ce508cfc70e7d6291b13a",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "SqlInjectionSink",
+      "typed_name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4 [ModeledSinkType SqlInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "SqlInjectionSink",
+          "query": "QueryInjection.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Deterministically mined complete Java sink predicate semantics.",
+      "autodoc_name": "java_query_injection_sink_sink",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "CyberStitchJavaHelpers",
+      "id": "candidate:java_query_injection_sink_sink",
+      "kind": "codeql_helper",
+      "language": "java",
+      "name": "java_query_injection_sink_sink",
+      "predicate": "isQueryInjectionSink",
+      "raw_name": "java_query_injection_sink_sink",
+      "rewrite_eligible": true,
+      "schema": "java_sink_predicate_helper_v1",
+      "semantic_hash": "da45b3c0a20d4b6bc31198c3b65741e632bf44f0566af3355a1e06a644651065",
+      "semantic_role": "Sink",
+      "semantic_target": "QueryInjectionSink",
+      "typed_name": "java_query_injection_sink_sink [Sink QueryInjectionSink]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "official-cwe089-query-flow.ql"
+        },
+        {
+          "predicate": "isSink",
+          "query": "remote-cwe089-query-model.ql"
+        }
+      ],
+      "validation": {
+        "accepted": true,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": []
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java remote-flow source nodes used as user-controlled inputs in path queries.",
+      "autodoc_name": "remote_flow_source",
+      "autodoc_rationale": "This documents a stable CodeQL source role while leaving executable QL generation to CyberSTITCH.",
+      "autodoc_source": "lilo-loop-autodoc",
+      "group": "sources",
+      "helper_module": "CyberStitchJavaHelpers",
+      "id": "candidate:java_remote_flow_source",
+      "kind": "codeql_helper",
+      "language": "java",
+      "name": "java_remote_flow_source",
+      "predicate": "isRemoteFlowSource",
+      "raw_name": "java_remote_flow_source",
+      "rewrite_eligible": true,
+      "schema": "java_source_predicate_helper_v1",
+      "semantic_hash": "a9eb398e68bfa3ad289637ca3decdd3ce8a50206e1d457ecaf6499e6963f8930",
+      "semantic_role": "Source",
+      "semantic_target": "RemoteFlowSource",
+      "typed_name": "java_remote_flow_source [Source RemoteFlowSource]",
+      "use_sites": [
+        {
+          "predicate": "isSource",
+          "query": "owasp-cwe078-command.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "owasp-cwe089-sql.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "remote-cwe078-command-model.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "remote-cwe089-query-model.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "remote-cwe089-sql-sinkmodel.ql"
+        }
+      ],
+      "validation": {
+        "accepted": true,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": []
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SinkKind semantics for sinkNode:command-injection.",
+      "autodoc_name": "java_sink_kind_sink_node_command_injection_058dd9c5",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_sink_kind_sink_node_command_injection_058dd9c5",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_sink_kind_sink_node_command_injection_058dd9c5",
+      "predicate": "",
+      "raw_name": "java_sink_kind_sink_node_command_injection_058dd9c5",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "058dd9c52ece583fa06f355343a6abfb0e7857d1884624d25e4b1f9e5ea63e49",
+      "semantic_role": "SinkKind",
+      "semantic_target": "sinkNode:command-injection",
+      "typed_name": "java_sink_kind_sink_node_command_injection_058dd9c5 [SinkKind sinkNode:command-injection]",
+      "use_sites": [
+        {
+          "predicate": "sinkNode:command-injection",
+          "query": "CommandLineQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SinkKind semantics for sinkNode:environment-injection.",
+      "autodoc_name": "java_sink_kind_sink_node_environment_injection_32bdea5f",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_sink_kind_sink_node_environment_injection_32bdea5f",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_sink_kind_sink_node_environment_injection_32bdea5f",
+      "predicate": "",
+      "raw_name": "java_sink_kind_sink_node_environment_injection_32bdea5f",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "32bdea5f96ceac121b5ea7e00d94a031cae9920feaa64ebb96dbd4fdf86c81c8",
+      "semantic_role": "SinkKind",
+      "semantic_target": "sinkNode:environment-injection",
+      "typed_name": "java_sink_kind_sink_node_environment_injection_32bdea5f [SinkKind sinkNode:environment-injection]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "official-cwe078-environment-flow.ql"
+        },
+        {
+          "predicate": "sinkNode:environment-injection",
+          "query": "TaintedEnvironmentVariableQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SinkKind semantics for sinkNode:sql-injection.",
+      "autodoc_name": "java_sink_kind_sink_node_sql_injection_e532ab40",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sinks",
+      "helper_module": "",
+      "id": "candidate:java_sink_kind_sink_node_sql_injection_e532ab40",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_sink_kind_sink_node_sql_injection_e532ab40",
+      "predicate": "",
+      "raw_name": "java_sink_kind_sink_node_sql_injection_e532ab40",
+      "rewrite_eligible": false,
+      "schema": "java_modeled_sink_helper_v1",
+      "semantic_hash": "e532ab40d18942781ecd1434e98c7b6d7161fd235ae5ec3e901ce962a49ab924",
+      "semantic_role": "SinkKind",
+      "semantic_target": "sinkNode:sql-injection",
+      "typed_name": "java_sink_kind_sink_node_sql_injection_e532ab40 [SinkKind sinkNode:sql-injection]",
+      "use_sites": [
+        {
+          "predicate": "isSink",
+          "query": "remote-cwe089-sql-sinkmodel.ql"
+        },
+        {
+          "predicate": "sinkNode:sql-injection",
+          "query": "QueryInjection.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for AndroidExternalStorageSource.",
+      "autodoc_name": "java_source_kind_android_external_storage_source_edf149a9",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_android_external_storage_source_edf149a9",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_android_external_storage_source_edf149a9",
+      "predicate": "",
+      "raw_name": "java_source_kind_android_external_storage_source_edf149a9",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "edf149a94eb977fb27dc584d57c6d612de02f01baabd354e8d90b07e653004a7",
+      "semantic_role": "SourceKind",
+      "semantic_target": "AndroidExternalStorageSource",
+      "typed_name": "java_source_kind_android_external_storage_source_edf149a9 [SourceKind AndroidExternalStorageSource]",
+      "use_sites": [
+        {
+          "predicate": "AndroidExternalStorageSource",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for AndroidJavascriptInterfaceMethodParameter.",
+      "autodoc_name": "java_source_kind_android_javascript_interface_method_parameter_01e51fdb",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_android_javascript_interface_method_parameter_01e51fdb",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_android_javascript_interface_method_parameter_01e51fdb",
+      "predicate": "",
+      "raw_name": "java_source_kind_android_javascript_interface_method_parameter_01e51fdb",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "01e51fdb5cc5ccd5f5bb1410a411ee501a9cb4a2708901e1c1ea2618aa0276ed",
+      "semantic_role": "SourceKind",
+      "semantic_target": "AndroidJavascriptInterfaceMethodParameter",
+      "typed_name": "java_source_kind_android_javascript_interface_method_parameter_01e51fdb [SourceKind AndroidJavascriptInterfaceMethodParameter]",
+      "use_sites": [
+        {
+          "predicate": "AndroidJavascriptInterfaceMethodParameter",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for ExportedAndroidContentProviderInput.",
+      "autodoc_name": "java_source_kind_exported_android_content_provider_input_1c741880",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_exported_android_content_provider_input_1c741880",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_exported_android_content_provider_input_1c741880",
+      "predicate": "",
+      "raw_name": "java_source_kind_exported_android_content_provider_input_1c741880",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "1c741880d88582ab73b1da7a89f60cf73f6dec70da4bb798cd0e3994c73bef75",
+      "semantic_role": "SourceKind",
+      "semantic_target": "ExportedAndroidContentProviderInput",
+      "typed_name": "java_source_kind_exported_android_content_provider_input_1c741880 [SourceKind ExportedAndroidContentProviderInput]",
+      "use_sites": [
+        {
+          "predicate": "ExportedAndroidContentProviderInput",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for ExportedAndroidIntentInput.",
+      "autodoc_name": "java_source_kind_exported_android_intent_input_5afd578a",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_exported_android_intent_input_5afd578a",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_exported_android_intent_input_5afd578a",
+      "predicate": "",
+      "raw_name": "java_source_kind_exported_android_intent_input_5afd578a",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "5afd578a63847ded2fcd3738f1d31432f4ae7da89adab8e900337b1c258bdb64",
+      "semantic_role": "SourceKind",
+      "semantic_target": "ExportedAndroidIntentInput",
+      "typed_name": "java_source_kind_exported_android_intent_input_5afd578a [SourceKind ExportedAndroidIntentInput]",
+      "use_sites": [
+        {
+          "predicate": "ExportedAndroidIntentInput",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for ExternalRemoteFlowSource.",
+      "autodoc_name": "java_source_kind_external_remote_flow_source_c97357e4",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_external_remote_flow_source_c97357e4",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_external_remote_flow_source_c97357e4",
+      "predicate": "",
+      "raw_name": "java_source_kind_external_remote_flow_source_c97357e4",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "c97357e4c72c8332051dcf385006a514e270aa845d67b5f217e71fb44c29c10d",
+      "semantic_role": "SourceKind",
+      "semantic_target": "ExternalRemoteFlowSource",
+      "typed_name": "java_source_kind_external_remote_flow_source_c97357e4 [SourceKind ExternalRemoteFlowSource]",
+      "use_sites": [
+        {
+          "predicate": "ExternalRemoteFlowSource",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for GuiceRequestParameterSource.",
+      "autodoc_name": "java_source_kind_guice_request_parameter_source_d5e556b9",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_guice_request_parameter_source_d5e556b9",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_guice_request_parameter_source_d5e556b9",
+      "predicate": "",
+      "raw_name": "java_source_kind_guice_request_parameter_source_d5e556b9",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "d5e556b9ff3719d06eca39fd4fea4939819e42976cb85e7cf81726beb5f955b5",
+      "semantic_role": "SourceKind",
+      "semantic_target": "GuiceRequestParameterSource",
+      "typed_name": "java_source_kind_guice_request_parameter_source_d5e556b9 [SourceKind GuiceRequestParameterSource]",
+      "use_sites": [
+        {
+          "predicate": "GuiceRequestParameterSource",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for JaxRsMethodParameterSource.",
+      "autodoc_name": "java_source_kind_jax_rs_method_parameter_source_de780bd2",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_jax_rs_method_parameter_source_de780bd2",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_jax_rs_method_parameter_source_de780bd2",
+      "predicate": "",
+      "raw_name": "java_source_kind_jax_rs_method_parameter_source_de780bd2",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "de780bd2d9ff4bc0eb6a5b6d79c4c692baeefebb6184086e6c6b3268d9930312",
+      "semantic_role": "SourceKind",
+      "semantic_target": "JaxRsMethodParameterSource",
+      "typed_name": "java_source_kind_jax_rs_method_parameter_source_de780bd2 [SourceKind JaxRsMethodParameterSource]",
+      "use_sites": [
+        {
+          "predicate": "JaxRsMethodParameterSource",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for JaxWsMethodParameterSource.",
+      "autodoc_name": "java_source_kind_jax_ws_method_parameter_source_4c05ab0a",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_jax_ws_method_parameter_source_4c05ab0a",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_jax_ws_method_parameter_source_4c05ab0a",
+      "predicate": "",
+      "raw_name": "java_source_kind_jax_ws_method_parameter_source_4c05ab0a",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "4c05ab0afd4f53110720e263685ab2c93bfef4cbc775bf3a5135a844bdd2c653",
+      "semantic_role": "SourceKind",
+      "semantic_target": "JaxWsMethodParameterSource",
+      "typed_name": "java_source_kind_jax_ws_method_parameter_source_4c05ab0a [SourceKind JaxWsMethodParameterSource]",
+      "use_sites": [
+        {
+          "predicate": "JaxWsMethodParameterSource",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for LocalUserInput.",
+      "autodoc_name": "java_source_kind_local_user_input_66e9bccd",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_local_user_input_66e9bccd",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_local_user_input_66e9bccd",
+      "predicate": "",
+      "raw_name": "java_source_kind_local_user_input_66e9bccd",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "66e9bccdde9caf0a7d4f8ca218ee65417c38e97e72abae77a740ac2d9172eb12",
+      "semantic_role": "SourceKind",
+      "semantic_target": "LocalUserInput",
+      "typed_name": "java_source_kind_local_user_input_66e9bccd [SourceKind LocalUserInput]",
+      "use_sites": [
+        {
+          "predicate": "isSource",
+          "query": "CommandLineQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for MessageBodyReaderParameterSource.",
+      "autodoc_name": "java_source_kind_message_body_reader_parameter_source_810ff54e",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_message_body_reader_parameter_source_810ff54e",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_message_body_reader_parameter_source_810ff54e",
+      "predicate": "",
+      "raw_name": "java_source_kind_message_body_reader_parameter_source_810ff54e",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "810ff54eed16575f62bff51b7522fc498a61cd8f9905756769f956ee30977c17",
+      "semantic_role": "SourceKind",
+      "semantic_target": "MessageBodyReaderParameterSource",
+      "typed_name": "java_source_kind_message_body_reader_parameter_source_810ff54e [SourceKind MessageBodyReaderParameterSource]",
+      "use_sites": [
+        {
+          "predicate": "MessageBodyReaderParameterSource",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for OnActivityResultIntentSource.",
+      "autodoc_name": "java_source_kind_on_activity_result_intent_source_6be87d9c",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_on_activity_result_intent_source_6be87d9c",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_on_activity_result_intent_source_6be87d9c",
+      "predicate": "",
+      "raw_name": "java_source_kind_on_activity_result_intent_source_6be87d9c",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "6be87d9c21f4ffadecc0d684b5c58d9c0c26973eabae4d100a7af2084d89ff72",
+      "semantic_role": "SourceKind",
+      "semantic_target": "OnActivityResultIntentSource",
+      "typed_name": "java_source_kind_on_activity_result_intent_source_6be87d9c [SourceKind OnActivityResultIntentSource]",
+      "use_sites": [
+        {
+          "predicate": "OnActivityResultIntentSource",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for PlayParameterSource.",
+      "autodoc_name": "java_source_kind_play_parameter_source_ea212a10",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_play_parameter_source_ea212a10",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_play_parameter_source_ea212a10",
+      "predicate": "",
+      "raw_name": "java_source_kind_play_parameter_source_ea212a10",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "ea212a10b625e37b436721cf7e92ac5c0bf58c1bd7c84a8c2ea2db6d793e253f",
+      "semantic_role": "SourceKind",
+      "semantic_target": "PlayParameterSource",
+      "typed_name": "java_source_kind_play_parameter_source_ea212a10 [SourceKind PlayParameterSource]",
+      "use_sites": [
+        {
+          "predicate": "PlayParameterSource",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.",
+      "autodoc_name": "java_source_kind_remote_flow_source_3dbd0ce5",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_3dbd0ce5",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_3dbd0ce5",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_3dbd0ce5",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "3dbd0ce5fd818e9519d8d706f0682123aca6505ebb913d707770a5a36ecf61f8",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource",
+      "typed_name": "java_source_kind_remote_flow_source_3dbd0ce5 [SourceKind RemoteFlowSource]",
+      "use_sites": [
+        {
+          "predicate": "isSource",
+          "query": "owasp-cwe078-command.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "remote-cwe078-command-model.ql"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.",
+      "autodoc_name": "java_source_kind_remote_flow_source_7bbaf778",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_7bbaf778",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_7bbaf778",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_7bbaf778",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "7bbaf778b857a831099b9ae2b95336ff0cb121cddc5f37cea4c88648f70127de",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource",
+      "typed_name": "java_source_kind_remote_flow_source_7bbaf778 [SourceKind RemoteFlowSource]",
+      "use_sites": [
+        {
+          "predicate": "isSource",
+          "query": "owasp-cwe089-sql.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "remote-cwe089-query-model.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "remote-cwe089-sql-sinkmodel.ql"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Android external storage.",
+      "autodoc_name": "java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "c1deb228c65b2214557ee053cc4c6ec94e37a1b77e83469e2f476eca7b301c7e",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Android external storage",
+      "typed_name": "java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228 [SourceKind RemoteFlowSource.getSourceType:Android external storage]",
+      "use_sites": [
+        {
+          "predicate": "RemoteFlowSource.getSourceType:Android external storage",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent.",
+      "autodoc_name": "java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "3b7a8b24720be1d3c9262e10e3713057f3e03f6fdb716393ffd03d3260bdd968",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+      "typed_name": "java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24 [SourceKind RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent]",
+      "use_sites": [
+        {
+          "predicate": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Exported Android content provider source.",
+      "autodoc_name": "java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "bca0b10f907c8d1ad952e23567b896926934111e96ad745d3a2f9afdefabc9f2",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+      "typed_name": "java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f [SourceKind RemoteFlowSource.getSourceType:Exported Android content provider source]",
+      "use_sites": [
+        {
+          "predicate": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Exported Android intent source.",
+      "autodoc_name": "java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "ae63c928391fdb05ef9c06de44037ced649f765f07104bae1b5bc036bbc8e34b",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Exported Android intent source",
+      "typed_name": "java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928 [SourceKind RemoteFlowSource.getSourceType:Exported Android intent source]",
+      "use_sites": [
+        {
+          "predicate": "RemoteFlowSource.getSourceType:Exported Android intent source",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:external.",
+      "autodoc_name": "java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "7afe2f1babf8f669b7a53880551503b57774be3ad7a4f70eee3dc1230ffdc274",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:external",
+      "typed_name": "java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b [SourceKind RemoteFlowSource.getSourceType:external]",
+      "use_sites": [
+        {
+          "predicate": "RemoteFlowSource.getSourceType:external",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.",
+      "autodoc_name": "java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "4fbc8cd3541862bebbc999217eefb672ac147fee6053fed5f689c6b0285ee419",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Guice request parameter",
+      "typed_name": "java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3 [SourceKind RemoteFlowSource.getSourceType:Guice request parameter]",
+      "use_sites": [
+        {
+          "predicate": "RemoteFlowSource.getSourceType:Guice request parameter",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Jax Rs method parameter.",
+      "autodoc_name": "java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "eef3e93a8dd075d55d66fad33c90365c5c29b4dd9ff5bd69c5f48aa406ae37ce",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+      "typed_name": "java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a [SourceKind RemoteFlowSource.getSourceType:Jax Rs method parameter]",
+      "use_sites": [
+        {
+          "predicate": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Jax WS method parameter.",
+      "autodoc_name": "java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "60a8f8812d3aa256d6d77087e4d0579b01f9b173732b555886b6e450623c4bf3",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+      "typed_name": "java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881 [SourceKind RemoteFlowSource.getSourceType:Jax WS method parameter]",
+      "use_sites": [
+        {
+          "predicate": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:MessageBodyReader parameter.",
+      "autodoc_name": "java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+      "predicate": "",
+      "raw_name": "java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "91ac6ff8f81e38b0745d2d6863a22bfb4cd43b579f2d691e338ba809eff69874",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+      "typed_name": "java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8 [SourceKind RemoteFlowSource.getSourceType:MessageBodyReader parameter]",
+      "use_sites": [
+        {
+          "predicate": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+          "query": "FlowSources.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "autodoc_name": "java_threat_model_active_threat_model_source_3c0f2e2d",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_threat_model_active_threat_model_source_3c0f2e2d",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_threat_model_active_threat_model_source_3c0f2e2d",
+      "predicate": "",
+      "raw_name": "java_threat_model_active_threat_model_source_3c0f2e2d",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "3c0f2e2dfcb6e1946b242078f8b9efe715db59cfb7b676dc290d156c28e9a643",
+      "semantic_role": "ThreatModel",
+      "semantic_target": "ActiveThreatModelSource",
+      "typed_name": "java_threat_model_active_threat_model_source_3c0f2e2d [ThreatModel ActiveThreatModelSource]",
+      "use_sites": [
+        {
+          "predicate": "isSource",
+          "query": "official-cwe078-command-flow.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "official-cwe078-environment-flow.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "threat-cwe078-runtime-exec.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "CommandLineQuery.qll"
+        },
+        {
+          "predicate": "isSource",
+          "query": "TaintedEnvironmentVariableQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    },
+    {
+      "autodoc_description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "autodoc_name": "java_threat_model_active_threat_model_source_473aa43e",
+      "autodoc_rationale": "",
+      "autodoc_source": "candidate",
+      "group": "sources",
+      "helper_module": "",
+      "id": "candidate:java_threat_model_active_threat_model_source_473aa43e",
+      "kind": "semantic_template",
+      "language": "java",
+      "name": "java_threat_model_active_threat_model_source_473aa43e",
+      "predicate": "",
+      "raw_name": "java_threat_model_active_threat_model_source_473aa43e",
+      "rewrite_eligible": false,
+      "schema": "java_remote_source_kind_template_v1",
+      "semantic_hash": "473aa43ed9cbefcd25d5122b584a40928d1f31e4aa647a438cc1e0b5c3415ea5",
+      "semantic_role": "ThreatModel",
+      "semantic_target": "ActiveThreatModelSource",
+      "typed_name": "java_threat_model_active_threat_model_source_473aa43e [ThreatModel ActiveThreatModelSource]",
+      "use_sites": [
+        {
+          "predicate": "isSource",
+          "query": "official-cwe089-query-flow.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "threat-cwe089-statement-execute.ql"
+        },
+        {
+          "predicate": "isSource",
+          "query": "SqlInjectionQuery.qll"
+        }
+      ],
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "lilo_reasons": [],
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ]
+      }
+    }
+  ]
+}

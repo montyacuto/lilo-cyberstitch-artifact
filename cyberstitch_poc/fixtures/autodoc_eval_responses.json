@@ -1,0 +1,5 @@
+{
+  "format": "cyberstitch-autodoc-eval-fixture-v1",
+  "strategy": "deterministic_by_condition",
+  "description": "Fixture mode uses deterministic responses derived from each task expectation. raw_names is intentionally degraded; typed/autodoc conditions are valid. This keeps the AutoDoc evaluator reproducible without live API access."
+}

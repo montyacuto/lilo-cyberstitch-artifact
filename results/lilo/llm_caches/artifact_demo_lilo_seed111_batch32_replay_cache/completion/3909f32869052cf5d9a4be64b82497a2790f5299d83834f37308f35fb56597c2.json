@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T20:40:49Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nmove_pen_forward_with_rotation :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Moves the turtle pen forward with rotation based on the specified length and angle, within a loop\n\ncreate_snowflake_with_arms :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop 9 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $2) (logo_get_set_function_pen (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_divide_angle logo_unit_angle $4) (logo_for_loop $4 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_subtract_angles (logo_divide_angle logo_unit_angle $6) logo_zero_angle) $0))) $0))) $0)))) $2))))\ndescription: Creates a snowflake pattern with arms of a specified shape and number of sides\n\nmove_pen_forward_rotate_with_scaled_line_and_angle :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop logo_IFTY (lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line logo_epsilon_line $2) logo_epsilon_angle $0))) $1)))\ndescription: Moves the turtle pen forward with rotation based on a scaled line and angle within a loop\n\nfn_30 :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))) $1)))\n\nfn_31 :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_with_rotation $0 $1 (logo_multiply_line logo_unit_line 2))))\n\nfn_32 :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_with_rotation (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0) $3 logo_unit_line))) $2))))\n\nfn_33 :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_with_rotation $0 4 (logo_multiply_line logo_unit_line $1)))) $1)))\n\nfn_34 :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_with_rotation $0 $1 logo_unit_line)))\n\nfn_35 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 7 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 6) (logo_get_set_function_pen $2 $0)))) $1)))\n\nfn_36 :: turtle -> int -> turtle\n\n(lambda (lambda (fn_34 $0 (logo_lift_pen (lambda (fn_30 (fn_34 9 $0) 2)) (fn_34 7 $1)))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_30 :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))) $1)))\n\nHere are some examples of its usage:\n\n-- a small 9 gon connected by a medium line to a small 7 gon\n(lambda (fn_34 9 (fn_30 (fn_34 7 $0) 2)))\n\n-- 5 short line s in a row\n(lambda (fn_30 $0 5))\n\n-- a small square connected by a big line to a small 9 gon\n(lambda (fn_34 4 (fn_30 (fn_34 9 $0) 5)))\n\n-- a medium triangle connected by a big line to a small 8 gon\n(lambda (fn_31 3 (fn_30 (fn_34 8 $0) 5)))\n\n-- a medium square connected by a big line to a small square\n(lambda (fn_31 4 (fn_30 (fn_34 4 $0) 5)))\n\n-- 3 short line s in a row\n(lambda (fn_30 $0 3))\n\n-- a small triangle connected by a big line to a medium triangle\n(lambda (fn_34 3 (fn_30 (fn_31 3 $0) 5)))\n\n-- 4 short line s in a row\n(lambda (fn_30 $0 4))\n\n-- a small 9 gon connected by a big line to a small 8 gon\n(lambda (fn_34 9 (fn_30 (fn_34 8 $0) 5)))\n\n-- a small semicircle connected by a big line to a small 9 gon\n(lambda (move_pen_forward_rotate_with_scaled_line_and_angle (fn_30 (fn_34 9 $0) 5) 1))\n\nPlease write a human-readable name and description for `fn_30` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "3909f32869052cf5d9a4be64b82497a2790f5299d83834f37308f35fb56597c2",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_30\",\n    \"readable_name\": \"move_pen_forward_in_loop\",\n    \"description\": \"Moves the turtle pen forward in a loop for a specified number of times\"\n}"
+      }
+    ],
+    "created": 1778272848,
+    "id": "chatcmpl-DdMI4cPbYr7A8lMB9e5LaVIRk2btY",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 225,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1142,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1367
+    }
+  }
+}

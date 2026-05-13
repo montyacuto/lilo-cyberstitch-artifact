@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T16:58:48Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_if_match_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that replaces a substring in a full string based on a condition. It checks if the substring matches a specific pattern in the full string, and if it does, replaces it with another substring. It then splits the full string by a delimiter.\n\nreplace_concat_with_cdr_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that replaces the concatenation of two substrings in a full string with the rest of the string after splitting by a delimiter.\n\nreplace_vowels_with_specific_substring :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (replace_if_match_split $0 $1 (regex_or 'a' (regex_or 'o' (regex_or 'e' (regex_or 'i' 'u')))))))\ndescription: A function that replaces vowels in a full string with a specific substring based on a given condition. It checks for vowels ('a', 'e', 'i', 'o', 'u') in the full string and replaces them with the specified substring.\n\nreplace_end_of_string :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that replaces the end of a full string with a specified substring. It appends the given substring to the end of the string after splitting by a delimiter.\n\nreplace_substring_based_on_condition :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that replaces substrings in a full string based on a condition provided by a transformation function. It splits the full string by a delimiter and applies the transformation function to each substring, replacing it with the result of the transformation.\n\nappend_substring_to_end :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\ndescription: A function that appends a specified substring to the end of a full string.\n\nreplace_end_of_string_with_reversed_substring :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\ndescription: A function that replaces the end of a full string with a reversed substring. It concatenates the first two substrings, reverses the third substring, and appends it to the concatenated result.\n\nreplace_p_with_given_substring :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match 'p' $0) $1 $0)) (regex_split empty_string $1)))))\ndescription: A function that replaces occurrences of the letter 'p' in a full string with a specified substring. It splits the full string by an empty string and applies the replacement based on the given condition.\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match_split $0 (regex_concat 'a' $1) $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n\nHere are some examples of its usage:\n\n-- if the word starts with any letter replace that with a\n(lambda (fn_50 $0 'a'))\n\n-- if the word starts with any letter replace that with b\n(lambda (fn_50 $0 'b'))\n\n-- if the word starts with consonant any letter replace that with e a\n(lambda (replace_concat_with_cdr_split (fn_50 $0 empty_string) 'a' 'e'))\n\nPlease write a human-readable name and description for `fn_50` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "4d2d8fb815bd940fd41edfd8ea20d018e900aeceaaf7b8e6b7720b458c2ab5d4",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"replace_first_letter_with_rest_after_dot\",\n    \"description\": \"A function that replaces the first letter of a full string with the rest of the string after splitting by a dot.\"\n}"
+      }
+    ],
+    "created": 1778173127,
+    "id": "chatcmpl-DcwLfpoLWejrfWWGN0BaNV37oBd9U",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 275,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1073,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1348
+    }
+  }
+}

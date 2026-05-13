@@ -1,0 +1,160 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/official-cwe078-environment-flow.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Official CodeQL environment variable command injection flow",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/official-cwe078-environment-flow",
+    "tags": "security external/cwe/cwe-078"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.dataflow.ExternalFlow",
+    "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "CyberStitchOfficialEnvironmentConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ActiveThreatModelSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "5a7bb5986b56dd3561cf6a43ffdbaaaf4aa34b3bf24cb01239885038d3ca68ca"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "sinkNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "sink"
+              },
+              {
+                "kind": "string",
+                "value": "environment-injection"
+              }
+            ]
+          },
+          "source_hash": "da1bc10008dcd591c8ad2a650dc6c8621d2aa605028562980b9521f8e19e6e0b"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ExecTaintedEnvironmentSanitizer",
+                "name": "sanitizer"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "node"
+              },
+              "right": {
+                "kind": "var",
+                "name": "sanitizer"
+              }
+            }
+          },
+          "source_hash": "67c6907251a9e22a94a5f278818591dba78cbb55c02bcd14daf9ac88f47b42d9"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "CyberStitchOfficialEnvironmentFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "CyberStitchOfficialEnvironmentConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "CyberStitchOfficialEnvironmentFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "CyberStitchOfficialEnvironmentFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "CyberStitchOfficialEnvironmentFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "Official CodeQL source reaches an environment-injection sink."
+    },
+    "message": "Official CodeQL source reaches an environment-injection sink."
+  },
+  "provenance_hash": "491f59d43fe5817c5424111a70de1daaadaadac20aa8b8099dedb4cca73accb2",
+  "version": "sqir-v2"
+}

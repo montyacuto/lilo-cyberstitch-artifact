@@ -1,0 +1,159 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-command-sink-node.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Threat-model source reaches command-injection sink model label",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/bounded/threat-command-sink-node",
+    "tags": "security external/cwe/cwe-078"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.dataflow.ExternalFlow",
+    "semmle.code.java.security.CommandLineQuery",
+    "semmle.code.java.security.ExternalProcess",
+    "semmle.code.java.security.QueryInjection",
+    "semmle.code.java.security.SqlInjectionQuery",
+    "semmle.code.java.security.Sanitizers",
+    "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "ThreatCommandSinkNodeConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ActiveThreatModelSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "5a7bb5986b56dd3561cf6a43ffdbaaaf4aa34b3bf24cb01239885038d3ca68ca"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "sinkNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "sink"
+              },
+              {
+                "kind": "string",
+                "value": "command-injection"
+              }
+            ]
+          },
+          "source_hash": "da7cb7e4b4d968a6aebaf624c53327e3a53016b13f479d0c096ce1e0ee1d6934"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "barrierNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "node"
+              },
+              {
+                "kind": "string",
+                "value": "command-injection"
+              }
+            ]
+          },
+          "source_hash": "d22b0fb5ee6b2ad00ff6d267115742986f6af33bd6feb96e5c7827a26c7ed7eb"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "ThreatCommandSinkNodeFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "ThreatCommandSinkNodeConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "ThreatCommandSinkNodeFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "ThreatCommandSinkNodeFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "ThreatCommandSinkNodeFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "ActiveThreatModelSource source reaches sinkNode:command-injection sink."
+    },
+    "message": "ActiveThreatModelSource source reaches sinkNode:command-injection sink."
+  },
+  "provenance_hash": "059a07694eaec56d58e2f2bbb8d34a8b03e81d5eb790509aacae7e4d5177ba62",
+  "version": "sqir-v2"
+}

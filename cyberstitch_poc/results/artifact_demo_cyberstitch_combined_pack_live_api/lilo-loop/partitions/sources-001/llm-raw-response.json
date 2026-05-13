@@ -1,0 +1,40 @@
+{
+  "response": {
+    "id": "chatcmpl-Dehc9Mv4qlKjNyGqLv03mab39VVL9",
+    "object": "chat.completion",
+    "created": 1778593145,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This proposal provides a complete Java source predicate semantics for ThreatModel, specifically for ActiveThreatModelSource.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Deterministically mined complete Java source predicate semantics.\",\n      \"rationale\": \"This existing candidate should stay rewrite-enabled to preserve the complete Java source predicate semantics for ThreatModel.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This proposal provides a complete Java source predicate semantics for ThreatModel, specifically for ActiveThreatModelSource.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Deterministically mined complete Java source predicate semantics.\",\n      \"rationale\": \"This existing candidate should stay rewrite-enabled to preserve the complete Java source predicate semantics for ThreatModel.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 11347,
+      "completion_tokens": 235,
+      "total_tokens": 11582,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": null
+  },
+  "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This proposal provides a complete Java source predicate semantics for ThreatModel, specifically for ActiveThreatModelSource.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Deterministically mined complete Java source predicate semantics.\",\n      \"rationale\": \"This existing candidate should stay rewrite-enabled to preserve the complete Java source predicate semantics for ThreatModel.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+}

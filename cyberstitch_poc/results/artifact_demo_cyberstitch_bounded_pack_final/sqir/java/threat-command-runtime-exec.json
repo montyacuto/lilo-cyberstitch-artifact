@@ -1,0 +1,171 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-command-runtime-exec.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Threat-model source reaches Runtime.exec",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/bounded/threat-command-runtime-exec",
+    "tags": "security external/cwe/cwe-078"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.dataflow.ExternalFlow",
+    "semmle.code.java.security.CommandLineQuery",
+    "semmle.code.java.security.ExternalProcess",
+    "semmle.code.java.security.QueryInjection",
+    "semmle.code.java.security.SqlInjectionQuery",
+    "semmle.code.java.security.Sanitizers",
+    "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "ThreatCommandRuntimeExecConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ActiveThreatModelSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "5a7bb5986b56dd3561cf6a43ffdbaaaf4aa34b3bf24cb01239885038d3ca68ca"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "MethodCall",
+                "name": "call"
+              }
+            ],
+            "body": {
+              "kind": "and",
+              "terms": [
+                {
+                  "kind": "qualified_name_check",
+                  "receiver": {
+                    "kind": "method_call",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "call"
+                    },
+                    "method": "getMethod",
+                    "args": []
+                  },
+                  "name_parts": [
+                    "java.lang",
+                    "Runtime",
+                    "exec"
+                  ]
+                },
+                {
+                  "kind": "eq",
+                  "left": {
+                    "kind": "method_call",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "sink"
+                    },
+                    "method": "asExpr",
+                    "args": []
+                  },
+                  "right": {
+                    "kind": "argument_selection",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "call"
+                    },
+                    "index": 0
+                  }
+                }
+              ]
+            }
+          },
+          "source_hash": "951ee47fdb64c19d1ba8c9028fd27be080637c66f2a5db63a9c991d901155c55"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "ThreatCommandRuntimeExecFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "ThreatCommandRuntimeExecConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "ThreatCommandRuntimeExecFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "ThreatCommandRuntimeExecFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "ThreatCommandRuntimeExecFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "ActiveThreatModelSource source reaches java.lang.Runtime.exec sink."
+    },
+    "message": "ActiveThreatModelSource source reaches java.lang.Runtime.exec sink."
+  },
+  "provenance_hash": "f4596300f42b7202c15f520c0ce019046259898d3a7c614ed4ae70201d7a446c",
+  "version": "sqir-v2"
+}

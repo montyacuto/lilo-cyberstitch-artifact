@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T18:22:44Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nmove_pen_forward_rotate_with_angle_and_length :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Moves the turtle's pen forward and rotates it by a specified angle and length within a for loop.\n\ncreate_snowflake_with_arms :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop 9 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $2) (logo_get_set_function_pen (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_divide_angle logo_unit_angle $4) (logo_for_loop $4 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_subtract_angles (logo_divide_angle logo_unit_angle $6) logo_zero_angle) $0))) $0))) $0)))) $2))))\ndescription: Generates a snowflake pattern with arms of a specified polygon shape and number of sides\n\ncreate_shape_pattern_with_rotation :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_rotate_with_angle_and_length (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0) $3 logo_unit_line))) $2))))\ndescription: Generates a pattern of shapes with specified rotation angles and lengths in a row\n\nmove_pen_forward_rotate_with_double_length :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_rotate_with_angle_and_length $0 $1 (logo_multiply_line logo_unit_line 2))))\ndescription: Moves the turtle's pen forward and rotates it by a specified angle and double the length\n\ncreate_semicircle_with_variable_length :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop logo_IFTY (lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line logo_epsilon_line $2) logo_epsilon_angle $0))) $1)))\ndescription: Creates a semicircle with a variable length based on the input integer\n\ncreate_pattern_with_repeated_lines :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))) $1)))\ndescription: Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\n\ncreate_concentric_squares :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_rotate_with_angle_and_length $0 4 (logo_multiply_line logo_unit_line $1)))) $1)))\ndescription: Generates a pattern of concentric squares with increasing size based on the input integer\n\nmove_pen_forward_rotate_with_unit_line :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_rotate_with_angle_and_length $0 $1 logo_unit_line)))\ndescription: Moves the turtle's pen forward and rotates it by a specified angle and the unit line length\n\ncreate_pattern_with_custom_actions :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 7 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 6) (logo_get_set_function_pen $2 $0)))) $1)))\ndescription: Generates a pattern with custom actions applied to the turtle for each iteration\n\nfn_36 :: turtle -> int -> turtle\n\n(lambda (lambda (move_pen_forward_rotate_with_unit_line $0 (logo_lift_pen (lambda (create_shape_pattern_with_rotation $0 5 2)) (move_pen_forward_rotate_with_double_length 4 $1)))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_36 :: turtle -> int -> turtle\n\n(lambda (lambda (move_pen_forward_rotate_with_unit_line $0 (logo_lift_pen (lambda (create_shape_pattern_with_rotation $0 5 2)) (move_pen_forward_rotate_with_double_length 4 $1)))))\n\nHere are some examples of its usage:\n\n-- a small 8 gon next to a medium square\n(lambda (fn_36 $0 8))\n\n-- a small 9 gon next to a medium square\n(lambda (fn_36 $0 9))\n\nPlease write a human-readable name and description for `fn_36` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "70e25ebdfec67477f97e49770af1eadd1b413d7194963830391cb74ce3bd0370",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_pattern_with_custom_shapes_and_lengths\",\n    \"description\": \"Generates a pattern with custom shapes and lengths based on the input integer\"\n}"
+      }
+    ],
+    "created": 1778264563,
+    "id": "chatcmpl-DdK8RxD2Z4Y4r7ExNvf7LEoiYa75X",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 235,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1005,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1240
+    }
+  }
+}

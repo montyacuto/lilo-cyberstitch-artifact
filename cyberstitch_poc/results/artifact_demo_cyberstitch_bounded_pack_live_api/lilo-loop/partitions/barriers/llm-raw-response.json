@@ -1,0 +1,40 @@
+{
+  "response": {
+    "id": "chatcmpl-DeioUQGFDKA4oUMRi4EWOS58deG73",
+    "object": "chat.completion",
+    "created": 1778597754,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL Barrier semantics for SimpleTypeSanitizer.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the barrier predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing candidate for Java SimpleTypeSanitizer barrier predicate.\",\n      \"rationale\": \"This candidate should remain rewrite-enabled for future CodeQL semantic enhancements.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:2:BarrierKind\"\n      ],\n      \"hint\": \"Provide future query-synthesis guidance for BarrierKind related to SimpleTypeSanitizer.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for BarrierKind related to SimpleTypeSanitizer.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL Barrier semantics for SimpleTypeSanitizer.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the barrier predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing candidate for Java SimpleTypeSanitizer barrier predicate.\",\n      \"rationale\": \"This candidate should remain rewrite-enabled for future CodeQL semantic enhancements.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:2:BarrierKind\"\n      ],\n      \"hint\": \"Provide future query-synthesis guidance for BarrierKind related to SimpleTypeSanitizer.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for BarrierKind related to SimpleTypeSanitizer.\"\n    }\n  ]\n}"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6176,
+      "completion_tokens": 248,
+      "total_tokens": 6424,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": null
+  },
+  "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL Barrier semantics for SimpleTypeSanitizer.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the barrier predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing candidate for Java SimpleTypeSanitizer barrier predicate.\",\n      \"rationale\": \"This candidate should remain rewrite-enabled for future CodeQL semantic enhancements.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:2:BarrierKind\"\n      ],\n      \"hint\": \"Provide future query-synthesis guidance for BarrierKind related to SimpleTypeSanitizer.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for BarrierKind related to SimpleTypeSanitizer.\"\n    }\n  ]\n}"
+}

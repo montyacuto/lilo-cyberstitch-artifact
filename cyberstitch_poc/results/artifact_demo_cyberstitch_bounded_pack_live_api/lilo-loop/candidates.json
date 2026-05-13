@@ -1,0 +1,280 @@
+{
+  "format": "cyberstitch-candidates-v2",
+  "source": "merged",
+  "sources": [
+    "lilo-openai-compat",
+    "lilo-openai-compat",
+    "lilo-openai-compat",
+    "lilo-openai-compat"
+  ],
+  "candidates": [
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "java_active_threat_model_source",
+      "kind": "codeql_helper",
+      "origin": "lilo-loop",
+      "schema": "java_source_predicate_helper_v1",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isActiveThreatModelSource",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "body": "predicate isActiveThreatModelSource(DataFlow::Node source) {\n  exists(ActiveThreatModelSource remote | source = remote)\n}",
+      "use_sites": [
+        {
+          "query": "threat-command-argument-to-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q21:predicate:ThreatCommandArgumentToExecConfig:isSource"
+        },
+        {
+          "query": "threat-command-modeled.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q22:predicate:ThreatCommandModeledConfig:isSource"
+        },
+        {
+          "query": "threat-command-runtime-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q23:predicate:ThreatCommandRuntimeExecConfig:isSource"
+        },
+        {
+          "query": "threat-command-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q24:predicate:ThreatCommandSinkNodeConfig:isSource"
+        },
+        {
+          "query": "threat-environment-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q25:predicate:ThreatEnvironmentSinkNodeConfig:isSource"
+        },
+        {
+          "query": "threat-sql-execute-query.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q26:predicate:ThreatSqlExecuteQueryConfig:isSource"
+        },
+        {
+          "query": "threat-sql-execute-update.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q27:predicate:ThreatSqlExecuteUpdateConfig:isSource"
+        },
+        {
+          "query": "threat-sql-execute.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q28:predicate:ThreatSqlExecuteConfig:isSource"
+        },
+        {
+          "query": "threat-sql-mongo-parse.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q29:predicate:ThreatSqlMongoParseConfig:isSource"
+        },
+        {
+          "query": "threat-sql-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q30:predicate:ThreatSqlQueryModelConfig:isSource"
+        },
+        {
+          "query": "threat-sql-sink-node.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q31:predicate:ThreatSqlSinkNodeConfig:isSource"
+        },
+        {
+          "query": "threat-sql-statement-execute-all.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q32:predicate:ThreatSqlStatementExecuteAllConfig:isSource"
+        }
+      ],
+      "rewrite_eligible": true,
+      "semantic_hash": "f80425e59f587c82254588247dbf4abc9abbed4fb404b3220cc28ae20a05f4f7",
+      "semantic_role": "Source",
+      "semantic_target": "ActiveThreatModelSource",
+      "semantic_usefulness": "semantic",
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q21:predicate:ThreatCommandArgumentToExecConfig:isSource",
+          "role": "Source",
+          "target": "ActiveThreatModelSource",
+          "num_exact_matches": 12,
+          "lilo_loop_reference": "candidate:java_active_threat_model_source",
+          "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+        }
+      },
+      "mapping_status": "semantic-mine-exact-predicate",
+      "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "rationale": "This existing candidate should stay rewrite-enabled to maintain ThreatModel semantics in Java CodeQL.",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_active_threat_model_source",
+        "display_name": "remote_flow_source",
+        "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+        "rationale": "This existing candidate should stay rewrite-enabled to maintain ThreatModel semantics in Java CodeQL."
+      }
+    },
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "java_command_injection_sink_sink",
+      "kind": "codeql_helper",
+      "origin": "lilo-loop",
+      "schema": "java_sink_predicate_helper_v1",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isCommandInjectionSink",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL sink semantics for command injection.",
+      "body": "predicate isCommandInjectionSink(DataFlow::Node sink) {\n  exists(CommandInjectionSink command | sink = command)\n}",
+      "use_sites": [
+        {
+          "query": "remote-command-modeled.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q1:predicate:RemoteCommandModeledConfig:isSink"
+        },
+        {
+          "query": "source-node-environment-command-modeled.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q14:predicate:SourceNodeEnvironmentCommandModeledConfig:isSink"
+        },
+        {
+          "query": "source-node-remote-command-modeled.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q16:predicate:SourceNodeRemoteCommandModeledConfig:isSink"
+        },
+        {
+          "query": "threat-command-modeled.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q22:predicate:ThreatCommandModeledConfig:isSink"
+        }
+      ],
+      "rewrite_eligible": true,
+      "semantic_hash": "23b9c0d462a159dfa7ef92c592a06bfc33e4f906b8d802928d636144b9f9bf82",
+      "semantic_role": "Sink",
+      "semantic_target": "CommandInjectionSink",
+      "semantic_usefulness": "semantic",
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q1:predicate:RemoteCommandModeledConfig:isSink",
+          "role": "Sink",
+          "target": "CommandInjectionSink",
+          "num_exact_matches": 4,
+          "lilo_loop_reference": "candidate:java_command_injection_sink_sink",
+          "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+        }
+      },
+      "mapping_status": "semantic-mine-exact-predicate",
+      "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/semantic/candidates.json",
+      "rationale": "Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction.",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_command_injection_sink_sink",
+        "display_name": "remote_flow_source",
+        "description": "Recognizes Java CodeQL sink semantics for command injection.",
+        "rationale": "Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction."
+      }
+    },
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "remote_flow_source",
+      "kind": "llm_schema_proposal",
+      "origin": "llm",
+      "schema": "rewrite_candidate_reference_v1",
+      "language": "unknown",
+      "body": "",
+      "use_sites": [],
+      "rewrite_eligible": false,
+      "semantic_hash": "e4b36b62cb6c21de605ef9a8bc814b1cc623c7dddfae6d4992879adf477a70ab",
+      "semantic_validation": {
+        "ok": false,
+        "reasons": [
+          "referenced item is not a rewrite-eligible CodeQL helper"
+        ],
+        "evidence": {}
+      },
+      "mapping_status": "invalid",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_method_call_sink_method_names_execute_query_486e5c11",
+        "display_name": "remote_flow_source",
+        "description": "Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.",
+        "rationale": "This candidate should stay rewrite-enabled to preserve its semantic role for future use."
+      }
+    },
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "java_simple_type_sanitizer_barrier",
+      "kind": "codeql_helper",
+      "origin": "lilo-loop",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isSimpleTypeSanitizerBarrier",
+      "display_name": "remote_flow_source",
+      "description": "Existing candidate for Java SimpleTypeSanitizer barrier predicate.",
+      "body": "predicate isSimpleTypeSanitizerBarrier(DataFlow::Node node) {\n  exists(SimpleTypeSanitizer sanitizer | node = sanitizer)\n}",
+      "use_sites": [
+        {
+          "query": "remote-sql-mongo-parse.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q8:predicate:RemoteSqlMongoParseConfig:isBarrier"
+        },
+        {
+          "query": "remote-sql-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q9:predicate:RemoteSqlQueryModelConfig:isBarrier"
+        },
+        {
+          "query": "source-node-database-sql-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q12:predicate:SourceNodeDatabaseSqlQueryModelConfig:isBarrier"
+        },
+        {
+          "query": "source-node-remote-sql-mongo-parse.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q18:predicate:SourceNodeRemoteSqlMongoParseConfig:isBarrier"
+        },
+        {
+          "query": "source-node-remote-sql-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q19:predicate:SourceNodeRemoteSqlQueryModelConfig:isBarrier"
+        },
+        {
+          "query": "threat-sql-mongo-parse.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q29:predicate:ThreatSqlMongoParseConfig:isBarrier"
+        },
+        {
+          "query": "threat-sql-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q30:predicate:ThreatSqlQueryModelConfig:isBarrier"
+        }
+      ],
+      "rewrite_eligible": true,
+      "semantic_hash": "45ce32f0e3006d4b6457a3f63377b590571b81481619d40bd5c16c821dfee973",
+      "semantic_role": "Barrier",
+      "semantic_target": "SimpleTypeSanitizer",
+      "semantic_usefulness": "semantic",
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q8:predicate:RemoteSqlMongoParseConfig:isBarrier",
+          "role": "Barrier",
+          "target": "SimpleTypeSanitizer",
+          "num_exact_matches": 7,
+          "lilo_loop_reference": "candidate:java_simple_type_sanitizer_barrier",
+          "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+        }
+      },
+      "mapping_status": "semantic-mine-exact-predicate",
+      "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic enhancements.",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_simple_type_sanitizer_barrier",
+        "display_name": "remote_flow_source",
+        "description": "Existing candidate for Java SimpleTypeSanitizer barrier predicate.",
+        "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic enhancements."
+      }
+    }
+  ]
+}

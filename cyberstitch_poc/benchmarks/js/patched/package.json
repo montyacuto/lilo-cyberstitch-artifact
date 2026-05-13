@@ -1,0 +1,8 @@
+{
+  "name": "cyberstitch-patched",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

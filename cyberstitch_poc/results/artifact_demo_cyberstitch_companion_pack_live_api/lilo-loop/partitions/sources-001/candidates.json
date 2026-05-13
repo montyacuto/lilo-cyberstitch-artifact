@@ -1,0 +1,144 @@
+{
+  "format": "cyberstitch-candidates-v2",
+  "source": "lilo-openai-compat",
+  "raw_output": {
+    "response": {
+      "id": "chatcmpl-DeiAZaYGLWkV4nQy4I4ZdaoeJXCwA",
+      "object": "chat.completion",
+      "created": 1778595279,
+      "model": "gpt-3.5-turbo-0125",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the candidate java_active_threat_model_source, preserving its ThreatModel semantics.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This existing candidate should stay rewrite-enabled to maintain consistency and reuse of ThreatModel semantics.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}",
+            "refusal": null,
+            "annotations": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the candidate java_active_threat_model_source, preserving its ThreatModel semantics.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This existing candidate should stay rewrite-enabled to maintain consistency and reuse of ThreatModel semantics.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 11864,
+        "completion_tokens": 242,
+        "total_tokens": 12106,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": null
+    },
+    "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the candidate java_active_threat_model_source, preserving its ThreatModel semantics.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This existing candidate should stay rewrite-enabled to maintain consistency and reuse of ThreatModel semantics.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+  },
+  "lilo_input": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/sources-001/input.json",
+  "autodoc": [
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_active_threat_model_source",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "rationale": "This proposal provides a clear and descriptive name for the candidate java_active_threat_model_source, preserving its ThreatModel semantics."
+    }
+  ],
+  "groupings": [],
+  "query_synthesis_hints": [
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "concept:codeql_lib5:concept:0:ThreatModel"
+      ],
+      "hint": "future query-synthesis guidance; not executable in this milestone"
+    }
+  ],
+  "ignored_outputs": [],
+  "candidates": [
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "java_active_threat_model_source",
+      "kind": "codeql_helper",
+      "origin": "lilo-loop",
+      "schema": "java_source_predicate_helper_v1",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isActiveThreatModelSource",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "body": "predicate isActiveThreatModelSource(DataFlow::Node source) {\n  exists(ActiveThreatModelSource remote | source = remote)\n}",
+      "use_sites": [
+        {
+          "query": "official-cwe078-command-flow.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isSource"
+        },
+        {
+          "query": "official-cwe078-environment-flow.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q1:predicate:CyberStitchOfficialEnvironmentConfig:isSource"
+        },
+        {
+          "query": "official-cwe089-query-flow.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q2:predicate:CyberStitchOfficialSqlConfig:isSource"
+        },
+        {
+          "query": "threat-cwe078-argument-to-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q18:predicate:ThreatArgumentToExecConfig:isSource"
+        },
+        {
+          "query": "threat-cwe078-runtime-exec.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q19:predicate:ThreatRuntimeExecConfig:isSource"
+        },
+        {
+          "query": "threat-cwe089-sql-sinknode.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q20:predicate:ThreatSqlSinkNodeConfig:isSource"
+        },
+        {
+          "query": "threat-cwe089-statement-execute.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q21:predicate:ThreatSqlStatementConfig:isSource"
+        }
+      ],
+      "rewrite_eligible": true,
+      "semantic_hash": "f80425e59f587c82254588247dbf4abc9abbed4fb404b3220cc28ae20a05f4f7",
+      "semantic_role": "Source",
+      "semantic_target": "ActiveThreatModelSource",
+      "semantic_usefulness": "semantic",
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isSource",
+          "role": "Source",
+          "target": "ActiveThreatModelSource",
+          "num_exact_matches": 7,
+          "lilo_loop_reference": "candidate:java_active_threat_model_source",
+          "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+        }
+      },
+      "mapping_status": "semantic-mine-exact-predicate",
+      "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "rationale": "This existing candidate should stay rewrite-enabled to maintain consistency and reuse of ThreatModel semantics.",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_active_threat_model_source",
+        "display_name": "remote_flow_source",
+        "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+        "rationale": "This existing candidate should stay rewrite-enabled to maintain consistency and reuse of ThreatModel semantics."
+      }
+    }
+  ]
+}

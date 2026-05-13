@@ -1,0 +1,354 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T11:47:55Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 180,
+    "messages": [
+      {
+        "content": "You are an expert programmer working in a language based on lambda calculus.\nYour goal is to write programs that accomplish the tasks specified by the user.\nThis is a domain-specific language for CLEVR: A Diagnostic Dataset for Compositional Language and Elementary Visual Reasoning.\n\nWrite programs using the available functions:\n\nclevr_relate :: tclevrobject -> tclevrrelation -> list(tclevrobject) -> list(tclevrobject)\n\nclevr_query_color :: tclevrobject -> tclevrcolor\n\nclevr_query_size :: tclevrobject -> tclevrsize\n\nclevr_query_material :: tclevrobject -> tclevrmaterial\n\nclevr_query_shape :: tclevrobject -> tclevrshape\n\nclevr_eq_color :: tclevrcolor -> tclevrcolor -> bool\n\nclevr_eq_size :: tclevrsize -> tclevrsize -> bool\n\nclevr_eq_material :: tclevrmaterial -> tclevrmaterial -> bool\n\nclevr_eq_shape :: tclevrshape -> tclevrshape -> bool\n\nclevr_union :: list(tclevrobject) -> list(tclevrobject) -> list(tclevrobject)\n\nclevr_intersect :: list(tclevrobject) -> list(tclevrobject) -> list(tclevrobject)\n\nclevr_difference :: list(tclevrobject) -> list(tclevrobject) -> list(tclevrobject)\n\nclevr_count :: list(tclevrobject) -> int\n\nclevr_gt? :: int -> int -> bool\n\nclevr_lt? :: int -> int -> bool\n\nclevr_car :: list(tclevrobject) -> tclevrobject\n\nclevr_if :: bool -> t0 -> t0 -> t0\n\nclevr_empty :: list(tclevrobject)\n\nclevr_fold :: list(tclevrobject) -> list(tclevrobject) -> (tclevrobject -> list(tclevrobject) -> list(tclevrobject)) -> list(tclevrobject)\n\nclevr_add :: tclevrobject -> list(tclevrobject) -> list(tclevrobject)\n\nclevr_gray :: tclevrcolor\n\nclevr_red :: tclevrcolor\n\nclevr_blue :: tclevrcolor\n\nclevr_green :: tclevrcolor\n\nclevr_brown :: tclevrcolor\n\nclevr_purple :: tclevrcolor\n\nclevr_cyan :: tclevrcolor\n\nclevr_yellow :: tclevrcolor\n\nclevr_small :: tclevrsize\n\nclevr_large :: tclevrsize\n\nclevr_rubber :: tclevrmaterial\n\nclevr_metal :: tclevrmaterial\n\nclevr_cube :: tclevrshape\n\nclevr_sphere :: tclevrshape\n\nclevr_cylinder :: tclevrshape\n\nclevr_left :: tclevrrelation\n\nclevr_right :: tclevrrelation\n\nclevr_behind :: tclevrrelation\n\nclevr_front :: tclevrrelation\n\n0 :: int\n\n1 :: int\n\n2 :: int\n\n3 :: int\n\n4 :: int\n\n5 :: int\n\n6 :: int\n\n7 :: int\n\n8 :: int\n\n9 :: int\n\nclevr_map :: (tclevrobject -> tclevrobject) -> list(tclevrobject) -> list(tclevrobject)\n\nclevr_transform_color :: tclevrcolor -> tclevrobject -> tclevrobject\n\nclevr_transform_material :: tclevrmaterial -> tclevrobject -> tclevrobject\n\nclevr_transform_size :: tclevrsize -> tclevrobject -> tclevrobject\n\nclevr_transform_shape :: tclevrshape -> tclevrobject -> tclevrobject\n\nfind_objects_by_color :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $3) (clevr_add $1 $0) $0))))))\ndescription: Returns a list of objects that have the specified color.\n\ncount_objects_related_to_object_by_relation :: list(tclevrobject) -> tclevrrelation -> bool\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\ndescription: Counts the number of objects related to the first object by the specified relation and returns true if the count is greater than 2.\n\nfilter_objects_by_small_size :: list(tclevrobject) -> list(tclevrobject)\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size (clevr_query_size $1) clevr_small) (clevr_add $1 $0) $0)))))\ndescription: Filters a list of objects to only include those that have a small size.\n\nfilter_objects_by_material_and_shape :: tclevrmaterial -> tclevrshape -> list(tclevrobject) -> list(tclevrobject)\n(lambda (lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape $1) $3) (clevr_if (clevr_eq_material (clevr_query_material $1) $4) (clevr_add $1 $0) $0) $0)))))))\ndescription: Filters a list of objects by both material and shape, returning objects that match both criteria.\n\nfind_object_behind_related_objects :: tclevrrelation -> list(tclevrobject) -> tclevrobject\n(lambda (lambda (clevr_car (clevr_fold $0 $0 (lambda (lambda (clevr_difference $0 (clevr_relate $1 $3 $0))))))))\ndescription: Finds an object that is behind a group of related objects based on a specified relation.\n\ncount_objects_in_front :: list(tclevrobject) -> int\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\ndescription: Counts the number of objects that are in front of the first object in the provided list.\n\ndetermine_shape_based_on_condition :: t0 -> t0 -> list(tclevrobject) -> t0\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\ndescription: Determines a value based on whether the shape of the first object in a list matches a specified condition. Returns the second value if the condition is true, otherwise returns the third value.\n\nfilter_objects_by_color_and_material :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_if (clevr_eq_material (clevr_query_material $1) clevr_metal) clevr_red (clevr_query_color $1)) $3) (clevr_add $1 $0) $0))))))\ndescription: Filters a list of objects by both color and material, returning objects that match both criteria.\n\nfilter_objects_by_material :: tclevrmaterial -> list(tclevrobject) -> list(tclevrobject)\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_material (clevr_query_material $1) $3) (clevr_add $1 $0) $0))))))\ndescription: Filters a list of objects by the specified material, returning objects that match the material.\n\ndetermine_shape_based_on_material_count :: list(tclevrobject) -> tclevrshape\n(lambda (clevr_if (clevr_eq_material (clevr_if (clevr_gt? (clevr_count $0) 7) (clevr_query_material (clevr_car $0)) clevr_rubber) clevr_metal) clevr_sphere clevr_cylinder))\ndescription: Determines the shape of an object based on the material count of the objects in the provided list. If the material count is greater than 7, it returns 'sphere' if the material is 'metal', otherwise 'cylinder'.\n\n",
+        "role": "system"
+      },
+      {
+        "content": "Here are some example programs:",
+        "role": "user"
+      },
+      {
+        "content": "-- find the cyan thing",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (find_objects_by_color clevr_cyan $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- how many cylinder s are brown thing s or small rubber thing s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (count_objects_related_to_object_by_relation $0 clevr_front) (clevr_count (filter_objects_by_material_and_shape clevr_metal clevr_cube $0)) 2))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what number of sphere s are small cyan metal thing s or small rubber thing s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_sphere) 5 1))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- how many thing s are red thing s or large green thing s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (count_objects_related_to_object_by_relation $0 clevr_right) 4 2))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if all of the small red thing s became large how many small thing s would there be",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_count (filter_objects_by_small_size (clevr_difference $0 (filter_objects_by_small_size (find_objects_by_color clevr_red $0))))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- find the cylinder s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape $1) clevr_cylinder) (clevr_add $1 $0) $0)))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- the large cube is what color",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (clevr_eq_shape (determine_shape_based_on_material_count $0) clevr_cylinder) (clevr_query_color (clevr_car $0)) clevr_purple))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- the brown metal thing has what size",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_query_size (clevr_car (find_objects_by_color clevr_brown $0))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- there is a small purple rubber thing what number of rubber cylinder s are right it",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (clevr_lt? 0 (count_objects_in_front $0)) 0 2))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what color is the metal sphere",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_query_color (clevr_car (filter_objects_by_material_and_shape clevr_metal clevr_sphere $0))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- how many yellow objects are rubber cylinder s or rubber thing s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (count_objects_related_to_object_by_relation $0 clevr_left) 0 (clevr_if (count_objects_related_to_object_by_relation $0 clevr_behind) 1 2)))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- find the gray sphere",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_if (clevr_eq_color (clevr_query_color $1) clevr_gray) (clevr_query_shape $1) clevr_cube) clevr_sphere) (clevr_add $1 $0) $0)))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what is the shape of the small purple thing",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_query_shape (clevr_car (filter_objects_by_small_size (find_objects_by_color clevr_purple $0)))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- there is a cube front the gray rubber thing how big is it",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (count_objects_related_to_object_by_relation $0 clevr_front) (clevr_query_size (find_object_behind_related_objects clevr_behind $0)) clevr_small))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- find the blue thing",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (find_objects_by_color clevr_blue $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- find the large metal sphere",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (filter_objects_by_material_and_shape clevr_metal clevr_sphere (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size clevr_large (clevr_query_size $1)) (clevr_add $1 $0) $0))))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what material is the purple cylinder",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (clevr_gt? (clevr_count $0) 9) clevr_metal clevr_rubber))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- how many thing s are either small thing s or cylinder s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (count_objects_related_to_object_by_relation $0 clevr_behind) (clevr_if (count_objects_related_to_object_by_relation $0 clevr_front) 8 3) (determine_shape_based_on_condition 6 3 $0)))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what number of gray rubber cube s are there",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_count (filter_objects_by_color_and_material clevr_gray $0)))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- is the number of large rubber cube s less than the number of large green rubber thing s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_eq_color (clevr_query_color (clevr_car $0)) clevr_green))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if you removed the small green thing s how many thing s would be left",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_count (clevr_difference $0 (filter_objects_by_small_size (find_objects_by_color clevr_green $0)))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- find the gray thing s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (find_objects_by_color clevr_gray $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- find the green thing",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (find_objects_by_color clevr_green $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what is the material of the sphere right the small sphere",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (clevr_eq_size (clevr_query_size (clevr_car $0)) (determine_shape_based_on_condition clevr_large clevr_small $0)) clevr_metal clevr_rubber))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what is the material of the cylinder that is left the small cube",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (determine_shape_based_on_condition clevr_rubber (clevr_query_material (find_object_behind_related_objects clevr_front $0)) $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- how many thing s are right the large cylinder",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (clevr_eq_color (clevr_query_color (find_object_behind_related_objects clevr_front $0)) clevr_yellow) 0 (determine_shape_based_on_condition 4 2 $0)))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what is the shape of the purple thing",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_query_shape (clevr_car (find_objects_by_color clevr_purple $0))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what is the purple thing made of",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_query_material (clevr_car (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) clevr_purple) (clevr_map (lambda $2) $2) $0)))))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- what number of yellow objects are large metal thing s or large rubber thing s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_if (clevr_eq_size clevr_large (clevr_query_size (find_object_behind_related_objects clevr_behind $0))) 0 1))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- is the number of cyan rubber thing s less than the number of large cylinder s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (clevr_eq_material (clevr_if (clevr_lt? 9 (clevr_count $0)) clevr_metal clevr_rubber) clevr_rubber))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- how many metal objects are large sphere s or large red thing s",
+        "role": "user"
+      }
+    ],
+    "n": 4,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": "\n",
+    "temperature": 0.9,
+    "top_p": null
+  },
+  "request_hash": "afb4a34e16700675bd86dd7d71e9cb50d831349b7e2851d6e8e4ddab4f86c973",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (clevr_count (filter_objects_by_material_and_shape clevr_metal clevr_sphere (clevr_union (find_objects_by_color clevr_red $0) (find_objects_by_color clevr_red $0)))))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (clevr_count (filter_objects_by_material_and_shape clevr_metal clevr_sphere (clevr_union (find_objects_by_color clevr_red $0) (find_objects_by_color clevr_red $0)))))"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (clevr_if (clevr_eq_color (clevr_query_color (clevr_car $0)) clevr_red) 5 1))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (clevr_if (clevr_eq_color (clevr_query_color (clevr_car $0)) clevr_red) 5 1))"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (clevr_count (filter_objects_by_material_and_shape clevr_metal clevr_sphere (find_objects_by_color clevr_red $0))))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (clevr_count (filter_objects_by_material_and_shape clevr_metal clevr_sphere (find_objects_by_color clevr_red $0))))"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (clevr_if (clevr_eq_color (clevr_query_color (clevr_car $0)) clevr_red) 1 (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_sphere) 2 0)))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (clevr_if (clevr_eq_color (clevr_query_color (clevr_car $0)) clevr_red) 1 (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_sphere) 2 0)))"
+      }
+    ],
+    "created": 1778240874,
+    "id": "chatcmpl-DdDyMadyDTc2lCiMemcJ1w8vqxRZI",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 190,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 3605,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 3795
+    }
+  }
+}

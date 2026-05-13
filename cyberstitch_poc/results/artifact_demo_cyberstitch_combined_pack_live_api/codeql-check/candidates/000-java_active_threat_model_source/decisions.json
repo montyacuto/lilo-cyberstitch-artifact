@@ -1,0 +1,77 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_active_threat_model_source",
+        "kind": "codeql_helper",
+        "origin": "lilo-loop",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isActiveThreatModelSource",
+        "display_name": "remote_flow_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isActiveThreatModelSource(DataFlow::Node source) {\n  exists(ActiveThreatModelSource remote | source = remote)\n}",
+        "use_sites": [
+          {
+            "query": "official-cwe078-command-flow.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isSource"
+          },
+          {
+            "query": "official-cwe078-environment-flow.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q1:predicate:CyberStitchOfficialEnvironmentConfig:isSource"
+          },
+          {
+            "query": "official-cwe089-query-flow.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q2:predicate:CyberStitchOfficialSqlConfig:isSource"
+          },
+          {
+            "query": "threat-cwe078-runtime-exec.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q8:predicate:ThreatRuntimeExecConfig:isSource"
+          },
+          {
+            "query": "threat-cwe089-statement-execute.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q9:predicate:ThreatSqlStatementConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "f80425e59f587c82254588247dbf4abc9abbed4fb404b3220cc28ae20a05f4f7",
+        "semantic_role": "Source",
+        "semantic_target": "ActiveThreatModelSource",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isSource",
+            "role": "Source",
+            "target": "ActiveThreatModelSource",
+            "num_exact_matches": 5,
+            "lilo_loop_reference": "candidate:java_active_threat_model_source",
+            "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+        "rationale": "This existing candidate should stay rewrite-enabled to preserve the complete Java source predicate semantics for ThreatModel.",
+        "llm_proposal": {
+          "schema": "rewrite_candidate_reference_v1",
+          "candidate_ref": "candidate:java_active_threat_model_source",
+          "display_name": "remote_flow_source",
+          "description": "Deterministically mined complete Java source predicate semantics.",
+          "rationale": "This existing candidate should stay rewrite-enabled to preserve the complete Java source predicate semantics for ThreatModel."
+        }
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

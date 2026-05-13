@@ -1,0 +1,59 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_barrier_node_command_injection_barrier",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isBarrierNodeCommandInjectionBarrier",
+        "display_name": "java_barrier_node_command_injection_barrier",
+        "description": "Deterministically mined complete Java barrier predicate semantics.",
+        "body": "predicate isBarrierNodeCommandInjectionBarrier(DataFlow::Node node) {\n  barrierNode(node, \"command-injection\")\n}",
+        "use_sites": [
+          {
+            "query": "remote-command-sink-node.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q3:predicate:RemoteCommandSinkNodeConfig:isBarrier"
+          },
+          {
+            "query": "source-node-remote-command-sink-node.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q17:predicate:SourceNodeRemoteCommandSinkNodeConfig:isBarrier"
+          },
+          {
+            "query": "threat-command-sink-node.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q24:predicate:ThreatCommandSinkNodeConfig:isBarrier"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "670585db28d2fc6c52c65d929a950ed3d090b04e3fe5be550f330a757ae699a0",
+        "semantic_role": "Barrier",
+        "semantic_target": "barrierNode:command-injection",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q3:predicate:RemoteCommandSinkNodeConfig:isBarrier",
+            "role": "Barrier",
+            "target": "barrierNode:command-injection",
+            "num_exact_matches": 3
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

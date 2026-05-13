@@ -1,0 +1,74 @@
+{
+  "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/rewritten.sarif",
+  "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+  "totals": {
+    "78": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 1,
+      "FP": 0
+    },
+    "89": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 1,
+      "FP": 0
+    }
+  },
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00017",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "results": [
+        {
+          "rule_id": "java/cyberstitch/owasp-cwe078-command",
+          "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+          "line": 63,
+          "test_id": "BenchmarkTest00017",
+          "cwe": 78,
+          "message": "Remote input reaches Runtime.exec."
+        }
+      ]
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00018",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "results": [
+        {
+          "rule_id": "java/cyberstitch/owasp-cwe089-sql",
+          "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+          "line": 59,
+          "test_id": "BenchmarkTest00018",
+          "cwe": 89,
+          "message": "Remote input reaches java.sql.Statement execution."
+        }
+      ]
+    },
+    {
+      "test_id": "BenchmarkTest00107",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    }
+  ]
+}

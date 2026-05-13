@@ -1,0 +1,77 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_sink_node_sql_injection_sink",
+        "kind": "codeql_helper",
+        "origin": "lilo-loop",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSinkNodeSqlInjectionSink",
+        "display_name": "remote_flow_source",
+        "description": "Existing sink predicate for SQL injection sinks.",
+        "body": "predicate isSinkNodeSqlInjectionSink(DataFlow::Node sink) {\n  sinkNode(sink, \"sql-injection\")\n}",
+        "use_sites": [
+          {
+            "query": "remote-cwe089-sql-sinkmodel.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q8:predicate:RemoteSqlSinkModelConfig:isSink"
+          },
+          {
+            "query": "remote-cwe089-sql-sinknode.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q9:predicate:RemoteSqlSinkNodeConfig:isSink"
+          },
+          {
+            "query": "source-database-cwe089-sql-sinknode.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q11:predicate:SourceDatabaseSqlSinkNodeConfig:isSink"
+          },
+          {
+            "query": "source-remote-cwe089-sql-sinknode.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q17:predicate:SourceRemoteSqlSinkNodeConfig:isSink"
+          },
+          {
+            "query": "threat-cwe089-sql-sinknode.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q20:predicate:ThreatSqlSinkNodeConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "f683376e9702ec33bb3cbb93a5b620beab74dea43d45143be7abdd36df07b485",
+        "semantic_role": "Sink",
+        "semantic_target": "sinkNode:sql-injection",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q8:predicate:RemoteSqlSinkModelConfig:isSink",
+            "role": "Sink",
+            "target": "sinkNode:sql-injection",
+            "num_exact_matches": 5,
+            "lilo_loop_reference": "candidate:java_sink_node_sql_injection_sink",
+            "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+        "rationale": "Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries.",
+        "llm_proposal": {
+          "schema": "rewrite_candidate_reference_v1",
+          "candidate_ref": "candidate:java_sink_node_sql_injection_sink",
+          "display_name": "remote_flow_source",
+          "description": "Existing sink predicate for SQL injection sinks.",
+          "rationale": "Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries."
+        }
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

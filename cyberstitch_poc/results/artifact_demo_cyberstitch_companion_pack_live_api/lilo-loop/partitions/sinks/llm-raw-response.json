@@ -1,0 +1,40 @@
+{
+  "response": {
+    "id": "chatcmpl-DeiAjZFClOdznyHOgvWaVI86WYrVi",
+    "object": "chat.completion",
+    "created": 1778595289,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink predicate semantics for SQL injection sinks.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing sink predicate for SQL injection sinks.\",\n      \"rationale\": \"Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Provide additional query-synthesis guidance for ModeledSinkType concepts related to SQL injection sinks.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for ModeledSinkType concepts in the context of SQL injection sinks.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink predicate semantics for SQL injection sinks.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing sink predicate for SQL injection sinks.\",\n      \"rationale\": \"Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Provide additional query-synthesis guidance for ModeledSinkType concepts related to SQL injection sinks.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for ModeledSinkType concepts in the context of SQL injection sinks.\"\n    }\n  ]\n}"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 9857,
+      "completion_tokens": 261,
+      "total_tokens": 10118,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": null
+  },
+  "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink predicate semantics for SQL injection sinks.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_sink_node_sql_injection_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing sink predicate for SQL injection sinks.\",\n      \"rationale\": \"Maintaining the rewrite eligibility of this candidate ensures consistency and reuse in future CodeQL queries.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Provide additional query-synthesis guidance for ModeledSinkType concepts related to SQL injection sinks.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for ModeledSinkType concepts in the context of SQL injection sinks.\"\n    }\n  ]\n}"
+}

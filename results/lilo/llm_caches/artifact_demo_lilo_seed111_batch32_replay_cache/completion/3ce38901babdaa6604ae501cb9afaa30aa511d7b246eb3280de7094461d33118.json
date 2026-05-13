@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T11:30:56Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nfind_objects_by_color :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $3) (clevr_add $1 $0) $0))))))\ndescription: Returns a list of objects that have the specified color.\n\ncount_objects_related_to_object_by_relation :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\ndescription: Counts the number of objects related to the first object by the specified relation and returns true if the count is greater than 2.\n\nfilter_objects_by_small_size :: list(tclevrobject) -> list(tclevrobject)\n\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size (clevr_query_size $1) clevr_small) (clevr_add $1 $0) $0)))))\ndescription: Filters a list of objects to only include those that have a small size.\n\nfilter_objects_by_material_and_shape :: tclevrmaterial -> tclevrshape -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape $1) $3) (clevr_if (clevr_eq_material (clevr_query_material $1) $4) (clevr_add $1 $0) $0) $0)))))))\ndescription: Filters a list of objects by both material and shape, returning objects that match both criteria.\n\nfind_object_behind_related_objects :: tclevrrelation -> list(tclevrobject) -> tclevrobject\n\n(lambda (lambda (clevr_car (clevr_fold $0 $0 (lambda (lambda (clevr_difference $0 (clevr_relate $1 $3 $0))))))))\ndescription: Finds an object that is behind a group of related objects based on a specified relation.\n\nfn_59 :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\n\nfn_60 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\n\nfn_61 :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_if (clevr_eq_material (clevr_query_material $1) clevr_metal) clevr_red (clevr_query_color $1)) $3) (clevr_add $1 $0) $0))))))\n\nfn_62 :: tclevrmaterial -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_material (clevr_query_material $1) $3) (clevr_add $1 $0) $0))))))\n\nfn_63 :: list(tclevrobject) -> tclevrshape\n\n(lambda (clevr_if (clevr_eq_material (clevr_if (clevr_gt? (clevr_count $0) 7) (clevr_query_material (clevr_car $0)) clevr_rubber) clevr_metal) clevr_sphere clevr_cylinder))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_59 :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\n\nHere are some examples of its usage:\n\n-- there is a green thing what number of thing s are front it\n(lambda (clevr_if (count_objects_related_to_object_by_relation $0 clevr_left) 3 (fn_59 $0)))\n\n-- how many metal objects are either green thing s or large thing s\n(lambda (clevr_if (count_objects_related_to_object_by_relation $0 clevr_left) 0 (clevr_if (clevr_gt? (fn_59 $0) 0) 3 2)))\n\n-- there is a small purple rubber thing what number of rubber cylinder s are right it\n(lambda (clevr_if (clevr_gt? (fn_59 $0) 0) 0 2))\n\n-- how many thing s are right the large cylinder\n(lambda (clevr_if (count_objects_related_to_object_by_relation $0 clevr_behind) (clevr_if (count_objects_related_to_object_by_relation $0 clevr_front) 4 2) (fn_59 $0)))\n\n-- how many purple thing s are rubber thing s or large thing s\n(lambda (fn_59 $0))\n\n-- how many large thing s are behind the large metal thing\n(lambda (clevr_if (clevr_eq_size (clevr_query_size (find_object_behind_related_objects clevr_behind $0)) (clevr_query_size (clevr_car $0))) (clevr_if (count_objects_related_to_object_by_relation $0 clevr_front) 3 (fn_59 $0)) 0))\n\n-- how many red objects are either large metal thing s or small rubber cylinder s\n(lambda (fn_59 (clevr_difference $0 (clevr_relate (clevr_car $0) (clevr_if (count_objects_related_to_object_by_relation $0 clevr_front) clevr_left clevr_right) $0))))\n\nPlease write a human-readable name and description for `fn_59` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "3ce38901babdaa6604ae501cb9afaa30aa511d7b246eb3280de7094461d33118",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"count_objects_in_front\",\n    \"description\": \"Counts the number of objects that are in front of the first object in the provided list.\"\n}"
+      }
+    ],
+    "created": 1778239855,
+    "id": "chatcmpl-DdDhvvH1G2xIE8dgJORCw4oyRsC7d",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 235,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1481,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1716
+    }
+  }
+}

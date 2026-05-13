@@ -1,0 +1,202 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-mongo-parse.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Threat-model source reaches Mongo BasicDBObject.parse",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/bounded/threat-sql-mongo-parse",
+    "tags": "security external/cwe/cwe-089"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.dataflow.ExternalFlow",
+    "semmle.code.java.security.CommandLineQuery",
+    "semmle.code.java.security.ExternalProcess",
+    "semmle.code.java.security.QueryInjection",
+    "semmle.code.java.security.SqlInjectionQuery",
+    "semmle.code.java.security.Sanitizers",
+    "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "ThreatSqlMongoParseConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ActiveThreatModelSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "5a7bb5986b56dd3561cf6a43ffdbaaaf4aa34b3bf24cb01239885038d3ca68ca"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "MethodCall",
+                "name": "call"
+              }
+            ],
+            "body": {
+              "kind": "and",
+              "terms": [
+                {
+                  "kind": "qualified_name_check",
+                  "receiver": {
+                    "kind": "method_call",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "call"
+                    },
+                    "method": "getMethod",
+                    "args": []
+                  },
+                  "name_parts": [
+                    "com.mongodb",
+                    "BasicDBObject",
+                    "parse"
+                  ]
+                },
+                {
+                  "kind": "eq",
+                  "left": {
+                    "kind": "method_call",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "sink"
+                    },
+                    "method": "asExpr",
+                    "args": []
+                  },
+                  "right": {
+                    "kind": "argument_selection",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "call"
+                    },
+                    "index": 0
+                  }
+                }
+              ]
+            }
+          },
+          "source_hash": "09eaf9082532b6f9e4f14c9e8339d941508632e3a9cb3e1e67af7efecbbf3e56"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "SimpleTypeSanitizer",
+                "name": "sanitizer"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "node"
+              },
+              "right": {
+                "kind": "var",
+                "name": "sanitizer"
+              }
+            }
+          },
+          "source_hash": "71f93c0e7283385785659bd5a148ca32ec0f0a28fcecc3fed977e64f8aa1b788"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "ThreatSqlMongoParseFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "ThreatSqlMongoParseConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "ThreatSqlMongoParseFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "ThreatSqlMongoParseFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "ThreatSqlMongoParseFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "ActiveThreatModelSource source reaches com.mongodb.BasicDBObject.parse sink."
+    },
+    "message": "ActiveThreatModelSource source reaches com.mongodb.BasicDBObject.parse sink."
+  },
+  "provenance_hash": "52d9796d822251fa4e9c01579c7c2fd35f8012defc69206c897f0302373100a1",
+  "version": "sqir-v2"
+}

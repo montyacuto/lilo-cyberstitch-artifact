@@ -1,0 +1,117 @@
+{
+  "name": "official-cwe089",
+  "spec": "codeql/java-queries:Security/CWE/CWE-089",
+  "cwe": 89,
+  "tier": "official",
+  "experimental": false,
+  "resolved": {
+    "ok": true,
+    "spec": "codeql/java-queries:Security/CWE/CWE-089",
+    "queries": [
+      "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql",
+      "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql"
+    ],
+    "stdout": "[\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql\",\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql\"\n]\n",
+    "stderr": "Recording pack reference codeql/java-queries at <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1.\n",
+    "command": [
+      "<original-workspace>/codeql/codeql",
+      "resolve",
+      "queries",
+      "--format=json",
+      "--",
+      "codeql/java-queries:Security/CWE/CWE-089"
+    ]
+  },
+  "compile": {
+    "ok": true,
+    "spec": "codeql/java-queries:Security/CWE/CWE-089",
+    "queries": [
+      {
+        "query": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql",
+        "relativeName": "codeql/java-queries/Security/CWE/CWE-089/SqlConcatenated.ql",
+        "success": true,
+        "messages": []
+      },
+      {
+        "query": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql",
+        "relativeName": "codeql/java-queries/Security/CWE/CWE-089/SqlTainted.ql",
+        "success": true,
+        "messages": []
+      }
+    ],
+    "stdout": "[{\"query\":\"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql\"\n ,\"relativeName\":\"codeql/java-queries/Security/CWE/CWE-089/SqlConcatenated.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql\"\n ,\"relativeName\":\"codeql/java-queries/Security/CWE/CWE-089/SqlTainted.ql\"\n ,\"success\":true,\"messages\":[]}\n]\n",
+    "stderr": "Compiling query plan for <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql.\nDone [1/2] <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql.\nCompiling query plan for <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql.\nDone [2/2] <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql.\n",
+    "command": [
+      "<original-workspace>/codeql/codeql",
+      "query",
+      "compile",
+      "--check-only",
+      "--keep-going",
+      "--format=json",
+      "--common-caches=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe089/codeql-cache/common",
+      "--compilation-cache=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe089/codeql-cache/compile",
+      "--",
+      "codeql/java-queries:Security/CWE/CWE-089"
+    ]
+  },
+  "analysis": {
+    "ok": true,
+    "skipped": false,
+    "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe089/results.sarif",
+    "stdout": "",
+    "stderr": "Running queries.\nResolving data extensions.\nFinished resolving data extensions.\nLoading data extensions.\nFinished loading data extensions.\n[1/2] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.qlx.\n[2/2] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.qlx.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-089/SqlTainted.ql.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-089/SqlConcatenated.ql.\n[1/2 eval 2.1s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-089/SqlConcatenated.bqrs.\n[2/2 eval 2.3s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-089/SqlTainted.bqrs.\nShutting down query evaluator.\nInterpreting results.\n",
+    "command": [
+      "<original-workspace>/codeql/codeql",
+      "database",
+      "analyze",
+      "--common-caches=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe089/codeql-cache/analysis-common",
+      "--compilation-cache=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe089/codeql-cache/analysis-compile",
+      "--rerun",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/codeql-dbs/java",
+      "codeql/java-queries:Security/CWE/CWE-089",
+      "--format=sarifv2.1.0",
+      "--output=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe089/results.sarif",
+      "--threads=0"
+    ]
+  },
+  "queries": [
+    {
+      "rule_id": "java/concatenated-sql-query",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql",
+      "relative_query_path": "Security/CWE/CWE-089/SqlConcatenated.ql",
+      "cwe": 89,
+      "kind": "problem",
+      "precision": "medium",
+      "name": "Query built by concatenation with a possibly-untrusted string",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-089",
+      "experimental": false,
+      "source_hash": "e0fcdd405c531e2234bd456db496e173cd12e7a5a884fa87bb37749a76d8cecc",
+      "compile_ok": true,
+      "alert_count": 120,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/sql-injection",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql",
+      "relative_query_path": "Security/CWE/CWE-089/SqlTainted.ql",
+      "cwe": 89,
+      "kind": "path-problem",
+      "precision": "high",
+      "name": "Query built from user-controlled sources",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-089",
+      "experimental": false,
+      "source_hash": "e9d3c9ac72b3d832a6065cf0589bb3aef7ff4a727e2ec9b906e4da10c1ffb8bb",
+      "compile_ok": true,
+      "alert_count": 359,
+      "selected": true,
+      "selection_policy": "all"
+    }
+  ],
+  "rule_alert_counts": {
+    "java/concatenated-sql-query": 120,
+    "java/sql-injection": 359
+  }
+}

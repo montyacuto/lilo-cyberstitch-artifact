@@ -1,0 +1,40 @@
+{
+  "response": {
+    "id": "chatcmpl-DeioQeg4SpYUILK4sEPYxoMOpwjLN",
+    "object": "chat.completion",
+    "created": 1778597750,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_method_call_sink_method_names_execute_query_486e5c11\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the semantic role of the candidate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_method_call_sink_method_names_execute_query_486e5c11\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.\",\n      \"rationale\": \"This candidate should stay rewrite-enabled to preserve its semantic role for future use.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_method_call_sink_method_names_execute_query_486e5c11\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the semantic role of the candidate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_method_call_sink_method_names_execute_query_486e5c11\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.\",\n      \"rationale\": \"This candidate should stay rewrite-enabled to preserve its semantic role for future use.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 7572,
+      "completion_tokens": 251,
+      "total_tokens": 7823,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": null
+  },
+  "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_method_call_sink_method_names_execute_query_486e5c11\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the semantic role of the candidate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_method_call_sink_method_names_execute_query_486e5c11\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.\",\n      \"rationale\": \"This candidate should stay rewrite-enabled to preserve its semantic role for future use.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+}

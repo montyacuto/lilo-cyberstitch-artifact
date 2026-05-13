@@ -1,0 +1,6 @@
+[
+  {
+    "schema": "raw_codeql_helper_v1",
+    "reason": "raw CodeQL/body fields are advisory only and are not used for deterministic rewrites"
+  }
+]

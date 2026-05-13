@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T02:12:17Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_vowels_and_characters :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\n\nvowel_replacement_rule :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: A rule that checks for vowels 'a', 'e', 'i', 'o', 'u' in a substring and provides replacement options based on specific combinations defined in the examples.\n\nreplace_starting_letters_with_specific_substring :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that takes a full string and two substrings, and replaces the starting letter of the full string with a specific substring based on the rules defined in the lambda expressions. It then flattens the result and concatenates the replacements according to the split '.' in the full string.\n\nreplace_ending_letters_with_substring :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that takes a full string and a substring, and replaces the ending letter of the full string with the specified substring based on the rules defined in the lambda expressions. It then flattens the result and appends the replacements according to the split '.' in the full string.\n\nreplace_letters_with_custom_substring :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that takes a full string and a function that defines a custom substring replacement rule. It then applies this rule to replace letters in the full string based on the split '.' in the string.\n\nreplace_ending_letters_with_double_reversed_substring :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\ndescription: A function that takes a full string and two substrings, and replaces the ending letters of the full string with a double-reversed combination of the provided substrings based on the rules defined in the lambda expressions.\n\nreplace_consonants_with_custom_substring :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_vowels_and_characters $0 (regex_concat $1 $2) (regex_not vowel_replacement_rule)))))\ndescription: A function that takes a custom substring and replaces consonants in a full string with a concatenated version of the custom substring. Vowels and specific characters are not replaced based on the rules defined in the vowel_replacement_rule.\n\nadd_character_after_vowel :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (replace_letters_with_custom_substring $0 (lambda (regex_if (regex_match vowel_replacement_rule $0) (regex_concat $0 $2) $0)))))\ndescription: A function that takes a substring and a full string, and adds a specific character after each vowel in the full string based on the rules defined in the lambda expressions.\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_vowels_and_characters $0 (regex_concat $1 $2) $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nHere are some examples of its usage:\n\n-- if the word ends with any letter any letter add a after that\n(lambda (fn_50 $0 'a'))\n\n-- if the word ends with any letter add u after that\n(lambda (fn_50 $0 'u'))\n\n-- if the word ends with any letter add k after that\n(lambda (fn_50 $0 'k'))\n\n-- if the word ends with consonant replace that with a o\n(lambda (fn_50 (replace_ending_letters_with_substring $0 'a') 'o'))\n\n-- if the word ends with any letter add d after that\n(lambda (fn_50 $0 'd'))\n\n-- if the word ends with any letter add q after that\n(lambda (fn_50 $0 'q'))\n\nPlease write a human-readable name and description for `fn_50` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "9413188d189aa3d81ea74db4eb383e2817fa9f62433a63e86b9aef8466ce467f",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"append_substring_to_end\",\n    \"description\": \"A function that appends a specified substring to the end of a given full string, effectively adding the substring after the last character of the string.\"\n}"
+      }
+    ],
+    "created": 1778206336,
+    "id": "chatcmpl-Dd4zI6bynZdK9HgVxYYR9Y5BPBKLi",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 295,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1194,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1489
+    }
+  }
+}

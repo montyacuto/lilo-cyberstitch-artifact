@@ -1,0 +1,1304 @@
+{
+  "task": "Run the LILO loop over CyberSTITCH CodeQL semantic abstraction objects.",
+  "goal": "Propose names, documentation, groupings, and provenance-backed rewrite references that preserve CodeQL semantics. Do not write executable CodeQL.",
+  "constraints": [
+    "Return one JSON object only.",
+    "Do not return Markdown, headings, prose, bullet lists, or fenced code blocks.",
+    "The JSON object must contain a top-level proposals array.",
+    "Every proposal must use one of the allowed schemas.",
+    "Use only target_id, target_ids, candidate_ref, or concept ids present in this prompt.",
+    "Do not reference candidates or concepts from outside this prompt partition.",
+    "Do not write executable CodeQL, QL predicate bodies, imports, select clauses, or source code."
+  ],
+  "domain": "codeql-java-security",
+  "partition": {
+    "id": "sources-001",
+    "role_family": "sources",
+    "role_family_label": "Sources"
+  },
+  "summary": {
+    "programs": 27,
+    "semantic_nodes": 270,
+    "concepts": 52,
+    "library_items": 23,
+    "rewrite_eligible_items": 2,
+    "accepted_items": 2,
+    "accepted_for_lilo_items": 23,
+    "rejected_items": 90
+  },
+  "validation_policy": [
+    "cyberstitch candidate schema validation",
+    "SQIR/FCIR semantic validation",
+    "deterministic CodeQL rewrite",
+    "CodeQL syntax check",
+    "SARIF equivalence against baseline unless explicitly marked as a delta experiment"
+  ],
+  "raw_codeql_policy": "Raw QL, predicate bodies, or handwritten CodeQL snippets are advisory only and will be rejected for execution.",
+  "allowed_schemas": [
+    "autodoc_v1",
+    "candidate_grouping_v1",
+    "rewrite_candidate_reference_v1",
+    "query_synthesis_hint_v1",
+    "java_source_predicate_helper_v1",
+    "java_sink_predicate_helper_v1"
+  ],
+  "response_format": {
+    "proposals": [
+      {
+        "schema": "autodoc_v1",
+        "target_id": "candidate:java_active_threat_model_source",
+        "display_name": "remote_flow_source",
+        "description": "one sentence",
+        "rationale": "why this is semantically reusable"
+      },
+      {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_active_threat_model_source",
+        "display_name": "remote_flow_source",
+        "description": "one sentence",
+        "rationale": "why this existing candidate should stay rewrite-enabled"
+      },
+      {
+        "schema": "query_synthesis_hint_v1",
+        "target_ids": [
+          "concept:codeql_lib5:concept:0:ThreatModel"
+        ],
+        "hint": "future query-synthesis guidance; not executable in this milestone"
+      }
+    ]
+  },
+  "library_items": [
+    {
+      "id": "candidate:java_active_threat_model_source",
+      "name": "java_active_threat_model_source",
+      "schema": "java_source_predicate_helper_v1",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "Source",
+      "semantic_target": "ActiveThreatModelSource",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "accepted_for_lilo": true
+      },
+      "description": "Deterministically mined complete Java source predicate semantics.",
+      "use_site_count": 5,
+      "use_site_examples": [
+        {
+          "query": "official-cwe078-command-flow.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isSource"
+        },
+        {
+          "query": "official-cwe078-environment-flow.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q1:predicate:CyberStitchOfficialEnvironmentConfig:isSource"
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_remote_flow_source",
+      "name": "java_remote_flow_source",
+      "schema": "java_source_predicate_helper_v1",
+      "kind": "codeql_helper",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "Source",
+      "semantic_target": "RemoteFlowSource",
+      "rewrite_eligible": true,
+      "validation": {
+        "accepted": true,
+        "accepted_for_lilo": true
+      },
+      "description": "Deterministically mined complete Java source predicate semantics.",
+      "use_site_count": 5,
+      "use_site_examples": [
+        {
+          "query": "owasp-cwe078-command.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q3:predicate:OwaspCommandInjectionConfig:isSource"
+        },
+        {
+          "query": "owasp-cwe089-sql.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q4:predicate:OwaspSqlInjectionConfig:isSource"
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_threat_model_active_threat_model_source_3c0f2e2d",
+      "name": "java_threat_model_active_threat_model_source_3c0f2e2d",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "ThreatModel",
+      "semantic_target": "ActiveThreatModelSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 4,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "use_site_count": 5,
+      "use_site_examples": [
+        {
+          "query": "official-cwe078-command-flow.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q0:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "official-cwe078-environment-flow.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q1:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_threat_model_active_threat_model_source_473aa43e",
+      "name": "java_threat_model_active_threat_model_source_473aa43e",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "ThreatModel",
+      "semantic_target": "ActiveThreatModelSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 4,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "use_site_count": 3,
+      "use_site_examples": [
+        {
+          "query": "official-cwe089-query-flow.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q2:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-cwe089-statement-execute.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q9:concept:1:ThreatModel",
+          "concept_kind": "ThreatModel",
+          "target": "ActiveThreatModelSource",
+          "official_codeql": false
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_7bbaf778",
+      "name": "java_source_kind_remote_flow_source_7bbaf778",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 4,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.",
+      "use_site_count": 3,
+      "use_site_examples": [
+        {
+          "query": "owasp-cwe089-sql.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q4:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-cwe089-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q6:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_3dbd0ce5",
+      "name": "java_source_kind_remote_flow_source_3dbd0ce5",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 4,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.",
+      "use_site_count": 2,
+      "use_site_examples": [
+        {
+          "query": "owasp-cwe078-command.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q3:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        },
+        {
+          "query": "remote-cwe078-command-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q5:concept:1:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource",
+          "official_codeql": false
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_android_external_storage_source_edf149a9",
+      "name": "java_source_kind_android_external_storage_source_edf149a9",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "AndroidExternalStorageSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for AndroidExternalStorageSource.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "AndroidExternalStorageSource",
+          "semantic_node_id": "codeql_lib14:concept:10:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "AndroidExternalStorageSource",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_android_javascript_interface_method_parameter_01e51fdb",
+      "name": "java_source_kind_android_javascript_interface_method_parameter_01e51fdb",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "AndroidJavascriptInterfaceMethodParameter",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for AndroidJavascriptInterfaceMethodParameter.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "AndroidJavascriptInterfaceMethodParameter",
+          "semantic_node_id": "codeql_lib14:concept:15:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "AndroidJavascriptInterfaceMethodParameter",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_exported_android_content_provider_input_1c741880",
+      "name": "java_source_kind_exported_android_content_provider_input_1c741880",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "ExportedAndroidContentProviderInput",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for ExportedAndroidContentProviderInput.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "ExportedAndroidContentProviderInput",
+          "semantic_node_id": "codeql_lib14:concept:13:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "ExportedAndroidContentProviderInput",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_exported_android_intent_input_5afd578a",
+      "name": "java_source_kind_exported_android_intent_input_5afd578a",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "ExportedAndroidIntentInput",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for ExportedAndroidIntentInput.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "ExportedAndroidIntentInput",
+          "semantic_node_id": "codeql_lib14:concept:12:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "ExportedAndroidIntentInput",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_external_remote_flow_source_c97357e4",
+      "name": "java_source_kind_external_remote_flow_source_c97357e4",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "ExternalRemoteFlowSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for ExternalRemoteFlowSource.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "ExternalRemoteFlowSource",
+          "semantic_node_id": "codeql_lib14:concept:0:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "ExternalRemoteFlowSource",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_guice_request_parameter_source_d5e556b9",
+      "name": "java_source_kind_guice_request_parameter_source_d5e556b9",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "GuiceRequestParameterSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for GuiceRequestParameterSource.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "GuiceRequestParameterSource",
+          "semantic_node_id": "codeql_lib14:concept:7:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "GuiceRequestParameterSource",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_jax_rs_method_parameter_source_de780bd2",
+      "name": "java_source_kind_jax_rs_method_parameter_source_de780bd2",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "JaxRsMethodParameterSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for JaxRsMethodParameterSource.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "JaxRsMethodParameterSource",
+          "semantic_node_id": "codeql_lib14:concept:3:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "JaxRsMethodParameterSource",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_jax_ws_method_parameter_source_4c05ab0a",
+      "name": "java_source_kind_jax_ws_method_parameter_source_4c05ab0a",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "JaxWsMethodParameterSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for JaxWsMethodParameterSource.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "JaxWsMethodParameterSource",
+          "semantic_node_id": "codeql_lib14:concept:2:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "JaxWsMethodParameterSource",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_local_user_input_66e9bccd",
+      "name": "java_source_kind_local_user_input_66e9bccd",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "LocalUserInput",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for LocalUserInput.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "CommandLineQuery.qll",
+          "predicate": "isSource",
+          "semantic_node_id": "codeql_lib5:concept:4:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "LocalUserInput",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_message_body_reader_parameter_source_810ff54e",
+      "name": "java_source_kind_message_body_reader_parameter_source_810ff54e",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "MessageBodyReaderParameterSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for MessageBodyReaderParameterSource.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "MessageBodyReaderParameterSource",
+          "semantic_node_id": "codeql_lib14:concept:4:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "MessageBodyReaderParameterSource",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_on_activity_result_intent_source_6be87d9c",
+      "name": "java_source_kind_on_activity_result_intent_source_6be87d9c",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "OnActivityResultIntentSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for OnActivityResultIntentSource.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "OnActivityResultIntentSource",
+          "semantic_node_id": "codeql_lib14:concept:14:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "OnActivityResultIntentSource",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_play_parameter_source_ea212a10",
+      "name": "java_source_kind_play_parameter_source_ea212a10",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "PlayParameterSource",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for PlayParameterSource.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "PlayParameterSource",
+          "semantic_node_id": "codeql_lib14:concept:5:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "PlayParameterSource",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228",
+      "name": "java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Android external storage",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Android external storage.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "RemoteFlowSource.getSourceType:Android external storage",
+          "semantic_node_id": "codeql_lib14:concept:21:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource.getSourceType:Android external storage",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24",
+      "name": "java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+          "semantic_node_id": "codeql_lib14:concept:22:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f",
+      "name": "java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Exported Android content provider source.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+          "semantic_node_id": "codeql_lib14:concept:23:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928",
+      "name": "java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:Exported Android intent source",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Exported Android intent source.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "RemoteFlowSource.getSourceType:Exported Android intent source",
+          "semantic_node_id": "codeql_lib14:concept:24:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource.getSourceType:Exported Android intent source",
+          "official_codeql": true
+        }
+      ]
+    },
+    {
+      "id": "candidate:java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b",
+      "name": "java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b",
+      "schema": "java_remote_source_kind_template_v1",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "language": "java",
+      "semantic_role": "SourceKind",
+      "semantic_target": "RemoteFlowSource.getSourceType:external",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "accepted_for_lilo": true,
+        "reason_count": 5,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible"
+        ]
+      },
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:external.",
+      "use_site_count": 1,
+      "use_site_examples": [
+        {
+          "query": "FlowSources.qll",
+          "predicate": "RemoteFlowSource.getSourceType:external",
+          "semantic_node_id": "codeql_lib14:concept:35:SourceKind",
+          "concept_kind": "SourceKind",
+          "target": "RemoteFlowSource.getSourceType:external",
+          "official_codeql": true
+        }
+      ]
+    }
+  ],
+  "semantic_concepts": [
+    {
+      "id": "concept:codeql_lib5:concept:0:ThreatModel",
+      "query": "CommandLineQuery.qll",
+      "cwe": 78,
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib5:concept:4:SourceKind",
+      "query": "CommandLineQuery.qll",
+      "cwe": 78,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "LocalUserInput",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:10:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "AndroidExternalStorageSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:15:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "AndroidJavascriptInterfaceMethodParameter",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:13:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ExportedAndroidContentProviderInput",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:12:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ExportedAndroidIntentInput",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:0:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ExternalRemoteFlowSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:7:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "GuiceRequestParameterSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:3:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "JaxRsMethodParameterSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:2:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "JaxWsMethodParameterSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:4:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "MessageBodyReaderParameterSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:14:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "OnActivityResultIntentSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:5:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "PlayParameterSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:21:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Android external storage",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:22:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Android onActivityResult incoming Intent",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:23:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Exported Android content provider source",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:24:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Exported Android intent source",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:25:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Guice request parameter",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:26:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Jax Rs method parameter",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:27:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Jax WS method parameter",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:28:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:MessageBodyReader parameter",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:29:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Parameter of method with JavascriptInterface annotation",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:30:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Play Query Parameters",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:31:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:RMI method parameter",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:32:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Spring servlet input parameter",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:33:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Struts2 ActionSupport field",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:34:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:Thrift Iface parameter",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:35:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource.getSourceType:external",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:11:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteUserInput",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:1:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RmiMethodParameterSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:6:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "SpringServletInputParameterSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:8:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "Struts2ActionSupportClassFieldSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:9:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "ThriftIfaceParameterSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:20:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:contentprovider",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:19:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:database",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:17:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:environment",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:18:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:file",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib14:concept:16:SourceKind",
+      "query": "FlowSources.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "sourceNode:remote",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib12:concept:0:SourceKind",
+      "query": "SqlConcatenatedQuery.qll",
+      "cwe": null,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "UncontrolledStringBuilderSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib11:concept:0:ThreatModel",
+      "query": "SqlInjectionQuery.qll",
+      "cwe": 89,
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:codeql_lib7:concept:1:ThreatModel",
+      "query": "TaintedEnvironmentVariableQuery.qll",
+      "cwe": 78,
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "official_codeql": true
+    },
+    {
+      "id": "concept:q0:concept:1:ThreatModel",
+      "query": "official-cwe078-command-flow.ql",
+      "cwe": 78,
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q1:concept:1:ThreatModel",
+      "query": "official-cwe078-environment-flow.ql",
+      "cwe": 78,
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q2:concept:1:ThreatModel",
+      "query": "official-cwe089-query-flow.ql",
+      "cwe": 89,
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q3:concept:1:SourceKind",
+      "query": "owasp-cwe078-command.ql",
+      "cwe": 78,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q4:concept:1:SourceKind",
+      "query": "owasp-cwe089-sql.ql",
+      "cwe": 89,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q5:concept:1:SourceKind",
+      "query": "remote-cwe078-command-model.ql",
+      "cwe": 78,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q6:concept:1:SourceKind",
+      "query": "remote-cwe089-query-model.ql",
+      "cwe": 89,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q7:concept:1:SourceKind",
+      "query": "remote-cwe089-sql-sinkmodel.ql",
+      "cwe": 89,
+      "concept_kind": "SourceKind",
+      "semantic_role": "Source",
+      "target": "RemoteFlowSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q8:concept:1:ThreatModel",
+      "query": "threat-cwe078-runtime-exec.ql",
+      "cwe": 78,
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:q9:concept:1:ThreatModel",
+      "query": "threat-cwe089-statement-execute.ql",
+      "cwe": 89,
+      "concept_kind": "ThreatModel",
+      "semantic_role": "Source",
+      "target": "ActiveThreatModelSource",
+      "official_codeql": false
+    },
+    {
+      "id": "concept:codeql_lib12:concept:3:FlowConfigTemplate",
+      "query": "SqlConcatenatedQuery.qll",
+      "cwe": null,
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "official_codeql": true
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_node_environment_source",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSourceNodeEnvironmentSource",
+        "display_name": "java_source_node_environment_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isSourceNodeEnvironmentSource(DataFlow::Node source) {\n  sourceNode(source, \"environment\")\n}",
+        "use_sites": [
+          {
+            "query": "source-node-environment-command-modeled.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q14:predicate:SourceNodeEnvironmentCommandModeledConfig:isSource"
+          },
+          {
+            "query": "source-node-environment-env-sink.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q15:predicate:SourceNodeEnvironmentEnvSinkConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "2f0d793e77adbd3ffaa33754055a9f1eb3f438da73957751bcd89334a21d9155",
+        "semantic_role": "Source",
+        "semantic_target": "sourceNode:environment",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q14:predicate:SourceNodeEnvironmentCommandModeledConfig:isSource",
+            "role": "Source",
+            "target": "sourceNode:environment",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

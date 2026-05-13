@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "spec": "codeql/java-queries:Security/CWE/CWE-089",
+  "queries": [
+    "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql",
+    "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql"
+  ],
+  "stdout": "[\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql\",\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql\"\n]\n",
+  "stderr": "Recording pack reference codeql/java-queries at <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1.\n",
+  "command": [
+    "<original-workspace>/codeql/codeql",
+    "resolve",
+    "queries",
+    "--format=json",
+    "--",
+    "codeql/java-queries:Security/CWE/CWE-089"
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "format": "cyberstitch-codeql-seed-discovery",
+  "version": 1,
+  "language": "java",
+  "codeql": "CodeQL command-line toolchain release 2.25.3.\nCopyright (C) 2019-2026 GitHub, Inc.\nUnpacked in: <original-workspace>/codeql\nAnalysis results depend critically on separately distributed query and\nextractor modules. To list modules that are visible to the toolchain,\nuse 'codeql resolve packs' and 'codeql resolve languages'.",
+  "java_queries_root": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1",
+  "database": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-dbs/java",
+  "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+  "include_experimental": false,
+  "selection_policy": "all",
+  "specs": [
+    {
+      "name": "official-cwe078",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "cwe": 78,
+      "tier": "official",
+      "experimental": false,
+      "resolved_queries": 4,
+      "compile_ok": true,
+      "analysis_ok": true,
+      "rule_alert_counts": {
+        "java/command-line-injection": 112,
+        "java/concatenated-command-line": 19,
+        "java/exec-tainted-environment": 59
+      }
+    },
+    {
+      "name": "official-cwe089",
+      "spec": "codeql/java-queries:Security/CWE/CWE-089",
+      "cwe": 89,
+      "tier": "official",
+      "experimental": false,
+      "resolved_queries": 2,
+      "compile_ok": true,
+      "analysis_ok": true,
+      "rule_alert_counts": {
+        "java/concatenated-sql-query": 120,
+        "java/sql-injection": 359
+      }
+    }
+  ],
+  "queries": [
+    {
+      "rule_id": "java/relative-path-command",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecRelative.ql",
+      "cwe": 78,
+      "kind": "problem",
+      "precision": "medium",
+      "name": "Executing a command with a relative path",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "211f380959a89497c46ea06f9fdd0c1d369d391cffce5d2057bd758609e8b389",
+      "compile_ok": true,
+      "alert_count": 0,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/command-line-injection",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecTainted.ql",
+      "cwe": 78,
+      "kind": "path-problem",
+      "precision": "high",
+      "name": "Uncontrolled command line",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "bf864db0fc65b41e18b07e251076fbb7805e8ce4c584bba955b3fbb4d7b5c2a0",
+      "compile_ok": true,
+      "alert_count": 112,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/exec-tainted-environment",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+      "cwe": 78,
+      "kind": "path-problem",
+      "precision": "medium",
+      "name": "Building a command with an injected environment variable",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "e485ce269c1d474a9e526a48da610f2d463a3617d757a2a8749c10a4ead5931d",
+      "compile_ok": true,
+      "alert_count": 59,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/concatenated-command-line",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecUnescaped.ql",
+      "cwe": 78,
+      "kind": "problem",
+      "precision": "medium",
+      "name": "Building a command line with string concatenation",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "55822bb97e1ca378b2761b8307c8b2a9a77c84e621e101cf1333e935df7ae1b2",
+      "compile_ok": true,
+      "alert_count": 19,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/concatenated-sql-query",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql",
+      "relative_query_path": "Security/CWE/CWE-089/SqlConcatenated.ql",
+      "cwe": 89,
+      "kind": "problem",
+      "precision": "medium",
+      "name": "Query built by concatenation with a possibly-untrusted string",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-089",
+      "experimental": false,
+      "source_hash": "e0fcdd405c531e2234bd456db496e173cd12e7a5a884fa87bb37749a76d8cecc",
+      "compile_ok": true,
+      "alert_count": 120,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/sql-injection",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql",
+      "relative_query_path": "Security/CWE/CWE-089/SqlTainted.ql",
+      "cwe": 89,
+      "kind": "path-problem",
+      "precision": "high",
+      "name": "Query built from user-controlled sources",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-089",
+      "experimental": false,
+      "source_hash": "e9d3c9ac72b3d832a6065cf0589bb3aef7ff4a727e2ec9b906e4da10c1ffb8bb",
+      "compile_ok": true,
+      "alert_count": 359,
+      "selected": true,
+      "selection_policy": "all"
+    }
+  ],
+  "selected_seeds": [
+    {
+      "rule_id": "java/relative-path-command",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecRelative.ql",
+      "cwe": 78,
+      "kind": "problem",
+      "precision": "medium",
+      "name": "Executing a command with a relative path",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "211f380959a89497c46ea06f9fdd0c1d369d391cffce5d2057bd758609e8b389",
+      "compile_ok": true,
+      "alert_count": 0,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/command-line-injection",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecTainted.ql",
+      "cwe": 78,
+      "kind": "path-problem",
+      "precision": "high",
+      "name": "Uncontrolled command line",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "bf864db0fc65b41e18b07e251076fbb7805e8ce4c584bba955b3fbb4d7b5c2a0",
+      "compile_ok": true,
+      "alert_count": 112,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/exec-tainted-environment",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+      "cwe": 78,
+      "kind": "path-problem",
+      "precision": "medium",
+      "name": "Building a command with an injected environment variable",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "e485ce269c1d474a9e526a48da610f2d463a3617d757a2a8749c10a4ead5931d",
+      "compile_ok": true,
+      "alert_count": 59,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/concatenated-command-line",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecUnescaped.ql",
+      "cwe": 78,
+      "kind": "problem",
+      "precision": "medium",
+      "name": "Building a command line with string concatenation",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "55822bb97e1ca378b2761b8307c8b2a9a77c84e621e101cf1333e935df7ae1b2",
+      "compile_ok": true,
+      "alert_count": 19,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/concatenated-sql-query",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql",
+      "relative_query_path": "Security/CWE/CWE-089/SqlConcatenated.ql",
+      "cwe": 89,
+      "kind": "problem",
+      "precision": "medium",
+      "name": "Query built by concatenation with a possibly-untrusted string",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-089",
+      "experimental": false,
+      "source_hash": "e0fcdd405c531e2234bd456db496e173cd12e7a5a884fa87bb37749a76d8cecc",
+      "compile_ok": true,
+      "alert_count": 120,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/sql-injection",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql",
+      "relative_query_path": "Security/CWE/CWE-089/SqlTainted.ql",
+      "cwe": 89,
+      "kind": "path-problem",
+      "precision": "high",
+      "name": "Query built from user-controlled sources",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-089",
+      "experimental": false,
+      "source_hash": "e9d3c9ac72b3d832a6065cf0589bb3aef7ff4a727e2ec9b906e4da10c1ffb8bb",
+      "compile_ok": true,
+      "alert_count": 359,
+      "selected": true,
+      "selection_policy": "all"
+    }
+  ],
+  "sarif": [
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/seed-discovery/official-cwe078/results.sarif",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/seed-discovery/official-cwe089/results.sarif"
+  ],
+  "score": {
+    "totals": {
+      "78": {
+        "TP": 1,
+        "FN": 0,
+        "TN": 0,
+        "FP": 1
+      },
+      "89": {
+        "TP": 1,
+        "FN": 0,
+        "TN": 0,
+        "FP": 1
+      }
+    },
+    "cases": [
+      {
+        "test_id": "BenchmarkTest00017",
+        "cwe": 78,
+        "expected_vulnerable": true,
+        "found": true,
+        "verdict": "TP",
+        "result_count": 1
+      },
+      {
+        "test_id": "BenchmarkTest00090",
+        "cwe": 78,
+        "expected_vulnerable": false,
+        "found": true,
+        "verdict": "FP",
+        "result_count": 1
+      },
+      {
+        "test_id": "BenchmarkTest00018",
+        "cwe": 89,
+        "expected_vulnerable": true,
+        "found": true,
+        "verdict": "TP",
+        "result_count": 1
+      },
+      {
+        "test_id": "BenchmarkTest00107",
+        "cwe": 89,
+        "expected_vulnerable": false,
+        "found": true,
+        "verdict": "FP",
+        "result_count": 1
+      }
+    ]
+  }
+}

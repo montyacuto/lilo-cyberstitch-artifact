@@ -1,0 +1,173 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute-update.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Remote input reaches executeUpdate argument sink",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/bounded/remote-sql-execute-update",
+    "tags": "security external/cwe/cwe-089"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.dataflow.ExternalFlow",
+    "semmle.code.java.security.CommandLineQuery",
+    "semmle.code.java.security.ExternalProcess",
+    "semmle.code.java.security.QueryInjection",
+    "semmle.code.java.security.SqlInjectionQuery",
+    "semmle.code.java.security.Sanitizers",
+    "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "RemoteSqlExecuteUpdateConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "RemoteFlowSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "77d5e6e4442609be97c0a6cfec158c7c77905df7e6d3359e203ff8b110762256"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "MethodCall",
+                "name": "call"
+              }
+            ],
+            "body": {
+              "kind": "and",
+              "terms": [
+                {
+                  "kind": "method_call",
+                  "receiver": {
+                    "kind": "method_call",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "call"
+                    },
+                    "method": "getMethod",
+                    "args": []
+                  },
+                  "method": "hasName",
+                  "args": [
+                    {
+                      "kind": "string",
+                      "value": "executeUpdate"
+                    }
+                  ]
+                },
+                {
+                  "kind": "eq",
+                  "left": {
+                    "kind": "method_call",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "sink"
+                    },
+                    "method": "asExpr",
+                    "args": []
+                  },
+                  "right": {
+                    "kind": "argument_selection",
+                    "receiver": {
+                      "kind": "var",
+                      "name": "call"
+                    },
+                    "index": 0
+                  }
+                }
+              ]
+            }
+          },
+          "source_hash": "bf7840dce31154907f0046c53012c204c516089ee190961481b049dc0e774239"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "RemoteSqlExecuteUpdateFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "RemoteSqlExecuteUpdateConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "RemoteSqlExecuteUpdateFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "RemoteSqlExecuteUpdateFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "RemoteSqlExecuteUpdateFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "RemoteFlowSource source reaches executeUpdate sink."
+    },
+    "message": "RemoteFlowSource source reaches executeUpdate sink."
+  },
+  "provenance_hash": "2221079529faf7e5c40c87e7b4bf68238b00ac83c040f1b2aa0f276bf4c19bfb",
+  "version": "sqir-v2"
+}

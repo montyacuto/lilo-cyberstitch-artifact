@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T18:22:36Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nmove_pen_forward_rotate_with_angle_and_length :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Moves the turtle's pen forward and rotates it by a specified angle and length within a for loop.\n\ncreate_snowflake_with_arms :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop 9 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $2) (logo_get_set_function_pen (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_divide_angle logo_unit_angle $4) (logo_for_loop $4 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_subtract_angles (logo_divide_angle logo_unit_angle $6) logo_zero_angle) $0))) $0))) $0)))) $2))))\ndescription: Generates a snowflake pattern with arms of a specified polygon shape and number of sides\n\ncreate_shape_pattern_with_rotation :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_rotate_with_angle_and_length (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0) $3 logo_unit_line))) $2))))\ndescription: Generates a pattern of shapes with specified rotation angles and lengths in a row\n\nmove_pen_forward_rotate_with_double_length :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_rotate_with_angle_and_length $0 $1 (logo_multiply_line logo_unit_line 2))))\ndescription: Moves the turtle's pen forward and rotates it by a specified angle and double the length\n\ncreate_semicircle_with_variable_length :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop logo_IFTY (lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line logo_epsilon_line $2) logo_epsilon_angle $0))) $1)))\ndescription: Creates a semicircle with a variable length based on the input integer\n\nfn_32 :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))) $1)))\n\nfn_33 :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_rotate_with_angle_and_length $0 4 (logo_multiply_line logo_unit_line $1)))) $1)))\n\nfn_34 :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_rotate_with_angle_and_length $0 $1 logo_unit_line)))\n\nfn_35 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 7 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 6) (logo_get_set_function_pen $2 $0)))) $1)))\n\nfn_36 :: turtle -> int -> turtle\n\n(lambda (lambda (fn_34 $0 (logo_lift_pen (lambda (create_shape_pattern_with_rotation $0 5 2)) (move_pen_forward_rotate_with_double_length 4 $1)))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_32 :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))) $1)))\n\nHere are some examples of its usage:\n\n-- a small semicircle connected by a big line to a medium semicircle\n(lambda (create_semicircle_with_variable_length (fn_32 (create_semicircle_with_variable_length $0 2) 5) 1))\n\n-- a medium triangle connected by a big line to a small square\n(lambda (move_pen_forward_rotate_with_double_length 3 (fn_32 (fn_34 4 $0) 5)))\n\n-- 4 short line s in a row\n(lambda (fn_32 $0 4))\n\n-- a small square connected by a big line to a small 9 gon\n(lambda (fn_34 4 (fn_32 (fn_34 9 $0) 5)))\n\n-- a medium semicircle connected by a big line to a medium triangle\n(lambda (create_semicircle_with_variable_length (fn_32 (move_pen_forward_rotate_with_double_length 3 $0) 5) 2))\n\n-- 6 short line s in a row\n(lambda (fn_32 $0 6))\n\n-- a small triangle connected by a big line to a medium triangle\n(lambda (fn_34 3 (fn_32 (move_pen_forward_rotate_with_double_length 3 $0) 5)))\n\n-- 3 short line s in a row\n(lambda (fn_32 $0 3))\n\n-- a small semicircle connected by a big line to a small 9 gon\n(lambda (create_semicircle_with_variable_length (fn_32 (fn_34 9 $0) 5) 1))\n\n-- a medium square connected by a big line to a small square\n(lambda (move_pen_forward_rotate_with_double_length 4 (fn_32 (fn_34 4 $0) 5)))\n\nPlease write a human-readable name and description for `fn_32` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "70b312a7d1f05cbf8dcc17a591ae75325fedc0d5b5ec1c0f57c91b8368983e35",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_32\",\n    \"readable_name\": \"create_pattern_with_repeated_lines\",\n    \"description\": \"Creates a pattern by repeating drawing lines with the turtle based on the specified integer input\"\n}"
+      }
+    ],
+    "created": 1778264554,
+    "id": "chatcmpl-DdK8IOeKAM2ZZNjzCN4fj59MLMSe7",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 240,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1222,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1462
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T06:18:19Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_or_add_characters :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that takes a full string and two substrings. It checks the full string for specific characters and either replaces them with new characters or adds new characters before or after them based on predefined rules.\n\nreplace_vowels_with_s :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: A function that checks for vowels ('a', 'e', 'i', 'o', 'u') in a substring and replaces them with the letter 's'.\n\nreplace_concat_with_cdr_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that takes a full string and two substrings. It concatenates the first two substrings and then splits the result by a delimiter '.'. It returns the flattened list starting from the second element after the split.\n\nreplace_end_of_string :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that takes a full string and a substring. It appends the substring to the end of the full string after splitting the full string by '.' and reversing the resulting list, excluding the last element.\n\nreplace_characters_based_on_split :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that takes a full string and a function that operates on substrings. It splits the full string by '.' and applies the given function to each substring, flattening the result.\n\nreplace_consonants_with_alternatives :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters $0 (regex_concat $1 $2) (regex_not replace_vowels_with_s)))))\ndescription: A function that takes three substrings. It checks for consonants in a full string and replaces them with alternative characters based on predefined rules.\n\nfn_48 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_50 :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (replace_characters_based_on_split $0 (lambda (regex_if (regex_match replace_vowels_with_s $0) (regex_concat $0 $2) $0)))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters $0 (regex_concat $1 $2) replace_vowels_with_s))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_48 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nHere are some examples of its usage:\n\n-- if the word ends with any letter consonant replace that with j\n(lambda (fn_48 $0 'j' empty_string))\n\n-- if the word ends with any letter any letter replace that with r q\n(lambda (fn_48 $0 'q' 'r'))\n\n-- if the word ends with any letter any letter replace that with b j\n(lambda (fn_48 $0 'j' 'b'))\n\n-- if the word ends with any letter any letter replace that with o u\n(lambda (fn_48 $0 'u' 'o'))\n\n-- if the word ends with any letter any letter replace that with j\n(lambda (fn_48 $0 'j' empty_string))\n\n-- if the word ends with any letter consonant replace that with d t\n(lambda (fn_48 $0 't' 'd'))\n\nPlease write a human-readable name and description for `fn_48` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "f468c135547cca0b7a7cb283b2b4760aaa1f4ce87f4bc5064140a2eb7001df67",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_48\",\n    \"readable_name\": \"replace_consonant_end_with_alternatives\",\n    \"description\": \"A function that takes a full string and two substrings. It concatenates the first two substrings and replaces the end of the full string, which ends with a consonant, with alternative characters based on predefined rules.\"\n}"
+      }
+    ],
+    "created": 1778221098,
+    "id": "chatcmpl-Dd8pOH9wy5eO2sm4L7rRndqnjSKjM",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 385,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1082,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1467
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-remote-cwe078-environment-sinknode.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Remote source node reaches environment injection sink",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/official-expanded/source-remote-cwe078-environment-sinknode",
+    "tags": "security external/cwe/cwe-078"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.ExternalFlow",
+    "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "SourceRemoteEnvironmentInjectionConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "sourceNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "source"
+              },
+              {
+                "kind": "string",
+                "value": "remote"
+              }
+            ]
+          },
+          "source_hash": "66b7d3bcac89a50e0d2ce44338e0e874b6a08b3ea9f9fd9fa050bf137b49fca5"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "sinkNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "sink"
+              },
+              {
+                "kind": "string",
+                "value": "environment-injection"
+              }
+            ]
+          },
+          "source_hash": "da1bc10008dcd591c8ad2a650dc6c8621d2aa605028562980b9521f8e19e6e0b"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ExecTaintedEnvironmentSanitizer",
+                "name": "sanitizer"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "node"
+              },
+              "right": {
+                "kind": "var",
+                "name": "sanitizer"
+              }
+            }
+          },
+          "source_hash": "67c6907251a9e22a94a5f278818591dba78cbb55c02bcd14daf9ac88f47b42d9"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "SourceRemoteEnvironmentInjectionFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "SourceRemoteEnvironmentInjectionConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "SourceRemoteEnvironmentInjectionFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "SourceRemoteEnvironmentInjectionFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "SourceRemoteEnvironmentInjectionFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "Remote source node reaches an environment-injection sink."
+    },
+    "message": "Remote source node reaches an environment-injection sink."
+  },
+  "provenance_hash": "d8efec7a00eeaaaccd207055635d32ec0e4bcab006a940cff639945f73f17a45",
+  "version": "sqir-v2"
+}

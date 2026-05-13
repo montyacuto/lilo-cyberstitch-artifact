@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T05:57:36Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_and_map :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that replaces specific characters in a string based on given conditions and maps the result using regex operations.\n\nvowel_replacement_checker :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') and returns true if it is.\n\nreplace_concat_with_cdr_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that replaces the concatenation of two substrings with the rest of the string after splitting by a delimiter.\n\nreplace_and_map_with_split :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that replaces characters in a string and maps the result using a specified split delimiter.\n\nreplace_end_with_specific_characters :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that replaces the end of a string with specific characters based on the given conditions.\n\nfn_47 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nfn_48 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_and_map $0 (regex_concat $1 $2) (regex_not vowel_replacement_checker)))))\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_50 :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (replace_and_map_with_split $0 (lambda (regex_if (regex_match vowel_replacement_checker $0) (regex_concat $0 $2) $0)))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_and_map $0 (regex_concat $1 $2) vowel_replacement_checker))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_47 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nHere are some examples of its usage:\n\n-- if the word ends with any letter any letter replace that with r q\n(lambda (fn_47 $0 'q' 'r'))\n\n-- if the word ends with any letter any letter replace that with j\n(lambda (fn_47 $0 'j' empty_string))\n\n-- if the word ends with any letter any letter replace that with o u\n(lambda (fn_47 $0 'u' 'o'))\n\n-- if the word ends with any letter consonant replace that with d t\n(lambda (fn_47 $0 't' 'd'))\n\n-- if the word ends with any letter any letter replace that with b j\n(lambda (fn_47 $0 'j' 'b'))\n\n-- if the word ends with any letter consonant replace that with j\n(lambda (fn_47 $0 'j' empty_string))\n\nPlease write a human-readable name and description for `fn_47` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "6512d6ee76114256288ab7ba459bbeadec7751318fa775dac528724454a8d6f3",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_concat_reverse_split_append\",\n    \"description\": \"A function that concatenates two substrings, reverses the result, splits it by an empty string, and appends it to the original string.\"\n}"
+      }
+    ],
+    "created": 1778219855,
+    "id": "chatcmpl-Dd8VLjJW9iJLmJ6BDTgUA1UNfBzLB",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 300,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 957,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1257
+    }
+  }
+}

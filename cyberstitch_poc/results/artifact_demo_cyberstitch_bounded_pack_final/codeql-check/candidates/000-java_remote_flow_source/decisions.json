@@ -1,0 +1,43 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "name": "java_remote_flow_source",
+        "kind": "codeql_helper",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isRemoteFlowSource",
+        "description": "Recognizes Java remote flow sources used by OWASP Benchmark servlet cases.",
+        "body": "predicate isRemoteFlowSource(DataFlow::Node source) {\n  exists(RemoteFlowSource remote | source = remote)\n}",
+        "use_sites": [
+          {
+            "query": "java/owasp-cwe078-command.ql",
+            "predicate": "isSource"
+          },
+          {
+            "query": "java/owasp-cwe089-sql.ql",
+            "predicate": "isSource"
+          }
+        ],
+        "candidate_version": "cyberstitch-candidate-v2",
+        "origin": "fixture",
+        "schema": "legacy_codeql_helper_v1",
+        "rewrite_eligible": true,
+        "semantic_hash": "65ae05ea3ffd1e8aa0923a7d539a5e99e4aaf1e5f0f30d29d32c916d00dc5604",
+        "semantic_role": "Source",
+        "semantic_target": "",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "source": "legacy-compatible candidate"
+          }
+        }
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

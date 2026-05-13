@@ -1,0 +1,129 @@
+{
+  "format": "cyberstitch-candidates-v2",
+  "source": "lilo-openai-compat",
+  "raw_output": {
+    "response": {
+      "id": "chatcmpl-DeioMzUouZaVTLWQPouvksrRbF67r",
+      "object": "chat.completion",
+      "created": 1778597746,
+      "model": "gpt-3.5-turbo-0125",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}",
+            "refusal": null,
+            "annotations": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 11729,
+        "completion_tokens": 228,
+        "total_tokens": 11957,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": null
+    },
+    "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the existing sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink semantics for command injection.\",\n      \"rationale\": \"Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+  },
+  "lilo_input": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/sinks-001/input.json",
+  "autodoc": [
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_command_injection_sink_sink",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL sink semantics for command injection.",
+      "rationale": "This proposal provides a clear and descriptive name for the existing sink predicate."
+    }
+  ],
+  "groupings": [],
+  "query_synthesis_hints": [
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "concept:codeql_lib5:concept:1:ModeledSinkType"
+      ],
+      "hint": "Future query-synthesis guidance; not executable in this milestone"
+    }
+  ],
+  "ignored_outputs": [],
+  "candidates": [
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "java_command_injection_sink_sink",
+      "kind": "codeql_helper",
+      "origin": "lilo-loop",
+      "schema": "java_sink_predicate_helper_v1",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isCommandInjectionSink",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL sink semantics for command injection.",
+      "body": "predicate isCommandInjectionSink(DataFlow::Node sink) {\n  exists(CommandInjectionSink command | sink = command)\n}",
+      "use_sites": [
+        {
+          "query": "remote-command-modeled.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q1:predicate:RemoteCommandModeledConfig:isSink"
+        },
+        {
+          "query": "source-node-environment-command-modeled.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q14:predicate:SourceNodeEnvironmentCommandModeledConfig:isSink"
+        },
+        {
+          "query": "source-node-remote-command-modeled.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q16:predicate:SourceNodeRemoteCommandModeledConfig:isSink"
+        },
+        {
+          "query": "threat-command-modeled.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q22:predicate:ThreatCommandModeledConfig:isSink"
+        }
+      ],
+      "rewrite_eligible": true,
+      "semantic_hash": "23b9c0d462a159dfa7ef92c592a06bfc33e4f906b8d802928d636144b9f9bf82",
+      "semantic_role": "Sink",
+      "semantic_target": "CommandInjectionSink",
+      "semantic_usefulness": "semantic",
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q1:predicate:RemoteCommandModeledConfig:isSink",
+          "role": "Sink",
+          "target": "CommandInjectionSink",
+          "num_exact_matches": 4,
+          "lilo_loop_reference": "candidate:java_command_injection_sink_sink",
+          "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+        }
+      },
+      "mapping_status": "semantic-mine-exact-predicate",
+      "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/semantic/candidates.json",
+      "rationale": "Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction.",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_command_injection_sink_sink",
+        "display_name": "remote_flow_source",
+        "description": "Recognizes Java CodeQL sink semantics for command injection.",
+        "rationale": "Preserving the existing candidate with a rewrite reference ensures continuity and consistency in the CodeQL semantic abstraction."
+      }
+    }
+  ]
+}

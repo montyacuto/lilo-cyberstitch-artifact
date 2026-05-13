@@ -1,0 +1,146 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/source-remote-cwe089-sql-sinknode.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Remote source node reaches SQL sink node",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/official-expanded/source-remote-cwe089-sql-sinknode",
+    "tags": "security external/cwe/cwe-089"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.ExternalFlow"
+  ],
+  "config_modules": [
+    {
+      "name": "SourceRemoteSqlSinkNodeConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "sourceNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "source"
+              },
+              {
+                "kind": "string",
+                "value": "remote"
+              }
+            ]
+          },
+          "source_hash": "66b7d3bcac89a50e0d2ce44338e0e874b6a08b3ea9f9fd9fa050bf137b49fca5"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "sinkNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "sink"
+              },
+              {
+                "kind": "string",
+                "value": "sql-injection"
+              }
+            ]
+          },
+          "source_hash": "79bab953cc063415e3d3f6a63f6a105331f351d61f32f6a87a23efe38c099b51"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "barrierNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "node"
+              },
+              {
+                "kind": "string",
+                "value": "sql-injection"
+              }
+            ]
+          },
+          "source_hash": "7a1417e4468b98ff9da1a76b5cdcf3e905b6912efbb8af98d21830817ff1f701"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "SourceRemoteSqlSinkNodeFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "SourceRemoteSqlSinkNodeConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "SourceRemoteSqlSinkNodeFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "SourceRemoteSqlSinkNodeFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "SourceRemoteSqlSinkNodeFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "Remote source node reaches a SQL-injection sink node."
+    },
+    "message": "Remote source node reaches a SQL-injection sink node."
+  },
+  "provenance_hash": "9f22a05f948031e213f6fbd5f7a65db61aa7ce6205930b13f0078e54b7e8ccd1",
+  "version": "sqir-v2"
+}

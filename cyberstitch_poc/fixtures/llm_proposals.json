@@ -1,0 +1,13 @@
+{
+  "proposals": [
+    {
+      "schema": "java_source_predicate_helper_v1",
+      "semantic_node_ids": [
+        "q0:predicate:OwaspCommandInjectionConfig:isSource"
+      ],
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java remote flow sources shared by OWASP Benchmark path queries.",
+      "rationale": "The source predicate is a stable CodeQL concept reused across command-injection and SQL-injection configs."
+    }
+  ]
+}

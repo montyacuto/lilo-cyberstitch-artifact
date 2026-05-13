@@ -1,0 +1,9 @@
+{
+  "policy": "opt-in only",
+  "bundle_mode": "none",
+  "bundle_created": false,
+  "bundle_path": null,
+  "package_by_default": false,
+  "contains_source_code": false,
+  "restricted_reason": "CodeQL database bundles contain analyzed source code and are restricted troubleshooting artifacts."
+}

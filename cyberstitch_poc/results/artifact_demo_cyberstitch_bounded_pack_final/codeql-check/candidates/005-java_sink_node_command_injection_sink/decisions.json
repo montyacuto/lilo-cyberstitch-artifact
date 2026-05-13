@@ -1,0 +1,59 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_sink_node_command_injection_sink",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSinkNodeCommandInjectionSink",
+        "display_name": "java_sink_node_command_injection_sink",
+        "description": "Deterministically mined complete Java sink predicate semantics.",
+        "body": "predicate isSinkNodeCommandInjectionSink(DataFlow::Node sink) {\n  sinkNode(sink, \"command-injection\")\n}",
+        "use_sites": [
+          {
+            "query": "remote-command-sink-node.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q3:predicate:RemoteCommandSinkNodeConfig:isSink"
+          },
+          {
+            "query": "source-node-remote-command-sink-node.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q17:predicate:SourceNodeRemoteCommandSinkNodeConfig:isSink"
+          },
+          {
+            "query": "threat-command-sink-node.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q24:predicate:ThreatCommandSinkNodeConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "95f418693106d88b59c7756ddd044d58f726f5c432141d26a2cadd16461132d1",
+        "semantic_role": "Sink",
+        "semantic_target": "sinkNode:command-injection",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q3:predicate:RemoteCommandSinkNodeConfig:isSink",
+            "role": "Sink",
+            "target": "sinkNode:command-injection",
+            "num_exact_matches": 3
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

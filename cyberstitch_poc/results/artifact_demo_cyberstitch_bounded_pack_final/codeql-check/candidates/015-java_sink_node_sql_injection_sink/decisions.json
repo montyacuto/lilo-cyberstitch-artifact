@@ -1,0 +1,64 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_sink_node_sql_injection_sink",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSinkNodeSqlInjectionSink",
+        "display_name": "java_sink_node_sql_injection_sink",
+        "description": "Deterministically mined complete Java sink predicate semantics.",
+        "body": "predicate isSinkNodeSqlInjectionSink(DataFlow::Node sink) {\n  sinkNode(sink, \"sql-injection\")\n}",
+        "use_sites": [
+          {
+            "query": "remote-sql-sink-node.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q10:predicate:RemoteSqlSinkNodeConfig:isSink"
+          },
+          {
+            "query": "source-node-database-sql-sink-node.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q13:predicate:SourceNodeDatabaseSqlSinkNodeConfig:isSink"
+          },
+          {
+            "query": "source-node-remote-sql-sink-node.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q20:predicate:SourceNodeRemoteSqlSinkNodeConfig:isSink"
+          },
+          {
+            "query": "threat-sql-sink-node.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q31:predicate:ThreatSqlSinkNodeConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "f683376e9702ec33bb3cbb93a5b620beab74dea43d45143be7abdd36df07b485",
+        "semantic_role": "Sink",
+        "semantic_target": "sinkNode:sql-injection",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q10:predicate:RemoteSqlSinkNodeConfig:isSink",
+            "role": "Sink",
+            "target": "sinkNode:sql-injection",
+            "num_exact_matches": 4
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

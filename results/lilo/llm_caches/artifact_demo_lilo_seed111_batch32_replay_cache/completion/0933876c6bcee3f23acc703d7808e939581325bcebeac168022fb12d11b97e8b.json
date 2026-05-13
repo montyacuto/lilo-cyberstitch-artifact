@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T11:50:10Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_if_match :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: Applies a replacement if a substring matches a given pattern in a full string. The function takes a full string, a pattern to match, and a replacement substring. It checks for the pattern in the full string and replaces it with the specified substring if found.\n\nfn_43 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n\nfn_44 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_45 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_46 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match $0 (regex_concat 'a' $1) $2))))\n\nfn_47 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match $0 (regex_concat 'u' $1) $2))))\n\nfn_48 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match $0 (regex_concat $1 't') $2))))\n\nfn_49 :: tfullstr -> list(tsubstr)\n\n(lambda (regex_split empty_string $0))\n\nfn_50 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (fn_44 $0 (lambda (regex_concat $2 $3))))))\n\nfn_51 :: list(tsubstr) -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 $1))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_43 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n\nHere are some examples of its usage:\n\n-- if the word starts with any letter replace that with b\n(lambda (fn_43 $0 'b'))\n\n-- if the word starts with any letter replace that with e s\n(lambda (fn_43 $0 (regex_concat 'e' 's')))\n\n-- if the word starts with any letter replace that with w i\n(lambda (fn_43 $0 (regex_concat 'w' 'i')))\n\nPlease write a human-readable name and description for `fn_43` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "0933876c6bcee3f23acc703d7808e939581325bcebeac168022fb12d11b97e8b",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_start_with_substring\",\n    \"description\": \"Replaces the starting character or characters of a word in a full string with a specified substring.\"\n}"
+      }
+    ],
+    "created": 1778154609,
+    "id": "chatcmpl-DcrWzI5HCnv0xisHbYXzHoTv8xeiC",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 245,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 710,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 955
+    }
+  }
+}

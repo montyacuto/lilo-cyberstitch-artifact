@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T01:51:39Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_or_add_characters_based_on_regex_match :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that takes a full string, a substring to replace or add, and a substring to match using regex. It replaces or adds characters in the full string based on whether the regex match is found in the full string.\n\nreplace_vowels_with_given_characters :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: A function that replaces vowels in a substring with given characters.\n\nreplace_concat_with_cdr_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that replaces the concatenation of two substrings in a full string with the rest of the string after splitting by a delimiter.\n\nreplace_or_transform_substrings_based_on_delimiter :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that replaces or transforms substrings in a full string based on a delimiter.\n\nreplace_end_of_string_with_given_substring :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that replaces the end of a full string with a given substring based on a delimiter.\n\nreplace_end_of_word_with_given_substrings :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\ndescription: A function that replaces the end of a word in a full string with given substrings based on specific conditions.\n\nadd_character_after_vowel :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (replace_or_transform_substrings_based_on_delimiter $0 (lambda (regex_if (regex_match replace_vowels_with_given_characters $0) (regex_concat $0 $2) $0)))))\ndescription: A function that adds a specific character after each vowel in a given full string.\n\nappend_substring_to_end_of_word :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\ndescription: A function that appends a substring to the end of a word in a full string.\n\nfn_50 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_regex_match $0 (regex_concat $1 $2) $2))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_regex_match $0 (regex_concat $1 $2) (regex_not replace_vowels_with_given_characters)))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_50 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_regex_match $0 (regex_concat $1 $2) $2))))\n\nHere are some examples of its usage:\n\n-- if there is p add p after that\n(lambda (fn_50 'p' 'p' $0))\n\n-- if there is g add w before that\n(lambda (fn_50 'g' 'w' $0))\n\n-- if there is c add u before that\n(lambda (fn_50 'c' 'u' $0))\n\n-- if there is c add d before that\n(lambda (fn_50 'c' 'd' $0))\n\n-- if there is e add e before that\n(lambda (fn_50 'e' 'e' $0))\n\n-- if there is g add q before that\n(lambda (fn_50 'g' 'q' $0))\n\n-- if there is b add k before that\n(lambda (fn_50 'b' 'k' $0))\n\n-- if there is o add r before that\n(lambda (fn_50 'o' 'r' $0))\n\nPlease write a human-readable name and description for `fn_50` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "fce8c56a2d889a998de9fbcad71208033808c4fdeb93bb996be9f33e7e7461ae",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_50\",\n    \"readable_name\": \"add_character_after_specific_substring\",\n    \"description\": \"A function that adds a specific character after a specific substring in a full string.\"\n}"
+      }
+    ],
+    "created": 1778205098,
+    "id": "chatcmpl-Dd4fKYic46TOfRjHTCXwoESjXXZON",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 235,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1075,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1310
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "format": "cyberstitch-candidates-v2",
+  "source": "fixture",
+  "raw_output": {
+    "proposals": [
+      {
+        "schema": "autodoc_v1",
+        "target_id": "candidate:java_remote_flow_source",
+        "display_name": "remote_flow_source",
+        "description": "Recognizes Java remote-flow source nodes used as user-controlled inputs in path queries.",
+        "rationale": "This documents a stable CodeQL source role while leaving executable QL generation to CyberSTITCH."
+      },
+      {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_remote_flow_source",
+        "display_name": "remote_flow_source",
+        "description": "Preserve the existing provenance-backed RemoteFlowSource helper as a rewrite candidate.",
+        "rationale": "The candidate is already backed by repeated SQIR/FCIR source predicates and can pass the deterministic rewrite gates."
+      },
+      {
+        "schema": "candidate_grouping_v1",
+        "target_ids": [
+          "candidate:java_remote_flow_source",
+          "candidate:java_active_threat_model_source"
+        ],
+        "display_name": "remote_input_sources",
+        "description": "Groups CodeQL source concepts that represent remote or threat-model-controlled input.",
+        "rationale": "This grouping is useful for future query synthesis, but is not directly executable in this milestone."
+      },
+      {
+        "schema": "query_synthesis_hint_v1",
+        "target_ids": [
+          "candidate:java_remote_flow_source"
+        ],
+        "hint": "Future synthesis should combine a remote source abstraction with a vulnerability-family-specific sink abstraction and then require CodeQL syntax plus SARIF equivalence checks."
+      },
+      {
+        "schema": "raw_codeql_helper_v1",
+        "target_id": "candidate:java_remote_flow_source",
+        "body": "predicate unsafeGeneratedHelper(DataFlow::Node n) { any() }",
+        "display_name": "unsafe_raw_codeql",
+        "description": "This fixture entry should be rejected because raw LLM-authored CodeQL is not executable in this milestone."
+      }
+    ]
+  },
+  "lilo_input": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_artifact_20260512/lilo-loop/input.json",
+  "autodoc": [
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_remote_flow_source",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java remote-flow source nodes used as user-controlled inputs in path queries.",
+      "rationale": "This documents a stable CodeQL source role while leaving executable QL generation to CyberSTITCH."
+    }
+  ],
+  "groupings": [
+    {
+      "schema": "candidate_grouping_v1",
+      "target_ids": [
+        "candidate:java_remote_flow_source",
+        "candidate:java_active_threat_model_source"
+      ],
+      "display_name": "remote_input_sources",
+      "description": "Groups CodeQL source concepts that represent remote or threat-model-controlled input.",
+      "rationale": "This grouping is useful for future query synthesis, but is not directly executable in this milestone."
+    }
+  ],
+  "query_synthesis_hints": [
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "candidate:java_remote_flow_source"
+      ],
+      "hint": "Future synthesis should combine a remote source abstraction with a vulnerability-family-specific sink abstraction and then require CodeQL syntax plus SARIF equivalence checks."
+    }
+  ],
+  "ignored_outputs": [
+    {
+      "schema": "raw_codeql_helper_v1",
+      "reason": "raw CodeQL/body fields are advisory only and are not used for deterministic rewrites"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "java_remote_flow_source",
+      "kind": "codeql_helper",
+      "origin": "lilo-loop",
+      "schema": "java_source_predicate_helper_v1",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isRemoteFlowSource",
+      "display_name": "remote_flow_source",
+      "description": "Preserve the existing provenance-backed RemoteFlowSource helper as a rewrite candidate.",
+      "body": "predicate isRemoteFlowSource(DataFlow::Node source) {\n  exists(RemoteFlowSource remote | source = remote)\n}",
+      "use_sites": [
+        {
+          "query": "owasp-cwe078-command.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q3:predicate:OwaspCommandInjectionConfig:isSource"
+        },
+        {
+          "query": "owasp-cwe089-sql.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q4:predicate:OwaspSqlInjectionConfig:isSource"
+        },
+        {
+          "query": "remote-cwe078-command-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q5:predicate:RemoteCommandModelConfig:isSource"
+        },
+        {
+          "query": "remote-cwe089-query-model.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q6:predicate:RemoteQueryModelConfig:isSource"
+        },
+        {
+          "query": "remote-cwe089-sql-sinkmodel.ql",
+          "predicate": "isSource",
+          "semantic_node_id": "q7:predicate:RemoteSqlSinkModelConfig:isSource"
+        }
+      ],
+      "rewrite_eligible": true,
+      "semantic_hash": "a9eb398e68bfa3ad289637ca3decdd3ce8a50206e1d457ecaf6499e6963f8930",
+      "semantic_role": "Source",
+      "semantic_target": "RemoteFlowSource",
+      "semantic_usefulness": "semantic",
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q3:predicate:OwaspCommandInjectionConfig:isSource",
+          "role": "Source",
+          "target": "RemoteFlowSource",
+          "num_exact_matches": 5,
+          "lilo_loop_reference": "candidate:java_remote_flow_source",
+          "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+        }
+      },
+      "mapping_status": "semantic-mine-exact-predicate",
+      "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_artifact_20260512/semantic/candidates.json",
+      "rationale": "The candidate is already backed by repeated SQIR/FCIR source predicates and can pass the deterministic rewrite gates.",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_remote_flow_source",
+        "display_name": "remote_flow_source",
+        "description": "Preserve the existing provenance-backed RemoteFlowSource helper as a rewrite candidate.",
+        "rationale": "The candidate is already backed by repeated SQIR/FCIR source predicates and can pass the deterministic rewrite gates."
+      }
+    },
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "unsafe_raw_codeql",
+      "kind": "llm_schema_proposal",
+      "origin": "llm",
+      "schema": "raw_codeql_helper_v1",
+      "language": "unknown",
+      "body": "",
+      "use_sites": [],
+      "rewrite_eligible": false,
+      "semantic_hash": "bc541d94e29a9e1ac36b14c7c172c6ac0a82e343cf4d8009db8c4bea85522ec3",
+      "semantic_validation": {
+        "ok": false,
+        "reasons": [
+          "unsupported LLM abstraction schema"
+        ],
+        "evidence": {}
+      },
+      "mapping_status": "invalid",
+      "llm_proposal": {
+        "schema": "raw_codeql_helper_v1",
+        "target_id": "candidate:java_remote_flow_source",
+        "body": "predicate unsafeGeneratedHelper(DataFlow::Node n) { any() }",
+        "display_name": "unsafe_raw_codeql",
+        "description": "This fixture entry should be rejected because raw LLM-authored CodeQL is not executable in this milestone."
+      }
+    }
+  ]
+}

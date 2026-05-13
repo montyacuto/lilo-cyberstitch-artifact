@@ -1,0 +1,171 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-sql-query-model.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Threat-model source reaches QueryInjectionSink",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/bounded/threat-sql-query-model",
+    "tags": "security external/cwe/cwe-089"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.dataflow.ExternalFlow",
+    "semmle.code.java.security.CommandLineQuery",
+    "semmle.code.java.security.ExternalProcess",
+    "semmle.code.java.security.QueryInjection",
+    "semmle.code.java.security.SqlInjectionQuery",
+    "semmle.code.java.security.Sanitizers",
+    "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "ThreatSqlQueryModelConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ActiveThreatModelSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "5a7bb5986b56dd3561cf6a43ffdbaaaf4aa34b3bf24cb01239885038d3ca68ca"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "QueryInjectionSink",
+                "name": "query"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "sink"
+              },
+              "right": {
+                "kind": "var",
+                "name": "query"
+              }
+            }
+          },
+          "source_hash": "7dd3fc795b14053e4a844355eb780c4e98a84a1ee8aa949dac8ccf1e52d0bd5d"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "SimpleTypeSanitizer",
+                "name": "sanitizer"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "node"
+              },
+              "right": {
+                "kind": "var",
+                "name": "sanitizer"
+              }
+            }
+          },
+          "source_hash": "71f93c0e7283385785659bd5a148ca32ec0f0a28fcecc3fed977e64f8aa1b788"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "ThreatSqlQueryModelFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "ThreatSqlQueryModelConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "ThreatSqlQueryModelFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "ThreatSqlQueryModelFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "ThreatSqlQueryModelFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "ActiveThreatModelSource source reaches QueryInjectionSink sink."
+    },
+    "message": "ActiveThreatModelSource source reaches QueryInjectionSink sink."
+  },
+  "provenance_hash": "7afeba9bd71271685314cc117ac7e4c331ac39cc3977af5c1dbbb7941c565c08",
+  "version": "sqir-v2"
+}

@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "skipped": false,
+  "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/seed-discovery/official-cwe078/results.sarif",
+  "stdout": "",
+  "stderr": "Running queries.\nResolving data extensions.\nFinished resolving data extensions.\nLoading data extensions.\nFinished loading data extensions.\n[1/4] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.qlx.\n[2/4] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.qlx.\n[3/4] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.qlx.\n[4/4] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.qlx.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-078/ExecTainted.ql.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-078/ExecRelative.ql.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-078/ExecUnescaped.ql.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-078/ExecTaintedEnvironment.ql.\n[1/4 eval 3.8s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-078/ExecRelative.bqrs.\n[2/4 eval 4.2s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-078/ExecUnescaped.bqrs.\n[3/4 eval 4.5s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-078/ExecTaintedEnvironment.bqrs.\n[4/4 eval 4.6s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-078/ExecTainted.bqrs.\nShutting down query evaluator.\nInterpreting results.\n",
+  "command": [
+    "<original-workspace>/codeql/codeql",
+    "database",
+    "analyze",
+    "--common-caches=<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/seed-discovery/official-cwe078/codeql-cache/analysis-common",
+    "--compilation-cache=<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/seed-discovery/official-cwe078/codeql-cache/analysis-compile",
+    "--rerun",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/codeql-dbs/java",
+    "codeql/java-queries:Security/CWE/CWE-078",
+    "--format=sarifv2.1.0",
+    "--output=<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_official_expanded_pack_live_api_partitioned_record_20260512/seed-discovery/official-cwe078/results.sarif",
+    "--threads=0"
+  ]
+}

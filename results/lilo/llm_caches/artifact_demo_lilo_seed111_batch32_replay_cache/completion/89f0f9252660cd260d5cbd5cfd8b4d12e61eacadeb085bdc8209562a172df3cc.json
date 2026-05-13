@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T13:07:38Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nfn_54 :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $3) (clevr_add $1 $0) $0))))))\n\nfn_55 :: tclevrmaterial -> tclevrshape -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape $1) $3) (clevr_if (clevr_eq_material (clevr_query_material $1) $4) (clevr_add $1 $0) $0) $0)))))))\n\nfn_56 :: list(tclevrobject) -> list(tclevrobject)\n\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size (clevr_query_size $1) clevr_small) (clevr_add $1 $0) $0)))))\n\nfn_57 :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\n\nfn_58 :: tclevrrelation -> list(tclevrobject) -> tclevrobject\n\n(lambda (lambda (clevr_car (clevr_fold $0 $0 (lambda (lambda (clevr_difference $0 (clevr_relate $1 $3 $0))))))))\n\nfn_59 :: tclevrshape -> tclevrcolor -> list(tclevrobject) -> int\n\n(lambda (lambda (lambda (clevr_count (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color $3 (clevr_query_color $1)) $0 (clevr_if (clevr_eq_shape (clevr_query_shape $1) $4) (clevr_add $1 $0) $0)))))))))\n\nfn_60 :: list(tclevrobject) -> tclevrobject -> bool -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_if $0 (clevr_add $1 $2) $2))))\n\nfn_61 :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (fn_60 $0 $1 (clevr_eq_color (clevr_if (clevr_eq_material (clevr_query_material $1) clevr_metal) clevr_red (clevr_query_color $1)) $3)))))))\n\nfn_62 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\n\nfn_63 :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_54 :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $3) (clevr_add $1 $0) $0))))))\n\nHere are some examples of its usage:\n\n-- what is the size of the gray thing\n(lambda (clevr_query_size (clevr_car (fn_54 clevr_gray $0))))\n\n-- find the small brown thing\n(lambda (fn_56 (fn_54 clevr_brown $0)))\n\n-- what if you removed all of the yellow sphere s\n(lambda (clevr_difference $0 (clevr_fold (fn_54 clevr_yellow $0) clevr_empty (lambda (lambda (fn_60 $0 $1 (clevr_eq_shape clevr_sphere (clevr_query_shape $1))))))))\n\n-- what number of small objects are either metal cube s or red rubber thing s\n(lambda (clevr_count (fn_54 (fn_62 clevr_red (clevr_query_color (clevr_car $0)) $0) $0)))\n\n-- if you removed the small blue thing s how many thing s would be left\n(lambda (clevr_count (clevr_difference $0 (fn_56 (fn_54 clevr_blue $0)))))\n\n-- the brown metal thing has what size\n(lambda (clevr_query_size (clevr_car (fn_54 clevr_brown $0))))\n\n-- find the blue thing\n(lambda (fn_54 clevr_blue $0))\n\n-- how many purple objects are either rubber thing s or cylinder s\n(lambda (clevr_count (fn_54 clevr_purple $0)))\n\n-- find the yellow thing s\n(lambda (fn_54 clevr_yellow $0))\n\n-- find the green thing\n(lambda (fn_54 clevr_green $0))\n\nPlease write a human-readable name and description for `fn_54` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "89f0f9252660cd260d5cbd5cfd8b4d12e61eacadeb085bdc8209562a172df3cc",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_54\",\n    \"readable_name\": \"filter_objects_by_color\",\n    \"description\": \"Filters a list of objects based on the specified color.\"\n}"
+      }
+    ],
+    "created": 1778245657,
+    "id": "chatcmpl-DdFDVuKUNRkpgHs5YdvQGqQapT3mC",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 200,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1320,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1520
+    }
+  }
+}

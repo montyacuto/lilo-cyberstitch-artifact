@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T13:07:43Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nfilter_objects_by_color :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $3) (clevr_add $1 $0) $0))))))\ndescription: Filters a list of objects based on the specified color.\n\nfilter_objects_by_material_and_shape :: tclevrmaterial -> tclevrshape -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape $1) $3) (clevr_if (clevr_eq_material (clevr_query_material $1) $4) (clevr_add $1 $0) $0) $0)))))))\ndescription: Filters a list of objects based on the specified material and shape.\n\nfilter_objects_by_size :: list(tclevrobject) -> list(tclevrobject)\n\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size (clevr_query_size $1) clevr_small) (clevr_add $1 $0) $0)))))\ndescription: Filters a list of objects based on the size being small.\n\nfn_57 :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\n\nfn_58 :: tclevrrelation -> list(tclevrobject) -> tclevrobject\n\n(lambda (lambda (clevr_car (clevr_fold $0 $0 (lambda (lambda (clevr_difference $0 (clevr_relate $1 $3 $0))))))))\n\nfn_59 :: tclevrshape -> tclevrcolor -> list(tclevrobject) -> int\n\n(lambda (lambda (lambda (clevr_count (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color $3 (clevr_query_color $1)) $0 (clevr_if (clevr_eq_shape (clevr_query_shape $1) $4) (clevr_add $1 $0) $0)))))))))\n\nfn_60 :: list(tclevrobject) -> tclevrobject -> bool -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_if $0 (clevr_add $1 $2) $2))))\n\nfn_61 :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (fn_60 $0 $1 (clevr_eq_color (clevr_if (clevr_eq_material (clevr_query_material $1) clevr_metal) clevr_red (clevr_query_color $1)) $3)))))))\n\nfn_62 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\n\nfn_63 :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_57 :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\n\nHere are some examples of its usage:\n\n-- the rubber thing that is right the large metal sphere is what color\n(lambda (clevr_if (fn_57 $0 clevr_front) clevr_gray (clevr_query_color (fn_58 clevr_left $0))))\n\n-- how many rubber thing s are either small sphere s or large purple thing s\n(lambda (clevr_count (clevr_relate (clevr_car (filter_objects_by_size $0)) (clevr_if (fn_57 $0 clevr_front) clevr_right clevr_front) $0)))\n\n-- how many cylinder s are brown thing s or small rubber thing s\n(lambda (clevr_if (fn_57 $0 clevr_front) (clevr_count (filter_objects_by_material_and_shape clevr_metal clevr_cube $0)) 2))\n\n-- what number of rubber objects are purple thing s or cylinder s\n(lambda (clevr_count (fn_61 (clevr_if (fn_57 $0 clevr_front) (clevr_query_color (clevr_car $0)) clevr_red) $0)))\n\n-- how many thing s are red thing s or large green thing s\n(lambda (clevr_if (fn_57 $0 clevr_right) 4 2))\n\n-- how many sphere s are either purple thing s or metal thing s\n(lambda (clevr_if (clevr_eq_size (clevr_query_size (clevr_car $0)) clevr_small) 1 (clevr_if (fn_57 $0 clevr_front) 3 2)))\n\n-- how many thing s are right the large cylinder\n(lambda (clevr_if (fn_57 $0 clevr_behind) (clevr_if (fn_57 $0 clevr_front) 4 2) 0))\n\n-- how many metal objects are either green thing s or large thing s\n(lambda (clevr_if (fn_57 $0 clevr_left) 0 (clevr_if (fn_57 $0 clevr_right) 3 2)))\n\n-- what is the shape of the large rubber thing left the large rubber cylinder\n(lambda (clevr_if (fn_57 $0 (clevr_if (clevr_lt? (clevr_count (clevr_relate (clevr_car $0) clevr_left $0)) 2) clevr_behind clevr_right)) clevr_sphere clevr_cube))\n\n-- is the number of large cylinder s greater than the number of small rubber sphere s\n(lambda (fn_62 (clevr_eq_material clevr_rubber clevr_rubber) (fn_57 $0 clevr_behind) $0))\n\nPlease write a human-readable name and description for `fn_57` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "5c8f23631981f594793ae4b0d689f6ba3f4d2765393d6500f82ec90084bd23cb",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_57\",\n    \"readable_name\": \"check_relation_count_greater_than_2\",\n    \"description\": \"Checks if the count of objects related in a specified way is greater than 2.\"\n}"
+      }
+    ],
+    "created": 1778245662,
+    "id": "chatcmpl-DdFDa0Hd9kn5m3F7Mf1EBi5pUY0LT",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 245,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1593,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1838
+    }
+  }
+}

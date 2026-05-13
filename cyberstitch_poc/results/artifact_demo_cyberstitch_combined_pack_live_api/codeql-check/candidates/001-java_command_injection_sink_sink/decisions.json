@@ -1,0 +1,62 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_command_injection_sink_sink",
+        "kind": "codeql_helper",
+        "origin": "lilo-loop",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isCommandInjectionSink",
+        "display_name": "remote_flow_source",
+        "description": "Existing candidate with complete Java sink predicate semantics for CommandInjectionSink.",
+        "body": "predicate isCommandInjectionSink(DataFlow::Node sink) {\n  exists(CommandInjectionSink command | sink = command)\n}",
+        "use_sites": [
+          {
+            "query": "official-cwe078-command-flow.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isSink"
+          },
+          {
+            "query": "remote-cwe078-command-model.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q5:predicate:RemoteCommandModelConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "23b9c0d462a159dfa7ef92c592a06bfc33e4f906b8d802928d636144b9f9bf82",
+        "semantic_role": "Sink",
+        "semantic_target": "CommandInjectionSink",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isSink",
+            "role": "Sink",
+            "target": "CommandInjectionSink",
+            "num_exact_matches": 2,
+            "lilo_loop_reference": "candidate:java_command_injection_sink_sink",
+            "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+        "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic analysis.",
+        "llm_proposal": {
+          "schema": "rewrite_candidate_reference_v1",
+          "candidate_ref": "candidate:java_command_injection_sink_sink",
+          "display_name": "remote_flow_source",
+          "description": "Existing candidate with complete Java sink predicate semantics for CommandInjectionSink.",
+          "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic analysis."
+        }
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "data": {
+    "proposals": [
+      {
+        "candidate_ref": "candidate:java_remote_flow_source",
+        "schema": "rewrite_candidate_reference_v1"
+      }
+    ]
+  },
+  "source": "fixture",
+  "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_remote_flow_source\"\n    }\n  ]\n}"
+}

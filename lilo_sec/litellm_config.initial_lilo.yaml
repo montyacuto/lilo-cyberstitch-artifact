@@ -1,0 +1,60 @@
+# LiteLLM proxy config for the initial base-LILO reproduction.
+#
+# This keeps the main reported run on the paper-selected AutoDoc model family
+# (GPT-3.5 Turbo) while allowing explicit GPT-4 access checks through the same
+# proxy. OpenAI lists gpt-3.5-turbo/gpt-3.5-turbo-0125 API shutdown on
+# 2026-10-23, so runs after that date need a replacement policy. Run LiteLLM
+# outside the Python 3.7 LILO environment:
+#
+#   conda activate ./lilo_sec/.conda/envs/litellm
+#   export LITELLM_OPENAI_API_KEY=<provider key>
+#   export LITELLM_MASTER_KEY=<proxy key>
+#   litellm --config lilo_sec/litellm_config.initial_lilo.yaml --port 4000
+#
+# Then point LILO at the proxy:
+#
+#   export LILO_OPENAI_API_BASE=http://127.0.0.1:4000/v1
+#   export OPENAI_API_KEY="$LITELLM_MASTER_KEY"
+#   source lilo_sec/scripts/env_litellm_initial_lilo.sh
+
+model_list:
+  - model_name: code-davinci-002
+    litellm_params:
+      model: openai/gpt-3.5-turbo-0125
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+  - model_name: gpt-3.5-turbo
+    litellm_params:
+      model: openai/gpt-3.5-turbo-0125
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+  - model_name: gpt-3.5-turbo-0125
+    litellm_params:
+      model: openai/gpt-3.5-turbo-0125
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+  - model_name: gpt-3.5-turbo-0301
+    litellm_params:
+      model: openai/gpt-3.5-turbo-0125
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+  - model_name: gpt-4
+    litellm_params:
+      model: openai/gpt-4
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+  - model_name: gpt-4-0314
+    litellm_params:
+      model: openai/gpt-4
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+  - model_name: text-embedding-ada-002
+    litellm_params:
+      model: openai/text-embedding-3-small
+      api_key: os.environ/LITELLM_OPENAI_API_KEY
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+
+litellm_settings:
+  drop_params: true

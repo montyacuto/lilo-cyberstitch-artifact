@@ -1,0 +1,881 @@
+[2026-05-12T09:39:02-04:00] + python3 -c $'import json, pathlib, sys\npath = pathlib.Path(sys.argv[1])\nbundle_mode = sys.argv[2]\nbundle_created = sys.argv[3] == "true"\nbundle_path = sys.argv[4] or None\ndata = {\n    "policy": "opt-in only",\n    "bundle_mode": bundle_mode,\n    "bundle_created": bundle_created,\n    "bundle_path": bundle_path,\n    "package_by_default": False,\n    "contains_source_code": bool(bundle_created),\n    "restricted_reason": "CodeQL database bundles contain analyzed source code and are restricted troubleshooting artifacts.",\n}\npath.parent.mkdir(parents=True, exist_ok=True)\npath.write_text(json.dumps(data, indent=2) + "\\n")\n' <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/bundle-policy.json none false ''
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli doctor
+{
+  "language": "java",
+  "owasp_root": "<original-workspace>/cyberstitch_poc/benchmarks/BenchmarkJava",
+  "curated_subset_manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+  "selected_cwes": [
+    78,
+    89
+  ],
+  "codeql_build_mode": "none",
+  "codeql_build_command": "mvn -Dmaven.repo.local=<original-workspace>/cyberstitch_poc/results/m2-repository clean package -DskipTests",
+  "tools": {
+    "java": {
+      "available": true,
+      "path": "/usr/bin/java",
+      "version": "openjdk version \"25.0.3\" 2026-04-21"
+    },
+    "mvn": {
+      "available": true,
+      "path": "/usr/bin/mvn",
+      "version": "Apache Maven 3.9.11 (Red Hat 3.9.11-5)"
+    },
+    "codeql": {
+      "available": true,
+      "path": "<original-workspace>/codeql/codeql",
+      "version": "CodeQL command-line toolchain release 2.25.3."
+    }
+  },
+  "manifest": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "cases": [
+      {
+        "test_id": "BenchmarkTest00017",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+        "cwe": 78,
+        "category": "cmdi",
+        "expected_vulnerable": true,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe078-command"
+        ],
+        "rationale": "Header-derived servlet input flows through URL decoding into Runtime.exec argument 0, matching the narrow command sink abstraction.",
+        "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+      },
+      {
+        "test_id": "BenchmarkTest00090",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00090.java",
+        "cwe": 78,
+        "category": "cmdi",
+        "expected_vulnerable": false,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe078-command"
+        ],
+        "rationale": "Cookie input is present, but the feasible branch assigns a constant before Runtime.exec, exercising a safe command-injection control without list-index taint imprecision.",
+        "abstraction_target": "Safe Runtime.exec constant-branch control"
+      },
+      {
+        "test_id": "BenchmarkTest00018",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+        "cwe": 89,
+        "category": "sqli",
+        "expected_vulnerable": true,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe089-sql"
+        ],
+        "rationale": "Header-derived servlet input is concatenated into SQL and passed to Statement.executeUpdate argument 0.",
+        "abstraction_target": "RemoteFlowSource plus java.sql.Statement executeUpdate argument sink"
+      },
+      {
+        "test_id": "BenchmarkTest00107",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00107.java",
+        "cwe": 89,
+        "category": "sqli",
+        "expected_vulnerable": false,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe089-sql"
+        ],
+        "rationale": "Cookie input is assigned locally, but the SQL string uses a reflected constant before Statement.execute, exercising a safe SQL control.",
+        "abstraction_target": "Safe Statement.execute control"
+      }
+    ],
+    "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+    "owasp_root": "<original-workspace>/cyberstitch_poc/benchmarks/BenchmarkJava"
+  },
+  "actions": []
+}
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli manifest
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00017",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Header-derived servlet input flows through URL decoding into Runtime.exec argument 0, matching the narrow command sink abstraction.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00090.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Cookie input is present, but the feasible branch assigns a constant before Runtime.exec, exercising a safe command-injection control without list-index taint imprecision.",
+      "abstraction_target": "Safe Runtime.exec constant-branch control"
+    },
+    {
+      "test_id": "BenchmarkTest00018",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe089-sql"
+      ],
+      "rationale": "Header-derived servlet input is concatenated into SQL and passed to Statement.executeUpdate argument 0.",
+      "abstraction_target": "RemoteFlowSource plus java.sql.Statement executeUpdate argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00107",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00107.java",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe089-sql"
+      ],
+      "rationale": "Cookie input is assigned locally, but the SQL string uses a reflected constant before Statement.execute, exercising a safe SQL control.",
+      "abstraction_target": "Safe Statement.execute control"
+    }
+  ],
+  "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+  "owasp_root": "<original-workspace>/cyberstitch_poc/benchmarks/BenchmarkJava"
+}
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli sqir
+{
+  "written": [
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/official-cwe078-command-flow.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/official-cwe078-environment-flow.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/official-cwe089-query-flow.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/owasp-cwe078-command.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/owasp-cwe089-sql.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/remote-cwe078-command-model.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/remote-cwe089-query-model.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/remote-cwe089-sql-sinkmodel.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/threat-cwe078-runtime-exec.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/threat-cwe089-statement-execute.json"
+  ]
+}
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli roundtrip
+{
+  "written": [
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/official-cwe078-command-flow.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/official-cwe078-environment-flow.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/official-cwe089-query-flow.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/owasp-cwe078-command.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/owasp-cwe089-sql.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/remote-cwe078-command-model.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/remote-cwe089-query-model.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/remote-cwe089-sql-sinkmodel.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/threat-cwe078-runtime-exec.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java/threat-cwe089-statement-execute.ql"
+  ]
+}
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli fcir
+{
+  "written": [
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/official-cwe078-command-flow.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/official-cwe078-environment-flow.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/official-cwe089-query-flow.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/owasp-cwe078-command.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/owasp-cwe089-sql.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/remote-cwe078-command-model.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/remote-cwe089-query-model.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/remote-cwe089-sql-sinkmodel.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/threat-cwe078-runtime-exec.json",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sqir/java/threat-cwe089-statement-execute.json"
+  ]
+}
+{
+  "output": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/fcir/corpus.json",
+  "programs": 10,
+  "programs_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/fcir/programs.json",
+  "provenance_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/fcir/provenance.json"
+}
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli codeql-pack-fcir
+{
+  "programs": 17,
+  "programs_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/fcir/codeql-pack/programs.json",
+  "provenance_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/fcir/codeql-pack/provenance.json",
+  "java_queries_root": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1",
+  "include_experimental": false
+}
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli stitch --mode offline --stitch-python <original-workspace>/cyberstitch_poc/../lilo_sec/.conda/envs/lilo/bin/python
+{
+  "mode": "offline",
+  "output": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+}
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli semantic-mine --merge --include-codeql-pack
+{
+  "output": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/semantic/candidates.json",
+  "concepts": 160,
+  "candidates": 96,
+  "merged_candidates": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+  "merged_count": 99
+}
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli validate
+{
+  "ok": true,
+  "manifest": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "cases": [
+      {
+        "test_id": "BenchmarkTest00017",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+        "cwe": 78,
+        "category": "cmdi",
+        "expected_vulnerable": true,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe078-command"
+        ],
+        "rationale": "Header-derived servlet input flows through URL decoding into Runtime.exec argument 0, matching the narrow command sink abstraction.",
+        "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+      },
+      {
+        "test_id": "BenchmarkTest00090",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00090.java",
+        "cwe": 78,
+        "category": "cmdi",
+        "expected_vulnerable": false,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe078-command"
+        ],
+        "rationale": "Cookie input is present, but the feasible branch assigns a constant before Runtime.exec, exercising a safe command-injection control without list-index taint imprecision.",
+        "abstraction_target": "Safe Runtime.exec constant-branch control"
+      },
+      {
+        "test_id": "BenchmarkTest00018",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+        "cwe": 89,
+        "category": "sqli",
+        "expected_vulnerable": true,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe089-sql"
+        ],
+        "rationale": "Header-derived servlet input is concatenated into SQL and passed to Statement.executeUpdate argument 0.",
+        "abstraction_target": "RemoteFlowSource plus java.sql.Statement executeUpdate argument sink"
+      },
+      {
+        "test_id": "BenchmarkTest00107",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00107.java",
+        "cwe": 89,
+        "category": "sqli",
+        "expected_vulnerable": false,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe089-sql"
+        ],
+        "rationale": "Cookie input is assigned locally, but the SQL string uses a reflected constant before Statement.execute, exercising a safe SQL control.",
+        "abstraction_target": "Safe Statement.execute control"
+      }
+    ],
+    "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+    "owasp_root": "<original-workspace>/cyberstitch_poc/benchmarks/BenchmarkJava"
+  },
+  "sqir": {
+    "ok": true,
+    "checked": 10,
+    "errors": []
+  },
+  "candidates": {
+    "decisions": 97,
+    "accepted": 7,
+    "accepted_for_lilo": 50,
+    "rejected": 90
+  }
+}
+[2026-05-12T09:39:02-04:00] + python3 -m cyberstitch.cli lilo-loop --mode live --merge --partition-mode auto --prompt-byte-budget 45000 --max-library-items 0 --max-concepts-per-partition 0 --max-use-site-examples 2 --lilo-python <original-workspace>/cyberstitch_poc/../lilo_sec/.conda/envs/lilo/bin/python
+{
+  "autodoc": [
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_active_threat_model_source",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+      "rationale": "This proposal provides a complete Java source predicate semantics for ThreatModel, specifically for ActiveThreatModelSource."
+    },
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL SourceKind semantics for RemoteFlowSource.getSourceType:Guice request parameter.",
+      "rationale": "This semantic template identifies a specific kind of source in Java CodeQL related to Guice request parameters, providing valuable context for security analysis."
+    },
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_command_injection_sink_sink",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL sink predicate semantics for CommandInjectionSink.",
+      "rationale": "This proposal provides a clear and descriptive name for the sink predicate."
+    },
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_command_injection_sanitizer_barrier",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL Barrier semantics for CommandInjectionSanitizer.",
+      "rationale": "This proposal preserves the semantics of the existing barrier predicate helper for CommandInjectionSanitizer."
+    }
+  ],
+  "groupings": [],
+  "query_synthesis_hints": [
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "concept:codeql_lib5:concept:0:ThreatModel"
+      ],
+      "hint": "future query-synthesis guidance; not executable in this milestone"
+    },
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "concept:codeql_lib5:concept:1:ModeledSinkType"
+      ],
+      "hint": "Provides future query-synthesis guidance for ModeledSinkType related to CommandInjectionSink.",
+      "rationale": "This hint helps guide future query synthesis efforts for CommandInjectionSink related queries."
+    },
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "concept:codeql_lib5:concept:2:BarrierKind"
+      ],
+      "hint": "Provides future query-synthesis guidance for BarrierKind concepts related to CommandInjectionSanitizer.",
+      "rationale": "This hint offers guidance for synthesizing queries related to BarrierKind concepts for CommandInjectionSanitizer."
+    }
+  ],
+  "ignored_outputs": [],
+  "format": "cyberstitch-candidates-v2",
+  "source": "lilo-loop-partitioned",
+  "output": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/candidates.json",
+  "proposals": 4,
+  "candidates": 4,
+  "candidate_summaries": [
+    {
+      "name": "java_active_threat_model_source",
+      "schema": "java_source_predicate_helper_v1",
+      "rewrite_eligible": true
+    },
+    {
+      "name": "remote_flow_source",
+      "schema": "rewrite_candidate_reference_v1",
+      "rewrite_eligible": false
+    },
+    {
+      "name": "java_command_injection_sink_sink",
+      "schema": "java_sink_predicate_helper_v1",
+      "rewrite_eligible": true
+    },
+    {
+      "name": "java_command_injection_sanitizer_barrier",
+      "schema": "java_barrier_predicate_helper_v1",
+      "rewrite_eligible": true
+    }
+  ],
+  "partitions_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/partitions.json",
+  "partition_mode": "auto",
+  "partition_count": 4,
+  "prompt_byte_budget": 45000,
+  "prompt_bytes": [
+    44758,
+    22459,
+    30487,
+    12932
+  ],
+  "selected_item_count": 50,
+  "selected_concept_count": 88,
+  "model": "gpt-3.5-turbo",
+  "cache_mode": "record",
+  "lilo_loop_summary": {
+    "format": "cyberstitch-lilo-loop-output-v1",
+    "source": "lilo-loop-partitioned",
+    "proposals": 4,
+    "candidates": 4,
+    "autodoc": 4,
+    "groupings": 0,
+    "query_synthesis_hints": 3,
+    "ignored_outputs": 0,
+    "candidates_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/candidates.json",
+    "sidecars": {
+      "autodoc": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/autodoc.json",
+      "groupings": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/groupings.json",
+      "query_synthesis_hints": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/query-synthesis-hints.json",
+      "ignored_outputs": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/ignored.json"
+    },
+    "partitions_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/partitions.json",
+    "partition_mode": "auto",
+    "partition_count": 4,
+    "prompt_byte_budget": 45000,
+    "prompt_bytes": [
+      44758,
+      22459,
+      30487,
+      12932
+    ],
+    "selected_item_count": 50,
+    "selected_concept_count": 88,
+    "model": "gpt-3.5-turbo",
+    "cache_mode": "record",
+    "summary_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/summary.json",
+    "report": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/report.md"
+  },
+  "merged_candidates": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+  "merged_count": 100
+}
+[2026-05-12T09:39:25-04:00] + python3 -m cyberstitch.cli validate
+{
+  "ok": true,
+  "manifest": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "cases": [
+      {
+        "test_id": "BenchmarkTest00017",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+        "cwe": 78,
+        "category": "cmdi",
+        "expected_vulnerable": true,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe078-command"
+        ],
+        "rationale": "Header-derived servlet input flows through URL decoding into Runtime.exec argument 0, matching the narrow command sink abstraction.",
+        "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+      },
+      {
+        "test_id": "BenchmarkTest00090",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00090.java",
+        "cwe": 78,
+        "category": "cmdi",
+        "expected_vulnerable": false,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe078-command"
+        ],
+        "rationale": "Cookie input is present, but the feasible branch assigns a constant before Runtime.exec, exercising a safe command-injection control without list-index taint imprecision.",
+        "abstraction_target": "Safe Runtime.exec constant-branch control"
+      },
+      {
+        "test_id": "BenchmarkTest00018",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+        "cwe": 89,
+        "category": "sqli",
+        "expected_vulnerable": true,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe089-sql"
+        ],
+        "rationale": "Header-derived servlet input is concatenated into SQL and passed to Statement.executeUpdate argument 0.",
+        "abstraction_target": "RemoteFlowSource plus java.sql.Statement executeUpdate argument sink"
+      },
+      {
+        "test_id": "BenchmarkTest00107",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00107.java",
+        "cwe": 89,
+        "category": "sqli",
+        "expected_vulnerable": false,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe089-sql"
+        ],
+        "rationale": "Cookie input is assigned locally, but the SQL string uses a reflected constant before Statement.execute, exercising a safe SQL control.",
+        "abstraction_target": "Safe Statement.execute control"
+      }
+    ],
+    "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+    "owasp_root": "<original-workspace>/cyberstitch_poc/benchmarks/BenchmarkJava"
+  },
+  "sqir": {
+    "ok": true,
+    "checked": 10,
+    "errors": []
+  },
+  "candidates": {
+    "decisions": 97,
+    "accepted": 7,
+    "accepted_for_lilo": 50,
+    "rejected": 90
+  }
+}
+[2026-05-12T09:39:25-04:00] + python3 -m cyberstitch.cli rewrite
+{
+  "helper": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/cyberstitch_helpers_java.qll",
+  "helpers": {
+    "java": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/cyberstitch_helpers_java.qll"
+  },
+  "query_helpers": {
+    "java": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/cyberstitch_helpers_java.qll"
+  },
+  "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries",
+  "written": [
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-command-flow.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-environment-flow.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe089-query-flow.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe078-command.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe089-sql.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe078-command-model.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-query-model.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-sql-sinkmodel.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe078-runtime-exec.ql",
+    "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe089-statement-execute.ql"
+  ]
+}
+[2026-05-12T09:39:25-04:00] + python3 -m cyberstitch.cli codeql-check
+{
+  "ok": true,
+  "decisions": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/validation/decisions.json",
+  "final_only": false,
+  "rewritten": {
+    "helper": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/cyberstitch_helpers_java.qll",
+    "helpers": {
+      "java": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/cyberstitch_helpers_java.qll"
+    },
+    "query_helpers": {
+      "java": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/cyberstitch_helpers_java.qll"
+    },
+    "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries",
+    "written": [
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-command-flow.ql",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-environment-flow.ql",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe089-query-flow.ql",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe078-command.ql",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe089-sql.ql",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe078-command-model.ql",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-query-model.ql",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-sql-sinkmodel.ql",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe078-runtime-exec.ql",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe089-statement-execute.ql"
+    ]
+  },
+  "candidate_results": [
+    {
+      "candidate": "java_active_threat_model_source",
+      "ok": true,
+      "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-check/candidates/000-java_active_threat_model_source/rewritten/queries/java"
+    },
+    {
+      "candidate": "java_command_injection_sink_sink",
+      "ok": true,
+      "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-check/candidates/001-java_command_injection_sink_sink/rewritten/queries/java"
+    },
+    {
+      "candidate": "java_command_injection_sanitizer_barrier",
+      "ok": true,
+      "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-check/candidates/002-java_command_injection_sanitizer_barrier/rewritten/queries/java"
+    },
+    {
+      "candidate": "java_remote_flow_source",
+      "ok": true,
+      "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-check/candidates/003-java_remote_flow_source/rewritten/queries/java"
+    },
+    {
+      "candidate": "java_query_injection_sink_sink",
+      "ok": true,
+      "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-check/candidates/005-java_query_injection_sink_sink/rewritten/queries/java"
+    },
+    {
+      "candidate": "java_java_lang_runtime_exec_sink",
+      "ok": true,
+      "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-check/candidates/006-java_java_lang_runtime_exec_sink/rewritten/queries/java"
+    },
+    {
+      "candidate": "java_method_names_execute_execute_query_execute_update_sink",
+      "ok": true,
+      "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-check/candidates/007-java_method_names_execute_execute_query_execute_update_sink/rewritten/queries/java"
+    }
+  ],
+  "final": {
+    "ok": true,
+    "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java",
+    "stdout": "[{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-command-flow.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/official-cwe078-command-flow.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-environment-flow.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/official-cwe078-environment-flow.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe089-query-flow.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/official-cwe089-query-flow.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe078-command.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/owasp-cwe078-command.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe089-sql.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/owasp-cwe089-sql.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe078-command-model.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/remote-cwe078-command-model.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-query-model.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/remote-cwe089-query-model.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-sql-sinkmodel.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/remote-cwe089-sql-sinkmodel.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe078-runtime-exec.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/threat-cwe078-runtime-exec.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe089-statement-execute.ql\"\n ,\"relativeName\":\"cyberstitch/generated-java-queries/threat-cwe089-statement-execute.ql\"\n ,\"success\":true,\"messages\":[]}\n]\n",
+    "stderr": "Compiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-command-flow.ql.\nDone [1/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-command-flow.ql.\nCompiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-environment-flow.ql.\nDone [2/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe078-environment-flow.ql.\nCompiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe089-query-flow.ql.\nDone [3/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/official-cwe089-query-flow.ql.\nCompiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe078-command.ql.\nDone [4/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe078-command.ql.\nCompiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe089-sql.ql.\nDone [5/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/owasp-cwe089-sql.ql.\nCompiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe078-command-model.ql.\nDone [6/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe078-command-model.ql.\nCompiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-query-model.ql.\nDone [7/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-query-model.ql.\nCompiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-sql-sinkmodel.ql.\nDone [8/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/remote-cwe089-sql-sinkmodel.ql.\nCompiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe078-runtime-exec.ql.\nDone [9/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe078-runtime-exec.ql.\nCompiling query plan for <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe089-statement-execute.ql.\nDone [10/10] <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java/threat-cwe089-statement-execute.ql.\n"
+  }
+}
+[2026-05-12T09:45:58-04:00] + python3 -m cyberstitch.cli db-create --overwrite --build-command mvn\ -Dmaven.repo.local=<original-workspace>/cyberstitch_poc/results/m2-repository\ clean\ package\ -DskipTests
+{
+  "database": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-dbs/java",
+  "created": true,
+  "source_root": "<original-workspace>/cyberstitch_poc/benchmarks/BenchmarkJava",
+  "build_mode": "manual",
+  "build_command": "mvn -Dmaven.repo.local=<original-workspace>/cyberstitch_poc/results/m2-repository clean package -DskipTests"
+}
+[2026-05-12T09:46:30-04:00] + python3 -m cyberstitch.cli codeql-discover --database <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-dbs/java --output-dir <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/seed-discovery
+{
+  "output": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/seed-discovery",
+  "specs": 2,
+  "queries": 6,
+  "selected_seeds": 6,
+  "score": {
+    "78": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 0,
+      "FP": 1
+    },
+    "89": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 0,
+      "FP": 1
+    }
+  }
+}
+[2026-05-12T09:47:17-04:00] + python3 -m cyberstitch.cli analyze --queries original
+{
+  "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/original.sarif",
+  "database": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-dbs/java",
+  "queries": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java"
+}
+[2026-05-12T09:49:39-04:00] + python3 -m cyberstitch.cli analyze --queries roundtrip
+{
+  "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/roundtrip.sarif",
+  "database": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-dbs/java",
+  "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/roundtrip/java"
+}
+[2026-05-12T09:50:54-04:00] + python3 -m cyberstitch.cli analyze --queries rewritten
+{
+  "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/rewritten.sarif",
+  "database": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/codeql-dbs/java",
+  "queries": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/rewritten/queries/java"
+}
+[2026-05-12T09:52:38-04:00] + python3 -m cyberstitch.cli score --sarif <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/original.sarif
+{
+  "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/original.sarif",
+  "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+  "totals": {
+    "78": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 1,
+      "FP": 0
+    },
+    "89": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 1,
+      "FP": 0
+    }
+  },
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00017",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "results": [
+        {
+          "rule_id": "java/cyberstitch/owasp-cwe078-command",
+          "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+          "line": 63,
+          "test_id": "BenchmarkTest00017",
+          "cwe": 78,
+          "message": "Remote input reaches Runtime.exec."
+        }
+      ]
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00018",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "results": [
+        {
+          "rule_id": "java/cyberstitch/owasp-cwe089-sql",
+          "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+          "line": 59,
+          "test_id": "BenchmarkTest00018",
+          "cwe": 89,
+          "message": "Remote input reaches java.sql.Statement execution."
+        }
+      ]
+    },
+    {
+      "test_id": "BenchmarkTest00107",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    }
+  ]
+}
+[2026-05-12T09:52:38-04:00] + python3 -m cyberstitch.cli score --sarif <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/roundtrip.sarif
+{
+  "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/roundtrip.sarif",
+  "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+  "totals": {
+    "78": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 1,
+      "FP": 0
+    },
+    "89": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 1,
+      "FP": 0
+    }
+  },
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00017",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "results": [
+        {
+          "rule_id": "java/cyberstitch/owasp-cwe078-command",
+          "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+          "line": 63,
+          "test_id": "BenchmarkTest00017",
+          "cwe": 78,
+          "message": "Remote input reaches Runtime.exec."
+        }
+      ]
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00018",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "results": [
+        {
+          "rule_id": "java/cyberstitch/owasp-cwe089-sql",
+          "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+          "line": 59,
+          "test_id": "BenchmarkTest00018",
+          "cwe": 89,
+          "message": "Remote input reaches java.sql.Statement execution."
+        }
+      ]
+    },
+    {
+      "test_id": "BenchmarkTest00107",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    }
+  ]
+}
+[2026-05-12T09:52:38-04:00] + python3 -m cyberstitch.cli score --sarif <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/rewritten.sarif
+{
+  "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/rewritten.sarif",
+  "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+  "totals": {
+    "78": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 1,
+      "FP": 0
+    },
+    "89": {
+      "TP": 1,
+      "FN": 0,
+      "TN": 1,
+      "FP": 0
+    }
+  },
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00017",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "results": [
+        {
+          "rule_id": "java/cyberstitch/owasp-cwe078-command",
+          "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+          "line": 63,
+          "test_id": "BenchmarkTest00017",
+          "cwe": 78,
+          "message": "Remote input reaches Runtime.exec."
+        }
+      ]
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    },
+    {
+      "test_id": "BenchmarkTest00018",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "results": [
+        {
+          "rule_id": "java/cyberstitch/owasp-cwe089-sql",
+          "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+          "line": 59,
+          "test_id": "BenchmarkTest00018",
+          "cwe": 89,
+          "message": "Remote input reaches java.sql.Statement execution."
+        }
+      ]
+    },
+    {
+      "test_id": "BenchmarkTest00107",
+      "cwe": 89,
+      "category": "sqli",
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "results": []
+    }
+  ]
+}
+[2026-05-12T09:52:39-04:00] + python3 -m cyberstitch.cli compare <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/original.sarif <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/roundtrip.sarif > <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/compare/original_vs_roundtrip.json
+{
+  "equivalent": true,
+  "missing": [],
+  "extra": []
+}
+[2026-05-12T09:52:39-04:00] + python3 -m cyberstitch.cli compare <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/original.sarif <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/sarif/rewritten.sarif > <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/compare/original_vs_rewritten.json
+{
+  "equivalent": true,
+  "missing": [],
+  "extra": []
+}
+[2026-05-12T09:52:39-04:00] + python3 -m cyberstitch.cli report
+{
+  "report": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/report.md"
+}
+[2026-05-12T09:52:39-04:00] + python3 -c $'import json, pathlib, sys\nroot = pathlib.Path(sys.argv[1])\nstatus = sys.argv[2]\nduration = int(sys.argv[3])\nbundle_mode = sys.argv[4]\nbundle_path = sys.argv[5] or None\nskip_db_create = sys.argv[6] == "1"\nstitch_mode = sys.argv[7]\nllm_propose = sys.argv[8]\nseed_profile = sys.argv[9]\nseed_discovery = sys.argv[10]\ninclude_experimental = sys.argv[11] == "1"\nlilo_loop = sys.argv[12]\nlilo_partition_mode = sys.argv[13]\nlilo_prompt_byte_budget = int(sys.argv[14])\nlilo_max_library_items = int(sys.argv[15])\nlilo_max_concepts_per_partition = int(sys.argv[16])\nlilo_max_use_site_examples = int(sys.argv[17])\n\ndef read_json(rel):\n    path = root / rel\n    if not path.exists():\n        return None\n    try:\n        return json.loads(path.read_text())\n    except json.JSONDecodeError:\n        return None\n\nscores = {}\nfor name in ("original", "roundtrip", "rewritten"):\n    data = read_json(f"score/{name}.json")\n    if data:\n        scores[name] = data.get("totals", {})\n\ncomparisons = {}\norig = read_json("compare/original_vs_roundtrip.json")\nrewr = read_json("compare/original_vs_rewritten.json")\nif orig:\n    comparisons["original_vs_roundtrip"] = orig\nif rewr:\n    comparisons["original_vs_rewritten"] = rewr\n\ndecisions = read_json("validation/decisions.json") or {"decisions": []}\naccepted = [\n    item["candidate"]["name"]\n    for item in decisions.get("decisions", [])\n    if item.get("accepted")\n]\naccepted_for_lilo = [\n    item["candidate"]["name"]\n    for item in decisions.get("decisions", [])\n    if item.get("accepted_for_lilo")\n]\nlilo_only = [\n    item["candidate"]["name"]\n    for item in decisions.get("decisions", [])\n    if item.get("accepted_for_lilo") and not item.get("accepted")\n]\nrejected = [\n    item["candidate"]["name"]\n    for item in decisions.get("decisions", [])\n    if not item.get("accepted")\n]\n\nsummary = {\n    "status": status,\n    "duration_seconds": duration,\n    "results_dir": str(root),\n    "bundle_policy": "opt-in only",\n    "bundle_mode": bundle_mode,\n    "stitch_mode": stitch_mode,\n    "llm_propose": llm_propose,\n    "lilo_loop": lilo_loop,\n    "lilo_loop_options": {\n        "partition_mode": lilo_partition_mode,\n        "prompt_byte_budget": lilo_prompt_byte_budget,\n        "max_library_items": lilo_max_library_items,\n        "max_concepts_per_partition": lilo_max_concepts_per_partition,\n        "max_use_site_examples": lilo_max_use_site_examples,\n    },\n    "seed_profile": seed_profile,\n    "seed_discovery": seed_discovery,\n    "include_experimental": include_experimental,\n    "bundle_path": bundle_path,\n    "bundle_created": bool(bundle_path),\n    "skip_db_create": skip_db_create,\n    "package_by_default": False,\n    "scores": scores,\n    "comparisons": comparisons,\n    "accepted_abstractions": accepted,\n    "accepted_for_lilo_abstractions": accepted_for_lilo,\n    "lilo_only_abstractions": lilo_only,\n    "rejected_abstractions": rejected,\n    "seed_discovery_summary": str(root / "seed-discovery" / "summary.json")\n    if (root / "seed-discovery" / "summary.json").exists()\n    else None,\n    "report": str(root / "report.md"),\n    "command_log": str(root / "commands.log"),\n    "environment": str(root / "environment.txt"),\n}\nlilo_loop_summary = root / "lilo-loop" / "summary.json"\nif lilo_loop_summary.exists():\n    summary["lilo_loop_summary"] = str(lilo_loop_summary)\n    data = json.loads(lilo_loop_summary.read_text())\n    summary["lilo_loop_partition_count"] = data.get("partition_count")\n    summary["lilo_loop_prompt_bytes"] = data.get("prompt_bytes")\nautodoc_summary = root / "autodoc-eval" / "summary.json"\nif autodoc_summary.exists():\n    summary["autodoc_eval_summary"] = str(autodoc_summary)\n    data = json.loads(autodoc_summary.read_text())\n    summary["autodoc_eval_primary_comparison"] = data.get("primary_comparison")\n(root / "summary.json").write_text(json.dumps(summary, indent=2) + "\\n")\n\nlines = ["# CyberSTITCH Curated BenchmarkJava Run Summary", ""]\nlines.append(f"Status: `{status}`")\nlines.append(f"Results: `{root}`")\nlines.append(f"Duration seconds: `{duration}`")\nlines.append(f"Bundle mode: `{bundle_mode}`")\nlines.append(f"STITCH mode: `{stitch_mode}`")\nlines.append(f"LLM propose: `{llm_propose}`")\nlines.append(f"LILO loop: `{lilo_loop}`")\nlines.append(f"LILO partition mode: `{lilo_partition_mode}`")\nlines.append(f"LILO prompt byte budget: `{lilo_prompt_byte_budget}`")\nlines.append(f"Seed profile: `{seed_profile}`")\nlines.append(f"Seed discovery: `{seed_discovery}`")\nlines.append(f"Include experimental CodeQL queries: `{include_experimental}`")\nlines.append(f"Bundle created: `{bool(bundle_path)}`")\nlines.append(f"Skip db-create: `{skip_db_create}`")\nif bundle_path:\n    lines.append(f"Restricted bundle: `{bundle_path}`")\nlines.append("")\nlines.append("## Scores")\nfor name, totals in scores.items():\n    lines.append(f"- `{name}`: `{totals}`")\nlines.append("")\nlines.append("## Equivalence")\nfor name, result in comparisons.items():\n    lines.append("- `{}`: equivalent=`{}` missing=`{}` extra=`{}`".format(\n        name,\n        result.get("equivalent"),\n        len(result.get("missing", [])),\n        len(result.get("extra", [])),\n    ))\nlines.append("")\nlines.append("## Abstractions")\nlines.append(f"- rewrite accepted: `{accepted}`")\nlines.append(f"- LILO accepted: `{accepted_for_lilo}`")\nlines.append(f"- LILO-only: `{lilo_only}`")\nlines.append(f"- rewrite rejected: `{rejected}`")\nlines.append("")\nseed_summary = root / "seed-discovery" / "summary.json"\nif seed_summary.exists():\n    data = json.loads(seed_summary.read_text())\n    lines.append("## Seed Discovery")\n    lines.append("- specs: `{}`".format(len(data.get("specs", []))))\n    lines.append("- queries: `{}`".format(len(data.get("queries", []))))\n    lines.append("- selected seeds: `{}`".format(len(data.get("selected_seeds", []))))\n    lines.append("- score: `{}`".format((data.get("score") or {}).get("totals")))\n    lines.append("")\nlines.append("## Files")\nlines.append("- report: `{}`".format(root / "report.md"))\nlines.append("- command log: `{}`".format(root / "commands.log"))\nlines.append("- environment: `{}`".format(root / "environment.txt"))\nif lilo_loop_summary.exists():\n    lines.append("- LILO loop summary: `{}`".format(lilo_loop_summary))\n    lines.append("- LILO loop report: `{}`".format(root / "lilo-loop" / "report.md"))\nif autodoc_summary.exists():\n    lines.append("- AutoDoc eval summary: `{}`".format(autodoc_summary))\n    lines.append("- AutoDoc eval report: `{}`".format(root / "autodoc-eval" / "report.md"))\n(root / "summary.md").write_text("\\n".join(lines) + "\\n")\n' <original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512 completed 818 none '' 0 offline none combined-pack official 0 live auto 45000 0 0 2

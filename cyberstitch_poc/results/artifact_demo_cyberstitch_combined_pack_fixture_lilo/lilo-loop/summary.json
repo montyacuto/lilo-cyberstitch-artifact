@@ -1,0 +1,17 @@
+{
+  "format": "cyberstitch-lilo-loop-output-v1",
+  "source": "fixture",
+  "proposals": 2,
+  "candidates": 2,
+  "autodoc": 1,
+  "groupings": 1,
+  "query_synthesis_hints": 1,
+  "ignored_outputs": 1,
+  "candidates_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_artifact_20260512/lilo-loop/candidates.json",
+  "sidecars": {
+    "autodoc": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_artifact_20260512/lilo-loop/autodoc.json",
+    "groupings": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_artifact_20260512/lilo-loop/groupings.json",
+    "query_synthesis_hints": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_artifact_20260512/lilo-loop/query-synthesis-hints.json",
+    "ignored_outputs": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_artifact_20260512/lilo-loop/ignored.json"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/remote-cwe089-sql-sinkmodel.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Remote input reaches modeled SQL sink",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/remote-cwe089-sql-sinkmodel",
+    "tags": "security external/cwe/cwe-089"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.dataflow.ExternalFlow"
+  ],
+  "config_modules": [
+    {
+      "name": "RemoteSqlSinkModelConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "RemoteFlowSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "77d5e6e4442609be97c0a6cfec158c7c77905df7e6d3359e203ff8b110762256"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "sinkNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "sink"
+              },
+              {
+                "kind": "string",
+                "value": "sql-injection"
+              }
+            ]
+          },
+          "source_hash": "79bab953cc063415e3d3f6a63f6a105331f351d61f32f6a87a23efe38c099b51"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "RemoteSqlSinkModelFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "RemoteSqlSinkModelConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "RemoteSqlSinkModelFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "RemoteSqlSinkModelFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "RemoteSqlSinkModelFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "Remote input reaches a modeled SQL-injection sink."
+    },
+    "message": "Remote input reaches a modeled SQL-injection sink."
+  },
+  "provenance_hash": "48c1fdc5b1d289907c0f62e84f8cbc576e586545a1a1df23c9bb13f180c9403e",
+  "version": "sqir-v2"
+}

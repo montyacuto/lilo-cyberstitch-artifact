@@ -1,0 +1,736 @@
+{
+  "created": "2026-05-12T23:18:16",
+  "entries": [
+    {
+      "exists": true,
+      "file_size_bytes": 19553,
+      "kind": "file",
+      "path": "README.md",
+      "reason": "Combined artifact README.",
+      "required": true,
+      "scope": "all",
+      "target": "README.md"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1070,
+      "kind": "file",
+      "path": "LICENSE.txt",
+      "reason": "Top-level artifact license.",
+      "required": true,
+      "scope": "all",
+      "target": "LICENSE.txt"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1514,
+      "kind": "file",
+      "path": "run_artifact.sh",
+      "reason": "Root artifact runner source.",
+      "required": true,
+      "scope": "all",
+      "target": "run_artifact.sh"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1514,
+      "kind": "file",
+      "path": "artifact",
+      "reason": "Packaged one-command artifact runner.",
+      "required": true,
+      "scope": "all",
+      "target": "artifact"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 362,
+      "kind": "file",
+      "path": "lilo",
+      "reason": "Compatibility wrapper for the combined artifact menu.",
+      "required": true,
+      "scope": "all",
+      "target": "lilo"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "package_stage",
+      "reason": "Package verification and staging manifests.",
+      "required": false,
+      "scope": "all",
+      "target": "package_stage"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "env/locks",
+      "reason": "Pinned dependency lock records.",
+      "required": true,
+      "scope": "lilo",
+      "target": "env/locks"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "results/lilo/run_logs/artifact_demo_lilo_seed111_init",
+      "reason": "Paper-faithful seed-111 init command logs.",
+      "required": true,
+      "scope": "lilo",
+      "target": "results/lilo/run_logs/artifact_demo_lilo_seed111_init"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "results/lilo/run_logs/artifact_demo_lilo_seed111_batch32_full_battery",
+      "reason": "Batch-32 full battery command logs.",
+      "required": true,
+      "scope": "lilo",
+      "target": "results/lilo/run_logs/artifact_demo_lilo_seed111_batch32_full_battery"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "results/lilo/run_logs/artifact_demo_lilo_logo_seed111_batch96_instruct_4gb_partial",
+      "reason": "Longest increased-cap LOGO partial run logs.",
+      "required": true,
+      "scope": "lilo",
+      "target": "results/lilo/run_logs/artifact_demo_lilo_logo_seed111_batch96_instruct_4gb_partial"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 995655,
+      "kind": "file",
+      "path": "results/lilo/run_logs/artifact_demo_lilo_regex_seed111_batch96_instruct_segment1/run.log",
+      "reason": "Batch-96 REGEX first segment embedded run log.",
+      "required": true,
+      "scope": "lilo",
+      "target": "results/lilo/run_logs/artifact_demo_lilo_regex_seed111_batch96_instruct_segment1/run.log"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 4790915,
+      "kind": "file",
+      "path": "results/lilo/run_logs/artifact_demo_lilo_regex_seed111_batch96_instruct_segment2/run.log",
+      "reason": "Batch-96 REGEX continuation embedded run log.",
+      "required": true,
+      "scope": "lilo",
+      "target": "results/lilo/run_logs/artifact_demo_lilo_regex_seed111_batch96_instruct_segment2/run.log"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "results/lilo/monitors/artifact_demo_lilo_seed111_init",
+      "reason": "Init monitor evidence.",
+      "required": true,
+      "scope": "lilo",
+      "target": "results/lilo/monitors/artifact_demo_lilo_seed111_init"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "results/lilo/monitors/artifact_demo_lilo_seed111_batch32_full_battery",
+      "reason": "Full battery monitor evidence.",
+      "required": true,
+      "scope": "lilo",
+      "target": "results/lilo/monitors/artifact_demo_lilo_seed111_batch32_full_battery"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "results/lilo/llm_caches/artifact_demo_lilo_seed111_batch32_replay_cache",
+      "reason": "Primary batch-32 replay cache.",
+      "required": true,
+      "scope": "lilo",
+      "target": "results/lilo/llm_caches/artifact_demo_lilo_seed111_batch32_replay_cache"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 882,
+      "kind": "file",
+      "path": "results/lilo/llm_caches/batch96_regex_cache_note.md",
+      "reason": "Batch-96 REGEX cache status note.",
+      "required": true,
+      "scope": "lilo",
+      "target": "results/lilo/llm_caches/batch96_regex_cache_note.md"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 9050,
+      "kind": "file",
+      "path": "lilo_sec/README.md",
+      "reason": "LILO source README.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/README.md"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1739,
+      "kind": "file",
+      "path": "lilo_sec/REPRODUCTION_STATUS.md",
+      "reason": "LILO reproduction status note.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/REPRODUCTION_STATUS.md"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 649,
+      "kind": "file",
+      "path": "lilo_sec/environment.yml",
+      "reason": "Pinned conda environment seed file.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/environment.yml"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1736,
+      "kind": "file",
+      "path": "lilo_sec/laps_requirements.txt",
+      "reason": "Legacy Python requirements record.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/laps_requirements.txt"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 340,
+      "kind": "file",
+      "path": "lilo_sec/.gitignore",
+      "reason": "LILO repository ignore rules.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/.gitignore"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 207,
+      "kind": "file",
+      "path": "lilo_sec/.gitmodules",
+      "reason": "LILO submodule metadata.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/.gitmodules"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1183,
+      "kind": "file",
+      "path": "lilo_sec/Dockerfile",
+      "reason": "Original Docker reference environment.",
+      "required": false,
+      "scope": "lilo",
+      "target": "lilo_sec/Dockerfile"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1189,
+      "kind": "file",
+      "path": "lilo_sec/litellm_config.example.yaml",
+      "reason": "LiteLLM example configuration.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/litellm_config.example.yaml"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1655,
+      "kind": "file",
+      "path": "lilo_sec/litellm_config.gpt35.yaml",
+      "reason": "LiteLLM GPT-3.5 compatibility configuration.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/litellm_config.gpt35.yaml"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1904,
+      "kind": "file",
+      "path": "lilo_sec/litellm_config.initial_lilo.yaml",
+      "reason": "LiteLLM initial LILO compatibility configuration.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/litellm_config.initial_lilo.yaml"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 2833,
+      "kind": "file",
+      "path": "lilo_sec/run_experiment.py",
+      "reason": "LILO experiment entrypoint.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/run_experiment.py"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 11752,
+      "kind": "file",
+      "path": "lilo_sec/run_iterative_experiment.py",
+      "reason": "Iterative LILO experiment entrypoint.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/run_iterative_experiment.py"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 2418,
+      "kind": "file",
+      "path": "lilo_sec/precompute_embeddings.py",
+      "reason": "Embedding precomputation helper.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/precompute_embeddings.py"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 5786,
+      "kind": "file",
+      "path": "lilo_sec/run_library_evaluation.py",
+      "reason": "Library evaluation helper.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/run_library_evaluation.py"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 27377,
+      "kind": "file",
+      "path": "lilo_sec/evaluate_compression_model_scoring.py",
+      "reason": "Compression-model scoring helper.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/evaluate_compression_model_scoring.py"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/scripts",
+      "reason": "Artifact runner and LILO helper scripts.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/scripts"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/src",
+      "reason": "LILO reproduction source modifications.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/src"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/data",
+      "reason": "LILO benchmark task data and embeddings.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/data"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/dreamcoder",
+      "reason": "Bundled DreamCoder source and binaries.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/dreamcoder"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/ocaml",
+      "reason": "OCaml solver source and binaries.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/ocaml"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/experiments",
+      "reason": "Original experiment definitions.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/experiments"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/experiments_iterative/templates",
+      "reason": "LILO iterative experiment templates.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/experiments_iterative/templates"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_seed111_init",
+      "reason": "Paper-faithful init output.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_seed111_init"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_seed111_batch32_full_battery",
+      "reason": "Batch-32 full battery output.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_seed111_batch32_full_battery"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_regex_seed111_batch96_instruct_segment1",
+      "reason": "Batch-96 REGEX first segment output.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_regex_seed111_batch96_instruct_segment1"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_regex_seed111_batch96_instruct_segment2",
+      "reason": "Batch-96 REGEX continuation output.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_regex_seed111_batch96_instruct_segment2"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_logo_seed111_batch96_instruct_4gb_partial",
+      "reason": "Longest increased-cap LOGO partial output.",
+      "required": true,
+      "scope": "lilo",
+      "target": "lilo_sec/experiments_iterative/outputs/artifact_demo_lilo_logo_seed111_batch96_instruct_4gb_partial"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 5325,
+      "kind": "file",
+      "path": "cyberstitch_poc/README.md",
+      "reason": "CyberSTITCH README.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/README.md"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 1022,
+      "kind": "file",
+      "path": "cyberstitch_poc/Makefile",
+      "reason": "CyberSTITCH developer commands.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/Makefile"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 412,
+      "kind": "file",
+      "path": "cyberstitch_poc/pyproject.toml",
+      "reason": "CyberSTITCH Python metadata.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/pyproject.toml"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 337,
+      "kind": "file",
+      "path": "cyberstitch_poc/cyberstitch.yml",
+      "reason": "CyberSTITCH configuration.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/cyberstitch.yml"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/cyberstitch",
+      "reason": "CyberSTITCH implementation.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/cyberstitch"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/queries",
+      "reason": "Baseline CyberSTITCH CodeQL queries.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/queries"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/query_profiles",
+      "reason": "CyberSTITCH query profiles and seed manifests.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/query_profiles"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/fixtures",
+      "reason": "Fixture-backed LILO/AutoDoc inputs.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/fixtures"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/scripts",
+      "reason": "CyberSTITCH experiment runner scripts.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/scripts"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/tests",
+      "reason": "CyberSTITCH tests.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/tests"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 2541,
+      "kind": "file",
+      "path": "cyberstitch_poc/benchmarks/owasp_curated_subset.json",
+      "reason": "Curated fixture manifest.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/benchmarks/owasp_curated_subset.json"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 2698,
+      "kind": "file",
+      "path": "cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+      "reason": "BenchmarkJava curated manifest.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 56426,
+      "kind": "file",
+      "path": "cyberstitch_poc/benchmarks/owasp_cmdi_100_benchmarkjava.json",
+      "reason": "BenchmarkJava command injection manifest.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/benchmarks/owasp_cmdi_100_benchmarkjava.json"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 402876,
+      "kind": "file",
+      "path": "cyberstitch_poc/benchmarks/owasp_cmdi_sqli_all_benchmarkjava.json",
+      "reason": "BenchmarkJava CMDI/SQLI manifest.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/benchmarks/owasp_cmdi_sqli_all_benchmarkjava.json"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": 993019,
+      "kind": "file",
+      "path": "cyberstitch_poc/benchmarks/owasp_cmdi_sqli_all_benchmarkjava_official_expanded.json",
+      "reason": "Companion-pack BenchmarkJava manifest.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/benchmarks/owasp_cmdi_sqli_all_benchmarkjava_official_expanded.json"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/benchmarks/owasp-fixture",
+      "reason": "Checked-in fixture source corpus.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/benchmarks/owasp-fixture"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/benchmarks/js",
+      "reason": "Checked-in JS fixture corpus.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/benchmarks/js"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/artifact_demo_cyberstitch_combined_pack_final",
+      "reason": "Deterministic combined-pack final run.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/artifact_demo_cyberstitch_combined_pack_final"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/artifact_demo_cyberstitch_companion_pack_final",
+      "reason": "Deterministic companion-pack final run.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/artifact_demo_cyberstitch_companion_pack_final"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/artifact_demo_cyberstitch_bounded_pack_final",
+      "reason": "Deterministic bounded-pack final run.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/artifact_demo_cyberstitch_bounded_pack_final"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/artifact_demo_cyberstitch_combined_pack_fixture_lilo",
+      "reason": "Fixture-backed LILO-loop artifact run.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/artifact_demo_cyberstitch_combined_pack_fixture_lilo"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/artifact_demo_cyberstitch_combined_pack_live_api",
+      "reason": "Live API partitioned combined-pack record run.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/artifact_demo_cyberstitch_combined_pack_live_api"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/artifact_demo_cyberstitch_companion_pack_live_api",
+      "reason": "Live API partitioned companion-pack record run.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/artifact_demo_cyberstitch_companion_pack_live_api"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/artifact_demo_cyberstitch_bounded_pack_live_api",
+      "reason": "Live API partitioned bounded-pack record run.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/artifact_demo_cyberstitch_bounded_pack_live_api"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/lilo-llm-cache/artifact_demo_cyberstitch_combined_pack_live_api",
+      "reason": "Live API combined-pack completion cache.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/lilo-llm-cache/artifact_demo_cyberstitch_combined_pack_live_api"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/lilo-llm-cache/artifact_demo_cyberstitch_companion_pack_live_api",
+      "reason": "Live API companion-pack completion cache.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/lilo-llm-cache/artifact_demo_cyberstitch_companion_pack_live_api"
+    },
+    {
+      "exists": true,
+      "file_size_bytes": null,
+      "kind": "dir",
+      "path": "cyberstitch_poc/results/lilo-llm-cache/artifact_demo_cyberstitch_bounded_pack_live_api",
+      "reason": "Live API bounded-pack completion cache.",
+      "required": true,
+      "scope": "cyberstitch",
+      "target": "cyberstitch_poc/results/lilo-llm-cache/artifact_demo_cyberstitch_bounded_pack_live_api"
+    }
+  ],
+  "exclude_dir_names": [
+    ".cache",
+    ".conda",
+    ".git",
+    ".mypy_cache",
+    ".opam",
+    ".pytest_cache",
+    ".ruff_cache",
+    "BenchmarkJava",
+    "__pycache__",
+    "_build",
+    "_opam",
+    "bundles",
+    "codeql-cache",
+    "codeql-dbs",
+    "m2-repository",
+    "target"
+  ],
+  "exclude_file_patterns": [
+    ".git",
+    ".DS_Store",
+    "*.pyc",
+    "*.pyo",
+    "*.zip",
+    "*.tar",
+    "*.tar.gz"
+  ],
+  "excluded_children": [],
+  "missing_required": [],
+  "project_root": "<artifact-root>",
+  "scope": "all"
+}

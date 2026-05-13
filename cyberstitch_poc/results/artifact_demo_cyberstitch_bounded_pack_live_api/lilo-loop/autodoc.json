@@ -1,0 +1,30 @@
+[
+  {
+    "schema": "autodoc_v1",
+    "target_id": "candidate:java_active_threat_model_source",
+    "display_name": "remote_flow_source",
+    "description": "Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.",
+    "rationale": "This proposal provides a reusable source predicate for ThreatModel semantics in Java CodeQL."
+  },
+  {
+    "schema": "autodoc_v1",
+    "target_id": "candidate:java_command_injection_sink_sink",
+    "display_name": "remote_flow_source",
+    "description": "Recognizes Java CodeQL sink semantics for command injection.",
+    "rationale": "This proposal provides a clear and descriptive name for the existing sink predicate."
+  },
+  {
+    "schema": "autodoc_v1",
+    "target_id": "candidate:java_method_call_sink_method_names_execute_query_486e5c11",
+    "display_name": "remote_flow_source",
+    "description": "Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.",
+    "rationale": "This proposal provides a clear and descriptive name for the semantic role of the candidate."
+  },
+  {
+    "schema": "autodoc_v1",
+    "target_id": "candidate:java_simple_type_sanitizer_barrier",
+    "display_name": "remote_flow_source",
+    "description": "Recognizes Java CodeQL Barrier semantics for SimpleTypeSanitizer.",
+    "rationale": "This proposal provides a clear and descriptive name for the barrier predicate."
+  }
+]

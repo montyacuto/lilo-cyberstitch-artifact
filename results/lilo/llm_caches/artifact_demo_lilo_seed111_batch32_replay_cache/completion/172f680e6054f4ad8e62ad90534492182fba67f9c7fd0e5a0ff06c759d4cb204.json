@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T21:09:27Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_or_add_characters_based_on_conditions :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: This function takes a full string, a substring to add or replace, and a substring to search for. It checks each character in the full string and performs the following actions based on conditions: if the search substring is found, it replaces it with the specified substring; if not found, it adds the specified substring before the search substring.\n\nadd_or_replace_characters_after_first_letter :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\n\nvowel_or_consonant_check :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: Checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') and returns true if it is a vowel, false otherwise.\n\nreplace_end_letter_based_on_conditions :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\ndescription: This function takes a full string, a substring to add or replace, and a substring to search for. It appends the specified substring to the concatenation of the full string and the first specified substring, then replaces the last character of the resulting string based on conditions provided by the third substring.\n\nreplace_end_letter_with_substring :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: Replaces the last letter of a full string with a specified substring based on the split by '.'\n\nfn_47 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_48 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_49 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_conditions $0 (regex_concat 'a' $1) $2))))\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match 'p' $0) $1 $0)) (regex_split empty_string $1)))))\n\nfn_51 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_47 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nHere are some examples of its usage:\n\n-- if there is any letter replace that with g i\n(lambda (fn_47 $0 (lambda (regex_concat 'g' 'i'))))\n\n-- if there is any letter replace that with w t\n(lambda (fn_47 $0 (lambda (regex_concat 'w' 't'))))\n\n-- if there is any letter replace that with k\n(lambda (fn_47 $0 (lambda 'k')))\n\n-- if there is any letter replace that with h s\n(lambda (fn_47 $0 (lambda (regex_concat 'h' 's'))))\n\n-- if there is any letter replace that with p\n(lambda (fn_47 $0 (lambda 'p')))\n\n-- if there is any letter replace that with r v\n(lambda (fn_47 $0 (lambda (regex_concat 'r' 'v'))))\n\n-- if there is any letter add v after that\n(lambda (fn_47 $0 (lambda (regex_concat $0 'v'))))\n\n-- if there is i replace that with m\n(lambda (fn_47 $0 (lambda (regex_if (regex_match $0 'i') 'm' $0))))\n\nPlease write a human-readable name and description for `fn_47` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "172f680e6054f4ad8e62ad90534492182fba67f9c7fd0e5a0ff06c759d4cb204",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_or_transform_based_on_separator\",\n    \"description\": \"This function takes a full string and a transformation function that operates on substrings separated by '.'. It applies the transformation function to each substring in the full string and returns the modified full string.\"\n}"
+      }
+    ],
+    "created": 1778188166,
+    "id": "chatcmpl-Dd0GErTDv9MTpmOYs1OVoD7vHKJS2",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 345,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1131,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1476
+    }
+  }
+}

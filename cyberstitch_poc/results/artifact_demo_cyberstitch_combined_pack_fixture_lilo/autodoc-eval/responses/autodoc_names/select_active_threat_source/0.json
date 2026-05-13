@@ -1,0 +1,10 @@
+{
+  "data": {
+    "no_raw_codeql": true,
+    "selected": [
+      "candidate:java_active_threat_model_source"
+    ]
+  },
+  "source": "fixture",
+  "text": "{\n  \"selected\": [\n    \"candidate:java_active_threat_model_source\"\n  ],\n  \"no_raw_codeql\": true\n}"
+}

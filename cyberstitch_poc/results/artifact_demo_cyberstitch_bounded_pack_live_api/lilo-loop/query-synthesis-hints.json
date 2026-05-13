@@ -1,0 +1,24 @@
+[
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "concept:codeql_lib5:concept:0:ThreatModel"
+    ],
+    "hint": "future query-synthesis guidance; not executable in this milestone"
+  },
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "concept:codeql_lib5:concept:1:ModeledSinkType"
+    ],
+    "hint": "Future query-synthesis guidance; not executable in this milestone"
+  },
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "concept:codeql_lib5:concept:2:BarrierKind"
+    ],
+    "hint": "Provide future query-synthesis guidance for BarrierKind related to SimpleTypeSanitizer.",
+    "rationale": "This hint helps guide future query synthesis efforts for BarrierKind related to SimpleTypeSanitizer."
+  }
+]

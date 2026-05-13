@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "spec": "codeql/java-queries:Security/CWE/CWE-078",
+  "queries": [
+    "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql",
+    "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql",
+    "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+    "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql"
+  ],
+  "stdout": "[\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql\",\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql\",\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql\",\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql\"\n]\n",
+  "stderr": "Recording pack reference codeql/java-queries at <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1.\n",
+  "command": [
+    "<original-workspace>/codeql/codeql",
+    "resolve",
+    "queries",
+    "--format=json",
+    "--",
+    "codeql/java-queries:Security/CWE/CWE-078"
+  ]
+}

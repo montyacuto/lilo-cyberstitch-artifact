@@ -1,0 +1,174 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/official-expanded/java/remote-cwe078-argument-to-exec.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Remote input reaches argumentToExec command sink",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/official-expanded/remote-cwe078-argument-to-exec",
+    "tags": "security external/cwe/cwe-078"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.security.CommandLineQuery",
+    "semmle.code.java.security.ExternalProcess"
+  ],
+  "config_modules": [
+    {
+      "name": "RemoteArgumentToExecConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "RemoteFlowSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "77d5e6e4442609be97c0a6cfec158c7c77905df7e6d3359e203ff8b110762256"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "CommandInjectionSink",
+                "name": "command"
+              }
+            ],
+            "body": {
+              "kind": "predicate_call",
+              "name": "argumentToExec",
+              "args": [
+                {
+                  "kind": "method_call",
+                  "receiver": {
+                    "kind": "var",
+                    "name": "sink"
+                  },
+                  "method": "asExpr",
+                  "args": []
+                },
+                {
+                  "kind": "var",
+                  "name": "command"
+                }
+              ]
+            }
+          },
+          "source_hash": "10d9304a5d75852134b74f1628a345bccd4a093ef1b1b930658a4458a9210232"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "CommandInjectionSanitizer",
+                "name": "sanitizer"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "node"
+              },
+              "right": {
+                "kind": "var",
+                "name": "sanitizer"
+              }
+            }
+          },
+          "source_hash": "d53b9ab54929ee61270337f54f4d0ff47c2e33d249326e8bafcf583e043aadec"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "RemoteArgumentToExecFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "RemoteArgumentToExecConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "RemoteArgumentToExecFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "RemoteArgumentToExecFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "RemoteArgumentToExecFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "Remote input reaches an argumentToExec command sink."
+    },
+    "message": "Remote input reaches an argumentToExec command sink."
+  },
+  "provenance_hash": "3e1a8e0eb0629950ee276c5c48d7ebb63083362a3543128118aac14972499564",
+  "version": "sqir-v2"
+}

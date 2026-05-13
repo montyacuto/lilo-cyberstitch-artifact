@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T12:11:15Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nfn_42 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\n\nfn_43 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n\nfn_44 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_45 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_46 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match 'p' $0) $1 $0)) (regex_split empty_string $1)))))\n\nfn_47 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (fn_42 $0 (regex_concat 'a' $1) $2))))\n\nfn_48 :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (fn_43 $0 (regex_concat $1 'a'))))\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_50 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (fn_45 $0 (lambda (regex_if (regex_match $0 $2) $3 $0))))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (fn_42 $0 (regex_concat 'c' $1) $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_42 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\n\nHere are some examples of its usage:\n\n-- if there is a replace that with u c\n(lambda (fn_42 $0 (regex_concat 'u' 'c') 'a'))\n\n-- if there is i replace that with k t\n(lambda (fn_42 $0 (regex_concat 'k' 't') 'i'))\n\n-- if there is t replace that with f v\n(lambda (fn_42 $0 (regex_concat 'f' 'v') 't'))\n\n-- if there is b replace that with q\n(lambda (fn_42 $0 'q' 'b'))\n\n-- if there is t replace that with n\n(lambda (fn_42 $0 'n' 't'))\n\n-- if there is h replace that with y\n(lambda (fn_42 $0 'y' 'h'))\n\n-- if there is g replace that with u f\n(lambda (fn_42 $0 (regex_concat 'u' 'f') 'g'))\n\n-- if there is t replace that with i\n(lambda (fn_42 $0 'i' 't'))\n\n-- if there is s replace that with r a\n(lambda (fn_42 $0 (regex_concat 'r' 'a') 's'))\n\nPlease write a human-readable name and description for `fn_42` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "7b3ee1859d688c1166094f8971bbb8082aed9b56842f9b298d92587e0fa71049",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_if_match\",\n    \"description\": \"A function that replaces a substring in a full string if a match is found based on a given condition.\"\n}"
+      }
+    ],
+    "created": 1778155873,
+    "id": "chatcmpl-DcrrNP03SoJ3u38BK8iWtu680VYQt",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 245,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 869,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1114
+    }
+  }
+}

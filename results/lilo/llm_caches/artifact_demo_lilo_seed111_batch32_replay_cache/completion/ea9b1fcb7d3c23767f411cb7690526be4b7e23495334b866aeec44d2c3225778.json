@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T12:18:44Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nfilter_objects_by_color :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $3) (clevr_add $1 $0) $0))))))\ndescription: Filters a list of objects by the specified color and returns a new list containing only objects of that color.\n\nfilter_objects_by_material_and_shape :: tclevrmaterial -> tclevrshape -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape $1) $3) (clevr_if (clevr_eq_material (clevr_query_material $1) $4) (clevr_add $1 $0) $0) $0)))))))\ndescription: Filters a list of objects by the specified material and shape, returning a new list containing only objects that match both criteria.\n\nfilter_objects_by_size :: list(tclevrobject) -> list(tclevrobject)\n\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size (clevr_query_size $1) clevr_small) (clevr_add $1 $0) $0)))))\ndescription: Filters a list of objects by size, returning a new list containing only objects that are small.\n\nretrieve_object_related_to_relation :: tclevrrelation -> list(tclevrobject) -> tclevrobject\n\n(lambda (lambda (clevr_car (clevr_fold $0 $0 (lambda (lambda (clevr_difference $0 (clevr_relate $1 $3 $0))))))))\ndescription: Retrieves an object related to a specified relation from a list of objects.\n\ncount_objects_related_to_relation_greater_than :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\ndescription: Counts the number of objects related to a specified relation that are greater than a specified threshold.\n\nfn_59 :: list(tclevrobject) -> tclevrobject -> bool -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_if $0 (clevr_add $1 $2) $2))))\n\nfn_60 :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (fn_59 $0 $1 (clevr_eq_color (clevr_if (clevr_eq_material (clevr_query_material $1) clevr_metal) clevr_red (clevr_query_color $1)) $3)))))))\n\nfn_61 :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\n\nfn_62 :: tclevrshape -> tclevrcolor -> list(tclevrobject) -> int\n\n(lambda (lambda (lambda (clevr_count (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color $3 (clevr_query_color $1)) $0 (fn_59 $0 $1 (clevr_eq_shape (clevr_query_shape $1) $4))))))))))\n\nfn_63 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_59 :: list(tclevrobject) -> tclevrobject -> bool -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_if $0 (clevr_add $1 $2) $2))))\n\nHere are some examples of its usage:\n\n-- if you removed the metal thing s how many thing s would be left\n(lambda (clevr_count (clevr_fold $0 clevr_empty (lambda (lambda (fn_59 $0 $1 (clevr_eq_material (clevr_query_material $1) clevr_rubber)))))))\n\n-- find the blue metal thing\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color clevr_blue (clevr_query_color $1)) (fn_59 $0 $1 (clevr_eq_material (clevr_query_material $1) clevr_metal)) $0)))))\n\n-- find the large metal thing\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_material (clevr_query_material $1) clevr_metal) (fn_59 $0 $1 (clevr_eq_size (clevr_query_size $1) clevr_large)) $0)))))\n\n-- find the large blue metal thing\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color clevr_blue (clevr_query_color $1)) (clevr_if (clevr_eq_material clevr_metal (clevr_query_material $1)) (fn_59 $0 $1 (clevr_eq_size clevr_large (clevr_query_size $1))) $0) $0)))))\n\n-- find the small red thing\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (fn_59 $0 $1 (clevr_eq_size (clevr_if (clevr_eq_color (clevr_query_color $1) clevr_red) (clevr_query_size $1) clevr_large) clevr_small))))))\n\n-- if you removed the cylinder s how many large thing s would be left\n(lambda (clevr_count (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape $1) clevr_cylinder) $0 (fn_59 $0 $1 (clevr_eq_size clevr_large (clevr_query_size $1)))))))))\n\n-- find the small metal thing\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (fn_59 $0 $1 (clevr_eq_size (clevr_if (clevr_eq_material (clevr_query_material $1) clevr_metal) (clevr_query_size $1) clevr_large) clevr_small))))))\n\n-- what number of thing s are rubber thing s or rubber cylinder s\n(lambda (clevr_count (clevr_fold $0 clevr_empty (lambda (lambda (fn_59 $0 $1 (clevr_eq_material (clevr_query_material $1) clevr_rubber)))))))\n\n-- find the brown metal thing\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color clevr_brown (clevr_query_color $1)) (fn_59 $0 $1 (clevr_eq_material (clevr_query_material $1) clevr_metal)) $0)))))\n\n-- the cube is what color\n(lambda (clevr_query_color (clevr_car (clevr_fold $0 clevr_empty (lambda (lambda (fn_59 $0 $1 (clevr_eq_shape clevr_cube (clevr_query_shape $1)))))))))\n\nPlease write a human-readable name and description for `fn_59` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "ea9b1fcb7d3c23767f411cb7690526be4b7e23495334b866aeec44d2c3225778",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"filter_object_by_condition\",\n    \"description\": \"Filters a list of objects based on a specified condition and returns a new list containing only objects that meet the condition.\"\n}"
+      }
+    ],
+    "created": 1778242722,
+    "id": "chatcmpl-DdESAtiMAnIe8WctwFZ52WP06X4UL",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 260,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1852,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 2112
+    }
+  }
+}

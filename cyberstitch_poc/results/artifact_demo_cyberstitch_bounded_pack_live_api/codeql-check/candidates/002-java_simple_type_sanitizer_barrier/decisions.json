@@ -1,0 +1,87 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_simple_type_sanitizer_barrier",
+        "kind": "codeql_helper",
+        "origin": "lilo-loop",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSimpleTypeSanitizerBarrier",
+        "display_name": "remote_flow_source",
+        "description": "Existing candidate for Java SimpleTypeSanitizer barrier predicate.",
+        "body": "predicate isSimpleTypeSanitizerBarrier(DataFlow::Node node) {\n  exists(SimpleTypeSanitizer sanitizer | node = sanitizer)\n}",
+        "use_sites": [
+          {
+            "query": "remote-sql-mongo-parse.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q8:predicate:RemoteSqlMongoParseConfig:isBarrier"
+          },
+          {
+            "query": "remote-sql-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q9:predicate:RemoteSqlQueryModelConfig:isBarrier"
+          },
+          {
+            "query": "source-node-database-sql-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q12:predicate:SourceNodeDatabaseSqlQueryModelConfig:isBarrier"
+          },
+          {
+            "query": "source-node-remote-sql-mongo-parse.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q18:predicate:SourceNodeRemoteSqlMongoParseConfig:isBarrier"
+          },
+          {
+            "query": "source-node-remote-sql-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q19:predicate:SourceNodeRemoteSqlQueryModelConfig:isBarrier"
+          },
+          {
+            "query": "threat-sql-mongo-parse.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q29:predicate:ThreatSqlMongoParseConfig:isBarrier"
+          },
+          {
+            "query": "threat-sql-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q30:predicate:ThreatSqlQueryModelConfig:isBarrier"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "45ce32f0e3006d4b6457a3f63377b590571b81481619d40bd5c16c821dfee973",
+        "semantic_role": "Barrier",
+        "semantic_target": "SimpleTypeSanitizer",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q8:predicate:RemoteSqlMongoParseConfig:isBarrier",
+            "role": "Barrier",
+            "target": "SimpleTypeSanitizer",
+            "num_exact_matches": 7,
+            "lilo_loop_reference": "candidate:java_simple_type_sanitizer_barrier",
+            "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+        "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic enhancements.",
+        "llm_proposal": {
+          "schema": "rewrite_candidate_reference_v1",
+          "candidate_ref": "candidate:java_simple_type_sanitizer_barrier",
+          "display_name": "remote_flow_source",
+          "description": "Existing candidate for Java SimpleTypeSanitizer barrier predicate.",
+          "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic enhancements."
+        }
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

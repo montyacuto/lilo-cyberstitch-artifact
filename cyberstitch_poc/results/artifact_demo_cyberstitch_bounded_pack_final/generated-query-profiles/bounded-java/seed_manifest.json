@@ -1,0 +1,909 @@
+{
+  "format": "cyberstitch-bounded-java-seed-manifest-v1",
+  "language": "java",
+  "selection_policy": "Bounded Java CWE-78/CWE-89 seed profile. Seeds are curated to repeat exact source, sink, and barrier predicate semantics at least twice where possible, while keeping generated queries inside the SQIR v2 path-query subset.",
+  "target_validated_candidates": {
+    "lilo_total_min": 20,
+    "lilo_total_max": 50,
+    "rewrite_helper_estimate": "18-24",
+    "validated_lilo_estimate": "26-40"
+  },
+  "defaults": {
+    "imports": [
+      "java",
+      "semmle.code.java.dataflow.TaintTracking",
+      "semmle.code.java.dataflow.FlowSources",
+      "semmle.code.java.dataflow.ExternalFlow",
+      "semmle.code.java.security.CommandLineQuery",
+      "semmle.code.java.security.ExternalProcess",
+      "semmle.code.java.security.QueryInjection",
+      "semmle.code.java.security.SqlInjectionQuery",
+      "semmle.code.java.security.Sanitizers",
+      "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+    ]
+  },
+  "seeds": [
+    {
+      "id": "remote-command-runtime-exec",
+      "cwe": 78,
+      "name": "Remote input reaches Runtime.exec",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_qualified_arg0",
+        "package": "java.lang",
+        "type": "Runtime",
+        "method": "exec"
+      },
+      "rationale": "Baseline OWASP command-injection wrapper for direct Runtime.exec argument sinks.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.FlowSources",
+        "semmle.code.java.security.ExternalProcess"
+      ],
+      "expected_concepts": [
+        "RemoteFlowSource",
+        "java.lang.Runtime.exec"
+      ]
+    },
+    {
+      "id": "threat-command-runtime-exec",
+      "cwe": 78,
+      "name": "Threat-model source reaches Runtime.exec",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_qualified_arg0",
+        "package": "java.lang",
+        "type": "Runtime",
+        "method": "exec"
+      },
+      "rationale": "Pairs the direct Runtime.exec sink with the official active threat-model source.",
+      "official_provenance": [
+        "semmle.code.java.security.CommandLineQuery"
+      ],
+      "expected_concepts": [
+        "ActiveThreatModelSource",
+        "java.lang.Runtime.exec"
+      ]
+    },
+    {
+      "id": "remote-command-modeled",
+      "cwe": 78,
+      "name": "Remote input reaches CommandInjectionSink",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSink",
+        "var": "command"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Uses the official modeled command-injection sink and sanitizer abstractions.",
+      "official_provenance": [
+        "semmle.code.java.security.CommandLineQuery"
+      ],
+      "expected_concepts": [
+        "RemoteFlowSource",
+        "CommandInjectionSink",
+        "CommandInjectionSanitizer"
+      ]
+    },
+    {
+      "id": "threat-command-modeled",
+      "cwe": 78,
+      "name": "Threat-model source reaches CommandInjectionSink",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSink",
+        "var": "command"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Repeats the official modeled command sink with the official threat source.",
+      "official_provenance": [
+        "semmle.code.java.security.CommandLineQuery"
+      ],
+      "expected_concepts": [
+        "ActiveThreatModelSource",
+        "CommandInjectionSink",
+        "CommandInjectionSanitizer"
+      ]
+    },
+    {
+      "id": "remote-command-sink-node",
+      "cwe": 78,
+      "name": "Remote input reaches command-injection sink model label",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "command-injection"
+      },
+      "barrier": {
+        "kind": "model_label",
+        "predicate": "barrierNode",
+        "label": "command-injection"
+      },
+      "rationale": "Exercises external model labels for command sinks and barriers.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.ExternalFlow",
+        "semmle.code.java.security.CommandLineQuery"
+      ],
+      "expected_concepts": [
+        "sinkNode:command-injection",
+        "barrierNode:command-injection"
+      ]
+    },
+    {
+      "id": "threat-command-sink-node",
+      "cwe": 78,
+      "name": "Threat-model source reaches command-injection sink model label",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "command-injection"
+      },
+      "barrier": {
+        "kind": "model_label",
+        "predicate": "barrierNode",
+        "label": "command-injection"
+      },
+      "rationale": "Repeats command external model labels with the active threat source.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.ExternalFlow",
+        "semmle.code.java.security.CommandLineQuery"
+      ],
+      "expected_concepts": [
+        "sinkNode:command-injection",
+        "barrierNode:command-injection"
+      ]
+    },
+    {
+      "id": "remote-command-argument-to-exec",
+      "cwe": 78,
+      "name": "Remote input reaches argumentToExec sink",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "argument_to_exec"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Exercises the official ExternalProcess argumentToExec helper.",
+      "official_provenance": [
+        "semmle.code.java.security.ExternalProcess"
+      ],
+      "expected_concepts": [
+        "argumentToExec",
+        "CommandInjectionSink"
+      ]
+    },
+    {
+      "id": "threat-command-argument-to-exec",
+      "cwe": 78,
+      "name": "Threat-model source reaches argumentToExec sink",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "argument_to_exec"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Repeats argumentToExec sink semantics with active threat sources.",
+      "official_provenance": [
+        "semmle.code.java.security.ExternalProcess"
+      ],
+      "expected_concepts": [
+        "argumentToExec",
+        "CommandInjectionSink"
+      ]
+    },
+    {
+      "id": "source-node-remote-command-modeled",
+      "cwe": 78,
+      "name": "External remote source label reaches CommandInjectionSink",
+      "source": {
+        "kind": "model_label",
+        "predicate": "sourceNode",
+        "label": "remote"
+      },
+      "sink": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSink",
+        "var": "command"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Separates sourceNode remote labels from RemoteFlowSource class predicates.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.ExternalFlow",
+        "semmle.code.java.security.CommandLineQuery"
+      ],
+      "expected_concepts": [
+        "sourceNode:remote",
+        "CommandInjectionSink"
+      ]
+    },
+    {
+      "id": "source-node-remote-command-sink-node",
+      "cwe": 78,
+      "name": "External remote source label reaches command-injection sink label",
+      "source": {
+        "kind": "model_label",
+        "predicate": "sourceNode",
+        "label": "remote"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "command-injection"
+      },
+      "barrier": {
+        "kind": "model_label",
+        "predicate": "barrierNode",
+        "label": "command-injection"
+      },
+      "rationale": "Repeats sourceNode remote and command sink label concepts.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.ExternalFlow"
+      ],
+      "expected_concepts": [
+        "sourceNode:remote",
+        "sinkNode:command-injection"
+      ]
+    },
+    {
+      "id": "source-node-environment-command-modeled",
+      "cwe": 78,
+      "name": "Environment source label reaches CommandInjectionSink",
+      "source": {
+        "kind": "model_label",
+        "predicate": "sourceNode",
+        "label": "environment"
+      },
+      "sink": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSink",
+        "var": "command"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "CommandInjectionSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Adds a repeated non-remote sourceNode label relevant to command execution.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.FlowSources"
+      ],
+      "expected_concepts": [
+        "sourceNode:environment",
+        "CommandInjectionSink"
+      ]
+    },
+    {
+      "id": "source-node-environment-env-sink",
+      "cwe": 78,
+      "name": "Environment source label reaches environment-injection sink",
+      "source": {
+        "kind": "model_label",
+        "predicate": "sourceNode",
+        "label": "environment"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "environment-injection"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "ExecTaintedEnvironmentSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Pairs environment sources with environment-injection sinks and sanitizers.",
+      "official_provenance": [
+        "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+      ],
+      "expected_concepts": [
+        "sourceNode:environment",
+        "sinkNode:environment-injection",
+        "ExecTaintedEnvironmentSanitizer"
+      ]
+    },
+    {
+      "id": "remote-environment-sink-node",
+      "cwe": 78,
+      "name": "Remote input reaches environment-injection sink label",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "environment-injection"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "ExecTaintedEnvironmentSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Repeats environment-injection sink label semantics with remote sources.",
+      "official_provenance": [
+        "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+      ],
+      "expected_concepts": [
+        "RemoteFlowSource",
+        "sinkNode:environment-injection"
+      ]
+    },
+    {
+      "id": "threat-environment-sink-node",
+      "cwe": 78,
+      "name": "Threat-model source reaches environment-injection sink label",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "environment-injection"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "ExecTaintedEnvironmentSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Mirrors the official tainted environment query shape with a model-label sink.",
+      "official_provenance": [
+        "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+      ],
+      "expected_concepts": [
+        "ActiveThreatModelSource",
+        "sinkNode:environment-injection",
+        "ExecTaintedEnvironmentSanitizer"
+      ]
+    },
+    {
+      "id": "remote-sql-statement-execute-all",
+      "cwe": 89,
+      "name": "Remote input reaches SQL statement execution methods",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_names_arg0",
+        "names": [
+          "execute",
+          "executeQuery",
+          "executeUpdate"
+        ]
+      },
+      "rationale": "Baseline OWASP SQL wrapper for Statement execute, executeQuery, and executeUpdate.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "method-names:execute|executeQuery|executeUpdate"
+      ]
+    },
+    {
+      "id": "threat-sql-statement-execute-all",
+      "cwe": 89,
+      "name": "Threat-model source reaches SQL statement execution methods",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_names_arg0",
+        "names": [
+          "execute",
+          "executeQuery",
+          "executeUpdate"
+        ]
+      },
+      "rationale": "Repeats grouped Statement execute sink semantics with active threat sources.",
+      "official_provenance": [
+        "semmle.code.java.security.SqlInjectionQuery"
+      ],
+      "expected_concepts": [
+        "method-names:execute|executeQuery|executeUpdate"
+      ]
+    },
+    {
+      "id": "remote-sql-query-model",
+      "cwe": 89,
+      "name": "Remote input reaches QueryInjectionSink",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "exists_type",
+        "type": "QueryInjectionSink",
+        "var": "query"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "SimpleTypeSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Uses the official modeled query-injection sink and sanitizer abstractions.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection",
+        "semmle.code.java.security.SqlInjectionQuery"
+      ],
+      "expected_concepts": [
+        "RemoteFlowSource",
+        "QueryInjectionSink",
+        "SimpleTypeSanitizer"
+      ]
+    },
+    {
+      "id": "threat-sql-query-model",
+      "cwe": 89,
+      "name": "Threat-model source reaches QueryInjectionSink",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "exists_type",
+        "type": "QueryInjectionSink",
+        "var": "query"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "SimpleTypeSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Repeats official SQL taint query config semantics.",
+      "official_provenance": [
+        "semmle.code.java.security.SqlInjectionQuery"
+      ],
+      "expected_concepts": [
+        "ActiveThreatModelSource",
+        "QueryInjectionSink",
+        "SimpleTypeSanitizer"
+      ]
+    },
+    {
+      "id": "remote-sql-sink-node",
+      "cwe": 89,
+      "name": "Remote input reaches sql-injection sink label",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "sql-injection"
+      },
+      "barrier": {
+        "kind": "model_label",
+        "predicate": "barrierNode",
+        "label": "sql-injection"
+      },
+      "rationale": "Exercises external model labels for SQL sinks and barriers.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.ExternalFlow",
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "sinkNode:sql-injection",
+        "barrierNode:sql-injection"
+      ]
+    },
+    {
+      "id": "threat-sql-sink-node",
+      "cwe": 89,
+      "name": "Threat-model source reaches sql-injection sink label",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "sql-injection"
+      },
+      "barrier": {
+        "kind": "model_label",
+        "predicate": "barrierNode",
+        "label": "sql-injection"
+      },
+      "rationale": "Repeats SQL external model labels with active threat sources.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.ExternalFlow",
+        "semmle.code.java.security.SqlInjectionQuery"
+      ],
+      "expected_concepts": [
+        "sinkNode:sql-injection",
+        "barrierNode:sql-injection"
+      ]
+    },
+    {
+      "id": "source-node-remote-sql-query-model",
+      "cwe": 89,
+      "name": "External remote source label reaches QueryInjectionSink",
+      "source": {
+        "kind": "model_label",
+        "predicate": "sourceNode",
+        "label": "remote"
+      },
+      "sink": {
+        "kind": "exists_type",
+        "type": "QueryInjectionSink",
+        "var": "query"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "SimpleTypeSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Separates sourceNode remote labels from RemoteFlowSource class predicates for SQL.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.ExternalFlow",
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "sourceNode:remote",
+        "QueryInjectionSink"
+      ]
+    },
+    {
+      "id": "source-node-remote-sql-sink-node",
+      "cwe": 89,
+      "name": "External remote source label reaches sql-injection sink label",
+      "source": {
+        "kind": "model_label",
+        "predicate": "sourceNode",
+        "label": "remote"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "sql-injection"
+      },
+      "barrier": {
+        "kind": "model_label",
+        "predicate": "barrierNode",
+        "label": "sql-injection"
+      },
+      "rationale": "Repeats sourceNode remote and SQL sink label concepts.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.ExternalFlow"
+      ],
+      "expected_concepts": [
+        "sourceNode:remote",
+        "sinkNode:sql-injection"
+      ]
+    },
+    {
+      "id": "source-node-database-sql-query-model",
+      "cwe": 89,
+      "name": "Database source label reaches QueryInjectionSink",
+      "source": {
+        "kind": "model_label",
+        "predicate": "sourceNode",
+        "label": "database"
+      },
+      "sink": {
+        "kind": "exists_type",
+        "type": "QueryInjectionSink",
+        "var": "query"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "SimpleTypeSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Adds a repeated database source label relevant to SQL query construction.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.FlowSources",
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "sourceNode:database",
+        "QueryInjectionSink"
+      ]
+    },
+    {
+      "id": "source-node-database-sql-sink-node",
+      "cwe": 89,
+      "name": "Database source label reaches sql-injection sink label",
+      "source": {
+        "kind": "model_label",
+        "predicate": "sourceNode",
+        "label": "database"
+      },
+      "sink": {
+        "kind": "model_label",
+        "predicate": "sinkNode",
+        "label": "sql-injection"
+      },
+      "barrier": {
+        "kind": "model_label",
+        "predicate": "barrierNode",
+        "label": "sql-injection"
+      },
+      "rationale": "Repeats database source labels and SQL sink labels.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.FlowSources",
+        "semmle.code.java.dataflow.ExternalFlow"
+      ],
+      "expected_concepts": [
+        "sourceNode:database",
+        "sinkNode:sql-injection"
+      ]
+    },
+    {
+      "id": "remote-sql-execute",
+      "cwe": 89,
+      "name": "Remote input reaches execute argument sink",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_name_arg0",
+        "name": "execute"
+      },
+      "rationale": "Splits the grouped Statement sink into a single execute method helper.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "method-names:execute"
+      ]
+    },
+    {
+      "id": "threat-sql-execute",
+      "cwe": 89,
+      "name": "Threat-model source reaches execute argument sink",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_name_arg0",
+        "name": "execute"
+      },
+      "rationale": "Repeats execute argument sink semantics with active threat sources.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "method-names:execute"
+      ]
+    },
+    {
+      "id": "remote-sql-execute-query",
+      "cwe": 89,
+      "name": "Remote input reaches executeQuery argument sink",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_name_arg0",
+        "name": "executeQuery"
+      },
+      "rationale": "Splits the grouped Statement sink into a single executeQuery method helper.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "method-names:executeQuery"
+      ]
+    },
+    {
+      "id": "threat-sql-execute-query",
+      "cwe": 89,
+      "name": "Threat-model source reaches executeQuery argument sink",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_name_arg0",
+        "name": "executeQuery"
+      },
+      "rationale": "Repeats executeQuery argument sink semantics with active threat sources.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "method-names:executeQuery"
+      ]
+    },
+    {
+      "id": "remote-sql-execute-update",
+      "cwe": 89,
+      "name": "Remote input reaches executeUpdate argument sink",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_name_arg0",
+        "name": "executeUpdate"
+      },
+      "rationale": "Splits the grouped Statement sink into a single executeUpdate method helper.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "method-names:executeUpdate"
+      ]
+    },
+    {
+      "id": "threat-sql-execute-update",
+      "cwe": 89,
+      "name": "Threat-model source reaches executeUpdate argument sink",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_name_arg0",
+        "name": "executeUpdate"
+      },
+      "rationale": "Repeats executeUpdate argument sink semantics with active threat sources.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "method-names:executeUpdate"
+      ]
+    },
+    {
+      "id": "remote-sql-mongo-parse",
+      "cwe": 89,
+      "name": "Remote input reaches Mongo BasicDBObject.parse",
+      "source": {
+        "kind": "exists_type",
+        "type": "RemoteFlowSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_qualified_arg0",
+        "package": "com.mongodb",
+        "type": "BasicDBObject",
+        "method": "parse"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "SimpleTypeSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Adds a distinct official QueryInjection modeled sink family without referencing private CodeQL classes.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "com.mongodb.BasicDBObject.parse"
+      ]
+    },
+    {
+      "id": "threat-sql-mongo-parse",
+      "cwe": 89,
+      "name": "Threat-model source reaches Mongo BasicDBObject.parse",
+      "source": {
+        "kind": "exists_type",
+        "type": "ActiveThreatModelSource",
+        "var": "remote"
+      },
+      "sink": {
+        "kind": "method_qualified_arg0",
+        "package": "com.mongodb",
+        "type": "BasicDBObject",
+        "method": "parse"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "SimpleTypeSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Repeats Mongo parse sink semantics with active threat sources.",
+      "official_provenance": [
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "com.mongodb.BasicDBObject.parse"
+      ]
+    },
+    {
+      "id": "source-node-remote-sql-mongo-parse",
+      "cwe": 89,
+      "name": "External remote source label reaches Mongo BasicDBObject.parse",
+      "source": {
+        "kind": "model_label",
+        "predicate": "sourceNode",
+        "label": "remote"
+      },
+      "sink": {
+        "kind": "method_qualified_arg0",
+        "package": "com.mongodb",
+        "type": "BasicDBObject",
+        "method": "parse"
+      },
+      "barrier": {
+        "kind": "exists_type",
+        "type": "SimpleTypeSanitizer",
+        "var": "sanitizer"
+      },
+      "rationale": "Repeats Mongo parse sink semantics with sourceNode remote sources.",
+      "official_provenance": [
+        "semmle.code.java.dataflow.ExternalFlow",
+        "semmle.code.java.security.QueryInjection"
+      ],
+      "expected_concepts": [
+        "sourceNode:remote",
+        "com.mongodb.BasicDBObject.parse"
+      ]
+    }
+  ]
+}

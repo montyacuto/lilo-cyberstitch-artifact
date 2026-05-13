@@ -1,0 +1,2020 @@
+{
+  "totals": {
+    "78": {
+      "TP": 126,
+      "FN": 0,
+      "TN": 61,
+      "FP": 64
+    }
+  },
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00006",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00007",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00015",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00017",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00051",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00077",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00091",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00092",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00093",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00158",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00159",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00171",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00172",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00173",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00174",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00175",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00176",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00177",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00293",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00294",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00295",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00302",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00303",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00304",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00305",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00306",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00307",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00308",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00309",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00310",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00311",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00396",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00406",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00407",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00408",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00409",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00410",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00411",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00412",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00480",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00481",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00494",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00495",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00496",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00497",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00498",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00499",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00500",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00558",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00559",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00567",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00568",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00569",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00570",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00571",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00572",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00573",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00574",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00575",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00576",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00657",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00658",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00659",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00731",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00732",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00738",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00739",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00740",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00741",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00742",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00743",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00814",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00815",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00816",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00823",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00824",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00825",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00826",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00827",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00895",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00896",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00897",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00905",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00906",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00907",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00908",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00909",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00910",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00968",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00969",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00970",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00978",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest00979",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00980",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00981",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00982",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest00983",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01064",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01065",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01066",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01067",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01068",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01182",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01189",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01190",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01191",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01192",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01193",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01194",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01269",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01270",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01285",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01286",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01287",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01288",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01289",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01290",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01353",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01360",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01361",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01362",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01363",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01364",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01365",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01430",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01440",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01441",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01442",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01443",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01444",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01445",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01446",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01516",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01517",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01526",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01527",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01528",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01529",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01530",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01531",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01532",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01533",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01600",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01601",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01606",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01607",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01608",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01609",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01610",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01672",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01673",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01674",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01685",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01686",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01687",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01688",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01689",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01690",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01691",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01692",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01693",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01778",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01779",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01780",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01791",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01792",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01793",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01794",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01795",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01796",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01850",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01851",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01852",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01864",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01865",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01928",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01929",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01936",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01937",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01938",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01939",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01940",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01941",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest01942",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01943",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest01944",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02058",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02059",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02067",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02068",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02069",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02070",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02137",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02146",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02147",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02148",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02149",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02150",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02151",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02152",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02153",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02154",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02155",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02156",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02242",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02243",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02244",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02249",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02250",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02251",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02252",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02253",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02333",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02334",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02335",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02336",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02340",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02341",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02342",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02343",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02344",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02411",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02412",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02413",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02414",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02428",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02429",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02430",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02431",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02432",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02433",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02496",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02510",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02511",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02512",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02513",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02514",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02515",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02516",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02517",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02518",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02610",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": true,
+      "verdict": "FP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02611",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02612",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02613",
+      "cwe": 78,
+      "expected_vulnerable": true,
+      "found": true,
+      "verdict": "TP",
+      "result_count": 1
+    },
+    {
+      "test_id": "BenchmarkTest02697",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02698",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02699",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02713",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    },
+    {
+      "test_id": "BenchmarkTest02714",
+      "cwe": 78,
+      "expected_vulnerable": false,
+      "found": false,
+      "verdict": "TN",
+      "result_count": 0
+    }
+  ]
+}

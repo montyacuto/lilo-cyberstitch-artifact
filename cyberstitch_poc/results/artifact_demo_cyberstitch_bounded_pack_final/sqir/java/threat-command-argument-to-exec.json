@@ -1,0 +1,179 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-command-argument-to-exec.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Threat-model source reaches argumentToExec sink",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/bounded/threat-command-argument-to-exec",
+    "tags": "security external/cwe/cwe-078"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.dataflow.ExternalFlow",
+    "semmle.code.java.security.CommandLineQuery",
+    "semmle.code.java.security.ExternalProcess",
+    "semmle.code.java.security.QueryInjection",
+    "semmle.code.java.security.SqlInjectionQuery",
+    "semmle.code.java.security.Sanitizers",
+    "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "ThreatCommandArgumentToExecConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ActiveThreatModelSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "5a7bb5986b56dd3561cf6a43ffdbaaaf4aa34b3bf24cb01239885038d3ca68ca"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "CommandInjectionSink",
+                "name": "command"
+              }
+            ],
+            "body": {
+              "kind": "predicate_call",
+              "name": "argumentToExec",
+              "args": [
+                {
+                  "kind": "method_call",
+                  "receiver": {
+                    "kind": "var",
+                    "name": "sink"
+                  },
+                  "method": "asExpr",
+                  "args": []
+                },
+                {
+                  "kind": "var",
+                  "name": "command"
+                }
+              ]
+            }
+          },
+          "source_hash": "b3861047933c9528e13d2a0cc62513e926113515da15d21b7277da70179352d3"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "CommandInjectionSanitizer",
+                "name": "sanitizer"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "node"
+              },
+              "right": {
+                "kind": "var",
+                "name": "sanitizer"
+              }
+            }
+          },
+          "source_hash": "d53b9ab54929ee61270337f54f4d0ff47c2e33d249326e8bafcf583e043aadec"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "ThreatCommandArgumentToExecFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "ThreatCommandArgumentToExecConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "ThreatCommandArgumentToExecFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "ThreatCommandArgumentToExecFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "ThreatCommandArgumentToExecFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "ActiveThreatModelSource source reaches argumentToExec sink."
+    },
+    "message": "ActiveThreatModelSource source reaches argumentToExec sink."
+  },
+  "provenance_hash": "7f5ca069d865daeaad799ba9ebd69cb74ee1d175d89bbee7a16dba6a101c1d2f",
+  "version": "sqir-v2"
+}

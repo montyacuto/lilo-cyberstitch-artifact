@@ -1,0 +1,15 @@
+{
+  "command": [
+    "scripts/artifact.sh",
+    "run-lilo"
+  ],
+  "cwd": "<original-workspace>/lilo_sec",
+  "dry_run": false,
+  "duration_seconds": 134047,
+  "ended_at": "2026-05-09T00:40:48Z",
+  "exit_code": 0,
+  "plan": "seed111-full",
+  "run_id": "full_lilo_seed111_paperfaithful_init_20260507",
+  "runner_log": "<original-workspace>/Info/monitors/full_lilo_seed111_paperfaithful_init_20260507/runner.log",
+  "started_at": "2026-05-07T11:26:40Z"
+}

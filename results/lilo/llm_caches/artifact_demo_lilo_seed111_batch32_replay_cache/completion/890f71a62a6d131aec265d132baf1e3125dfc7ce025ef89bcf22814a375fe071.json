@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T11:15:18Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\ncount_objects_related_to_given_relation :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\ndescription: This function counts the number of objects related to a given relation based on the first object in the list.\n\nfilter_objects_by_color :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $1) $3) (clevr_add $1 $0) $0))))))\ndescription: Filters a list of objects based on the specified color.\n\nretrieve_objects_not_related_to_given_relation :: tclevrrelation -> list(tclevrobject) -> tclevrobject\n\n(lambda (lambda (clevr_car (clevr_fold $0 $0 (lambda (lambda (clevr_difference $0 (clevr_relate $1 $3 $0))))))))\ndescription: This function retrieves objects that are not related to a specified relation from a list of objects.\n\nfilter_objects_by_small_size :: list(tclevrobject) -> list(tclevrobject)\n\n(lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_size (clevr_query_size $1) clevr_small) (clevr_add $1 $0) $0)))))\ndescription: Filters a list of objects to only include objects that are of small size.\n\ncount_objects_related_to_objects_behind :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\ndescription: Counts the number of objects that are behind the first object in the list.\n\ndetermine_shape_based_on_condition :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\ndescription: Determines the shape of an object based on a specified condition involving the shape of the first object in a list of objects.\n\nfilter_objects_by_color_and_material :: tclevrcolor -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_color (clevr_if (clevr_eq_material (clevr_query_material $1) clevr_metal) clevr_red (clevr_query_color $1)) $3) (clevr_add $1 $0) $0))))))\ndescription: Filters a list of objects based on both color and material criteria to find objects that match the specified color and material.\n\nfilter_objects_by_material_and_shape :: tclevrmaterial -> tclevrshape -> list(tclevrobject) -> list(tclevrobject)\n\n(lambda (lambda (lambda (clevr_fold $0 clevr_empty (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape $1) $3) (clevr_if (clevr_eq_material (clevr_query_material $1) $4) (clevr_add $1 $0) $0) $0)))))))\ndescription: Filters a list of objects based on both material and shape criteria to find objects that match the specified material and shape.\n\ndetermine_shape_based_on_material_count :: list(tclevrobject) -> tclevrshape\n\n(lambda (clevr_if (clevr_eq_material (clevr_if (clevr_gt? (clevr_count $0) 7) (clevr_query_material (clevr_car $0)) clevr_rubber) clevr_metal) clevr_sphere clevr_cylinder))\ndescription: Determines the shape of an object based on the material count of objects in the list. If the material count is greater than 7, it compares the material of the first object in the list to metal and returns either a sphere or a cylinder shape.\n\nfn_63 :: list(tclevrobject) -> tclevrrelation -> tclevrsize\n\n(lambda (lambda (clevr_if (clevr_lt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2) clevr_large clevr_small)))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_63 :: list(tclevrobject) -> tclevrrelation -> tclevrsize\n\n(lambda (lambda (clevr_if (clevr_lt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2) clevr_large clevr_small)))\n\nHere are some examples of its usage:\n\n-- what number of metal thing s are either large sphere s or large red thing s\n(lambda (clevr_if (count_objects_related_to_given_relation $0 clevr_behind) 0 (clevr_if (clevr_eq_size clevr_large (fn_63 $0 clevr_left)) 1 2)))\n\n-- what is the shape of the large rubber thing left the large rubber cylinder\n(lambda (clevr_if (clevr_eq_size (clevr_query_size (retrieve_objects_not_related_to_given_relation clevr_front $0)) (fn_63 $0 clevr_behind)) clevr_sphere clevr_cube))\n\n-- is the number of metal sphere s less than the number of blue metal thing s\n(lambda (clevr_eq_size (fn_63 $0 clevr_left) clevr_large))\n\n-- what is the size of the gray thing\n(lambda (fn_63 $0 clevr_right))\n\n-- there is a metal thing that is behind the metal sphere what size is it\n(lambda (fn_63 $0 clevr_behind))\n\n-- what is the material of the sphere right the small sphere\n(lambda (clevr_if (clevr_eq_size (fn_63 $0 clevr_behind) (clevr_query_size (clevr_car $0))) clevr_metal clevr_rubber))\n\n-- what is the size of the metal thing front the sphere\n(lambda (fn_63 $0 (clevr_if (clevr_eq_shape clevr_cube (clevr_query_shape (clevr_car $0))) clevr_behind clevr_front)))\n\n-- there is a thing that is right the cube what is its size\n(lambda (determine_shape_based_on_condition (fn_63 $0 clevr_right) clevr_large $0))\n\nPlease write a human-readable name and description for `fn_63` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "890f71a62a6d131aec265d132baf1e3125dfc7ce025ef89bcf22814a375fe071",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_63\",\n    \"readable_name\": \"determine_size_based_on_relation_count\",\n    \"description\": \"Determines the size of an object based on the count of objects related to a given relation involving the first object in the list.\"\n}"
+      }
+    ],
+    "created": 1778238917,
+    "id": "chatcmpl-DdDSnKAK2KZiw3C3EiUWll8pMpAhg",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 290,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1613,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1903
+    }
+  }
+}

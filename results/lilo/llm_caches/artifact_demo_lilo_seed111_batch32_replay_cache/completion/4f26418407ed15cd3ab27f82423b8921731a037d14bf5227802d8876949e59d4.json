@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T20:40:58Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nmove_pen_forward_with_rotation :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Moves the turtle pen forward with rotation based on the specified length and angle, within a loop\n\ncreate_snowflake_with_arms :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop 9 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $2) (logo_get_set_function_pen (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_divide_angle logo_unit_angle $4) (logo_for_loop $4 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_subtract_angles (logo_divide_angle logo_unit_angle $6) logo_zero_angle) $0))) $0))) $0)))) $2))))\ndescription: Creates a snowflake pattern with arms of a specified shape and number of sides\n\nmove_pen_forward_rotate_with_scaled_line_and_angle :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop logo_IFTY (lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line logo_epsilon_line $2) logo_epsilon_angle $0))) $1)))\ndescription: Moves the turtle pen forward with rotation based on a scaled line and angle within a loop\n\nmove_pen_forward_in_loop :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))) $1)))\ndescription: Moves the turtle pen forward in a loop for a specified number of times\n\nmove_pen_forward_with_double_line_length :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_with_rotation $0 $1 (logo_multiply_line logo_unit_line 2))))\ndescription: Moves the turtle pen forward with rotation based on the specified length multiplied by 2\n\ncreate_shape_pattern_in_row :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_with_rotation (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0) $3 logo_unit_line))) $2))))\ndescription: Creates a pattern of shapes in a row based on the specified number of sides and repetitions\n\nmove_pen_forward_with_rotation_and_scaled_line :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_with_rotation $0 4 (logo_multiply_line logo_unit_line $1)))) $1)))\ndescription: Moves the turtle pen forward with rotation based on the specified length and a scaled line, within a loop\n\nmove_pen_forward_with_unit_line_rotation :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_with_rotation $0 $1 logo_unit_line)))\ndescription: Moves the turtle pen forward with rotation based on the specified angle and a unit line length\n\ncreate_snowflake_pattern_with_custom_arms :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 7 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 6) (logo_get_set_function_pen $2 $0)))) $1)))\ndescription: Creates a snowflake pattern with custom arms based on the specified function for arm generation\n\nfn_36 :: turtle -> int -> turtle\n\n(lambda (lambda (move_pen_forward_with_unit_line_rotation $0 (logo_lift_pen (lambda (move_pen_forward_in_loop (move_pen_forward_with_unit_line_rotation 9 $0) 2)) (move_pen_forward_with_unit_line_rotation 7 $1)))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_36 :: turtle -> int -> turtle\n\n(lambda (lambda (move_pen_forward_with_unit_line_rotation $0 (logo_lift_pen (lambda (move_pen_forward_in_loop (move_pen_forward_with_unit_line_rotation 9 $0) 2)) (move_pen_forward_with_unit_line_rotation 7 $1)))))\n\nHere are some examples of its usage:\n\n-- a small 5 gon next to a small 7 gon\n(lambda (fn_36 $0 5))\n\n-- a small 8 gon next to a small 7 gon\n(lambda (fn_36 $0 8))\n\nPlease write a human-readable name and description for `fn_36` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "4f26418407ed15cd3ab27f82423b8921731a037d14bf5227802d8876949e59d4",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_polygon_pair_with_variable_sides\",\n    \"description\": \"Creates a pair of polygons with variable numbers of sides, positioning them next to each other\"\n}"
+      }
+    ],
+    "created": 1778272858,
+    "id": "chatcmpl-DdMIEDEL1kKjx3lV4SVl7I9KLtNg4",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 250,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1027,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1277
+    }
+  }
+}

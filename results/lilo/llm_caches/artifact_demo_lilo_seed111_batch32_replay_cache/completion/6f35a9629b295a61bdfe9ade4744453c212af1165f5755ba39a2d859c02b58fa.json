@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T21:30:24Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_if_match_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that replaces a substring in a full string if a match is found, splitting the string by a delimiter.\n\nreplace_concat_with_cdr_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that replaces a concatenated substring with the rest of the string after splitting by a delimiter.\n\nfn_44 :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\n\nfn_45 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nfn_46 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_47 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_48 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n\nfn_50 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match_split $0 (regex_concat $1 $2) $2))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match_split $0 (regex_concat 'a' $1) $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_44 :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\n\nHere are some examples of its usage:\n\n-- if there is vowel replace that with p v\n(lambda (replace_if_match_split $0 (regex_concat 'p' 'v') fn_44))\n\n-- if there is vowel replace that with q f\n(lambda (replace_if_match_split $0 (regex_concat 'q' 'f') fn_44))\n\n-- if there is consonant replace that with c m\n(lambda (replace_if_match_split $0 (regex_concat 'c' 'm') (regex_not fn_44)))\n\n-- if there is vowel replace that with s\n(lambda (replace_if_match_split $0 's' fn_44))\n\n-- if there is consonant replace that with j p\n(lambda (replace_if_match_split $0 (regex_concat 'j' 'p') (regex_not fn_44)))\n\n-- if there is vowel replace that with a f\n(lambda (fn_51 fn_44 'f' $0))\n\n-- if there is vowel replace that with a c\n(lambda (fn_51 fn_44 'c' $0))\n\nPlease write a human-readable name and description for `fn_44` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "6f35a9629b295a61bdfe9ade4744453c212af1165f5755ba39a2d859c02b58fa",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_44\",\n    \"readable_name\": \"vowel_or_consonant_check\",\n    \"description\": \"A function that checks if a character is a vowel ('a', 'e', 'i', 'o', 'u') or a consonant.\"\n}"
+      }
+    ],
+    "created": 1778189423,
+    "id": "chatcmpl-Dd0aVKSUpKls3T7RWKNN8vOv1oIV2",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 310,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 874,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1184
+    }
+  }
+}

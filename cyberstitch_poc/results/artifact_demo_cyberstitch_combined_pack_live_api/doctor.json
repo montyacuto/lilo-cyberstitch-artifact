@@ -1,0 +1,86 @@
+{
+  "language": "java",
+  "owasp_root": "<original-workspace>/cyberstitch_poc/benchmarks/BenchmarkJava",
+  "curated_subset_manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+  "selected_cwes": [
+    78,
+    89
+  ],
+  "codeql_build_mode": "none",
+  "codeql_build_command": "mvn -Dmaven.repo.local=<original-workspace>/cyberstitch_poc/results/m2-repository clean package -DskipTests",
+  "tools": {
+    "java": {
+      "available": true,
+      "path": "/usr/bin/java",
+      "version": "openjdk version \"25.0.3\" 2026-04-21"
+    },
+    "mvn": {
+      "available": true,
+      "path": "/usr/bin/mvn",
+      "version": "Apache Maven 3.9.11 (Red Hat 3.9.11-5)"
+    },
+    "codeql": {
+      "available": true,
+      "path": "<original-workspace>/codeql/codeql",
+      "version": "CodeQL command-line toolchain release 2.25.3."
+    }
+  },
+  "manifest": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "cases": [
+      {
+        "test_id": "BenchmarkTest00017",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+        "cwe": 78,
+        "category": "cmdi",
+        "expected_vulnerable": true,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe078-command"
+        ],
+        "rationale": "Header-derived servlet input flows through URL decoding into Runtime.exec argument 0, matching the narrow command sink abstraction.",
+        "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+      },
+      {
+        "test_id": "BenchmarkTest00090",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00090.java",
+        "cwe": 78,
+        "category": "cmdi",
+        "expected_vulnerable": false,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe078-command"
+        ],
+        "rationale": "Cookie input is present, but the feasible branch assigns a constant before Runtime.exec, exercising a safe command-injection control without list-index taint imprecision.",
+        "abstraction_target": "Safe Runtime.exec constant-branch control"
+      },
+      {
+        "test_id": "BenchmarkTest00018",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00018.java",
+        "cwe": 89,
+        "category": "sqli",
+        "expected_vulnerable": true,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe089-sql"
+        ],
+        "rationale": "Header-derived servlet input is concatenated into SQL and passed to Statement.executeUpdate argument 0.",
+        "abstraction_target": "RemoteFlowSource plus java.sql.Statement executeUpdate argument sink"
+      },
+      {
+        "test_id": "BenchmarkTest00107",
+        "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00107.java",
+        "cwe": 89,
+        "category": "sqli",
+        "expected_vulnerable": false,
+        "expected_rule_ids": [
+          "java/cyberstitch/owasp-cwe089-sql"
+        ],
+        "rationale": "Cookie input is assigned locally, but the SQL string uses a reflected constant before Statement.execute, exercising a safe SQL control.",
+        "abstraction_target": "Safe Statement.execute control"
+      }
+    ],
+    "manifest": "<original-workspace>/cyberstitch_poc/benchmarks/owasp_curated_subset_benchmarkjava.json",
+    "owasp_root": "<original-workspace>/cyberstitch_poc/benchmarks/BenchmarkJava"
+  },
+  "actions": []
+}

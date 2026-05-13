@@ -1,0 +1,10 @@
+{
+  "data": {
+    "body": "predicate bad(DataFlow::Node n) { any() }",
+    "selected": [
+      "candidate:java_active_threat_model_source"
+    ]
+  },
+  "source": "fixture",
+  "text": "{\n  \"selected\": [\n    \"candidate:java_active_threat_model_source\"\n  ],\n  \"body\": \"predicate bad(DataFlow::Node n) { any() }\"\n}"
+}

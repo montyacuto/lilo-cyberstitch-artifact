@@ -1,0 +1,59 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_simple_type_sanitizer_barrier",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSimpleTypeSanitizerBarrier",
+        "display_name": "java_simple_type_sanitizer_barrier",
+        "description": "Deterministically mined complete Java barrier predicate semantics.",
+        "body": "predicate isSimpleTypeSanitizerBarrier(DataFlow::Node node) {\n  exists(SimpleTypeSanitizer sanitizer | node = sanitizer)\n}",
+        "use_sites": [
+          {
+            "query": "remote-cwe089-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q7:predicate:RemoteQueryModelConfig:isBarrier"
+          },
+          {
+            "query": "source-database-cwe089-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q10:predicate:SourceDatabaseQueryModelConfig:isBarrier"
+          },
+          {
+            "query": "source-remote-cwe089-query-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q16:predicate:SourceRemoteQueryModelConfig:isBarrier"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "45ce32f0e3006d4b6457a3f63377b590571b81481619d40bd5c16c821dfee973",
+        "semantic_role": "Barrier",
+        "semantic_target": "SimpleTypeSanitizer",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q7:predicate:RemoteQueryModelConfig:isBarrier",
+            "role": "Barrier",
+            "target": "SimpleTypeSanitizer",
+            "num_exact_matches": 3
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

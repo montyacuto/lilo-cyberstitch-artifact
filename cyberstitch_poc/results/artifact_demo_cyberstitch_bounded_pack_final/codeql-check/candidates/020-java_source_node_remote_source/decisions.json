@@ -1,0 +1,69 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_source_node_remote_source",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_source_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isSourceNodeRemoteSource",
+        "display_name": "java_source_node_remote_source",
+        "description": "Deterministically mined complete Java source predicate semantics.",
+        "body": "predicate isSourceNodeRemoteSource(DataFlow::Node source) {\n  sourceNode(source, \"remote\")\n}",
+        "use_sites": [
+          {
+            "query": "source-node-remote-command-modeled.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q16:predicate:SourceNodeRemoteCommandModeledConfig:isSource"
+          },
+          {
+            "query": "source-node-remote-command-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q17:predicate:SourceNodeRemoteCommandSinkNodeConfig:isSource"
+          },
+          {
+            "query": "source-node-remote-sql-mongo-parse.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q18:predicate:SourceNodeRemoteSqlMongoParseConfig:isSource"
+          },
+          {
+            "query": "source-node-remote-sql-query-model.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q19:predicate:SourceNodeRemoteSqlQueryModelConfig:isSource"
+          },
+          {
+            "query": "source-node-remote-sql-sink-node.ql",
+            "predicate": "isSource",
+            "semantic_node_id": "q20:predicate:SourceNodeRemoteSqlSinkNodeConfig:isSource"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "969378149184ffd7626dd527c8068893306f7606673a36c6da2d4297cb263748",
+        "semantic_role": "Source",
+        "semantic_target": "sourceNode:remote",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q16:predicate:SourceNodeRemoteCommandModeledConfig:isSource",
+            "role": "Source",
+            "target": "sourceNode:remote",
+            "num_exact_matches": 5
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

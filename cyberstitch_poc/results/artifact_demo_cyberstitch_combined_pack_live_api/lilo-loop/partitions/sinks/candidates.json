@@ -1,0 +1,120 @@
+{
+  "format": "cyberstitch-candidates-v2",
+  "source": "lilo-openai-compat",
+  "raw_output": {
+    "response": {
+      "id": "chatcmpl-DehcJttY4CTkZUGEV4a7W9M4PJT0i",
+      "object": "chat.completion",
+      "created": 1778593155,
+      "model": "gpt-3.5-turbo-0125",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink predicate semantics for CommandInjectionSink.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing candidate with complete Java sink predicate semantics for CommandInjectionSink.\",\n      \"rationale\": \"This candidate should remain rewrite-enabled for future CodeQL semantic analysis.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Provides future query-synthesis guidance for ModeledSinkType related to CommandInjectionSink.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for CommandInjectionSink related queries.\"\n    }\n  ]\n}",
+            "refusal": null,
+            "annotations": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink predicate semantics for CommandInjectionSink.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing candidate with complete Java sink predicate semantics for CommandInjectionSink.\",\n      \"rationale\": \"This candidate should remain rewrite-enabled for future CodeQL semantic analysis.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Provides future query-synthesis guidance for ModeledSinkType related to CommandInjectionSink.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for CommandInjectionSink related queries.\"\n    }\n  ]\n}"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 7911,
+        "completion_tokens": 250,
+        "total_tokens": 8161,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": null
+    },
+    "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL sink predicate semantics for CommandInjectionSink.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the sink predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sink_sink\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing candidate with complete Java sink predicate semantics for CommandInjectionSink.\",\n      \"rationale\": \"This candidate should remain rewrite-enabled for future CodeQL semantic analysis.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:1:ModeledSinkType\"\n      ],\n      \"hint\": \"Provides future query-synthesis guidance for ModeledSinkType related to CommandInjectionSink.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for CommandInjectionSink related queries.\"\n    }\n  ]\n}"
+  },
+  "lilo_input": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/sinks/input.json",
+  "autodoc": [
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_command_injection_sink_sink",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL sink predicate semantics for CommandInjectionSink.",
+      "rationale": "This proposal provides a clear and descriptive name for the sink predicate."
+    }
+  ],
+  "groupings": [],
+  "query_synthesis_hints": [
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "concept:codeql_lib5:concept:1:ModeledSinkType"
+      ],
+      "hint": "Provides future query-synthesis guidance for ModeledSinkType related to CommandInjectionSink.",
+      "rationale": "This hint helps guide future query synthesis efforts for CommandInjectionSink related queries."
+    }
+  ],
+  "ignored_outputs": [],
+  "candidates": [
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "java_command_injection_sink_sink",
+      "kind": "codeql_helper",
+      "origin": "lilo-loop",
+      "schema": "java_sink_predicate_helper_v1",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isCommandInjectionSink",
+      "display_name": "remote_flow_source",
+      "description": "Existing candidate with complete Java sink predicate semantics for CommandInjectionSink.",
+      "body": "predicate isCommandInjectionSink(DataFlow::Node sink) {\n  exists(CommandInjectionSink command | sink = command)\n}",
+      "use_sites": [
+        {
+          "query": "official-cwe078-command-flow.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isSink"
+        },
+        {
+          "query": "remote-cwe078-command-model.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q5:predicate:RemoteCommandModelConfig:isSink"
+        }
+      ],
+      "rewrite_eligible": true,
+      "semantic_hash": "23b9c0d462a159dfa7ef92c592a06bfc33e4f906b8d802928d636144b9f9bf82",
+      "semantic_role": "Sink",
+      "semantic_target": "CommandInjectionSink",
+      "semantic_usefulness": "semantic",
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isSink",
+          "role": "Sink",
+          "target": "CommandInjectionSink",
+          "num_exact_matches": 2,
+          "lilo_loop_reference": "candidate:java_command_injection_sink_sink",
+          "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+        }
+      },
+      "mapping_status": "semantic-mine-exact-predicate",
+      "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic analysis.",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_command_injection_sink_sink",
+        "display_name": "remote_flow_source",
+        "description": "Existing candidate with complete Java sink predicate semantics for CommandInjectionSink.",
+        "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic analysis."
+      }
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "format": "cyberstitch-fcir-index",
+  "version": "fcir-v2",
+  "stitch_format": "programs-list",
+  "programs_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_combined_pack_20260512/fcir/programs.json",
+  "provenance_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_combined_pack_20260512/fcir/provenance.json",
+  "programs": [
+    {
+      "program_id": "q0",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/official-cwe078-command-flow.ql",
+      "language": "java",
+      "sqir_hash": "46edc7f63cbb7f5f1b0199eb9cb54b69753387f230c626def7f8c5186e0b5bc9",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-cwe078-command-flow"
+    },
+    {
+      "program_id": "q1",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/official-cwe078-environment-flow.ql",
+      "language": "java",
+      "sqir_hash": "a268900c5dfed1df2f49dbfd015196148d71746414fa73b09f9336e6c660e4d7",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/official-cwe078-environment-flow"
+    },
+    {
+      "program_id": "q2",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/official-cwe089-query-flow.ql",
+      "language": "java",
+      "sqir_hash": "c94f1b810d30771b6e5ac155ee41c03d97ce46c6e9ef88016ae3e5595978c4f9",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/official-cwe089-query-flow"
+    },
+    {
+      "program_id": "q3",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/owasp-cwe078-command.ql",
+      "language": "java",
+      "sqir_hash": "b01486b7ebc0877210e18b46c780530295494ce64673c9eef016f7e426a0adf1",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/owasp-cwe078-command"
+    },
+    {
+      "program_id": "q4",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/owasp-cwe089-sql.ql",
+      "language": "java",
+      "sqir_hash": "6f0533de6b0ffc675f92144451c616624151e1b956c6ae4fcdd7d119e6f0458c",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/owasp-cwe089-sql"
+    },
+    {
+      "program_id": "q5",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/remote-cwe078-command-model.ql",
+      "language": "java",
+      "sqir_hash": "31e2fab1f2abb3b27bda267fa60756f769d5e639e7edbb41389ebbae9777f080",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/remote-cwe078-command-model"
+    },
+    {
+      "program_id": "q6",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/remote-cwe089-query-model.ql",
+      "language": "java",
+      "sqir_hash": "e15c748162b4fb8e90ec56b8984e004bef689b925d626421d2d265b279f68ac0",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/remote-cwe089-query-model"
+    },
+    {
+      "program_id": "q7",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/remote-cwe089-sql-sinkmodel.ql",
+      "language": "java",
+      "sqir_hash": "83ddf893f1f19a230f515c84fa5cf2a7c407ca1a1b60352b298dbf7201713f38",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/remote-cwe089-sql-sinkmodel"
+    },
+    {
+      "program_id": "q8",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/threat-cwe078-runtime-exec.ql",
+      "language": "java",
+      "sqir_hash": "b25ab1d94445320dde4f224c0134afe197046495188ac33c5e060db372109833",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/threat-cwe078-runtime-exec"
+    },
+    {
+      "program_id": "q9",
+      "name": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/threat-cwe089-statement-execute.ql",
+      "language": "java",
+      "sqir_hash": "e446dd3f775bf8a1a33129e997e79a15f348bd102e670a3d527286a98b7d1983",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/threat-cwe089-statement-execute"
+    }
+  ]
+}

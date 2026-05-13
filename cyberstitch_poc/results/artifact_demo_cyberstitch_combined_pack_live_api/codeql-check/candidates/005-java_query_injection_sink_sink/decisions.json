@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_query_injection_sink_sink",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isQueryInjectionSink",
+        "display_name": "java_query_injection_sink_sink",
+        "description": "Deterministically mined complete Java sink predicate semantics.",
+        "body": "predicate isQueryInjectionSink(DataFlow::Node sink) {\n  exists(QueryInjectionSink query | sink = query)\n}",
+        "use_sites": [
+          {
+            "query": "official-cwe089-query-flow.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q2:predicate:CyberStitchOfficialSqlConfig:isSink"
+          },
+          {
+            "query": "remote-cwe089-query-model.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q6:predicate:RemoteQueryModelConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "da45b3c0a20d4b6bc31198c3b65741e632bf44f0566af3355a1e06a644651065",
+        "semantic_role": "Sink",
+        "semantic_target": "QueryInjectionSink",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q2:predicate:CyberStitchOfficialSqlConfig:isSink",
+            "role": "Sink",
+            "target": "QueryInjectionSink",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

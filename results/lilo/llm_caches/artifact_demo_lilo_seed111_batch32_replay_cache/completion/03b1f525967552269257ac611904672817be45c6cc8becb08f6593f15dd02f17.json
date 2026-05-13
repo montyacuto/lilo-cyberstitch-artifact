@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T16:37:35Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_if_match_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that replaces a substring in a full string if it matches a certain pattern, then splits the string by a delimiter.\n\nfn_43 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\n\nfn_44 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_45 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_46 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_47 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match 'p' $0) $1 $0)) (regex_split empty_string $1)))))\n\nfn_48 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match_split $0 (regex_concat 'a' $1) $2))))\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n\nfn_50 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (fn_45 $0 (lambda (regex_if (regex_match $0 $2) $3 $0))))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match_split $0 (regex_concat 'c' $1) $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_43 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\n\nHere are some examples of its usage:\n\n-- if the word starts with consonant any letter replace that with e a\n(lambda (fn_43 (fn_49 $0 empty_string) 'a' 'e'))\n\n-- if the word starts with any letter replace that with x e\n(lambda (fn_43 $0 'e' 'x'))\n\n-- if the word starts with any letter replace that with e s\n(lambda (fn_43 $0 's' 'e'))\n\n-- if the word starts with any letter replace that with n a\n(lambda (fn_43 $0 'a' 'n'))\n\n-- if the word starts with any letter replace that with w i\n(lambda (fn_43 $0 'i' 'w'))\n\n-- if the word starts with any letter replace that with i r\n(lambda (fn_43 $0 'r' 'i'))\n\n-- if the word starts with any letter replace that with q a\n(lambda (fn_43 $0 'a' 'q'))\n\n-- if the word starts with any letter replace that with a w\n(lambda (fn_43 $0 'w' 'a'))\n\nPlease write a human-readable name and description for `fn_43` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "03b1f525967552269257ac611904672817be45c6cc8becb08f6593f15dd02f17",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"replace_concat_cdr_split\",\n    \"description\": \"A function that replaces a substring in a full string with a concatenated version, then takes the cdr of the string split by a delimiter.\"\n}"
+      }
+    ],
+    "created": 1778171853,
+    "id": "chatcmpl-Dcw17u31QG896oiJQFUNzvgFl8lB1",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 285,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 893,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1178
+    }
+  }
+}

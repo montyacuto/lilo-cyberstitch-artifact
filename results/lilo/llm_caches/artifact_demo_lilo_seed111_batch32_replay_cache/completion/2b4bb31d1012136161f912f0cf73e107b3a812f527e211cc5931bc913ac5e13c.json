@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T21:51:29Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_if_match_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that replaces a substring in a full string based on a condition. It checks if the substring matches a pattern in the full string, and if so, replaces it with another substring. The full string is split by a delimiter before processing.\n\nreplace_concat_with_cdr_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\ndescription: A function that replaces the concatenation of two substrings in a full string with the rest of the string after splitting by a delimiter.\n\nvowel_consonant_regex :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\ndescription: A regular expression pattern that matches vowels ('a', 'e', 'i', 'o', 'u') in a substring.\n\nreplace_substrings_based_on_condition :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that replaces substrings in a full string based on a condition provided by a transformation function. It splits the full string by a delimiter, applies the transformation function to each substring, and then flattens the result back into a full string.\n\nreplace_concat_end_with_reversed_substr :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\ndescription: A function that replaces the concatenation of the first and second substrings at the end of a full string with the reversed substring obtained by splitting the third substring by an empty string.\n\nfn_47 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_48 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n\nfn_50 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match_split $0 (regex_concat $1 $2) vowel_consonant_regex))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match_split $0 (regex_concat $1 $2) $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_47 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nHere are some examples of its usage:\n\n-- if the word ends with any letter replace that with f\n(lambda (fn_47 $0 'f'))\n\n-- if the word ends with consonant replace that with a o\n(lambda (fn_48 (fn_47 $0 'a') 'o'))\n\n-- if the word ends with any letter replace that with o m\n(lambda (fn_47 $0 (regex_concat 'o' 'm')))\n\n-- if the word ends with consonant replace that with i\n(lambda (fn_47 $0 'i'))\n\n-- if the word ends with any letter replace that with r\n(lambda (fn_47 $0 'r'))\n\n-- if the word ends with any letter replace that with x s\n(lambda (fn_47 $0 (regex_concat 'x' 's')))\n\n-- if the word ends with any letter replace that with i y\n(lambda (fn_47 $0 (regex_concat 'i' 'y')))\n\nPlease write a human-readable name and description for `fn_47` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "2b4bb31d1012136161f912f0cf73e107b3a812f527e211cc5931bc913ac5e13c",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_47\",\n    \"readable_name\": \"replace_end_with_reversed_substr\",\n    \"description\": \"A function that replaces the end of a full string with the reversed substring obtained by splitting the provided substring by a delimiter.\"\n}"
+      }
+    ],
+    "created": 1778190688,
+    "id": "chatcmpl-Dd0uuPHOk5VsEkw3Li9agU4cIcHz0",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 275,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1024,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1299
+    }
+  }
+}

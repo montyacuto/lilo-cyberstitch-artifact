@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T13:49:12Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\ndraw_multiple_shapes_in_a_row :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_for_loop $3 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_divide_angle logo_unit_angle $5) $0))) (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0)))) $2))))\ndescription: Draws multiple shapes in a row with specified parameters such as number of shapes, size, and spacing.\n\ndraw_shapes_with_rotated_pen :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Draws shapes with a rotated pen based on specified parameters such as number of shapes, angle of rotation, and size.\n\nmove_pen_forward_rotate_with_angle :: turtle -> int -> turtle\n\n(lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $0) $1)))\ndescription: Moves the pen forward and rotates it by a specified angle.\n\ndraw_shapes_in_row_with_angle :: turtle -> tangle -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line $3 $0))) $2))))\ndescription: Draws shapes in a row with a specified angle between them.\n\nmove_pen_forward_rotate_to_zero_angle :: turtle -> turtle\n\n(lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))\ndescription: Moves the pen forward along the unit line and rotates it to zero angle.\n\ndraw_multiple_lines_with_length_multiplier :: turtle -> tlength -> turtle\n\n(lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line $0 5) logo_epsilon_angle $1)))\ndescription: Draws multiple lines with a length multiplier applied to each line.\n\ndraw_shapes_with_rotated_pen_and_scaled_line :: int -> int -> turtle -> turtle\n\n(lambda (lambda (lambda (draw_shapes_with_rotated_pen $0 $1 (logo_multiply_line logo_unit_line $2)))))\ndescription: Draw shapes with a rotated pen and a scaled line based on specified parameters.\n\ndraw_shapes_with_rotated_pen_using_unit_line :: int -> turtle -> turtle\n\n(lambda (lambda (draw_shapes_with_rotated_pen $0 $1 logo_unit_line)))\ndescription: Draws shapes with a rotated pen using the unit line as a reference based on the specified number of sides.\n\nmove_pen_forward_rotate_with_scaled_angle :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_move_pen_forward_rotate $0 (logo_divide_angle logo_unit_angle $1) $2))))\ndescription: Moves the pen forward and rotates it by a scaled angle based on specified parameters.\n\nfn_36 :: int -> turtle -> turtle\n\n(lambda (lambda (draw_multiple_shapes_in_a_row $0 3 $1)))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_36 :: int -> turtle -> turtle\n\n(lambda (lambda (draw_multiple_shapes_in_a_row $0 3 $1)))\n\nHere are some examples of its usage:\n\n-- 3 small triangle s in a row\n(lambda (fn_36 3 $0))\n\n-- 5 small triangle s in a row\n(lambda (fn_36 5 $0))\n\nPlease write a human-readable name and description for `fn_36` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "8d89298c96c9398c530c655ea6198cdba07d818c083e93c114a49e6770d04bd7",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"draw_multiple_shapes_in_a_row_multiple_times\",\n    \"description\": \"Draws multiple shapes in a row a specified number of times with the given parameters.\"\n}"
+      }
+    ],
+    "created": 1778248150,
+    "id": "chatcmpl-DdFriyIMbqFqMkcndPGoQ7ZKTt1f2",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 250,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 814,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1064
+    }
+  }
+}

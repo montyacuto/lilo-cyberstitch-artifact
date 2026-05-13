@@ -1,0 +1,226 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T13:50:16Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 92,
+    "messages": [
+      {
+        "content": "You are an expert programmer working in a language based on lambda calculus.\nYour goal is to write programs that accomplish the tasks specified by the user.\nThis is a domain-specific language for Logo turtle graphics.\n\nWrite programs using the available functions:\n\nlogo_unit_angle :: tangle\n\nlogo_unit_line :: tlength\n\nlogo_zero_angle :: tangle\n\nlogo_zero_line :: tlength\n\nlogo_divide_angle :: tangle -> int -> tangle\n\nlogo_multiply_angle :: tangle -> int -> tangle\n\nlogo_divide_line :: tlength -> int -> tlength\n\nlogo_multiply_line :: tlength -> int -> tlength\n\nlogo_add_angles :: tangle -> tangle -> tangle\n\nlogo_subtract_angles :: tangle -> tangle -> tangle\n\nlogo_lift_pen :: (turtle -> turtle) -> turtle -> turtle\n\nlogo_move_pen_forward_rotate :: tlength -> tangle -> turtle -> turtle\n\nlogo_get_set_function_pen :: (turtle -> turtle) -> turtle -> turtle\n\nlogo_IFTY :: int\n\nlogo_epsilon_angle :: tangle\n\nlogo_epsilon_line :: tlength\n\nlogo_for_loop :: int -> (int -> turtle -> turtle) -> turtle -> turtle\n\n0 :: int\n\n1 :: int\n\n2 :: int\n\n3 :: int\n\n4 :: int\n\n5 :: int\n\n6 :: int\n\n7 :: int\n\n8 :: int\n\n9 :: int\n\ndraw_multiple_shapes_in_a_row :: turtle -> int -> int -> turtle\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_for_loop $3 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_divide_angle logo_unit_angle $5) $0))) (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0)))) $2))))\ndescription: Draws multiple shapes in a row with specified parameters such as number of shapes, size, and spacing.\n\ndraw_shapes_with_rotated_pen :: turtle -> int -> tlength -> turtle\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Draws shapes with a rotated pen based on specified parameters such as number of shapes, angle of rotation, and size.\n\nmove_pen_forward_rotate_with_angle :: turtle -> int -> turtle\n(lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $0) $1)))\ndescription: Moves the pen forward and rotates it by a specified angle.\n\ndraw_shapes_in_row_with_angle :: turtle -> tangle -> int -> turtle\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line $3 $0))) $2))))\ndescription: Draws shapes in a row with a specified angle between them.\n\nmove_pen_forward_rotate_to_zero_angle :: turtle -> turtle\n(lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))\ndescription: Moves the pen forward along the unit line and rotates it to zero angle.\n\ndraw_multiple_lines_with_length_multiplier :: turtle -> tlength -> turtle\n(lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line $0 5) logo_epsilon_angle $1)))\ndescription: Draws multiple lines with a length multiplier applied to each line.\n\ndraw_shapes_with_rotated_pen_and_scaled_line :: int -> int -> turtle -> turtle\n(lambda (lambda (lambda (draw_shapes_with_rotated_pen $0 $1 (logo_multiply_line logo_unit_line $2)))))\ndescription: Draw shapes with a rotated pen and a scaled line based on specified parameters.\n\ndraw_shapes_with_rotated_pen_using_unit_line :: int -> turtle -> turtle\n(lambda (lambda (draw_shapes_with_rotated_pen $0 $1 logo_unit_line)))\ndescription: Draws shapes with a rotated pen using the unit line as a reference based on the specified number of sides.\n\nmove_pen_forward_rotate_with_scaled_angle :: turtle -> int -> tlength -> turtle\n(lambda (lambda (lambda (logo_move_pen_forward_rotate $0 (logo_divide_angle logo_unit_angle $1) $2))))\ndescription: Moves the pen forward and rotates it by a scaled angle based on specified parameters.\n\ndraw_multiple_shapes_in_a_row_multiple_times :: int -> turtle -> turtle\n(lambda (lambda (draw_multiple_shapes_in_a_row $0 3 $1)))\ndescription: Draws multiple shapes in a row a specified number of times with the given parameters.\n\n",
+        "role": "system"
+      },
+      {
+        "content": "Here are some example programs:",
+        "role": "user"
+      },
+      {
+        "content": "-- 5 small triangle s in a row",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (draw_multiple_shapes_in_a_row_multiple_times 5 $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- 6 sided snowflake with a short line as arms",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (logo_for_loop 7 (lambda (lambda (move_pen_forward_rotate_with_angle (logo_get_set_function_pen (lambda (move_pen_forward_rotate_to_zero_angle $0)) $0) 6))) $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- 5 small square s in a row",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (draw_multiple_shapes_in_a_row $0 4 5))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- a medium 7 gon",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (draw_shapes_with_rotated_pen_and_scaled_line 2 7 $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- 8 sided snowflake with a small triangle as arms",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (logo_for_loop 9 (lambda (lambda (move_pen_forward_rotate_with_angle (logo_get_set_function_pen (lambda (move_pen_forward_rotate_with_scaled_angle (draw_shapes_in_row_with_angle $0 (logo_subtract_angles (logo_divide_angle logo_unit_angle 3) logo_zero_angle) 3) 3 logo_unit_line)) $0) 8))) $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- 4 small 5 gon s in a row",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (draw_multiple_shapes_in_a_row $0 5 4))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- 4 concentric square s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (logo_for_loop 5 (lambda (lambda (draw_shapes_with_rotated_pen_and_scaled_line $1 4 $0))) $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- 4 short line s in a row",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (draw_shapes_in_row_with_angle $0 logo_unit_angle 4))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- a small 5 gon",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (draw_shapes_with_rotated_pen_using_unit_line 5 $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- a vertical short line",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (move_pen_forward_rotate_with_angle (move_pen_forward_rotate_to_zero_angle $0) 4))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- a small 8 gon",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (draw_shapes_with_rotated_pen_using_unit_line 8 $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- 5 short line s in a row",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (draw_multiple_lines_with_length_multiplier $0 logo_unit_line))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- a big semicircle",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (logo_for_loop logo_IFTY (lambda (lambda (draw_multiple_lines_with_length_multiplier $0 logo_epsilon_line))) $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- 3 small triangle s in a row",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (draw_multiple_shapes_in_a_row_multiple_times 3 $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- 2 concentric circle s",
+        "role": "user"
+      }
+    ],
+    "n": 4,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": "\n",
+    "temperature": 0.9,
+    "top_p": null
+  },
+  "request_hash": "c8cd6c219e3c2cc32b78b35f72d338d5b49df1aa1eab28182b063ff7c352ce2c",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (logo_for_loop 3 (lambda (lambda (draw_multiple_lines_with_length_multiplier $0 (logo_multiply_line logo_unit_line $1)))) $0))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (logo_for_loop 3 (lambda (lambda (draw_multiple_lines_with_length_multiplier $0 (logo_multiply_line logo_unit_line $1)))) $0))"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (logo_for_loop 3 (lambda (lambda (draw_shapes_with_rotated_pen_and_scaled_line 1 100 $0))) $0))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (logo_for_loop 3 (lambda (lambda (draw_shapes_with_rotated_pen_and_scaled_line 1 100 $0))) $0))"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (logo_for_loop 3 (lambda (lambda (draw_shapes_with_rotated_pen_and_scaled_line $1 36 $0))) $0))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (logo_for_loop 3 (lambda (lambda (draw_shapes_with_rotated_pen_and_scaled_line $1 36 $0))) $0))"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (logo_for_loop 3 (lambda (lambda (draw_multiple_lines_with_length_multiplier $0 (logo_multiply_line logo_unit_line 2)))) $0))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (logo_for_loop 3 (lambda (lambda (draw_multiple_lines_with_length_multiplier $0 (logo_multiply_line logo_unit_line 2)))) $0))"
+      }
+    ],
+    "created": 1778248216,
+    "id": "chatcmpl-DdFsmw9nSMT7WBqVcv9zLOsucYxaG",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 128,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1508,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1636
+    }
+  }
+}

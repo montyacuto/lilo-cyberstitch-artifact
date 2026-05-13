@@ -1,0 +1,64 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_barrier_node_sql_injection_barrier",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isBarrierNodeSqlInjectionBarrier",
+        "display_name": "java_barrier_node_sql_injection_barrier",
+        "description": "Deterministically mined complete Java barrier predicate semantics.",
+        "body": "predicate isBarrierNodeSqlInjectionBarrier(DataFlow::Node node) {\n  barrierNode(node, \"sql-injection\")\n}",
+        "use_sites": [
+          {
+            "query": "remote-sql-sink-node.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q10:predicate:RemoteSqlSinkNodeConfig:isBarrier"
+          },
+          {
+            "query": "source-node-database-sql-sink-node.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q13:predicate:SourceNodeDatabaseSqlSinkNodeConfig:isBarrier"
+          },
+          {
+            "query": "source-node-remote-sql-sink-node.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q20:predicate:SourceNodeRemoteSqlSinkNodeConfig:isBarrier"
+          },
+          {
+            "query": "threat-sql-sink-node.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q31:predicate:ThreatSqlSinkNodeConfig:isBarrier"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "23abf95b67bf8ea0cd6c5bf42a501935e6ce592790995e1ec48fb3915c63bbc7",
+        "semantic_role": "Barrier",
+        "semantic_target": "barrierNode:sql-injection",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q10:predicate:RemoteSqlSinkNodeConfig:isBarrier",
+            "role": "Barrier",
+            "target": "barrierNode:sql-injection",
+            "num_exact_matches": 4
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

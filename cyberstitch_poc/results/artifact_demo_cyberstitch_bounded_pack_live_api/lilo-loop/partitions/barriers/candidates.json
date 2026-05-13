@@ -1,0 +1,145 @@
+{
+  "format": "cyberstitch-candidates-v2",
+  "source": "lilo-openai-compat",
+  "raw_output": {
+    "response": {
+      "id": "chatcmpl-DeioUQGFDKA4oUMRi4EWOS58deG73",
+      "object": "chat.completion",
+      "created": 1778597754,
+      "model": "gpt-3.5-turbo-0125",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL Barrier semantics for SimpleTypeSanitizer.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the barrier predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing candidate for Java SimpleTypeSanitizer barrier predicate.\",\n      \"rationale\": \"This candidate should remain rewrite-enabled for future CodeQL semantic enhancements.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:2:BarrierKind\"\n      ],\n      \"hint\": \"Provide future query-synthesis guidance for BarrierKind related to SimpleTypeSanitizer.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for BarrierKind related to SimpleTypeSanitizer.\"\n    }\n  ]\n}",
+            "refusal": null,
+            "annotations": []
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL Barrier semantics for SimpleTypeSanitizer.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the barrier predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing candidate for Java SimpleTypeSanitizer barrier predicate.\",\n      \"rationale\": \"This candidate should remain rewrite-enabled for future CodeQL semantic enhancements.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:2:BarrierKind\"\n      ],\n      \"hint\": \"Provide future query-synthesis guidance for BarrierKind related to SimpleTypeSanitizer.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for BarrierKind related to SimpleTypeSanitizer.\"\n    }\n  ]\n}"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 6176,
+        "completion_tokens": 248,
+        "total_tokens": 6424,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "service_tier": "default",
+      "system_fingerprint": null
+    },
+    "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL Barrier semantics for SimpleTypeSanitizer.\",\n      \"rationale\": \"This proposal provides a clear and descriptive name for the barrier predicate.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_simple_type_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Existing candidate for Java SimpleTypeSanitizer barrier predicate.\",\n      \"rationale\": \"This candidate should remain rewrite-enabled for future CodeQL semantic enhancements.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:2:BarrierKind\"\n      ],\n      \"hint\": \"Provide future query-synthesis guidance for BarrierKind related to SimpleTypeSanitizer.\",\n      \"rationale\": \"This hint helps guide future query synthesis efforts for BarrierKind related to SimpleTypeSanitizer.\"\n    }\n  ]\n}"
+  },
+  "lilo_input": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/lilo-loop/partitions/barriers/input.json",
+  "autodoc": [
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_simple_type_sanitizer_barrier",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java CodeQL Barrier semantics for SimpleTypeSanitizer.",
+      "rationale": "This proposal provides a clear and descriptive name for the barrier predicate."
+    }
+  ],
+  "groupings": [],
+  "query_synthesis_hints": [
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "concept:codeql_lib5:concept:2:BarrierKind"
+      ],
+      "hint": "Provide future query-synthesis guidance for BarrierKind related to SimpleTypeSanitizer.",
+      "rationale": "This hint helps guide future query synthesis efforts for BarrierKind related to SimpleTypeSanitizer."
+    }
+  ],
+  "ignored_outputs": [],
+  "candidates": [
+    {
+      "candidate_version": "cyberstitch-candidate-v2",
+      "name": "java_simple_type_sanitizer_barrier",
+      "kind": "codeql_helper",
+      "origin": "lilo-loop",
+      "schema": "java_barrier_predicate_helper_v1",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isSimpleTypeSanitizerBarrier",
+      "display_name": "remote_flow_source",
+      "description": "Existing candidate for Java SimpleTypeSanitizer barrier predicate.",
+      "body": "predicate isSimpleTypeSanitizerBarrier(DataFlow::Node node) {\n  exists(SimpleTypeSanitizer sanitizer | node = sanitizer)\n}",
+      "use_sites": [
+        {
+          "query": "remote-sql-mongo-parse.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q8:predicate:RemoteSqlMongoParseConfig:isBarrier"
+        },
+        {
+          "query": "remote-sql-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q9:predicate:RemoteSqlQueryModelConfig:isBarrier"
+        },
+        {
+          "query": "source-node-database-sql-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q12:predicate:SourceNodeDatabaseSqlQueryModelConfig:isBarrier"
+        },
+        {
+          "query": "source-node-remote-sql-mongo-parse.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q18:predicate:SourceNodeRemoteSqlMongoParseConfig:isBarrier"
+        },
+        {
+          "query": "source-node-remote-sql-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q19:predicate:SourceNodeRemoteSqlQueryModelConfig:isBarrier"
+        },
+        {
+          "query": "threat-sql-mongo-parse.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q29:predicate:ThreatSqlMongoParseConfig:isBarrier"
+        },
+        {
+          "query": "threat-sql-query-model.ql",
+          "predicate": "isBarrier",
+          "semantic_node_id": "q30:predicate:ThreatSqlQueryModelConfig:isBarrier"
+        }
+      ],
+      "rewrite_eligible": true,
+      "semantic_hash": "45ce32f0e3006d4b6457a3f63377b590571b81481619d40bd5c16c821dfee973",
+      "semantic_role": "Barrier",
+      "semantic_target": "SimpleTypeSanitizer",
+      "semantic_usefulness": "semantic",
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "semantic_node_id": "q8:predicate:RemoteSqlMongoParseConfig:isBarrier",
+          "role": "Barrier",
+          "target": "SimpleTypeSanitizer",
+          "num_exact_matches": 7,
+          "lilo_loop_reference": "candidate:java_simple_type_sanitizer_barrier",
+          "lilo_loop_policy": "referenced existing provenance-backed candidate; no raw CodeQL accepted"
+        }
+      },
+      "mapping_status": "semantic-mine-exact-predicate",
+      "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic enhancements.",
+      "llm_proposal": {
+        "schema": "rewrite_candidate_reference_v1",
+        "candidate_ref": "candidate:java_simple_type_sanitizer_barrier",
+        "display_name": "remote_flow_source",
+        "description": "Existing candidate for Java SimpleTypeSanitizer barrier predicate.",
+        "rationale": "This candidate should remain rewrite-enabled for future CodeQL semantic enhancements."
+      }
+    }
+  ]
+}

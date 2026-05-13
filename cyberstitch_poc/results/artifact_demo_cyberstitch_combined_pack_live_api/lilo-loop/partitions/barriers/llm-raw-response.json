@@ -1,0 +1,40 @@
+{
+  "response": {
+    "id": "chatcmpl-DehcP4dLZikp3MbqJehw4v7VAIyI9",
+    "object": "chat.completion",
+    "created": 1778593161,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL Barrier semantics for CommandInjectionSanitizer.\",\n      \"rationale\": \"This proposal preserves the semantics of the existing barrier predicate helper for CommandInjectionSanitizer.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Preserves the existing candidate for rewrite-enabled reuse.\",\n      \"rationale\": \"This candidate has been accepted for LILO and should remain rewrite-enabled for future reuse.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:2:BarrierKind\"\n      ],\n      \"hint\": \"Provides future query-synthesis guidance for BarrierKind concepts related to CommandInjectionSanitizer.\",\n      \"rationale\": \"This hint offers guidance for synthesizing queries related to BarrierKind concepts for CommandInjectionSanitizer.\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL Barrier semantics for CommandInjectionSanitizer.\",\n      \"rationale\": \"This proposal preserves the semantics of the existing barrier predicate helper for CommandInjectionSanitizer.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Preserves the existing candidate for rewrite-enabled reuse.\",\n      \"rationale\": \"This candidate has been accepted for LILO and should remain rewrite-enabled for future reuse.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:2:BarrierKind\"\n      ],\n      \"hint\": \"Provides future query-synthesis guidance for BarrierKind concepts related to CommandInjectionSanitizer.\",\n      \"rationale\": \"This hint offers guidance for synthesizing queries related to BarrierKind concepts for CommandInjectionSanitizer.\"\n    }\n  ]\n}"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3252,
+      "completion_tokens": 259,
+      "total_tokens": 3511,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": null
+  },
+  "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_command_injection_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL Barrier semantics for CommandInjectionSanitizer.\",\n      \"rationale\": \"This proposal preserves the semantics of the existing barrier predicate helper for CommandInjectionSanitizer.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_command_injection_sanitizer_barrier\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Preserves the existing candidate for rewrite-enabled reuse.\",\n      \"rationale\": \"This candidate has been accepted for LILO and should remain rewrite-enabled for future reuse.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:2:BarrierKind\"\n      ],\n      \"hint\": \"Provides future query-synthesis guidance for BarrierKind concepts related to CommandInjectionSanitizer.\",\n      \"rationale\": \"This hint offers guidance for synthesizing queries related to BarrierKind concepts for CommandInjectionSanitizer.\"\n    }\n  ]\n}"
+}

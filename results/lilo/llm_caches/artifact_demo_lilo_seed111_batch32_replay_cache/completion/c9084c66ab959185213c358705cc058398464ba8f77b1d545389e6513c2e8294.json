@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T09:44:28Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\ncount_objects_related_to_car_with_relation :: int -> list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (lambda (clevr_gt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) $2))))\ndescription: Counts the number of objects related to the first object in the list based on a specified relation.\n\ndetermine_shape_if_cylinder :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) clevr_cylinder) $1 $2))))\ndescription: Determines a value based on whether the shape of the first object in the list is a cylinder.\n\ncount_objects_with_specific_shape :: tclevrshape -> list(tclevrobject) -> int\n\n(lambda (lambda (clevr_if (clevr_eq_shape (clevr_query_shape (clevr_car $0)) $1) 1 2)))\ndescription: Counts the number of objects in a list that have a specific shape.\n\ndetermine_shape_based_on_blue_color :: tclevrshape -> list(tclevrobject) -> tclevrshape\n\n(lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color (clevr_car $0)) clevr_blue) $1 clevr_cylinder)))\ndescription: Determines the shape based on whether the color of the first object in the list is blue or not.\n\ncount_objects_behind :: list(tclevrobject) -> int\n\n(lambda (clevr_count (clevr_map (lambda (clevr_car $1)) (clevr_relate (clevr_car $0) clevr_behind $0))))\ndescription: Counts the number of objects that are behind the first object in the list.\n\nfn_59 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (count_objects_related_to_car_with_relation 2 $0 clevr_front) $1 $2))))\n\nfn_60 :: list(tclevrobject) -> tclevrrelation -> bool\n\n(lambda (lambda (clevr_lt? (clevr_count (clevr_relate (clevr_car $1) $0 $1)) 2)))\n\nfn_61 :: tclevrmaterial -> int -> list(tclevrobject) -> tclevrmaterial\n\n(lambda (lambda (lambda (clevr_if (clevr_gt? (clevr_count $0) $1) $2 clevr_rubber))))\n\nfn_62 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (count_objects_related_to_car_with_relation 2 $0 clevr_behind) $1 $2))))\n\nfn_63 :: t0 -> t0 -> tclevrobject -> t0\n\n(lambda (lambda (lambda (clevr_if (clevr_eq_color (clevr_query_color $0) clevr_blue) $1 $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_59 :: t0 -> t0 -> list(tclevrobject) -> t0\n\n(lambda (lambda (lambda (clevr_if (count_objects_related_to_car_with_relation 2 $0 clevr_front) $1 $2))))\n\nHere are some examples of its usage:\n\n-- there is a thing that is right the cube what shape is it\n(lambda (fn_59 clevr_cylinder clevr_sphere $0))\n\n-- there is a large thing front the small metal cube what is its shape\n(lambda (fn_59 (determine_shape_based_on_blue_color clevr_sphere $0) clevr_cube $0))\n\nPlease write a human-readable name and description for `fn_59` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "c9084c66ab959185213c358705cc058398464ba8f77b1d545389e6513c2e8294",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_59\",\n    \"readable_name\": \"determine_value_based_on_objects_in_front\",\n    \"description\": \"Determines a value based on the number of objects related to the first object in the list with the 'front' relation.\"\n}"
+      }
+    ],
+    "created": 1778233467,
+    "id": "chatcmpl-DdC2tGnGNBMWLQ2OVjlCT22qP8oWw",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 290,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 943,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1233
+    }
+  }
+}

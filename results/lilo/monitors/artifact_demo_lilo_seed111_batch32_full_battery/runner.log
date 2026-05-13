@@ -1,0 +1,5 @@
+Running full LILO re2 seed 111; stdout: <original-workspace>/lilo_sec/../Info/full_lilo_runs/full_lilo_seed111_paperfaithful_init_20260507/re2_seed_111.stdout.log
+Running full LILO clevr seed 111; stdout: <original-workspace>/lilo_sec/../Info/full_lilo_runs/full_lilo_seed111_paperfaithful_init_20260507/clevr_seed_111.stdout.log
+Running full LILO logo seed 111; stdout: <original-workspace>/lilo_sec/../Info/full_lilo_runs/full_lilo_seed111_paperfaithful_init_20260507/logo_seed_111.stdout.log
+Full LILO run metadata: <original-workspace>/lilo_sec/../Info/full_lilo_runs/full_lilo_seed111_paperfaithful_init_20260507
+Summary: <original-workspace>/lilo_sec/../Info/full_lilo_runs/full_lilo_seed111_paperfaithful_init_20260507/summary.tsv

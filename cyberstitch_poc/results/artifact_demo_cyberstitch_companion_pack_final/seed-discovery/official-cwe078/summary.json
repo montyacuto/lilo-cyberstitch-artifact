@@ -1,0 +1,166 @@
+{
+  "name": "official-cwe078",
+  "spec": "codeql/java-queries:Security/CWE/CWE-078",
+  "cwe": 78,
+  "tier": "official",
+  "experimental": false,
+  "resolved": {
+    "ok": true,
+    "spec": "codeql/java-queries:Security/CWE/CWE-078",
+    "queries": [
+      "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql",
+      "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql",
+      "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+      "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql"
+    ],
+    "stdout": "[\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql\",\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql\",\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql\",\n  \"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql\"\n]\n",
+    "stderr": "Recording pack reference codeql/java-queries at <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1.\n",
+    "command": [
+      "<original-workspace>/codeql/codeql",
+      "resolve",
+      "queries",
+      "--format=json",
+      "--",
+      "codeql/java-queries:Security/CWE/CWE-078"
+    ]
+  },
+  "compile": {
+    "ok": true,
+    "spec": "codeql/java-queries:Security/CWE/CWE-078",
+    "queries": [
+      {
+        "query": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql",
+        "relativeName": "codeql/java-queries/Security/CWE/CWE-078/ExecRelative.ql",
+        "success": true,
+        "messages": []
+      },
+      {
+        "query": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql",
+        "relativeName": "codeql/java-queries/Security/CWE/CWE-078/ExecTainted.ql",
+        "success": true,
+        "messages": []
+      },
+      {
+        "query": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+        "relativeName": "codeql/java-queries/Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+        "success": true,
+        "messages": []
+      },
+      {
+        "query": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql",
+        "relativeName": "codeql/java-queries/Security/CWE/CWE-078/ExecUnescaped.ql",
+        "success": true,
+        "messages": []
+      }
+    ],
+    "stdout": "[{\"query\":\"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql\"\n ,\"relativeName\":\"codeql/java-queries/Security/CWE/CWE-078/ExecRelative.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql\"\n ,\"relativeName\":\"codeql/java-queries/Security/CWE/CWE-078/ExecTainted.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql\"\n ,\"relativeName\":\"codeql/java-queries/Security/CWE/CWE-078/ExecTaintedEnvironment.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql\"\n ,\"relativeName\":\"codeql/java-queries/Security/CWE/CWE-078/ExecUnescaped.ql\"\n ,\"success\":true,\"messages\":[]}\n]\n",
+    "stderr": "Compiling query plan for <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql.\nDone [1/4] <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql.\nCompiling query plan for <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql.\nDone [2/4] <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql.\nCompiling query plan for <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql.\nDone [3/4] <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql.\nCompiling query plan for <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql.\nDone [4/4] <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql.\n",
+    "command": [
+      "<original-workspace>/codeql/codeql",
+      "query",
+      "compile",
+      "--check-only",
+      "--keep-going",
+      "--format=json",
+      "--common-caches=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe078/codeql-cache/common",
+      "--compilation-cache=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe078/codeql-cache/compile",
+      "--",
+      "codeql/java-queries:Security/CWE/CWE-078"
+    ]
+  },
+  "analysis": {
+    "ok": true,
+    "skipped": false,
+    "sarif": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe078/results.sarif",
+    "stdout": "",
+    "stderr": "Running queries.\nResolving data extensions.\nFinished resolving data extensions.\nLoading data extensions.\nFinished loading data extensions.\n[1/4] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.qlx.\n[2/4] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.qlx.\n[3/4] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.qlx.\n[4/4] Loaded <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.qlx.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-078/ExecRelative.ql.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-078/ExecTaintedEnvironment.ql.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-078/ExecTainted.ql.\nStarting evaluation of codeql/java-queries/Security/CWE/CWE-078/ExecUnescaped.ql.\n[1/4 eval 3.7s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-078/ExecRelative.bqrs.\n[2/4 eval 4.2s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-078/ExecUnescaped.bqrs.\n[3/4 eval 4.4s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-078/ExecTaintedEnvironment.bqrs.\n[4/4 eval 4.5s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-078/ExecTainted.bqrs.\nShutting down query evaluator.\nInterpreting results.\n",
+    "command": [
+      "<original-workspace>/codeql/codeql",
+      "database",
+      "analyze",
+      "--common-caches=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe078/codeql-cache/analysis-common",
+      "--compilation-cache=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe078/codeql-cache/analysis-compile",
+      "--rerun",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/codeql-dbs/java",
+      "codeql/java-queries:Security/CWE/CWE-078",
+      "--format=sarifv2.1.0",
+      "--output=<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_official_expanded_pack_20260512/seed-discovery/official-cwe078/results.sarif",
+      "--threads=0"
+    ]
+  },
+  "queries": [
+    {
+      "rule_id": "java/relative-path-command",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecRelative.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecRelative.ql",
+      "cwe": 78,
+      "kind": "problem",
+      "precision": "medium",
+      "name": "Executing a command with a relative path",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "211f380959a89497c46ea06f9fdd0c1d369d391cffce5d2057bd758609e8b389",
+      "compile_ok": true,
+      "alert_count": 0,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/command-line-injection",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTainted.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecTainted.ql",
+      "cwe": 78,
+      "kind": "path-problem",
+      "precision": "high",
+      "name": "Uncontrolled command line",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "bf864db0fc65b41e18b07e251076fbb7805e8ce4c584bba955b3fbb4d7b5c2a0",
+      "compile_ok": true,
+      "alert_count": 112,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/exec-tainted-environment",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecTaintedEnvironment.ql",
+      "cwe": 78,
+      "kind": "path-problem",
+      "precision": "medium",
+      "name": "Building a command with an injected environment variable",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "e485ce269c1d474a9e526a48da610f2d463a3617d757a2a8749c10a4ead5931d",
+      "compile_ok": true,
+      "alert_count": 59,
+      "selected": true,
+      "selection_policy": "all"
+    },
+    {
+      "rule_id": "java/concatenated-command-line",
+      "query_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-078/ExecUnescaped.ql",
+      "relative_query_path": "Security/CWE/CWE-078/ExecUnescaped.ql",
+      "cwe": 78,
+      "kind": "problem",
+      "precision": "medium",
+      "name": "Building a command line with string concatenation",
+      "tier": "official",
+      "spec": "codeql/java-queries:Security/CWE/CWE-078",
+      "experimental": false,
+      "source_hash": "55822bb97e1ca378b2761b8307c8b2a9a77c84e621e101cf1333e935df7ae1b2",
+      "compile_ok": true,
+      "alert_count": 19,
+      "selected": true,
+      "selection_policy": "all"
+    }
+  ],
+  "rule_alert_counts": {
+    "java/command-line-injection": 112,
+    "java/concatenated-command-line": 19,
+    "java/exec-tainted-environment": 59
+  }
+}

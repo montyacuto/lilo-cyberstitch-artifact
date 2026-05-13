@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T12:11:32Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_if_match :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that replaces a substring in a full string if a match is found based on a given condition.\n\nreplace_first_letter :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\ndescription: A function that replaces the first letter of a full string with a specified substring.\n\nreplace_end_with_substring :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that replaces the end of a full string with a specified substring.\n\nreplace_with_transform :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that replaces substrings in a full string based on a transformation function applied to each substring.\n\nreplace_if_p_found :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match 'p' $0) $1 $0)) (regex_split empty_string $1)))))\ndescription: A function that replaces occurrences of 'p' with a specified substring in a full string.\n\nreplace_if_match_with_concatenated_suffix :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match $0 (regex_concat 'a' $1) $2))))\ndescription: A function that replaces a substring in a full string with a concatenated suffix if a match is found based on a given condition.\n\nreplace_first_letter_with_suffix :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (replace_first_letter $0 (regex_concat $1 'a'))))\ndescription: A function that replaces the first letter of a full string with a specified substring concatenated as a suffix.\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_50 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_with_transform $0 (lambda (regex_if (regex_match $0 $2) $3 $0))))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_if_match $0 (regex_concat 'c' $1) $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_49 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nHere are some examples of its usage:\n\n-- if the word ends with consonant replace that with a o\n(lambda (fn_49 (replace_end_with_substring $0 'a') 'o'))\n\n-- if the word ends with any letter add d after that\n(lambda (fn_49 $0 'd'))\n\nPlease write a human-readable name and description for `fn_49` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "4248f6c00076abd8134130db8719bc3000f73cb5c327dc91f90b803d63dedc91",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"append_split_empty\",\n    \"description\": \"A function that appends the first argument to the full string after splitting the second argument by an empty string.\"\n}"
+      }
+    ],
+    "created": 1778155891,
+    "id": "chatcmpl-DcrrfUT2eM0ZtRWTd1VxIluGFPkbA",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 250,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 820,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1070
+    }
+  }
+}

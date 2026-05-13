@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T13:11:32Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\ncreate_polygon_with_rotation :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Creates a polygon with a specified number of sides and rotation using the turtle graphics library.\n\ncreate_line_with_rotation :: turtle -> int -> turtle\n\n(lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $0) $1)))\ndescription: Creates a line with a specified length and rotation using the turtle graphics library.\n\nmove_pen_forward_with_unit_line_and_zero_angle :: turtle -> turtle\n\n(lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))\ndescription: Moves the turtle's pen forward with a unit line length and zero angle rotation.\n\ncreate_polygon_with_rotated_lines :: turtle -> tangle -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line $3 $0))) $2))))\ndescription: Creates a polygon with rotated lines using the turtle graphics library.\n\ncreate_line_with_scaled_length :: turtle -> tlength -> turtle\n\n(lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line $0 5) logo_epsilon_angle $1)))\ndescription: Creates a line with a scaled length using the turtle graphics library.\n\nmove_pen_forward_with_rotated_angle_and_length :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_move_pen_forward_rotate $0 (logo_divide_angle logo_unit_angle $1) $2))))\ndescription: Moves the turtle's pen forward with a rotated angle and specified length using the turtle graphics library.\n\ncreate_line_with_rotated_pen :: int -> turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (lambda (create_line_with_rotation (logo_get_set_function_pen $0 $1) $2))))\ndescription: Creates a line with rotation using the turtle graphics library, based on the specified pen settings.\n\ncreate_polygon_with_rotation_using_unit_line :: int -> turtle -> turtle\n\n(lambda (lambda (create_polygon_with_rotation $0 $1 logo_unit_line)))\ndescription: Creates a polygon with a specified number of sides and rotation using a unit line length\n\nfn_35 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop logo_IFTY (lambda $1) $1)))\n\nfn_36 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 9 (lambda $1) $1)))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_35 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop logo_IFTY (lambda $1) $1)))\n\nHere are some examples of its usage:\n\n-- a big semicircle\n(lambda (fn_35 $0 (lambda (create_line_with_scaled_length $0 logo_epsilon_line))))\n\nPlease write a human-readable name and description for `fn_35` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "12a5b2503af6a9163daa70f227b4d63602a9faf2db2dfd08e897c40a8f35a525",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_35\",\n    \"readable_name\": \"apply_function_for_loop_with_infinity\",\n    \"description\": \"Applies a function repeatedly using a for loop with infinity as the loop count\"\n}"
+      }
+    ],
+    "created": 1778245891,
+    "id": "chatcmpl-DdFHHyQxdkPBf0yLJa558jplQIdFK",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 240,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 737,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 977
+    }
+  }
+}

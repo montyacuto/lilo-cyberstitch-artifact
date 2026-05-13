@@ -1,0 +1,5 @@
+test name,category,real vulnerability,CWE
+BenchmarkTest00078,command-injection,true,78
+BenchmarkTest00079,command-injection,false,78
+BenchmarkTest00089,sql-injection,true,89
+BenchmarkTest00090,sql-injection,false,89

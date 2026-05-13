@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_method_names_execute_update_sink",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isMethodNamesExecuteUpdateSink",
+        "display_name": "java_method_names_execute_update_sink",
+        "description": "Deterministically mined complete Java sink predicate semantics.",
+        "body": "predicate isMethodNamesExecuteUpdateSink(DataFlow::Node sink) {\n  exists(MethodCall call | call.getMethod().hasName(\"executeUpdate\") and sink.asExpr() = call.getArgument(0))\n}",
+        "use_sites": [
+          {
+            "query": "remote-sql-execute-update.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q6:predicate:RemoteSqlExecuteUpdateConfig:isSink"
+          },
+          {
+            "query": "threat-sql-execute-update.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q27:predicate:ThreatSqlExecuteUpdateConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "d4e0247450b33627503750dd087830e4ac458811688e6db5300243b245ac3607",
+        "semantic_role": "Sink",
+        "semantic_target": "method-names:executeUpdate",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q6:predicate:RemoteSqlExecuteUpdateConfig:isSink",
+            "role": "Sink",
+            "target": "method-names:executeUpdate",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

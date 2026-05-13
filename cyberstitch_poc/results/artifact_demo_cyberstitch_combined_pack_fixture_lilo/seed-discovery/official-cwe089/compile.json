@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "spec": "codeql/java-queries:Security/CWE/CWE-089",
+  "queries": [
+    {
+      "query": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql",
+      "relativeName": "codeql/java-queries/Security/CWE/CWE-089/SqlConcatenated.ql",
+      "success": true,
+      "messages": []
+    },
+    {
+      "query": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql",
+      "relativeName": "codeql/java-queries/Security/CWE/CWE-089/SqlTainted.ql",
+      "success": true,
+      "messages": []
+    }
+  ],
+  "stdout": "[{\"query\":\"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql\"\n ,\"relativeName\":\"codeql/java-queries/Security/CWE/CWE-089/SqlConcatenated.ql\"\n ,\"success\":true,\"messages\":[]}\n,{\"query\":\"<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql\"\n ,\"relativeName\":\"codeql/java-queries/Security/CWE/CWE-089/SqlTainted.ql\"\n ,\"success\":true,\"messages\":[]}\n]\n",
+  "stderr": "Compiling query plan for <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql.\nDone [1/2] <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlConcatenated.ql.\nCompiling query plan for <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql.\nDone [2/2] <original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/Security/CWE/CWE-089/SqlTainted.ql.\n",
+  "command": [
+    "<original-workspace>/codeql/codeql",
+    "query",
+    "compile",
+    "--check-only",
+    "--keep-going",
+    "--format=json",
+    "--common-caches=<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_artifact_20260512/seed-discovery/official-cwe089/codeql-cache/common",
+    "--compilation-cache=<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_combined_pack_artifact_20260512/seed-discovery/official-cwe089/codeql-cache/compile",
+    "--",
+    "codeql/java-queries:Security/CWE/CWE-089"
+  ]
+}

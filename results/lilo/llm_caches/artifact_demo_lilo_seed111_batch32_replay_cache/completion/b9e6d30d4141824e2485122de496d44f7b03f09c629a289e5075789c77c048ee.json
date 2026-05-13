@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T18:22:30Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nmove_pen_forward_rotate_with_angle_and_length :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Moves the turtle's pen forward and rotates it by a specified angle and length within a for loop.\n\ncreate_snowflake_with_arms :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop 9 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $2) (logo_get_set_function_pen (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_divide_angle logo_unit_angle $4) (logo_for_loop $4 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_subtract_angles (logo_divide_angle logo_unit_angle $6) logo_zero_angle) $0))) $0))) $0)))) $2))))\ndescription: Generates a snowflake pattern with arms of a specified polygon shape and number of sides\n\nfn_29 :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_rotate_with_angle_and_length (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0) $3 logo_unit_line))) $2))))\n\nfn_30 :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_rotate_with_angle_and_length $0 $1 (logo_multiply_line logo_unit_line 2))))\n\nfn_31 :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop logo_IFTY (lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line logo_epsilon_line $2) logo_epsilon_angle $0))) $1)))\n\nfn_32 :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))) $1)))\n\nfn_33 :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_rotate_with_angle_and_length $0 4 (logo_multiply_line logo_unit_line $1)))) $1)))\n\nfn_34 :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_rotate_with_angle_and_length $0 $1 logo_unit_line)))\n\nfn_35 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 7 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 6) (logo_get_set_function_pen $2 $0)))) $1)))\n\nfn_36 :: turtle -> int -> turtle\n\n(lambda (lambda (fn_34 $0 (logo_lift_pen (lambda (fn_29 $0 5 2)) (fn_30 4 $1)))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_29 :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_rotate_with_angle_and_length (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0) $3 logo_unit_line))) $2))))\n\nHere are some examples of its usage:\n\n-- 3 small triangle s in a row\n(lambda (fn_29 $0 3 3))\n\n-- 3 small 5 gon s in a row\n(lambda (fn_29 $0 5 3))\n\n-- 4 small square s in a row\n(lambda (fn_29 $0 4 4))\n\n-- 6 small 5 gon s in a row\n(lambda (fn_29 $0 5 6))\n\n-- 6 small 5 gon s in a row\n(lambda (fn_29 $0 5 6))\n\n-- 6 small square s in a row\n(lambda (fn_29 $0 4 6))\n\n-- 5 small triangle s in a row\n(lambda (fn_29 $0 3 5))\n\n-- 4 small 5 gon s in a row\n(lambda (fn_29 $0 5 4))\n\n-- 5 small square s in a row\n(lambda (fn_29 $0 4 5))\n\nPlease write a human-readable name and description for `fn_29` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "b9e6d30d4141824e2485122de496d44f7b03f09c629a289e5075789c77c048ee",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_29\",\n    \"readable_name\": \"create_shape_pattern_with_rotation\",\n    \"description\": \"Generates a pattern of shapes with specified rotation angles and lengths in a row\"\n}"
+      }
+    ],
+    "created": 1778264549,
+    "id": "chatcmpl-DdK8DzP6F8u4gRE2zuSivb6AHpFeP",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 230,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1011,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1241
+    }
+  }
+}

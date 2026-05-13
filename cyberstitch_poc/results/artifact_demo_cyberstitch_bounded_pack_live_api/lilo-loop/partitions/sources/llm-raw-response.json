@@ -1,0 +1,40 @@
+{
+  "response": {
+    "id": "chatcmpl-DeioGAlftzpCPr9L2QP6ua0tGXuJf",
+    "object": "chat.completion",
+    "created": 1778597740,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This proposal provides a reusable source predicate for ThreatModel semantics in Java CodeQL.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This existing candidate should stay rewrite-enabled to maintain ThreatModel semantics in Java CodeQL.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}",
+          "refusal": null,
+          "annotations": []
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This proposal provides a reusable source predicate for ThreatModel semantics in Java CodeQL.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This existing candidate should stay rewrite-enabled to maintain ThreatModel semantics in Java CodeQL.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 11383,
+      "completion_tokens": 234,
+      "total_tokens": 11617,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "service_tier": "default",
+    "system_fingerprint": null
+  },
+  "text": "{\n  \"proposals\": [\n    {\n      \"schema\": \"autodoc_v1\",\n      \"target_id\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This proposal provides a reusable source predicate for ThreatModel semantics in Java CodeQL.\"\n    },\n    {\n      \"schema\": \"rewrite_candidate_reference_v1\",\n      \"candidate_ref\": \"candidate:java_active_threat_model_source\",\n      \"display_name\": \"remote_flow_source\",\n      \"description\": \"Recognizes Java CodeQL ThreatModel semantics for ActiveThreatModelSource.\",\n      \"rationale\": \"This existing candidate should stay rewrite-enabled to maintain ThreatModel semantics in Java CodeQL.\"\n    },\n    {\n      \"schema\": \"query_synthesis_hint_v1\",\n      \"target_ids\": [\n        \"concept:codeql_lib5:concept:0:ThreatModel\"\n      ],\n      \"hint\": \"future query-synthesis guidance; not executable in this milestone\"\n    }\n  ]\n}"
+}

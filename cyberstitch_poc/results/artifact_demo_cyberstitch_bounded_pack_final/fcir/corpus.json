@@ -1,0 +1,273 @@
+{
+  "format": "cyberstitch-fcir-index",
+  "version": "fcir-v2",
+  "stitch_format": "programs-list",
+  "programs_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/fcir/programs.json",
+  "provenance_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/fcir/provenance.json",
+  "programs": [
+    {
+      "program_id": "q0",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-command-argument-to-exec.ql",
+      "language": "java",
+      "sqir_hash": "f9c4b904d708b9ffe1b6cb681715c7b38669439b4e8c9ac7e435506867957d0d",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-argument-to-exec"
+    },
+    {
+      "program_id": "q1",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-command-modeled.ql",
+      "language": "java",
+      "sqir_hash": "c58b83d311b26e8a39f1861aca58d1eebf678e2846b1e51d5dc2b218fcfc2b96",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-modeled"
+    },
+    {
+      "program_id": "q2",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-command-runtime-exec.ql",
+      "language": "java",
+      "sqir_hash": "2109929266c1f2176e0311217cc94a0cf3de7ad5225862d96241e83ec73ef9ee",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-runtime-exec"
+    },
+    {
+      "program_id": "q3",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-command-sink-node.ql",
+      "language": "java",
+      "sqir_hash": "443db7303c7d3f49f38675b0fc6d9865e4930c58551b1fdec91b704e7d2d521d",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-sink-node"
+    },
+    {
+      "program_id": "q4",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-environment-sink-node.ql",
+      "language": "java",
+      "sqir_hash": "a242c961a2e775c107c4660ad32900c46350c2a81fa081943ebe63fcd996ccce",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-environment-sink-node"
+    },
+    {
+      "program_id": "q5",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute-query.ql",
+      "language": "java",
+      "sqir_hash": "3e394eb5c495f781963358794c0519afe1061eaf60a4b4e303edbb6ccd438779",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-execute-query"
+    },
+    {
+      "program_id": "q6",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute-update.ql",
+      "language": "java",
+      "sqir_hash": "c13951fc605430e24e2742c70f3efc6f9129f00515cdd9acd3b6b3d01e1a7c71",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-execute-update"
+    },
+    {
+      "program_id": "q7",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute.ql",
+      "language": "java",
+      "sqir_hash": "9a36d2a4e6a63d3848460ea5f9cfdea8b3c4ed5f2a0b0e721dbae79106a1e402",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-execute"
+    },
+    {
+      "program_id": "q8",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-sql-mongo-parse.ql",
+      "language": "java",
+      "sqir_hash": "fc5476c43e957568b6feb7e3dc0cc523d07b2068dbbed3b6e42d651b5483bcc0",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-mongo-parse"
+    },
+    {
+      "program_id": "q9",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-sql-query-model.ql",
+      "language": "java",
+      "sqir_hash": "5efc0665c9604ea57755956a8010a237a4cf6da52fd61c0df7a6f63af3f1bd49",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-query-model"
+    },
+    {
+      "program_id": "q10",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-sql-sink-node.ql",
+      "language": "java",
+      "sqir_hash": "24374639d4afdc20ecd94b9ce621328bf7d1b0a4838320d3c674c23d18f72f5a",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-sink-node"
+    },
+    {
+      "program_id": "q11",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/remote-sql-statement-execute-all.ql",
+      "language": "java",
+      "sqir_hash": "d08c03dac6c2fc8629d09c0cb61050db3ca6dbaf0d8341cd12f09c6c3aae8f2d",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-statement-execute-all"
+    },
+    {
+      "program_id": "q12",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-query-model.ql",
+      "language": "java",
+      "sqir_hash": "1697bab0c5c3af8bb4f6df1cbd0bfc11071857b687f557034da567de62384231",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-query-model"
+    },
+    {
+      "program_id": "q13",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-sink-node.ql",
+      "language": "java",
+      "sqir_hash": "90f07c9c11184ed81311a86ec36e60869f5f10c846eeb86e5408fb872cda9391",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-sink-node"
+    },
+    {
+      "program_id": "q14",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/source-node-environment-command-modeled.ql",
+      "language": "java",
+      "sqir_hash": "d8473b53d2dea0fd8405d0de9d80f5a7668bbcfd156b5b451d3ce8a059e5250e",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-command-modeled"
+    },
+    {
+      "program_id": "q15",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/source-node-environment-env-sink.ql",
+      "language": "java",
+      "sqir_hash": "6b7a9960dc0703d8a2dc03ad874eb068e7086343219e6dde8aba3a8375531969",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-env-sink"
+    },
+    {
+      "program_id": "q16",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-modeled.ql",
+      "language": "java",
+      "sqir_hash": "8ef1d2fb17c745b1360926614e4a65febcaadc872e7e3deddddf216b26736085",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-modeled"
+    },
+    {
+      "program_id": "q17",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-sink-node.ql",
+      "language": "java",
+      "sqir_hash": "301c56ff110ce143cc0b4499d24c6562a1f3b6a709cda504a7a60c0a32ff5d2b",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-sink-node"
+    },
+    {
+      "program_id": "q18",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-mongo-parse.ql",
+      "language": "java",
+      "sqir_hash": "a409c9c1a6afab2c4a76aad0bf3f000143182d224f9c951aef564e5f3b9e1b82",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-mongo-parse"
+    },
+    {
+      "program_id": "q19",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-query-model.ql",
+      "language": "java",
+      "sqir_hash": "2fcc2b43008ed2922f2f724836c2b96066312dd5d4b2c488346e99fbbef78d77",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-query-model"
+    },
+    {
+      "program_id": "q20",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-sink-node.ql",
+      "language": "java",
+      "sqir_hash": "5deb6d08747a0918a798ab787e0c5c288f76bc37cae0589e5e0fb09ee928a26d",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-sink-node"
+    },
+    {
+      "program_id": "q21",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-command-argument-to-exec.ql",
+      "language": "java",
+      "sqir_hash": "bcb5323b5bc1be46c441078b6d9a3c863b5cee8dc51c3f0d79c5c834348b61bc",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-argument-to-exec"
+    },
+    {
+      "program_id": "q22",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-command-modeled.ql",
+      "language": "java",
+      "sqir_hash": "0fee1723a676d783ef18e910c9cf2a8ade5f2f8984081b9f3cfebeee7274f67e",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-modeled"
+    },
+    {
+      "program_id": "q23",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-command-runtime-exec.ql",
+      "language": "java",
+      "sqir_hash": "b0e0e0725efcd639f91459d8a3c436d4498f22e96804a2730743f30367adfe0f",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-runtime-exec"
+    },
+    {
+      "program_id": "q24",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-command-sink-node.ql",
+      "language": "java",
+      "sqir_hash": "42e71b3128a6b65afeb8e2e318ba6a5116a06c465fc7053c9d28baf58e31735b",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-sink-node"
+    },
+    {
+      "program_id": "q25",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-environment-sink-node.ql",
+      "language": "java",
+      "sqir_hash": "42a37997848e4755f6f9bff33c3b8fab954c0eb3c0a6044ee7c6b85f5a19bf1e",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-environment-sink-node"
+    },
+    {
+      "program_id": "q26",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-sql-execute-query.ql",
+      "language": "java",
+      "sqir_hash": "fd979c245ce1c32de354706f6f9eceb14b17ee0ff4cf94c7a3d8d0e6faed5760",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-execute-query"
+    },
+    {
+      "program_id": "q27",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-sql-execute-update.ql",
+      "language": "java",
+      "sqir_hash": "32a036039b24e34cfd5350fefa282716c8d194ac4b6efeee26be279aa398bd7a",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-execute-update"
+    },
+    {
+      "program_id": "q28",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-sql-execute.ql",
+      "language": "java",
+      "sqir_hash": "872930dc02e7c8b8610ca2c10707c3ea0c11a90ab994066fb6399ab047816e42",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-execute"
+    },
+    {
+      "program_id": "q29",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-sql-mongo-parse.ql",
+      "language": "java",
+      "sqir_hash": "51192711c0b214bd1b96dfd13d5bad26c1c2beb9ee8609634578f85af04a64f6",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-mongo-parse"
+    },
+    {
+      "program_id": "q30",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-sql-query-model.ql",
+      "language": "java",
+      "sqir_hash": "3db53374ea7a7de7f09d2ed7542988c93d3f192bc4485c96c6d105c25d10433b",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-query-model"
+    },
+    {
+      "program_id": "q31",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-sql-sink-node.ql",
+      "language": "java",
+      "sqir_hash": "85d0019752e4f52c923f73b97bc2c615e655d4e70fc35b3018a11328d871dfd9",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-sink-node"
+    },
+    {
+      "program_id": "q32",
+      "name": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_final_bounded_java_pack_20260512/generated-query-profiles/bounded-java/java/threat-sql-statement-execute-all.ql",
+      "language": "java",
+      "sqir_hash": "6156bfe019c977f057bcfba7d9897c8ff83f7312ebdf7d363ef925058e79b267",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-statement-execute-all"
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "format": "cyberstitch-autodoc-eval-v1",
+  "tasks": [
+    {
+      "expected_roles": {
+        "candidate:java_active_threat_model_source": "Source",
+        "candidate:java_barrier_kind_barrier_node_command_injection_75be8832": "Barrier",
+        "candidate:java_barrier_kind_command_injection_sanitizer_54fe9f81": "Barrier",
+        "candidate:java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50": "Barrier",
+        "candidate:java_barrier_kind_simple_type_sanitizer_0a047631": "Barrier",
+        "candidate:java_barrier_kind_simple_type_sanitizer_f70cdda5": "Barrier",
+        "candidate:java_command_injection_sanitizer_barrier": "Barrier",
+        "candidate:java_command_injection_sink_sink": "Sink",
+        "candidate:java_java_lang_runtime_exec_sink": "Sink",
+        "candidate:java_method_call_sink_java_lang_runtime_exec_d636a205": "Sink",
+        "candidate:java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866": "Sink",
+        "candidate:java_method_names_execute_execute_query_execute_update_sink": "Sink",
+        "candidate:java_modeled_sink_type_command_injection_sink_2da17f01": "Sink",
+        "candidate:java_modeled_sink_type_default_command_injection_sink_c9373329": "Sink",
+        "candidate:java_modeled_sink_type_mongo_db_injection_sink_c4849996": "Sink",
+        "candidate:java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159": "Sink",
+        "candidate:java_modeled_sink_type_persistence_query_injection_sink_41d858c8": "Sink",
+        "candidate:java_modeled_sink_type_query_injection_sink_acd681bc": "Sink",
+        "candidate:java_modeled_sink_type_query_injection_sink_fba18fca": "Sink",
+        "candidate:java_modeled_sink_type_sql_injection_sink_a7f7cdd4": "Sink",
+        "candidate:java_query_injection_sink_sink": "Sink",
+        "candidate:java_remote_flow_source": "Source",
+        "candidate:java_sink_kind_sink_node_command_injection_058dd9c5": "Sink",
+        "candidate:java_sink_kind_sink_node_environment_injection_32bdea5f": "Sink",
+        "candidate:java_sink_kind_sink_node_sql_injection_e532ab40": "Sink",
+        "candidate:java_source_kind_android_external_storage_source_edf149a9": "Source",
+        "candidate:java_source_kind_android_javascript_interface_method_parameter_01e51fdb": "Source",
+        "candidate:java_source_kind_exported_android_content_provider_input_1c741880": "Source",
+        "candidate:java_source_kind_exported_android_intent_input_5afd578a": "Source",
+        "candidate:java_source_kind_external_remote_flow_source_c97357e4": "Source",
+        "candidate:java_source_kind_guice_request_parameter_source_d5e556b9": "Source",
+        "candidate:java_source_kind_jax_rs_method_parameter_source_de780bd2": "Source",
+        "candidate:java_source_kind_jax_ws_method_parameter_source_4c05ab0a": "Source",
+        "candidate:java_source_kind_local_user_input_66e9bccd": "Source",
+        "candidate:java_source_kind_message_body_reader_parameter_source_810ff54e": "Source",
+        "candidate:java_source_kind_on_activity_result_intent_source_6be87d9c": "Source",
+        "candidate:java_source_kind_play_parameter_source_ea212a10": "Source",
+        "candidate:java_source_kind_remote_flow_source_3dbd0ce5": "Source",
+        "candidate:java_source_kind_remote_flow_source_7bbaf778": "Source",
+        "candidate:java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228": "Source",
+        "candidate:java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24": "Source",
+        "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f": "Source",
+        "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928": "Source",
+        "candidate:java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b": "Source",
+        "candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3": "Source",
+        "candidate:java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a": "Source",
+        "candidate:java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881": "Source",
+        "candidate:java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8": "Source",
+        "candidate:java_threat_model_active_threat_model_source_3c0f2e2d": "Source",
+        "candidate:java_threat_model_active_threat_model_source_473aa43e": "Source"
+      },
+      "id": "role_classification",
+      "instruction": "Classify every abstraction by semantic role. Use only Source, Sink, Barrier, FlowStep, or Other.",
+      "output_shape": {
+        "roles": {
+          "candidate:<name>": "Source|Sink|Barrier|FlowStep|Other"
+        }
+      },
+      "type": "role_classification"
+    },
+    {
+      "expected_groups": {
+        "barriers": [
+          "candidate:java_barrier_kind_barrier_node_command_injection_75be8832",
+          "candidate:java_barrier_kind_command_injection_sanitizer_54fe9f81",
+          "candidate:java_barrier_kind_exec_tainted_environment_sanitizer_64e8ff50",
+          "candidate:java_barrier_kind_simple_type_sanitizer_0a047631",
+          "candidate:java_barrier_kind_simple_type_sanitizer_f70cdda5",
+          "candidate:java_command_injection_sanitizer_barrier"
+        ],
+        "sinks": [
+          "candidate:java_command_injection_sink_sink",
+          "candidate:java_java_lang_runtime_exec_sink",
+          "candidate:java_method_call_sink_java_lang_runtime_exec_d636a205",
+          "candidate:java_method_call_sink_method_names_execute_execute_query_execute_update_2d9cf866",
+          "candidate:java_method_names_execute_execute_query_execute_update_sink",
+          "candidate:java_modeled_sink_type_command_injection_sink_2da17f01",
+          "candidate:java_modeled_sink_type_default_command_injection_sink_c9373329",
+          "candidate:java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+          "candidate:java_modeled_sink_type_my_batis_sql_injection_sink_7b7ec159",
+          "candidate:java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+          "candidate:java_modeled_sink_type_query_injection_sink_acd681bc",
+          "candidate:java_modeled_sink_type_query_injection_sink_fba18fca",
+          "candidate:java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+          "candidate:java_query_injection_sink_sink",
+          "candidate:java_sink_kind_sink_node_command_injection_058dd9c5",
+          "candidate:java_sink_kind_sink_node_environment_injection_32bdea5f",
+          "candidate:java_sink_kind_sink_node_sql_injection_e532ab40"
+        ],
+        "sources": [
+          "candidate:java_active_threat_model_source",
+          "candidate:java_remote_flow_source",
+          "candidate:java_source_kind_android_external_storage_source_edf149a9",
+          "candidate:java_source_kind_android_javascript_interface_method_parameter_01e51fdb",
+          "candidate:java_source_kind_exported_android_content_provider_input_1c741880",
+          "candidate:java_source_kind_exported_android_intent_input_5afd578a",
+          "candidate:java_source_kind_external_remote_flow_source_c97357e4",
+          "candidate:java_source_kind_guice_request_parameter_source_d5e556b9",
+          "candidate:java_source_kind_jax_rs_method_parameter_source_de780bd2",
+          "candidate:java_source_kind_jax_ws_method_parameter_source_4c05ab0a",
+          "candidate:java_source_kind_local_user_input_66e9bccd",
+          "candidate:java_source_kind_message_body_reader_parameter_source_810ff54e",
+          "candidate:java_source_kind_on_activity_result_intent_source_6be87d9c",
+          "candidate:java_source_kind_play_parameter_source_ea212a10",
+          "candidate:java_source_kind_remote_flow_source_3dbd0ce5",
+          "candidate:java_source_kind_remote_flow_source_7bbaf778",
+          "candidate:java_source_kind_remote_flow_source_get_source_type_android_external_storage_c1deb228",
+          "candidate:java_source_kind_remote_flow_source_get_source_type_android_on_activity_result_incoming_intent_3b7a8b24",
+          "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_content_provider_source_bca0b10f",
+          "candidate:java_source_kind_remote_flow_source_get_source_type_exported_android_intent_source_ae63c928",
+          "candidate:java_source_kind_remote_flow_source_get_source_type_external_7afe2f1b",
+          "candidate:java_source_kind_remote_flow_source_get_source_type_guice_request_parameter_4fbc8cd3",
+          "candidate:java_source_kind_remote_flow_source_get_source_type_jax_rs_method_parameter_eef3e93a",
+          "candidate:java_source_kind_remote_flow_source_get_source_type_jax_ws_method_parameter_60a8f881",
+          "candidate:java_source_kind_remote_flow_source_get_source_type_message_body_reader_parameter_91ac6ff8",
+          "candidate:java_threat_model_active_threat_model_source_3c0f2e2d",
+          "candidate:java_threat_model_active_threat_model_source_473aa43e"
+        ]
+      },
+      "id": "group_families",
+      "instruction": "Group all abstractions into source, sink, and barrier families.",
+      "output_shape": {
+        "groups": {
+          "barriers": [
+            "candidate:<name>"
+          ],
+          "sinks": [
+            "candidate:<name>"
+          ],
+          "sources": [
+            "candidate:<name>"
+          ]
+        }
+      },
+      "type": "grouping"
+    },
+    {
+      "expected": [
+        "candidate:java_remote_flow_source"
+      ],
+      "id": "select_remote_source",
+      "instruction": "Select exactly one abstraction for Java remote user-controlled input source nodes.",
+      "output_shape": {
+        "selected": [
+          "candidate:<name>"
+        ]
+      },
+      "type": "helper_selection"
+    },
+    {
+      "expected": [
+        "candidate:java_active_threat_model_source"
+      ],
+      "id": "select_active_threat_source",
+      "instruction": "Select exactly one abstraction for active threat-model source nodes.",
+      "output_shape": {
+        "selected": [
+          "candidate:<name>"
+        ]
+      },
+      "type": "helper_selection"
+    },
+    {
+      "expected": [
+        "candidate:java_command_injection_sink_sink"
+      ],
+      "id": "select_modeled_command_sink",
+      "instruction": "Select exactly one abstraction for CodeQL modeled command-injection sinks.",
+      "output_shape": {
+        "selected": [
+          "candidate:<name>"
+        ]
+      },
+      "type": "helper_selection"
+    },
+    {
+      "expected": [
+        "candidate:java_query_injection_sink_sink"
+      ],
+      "id": "select_modeled_sql_sink",
+      "instruction": "Select exactly one abstraction for CodeQL modeled SQL/query-injection sinks.",
+      "output_shape": {
+        "selected": [
+          "candidate:<name>"
+        ]
+      },
+      "type": "helper_selection"
+    },
+    {
+      "expected": [
+        "candidate:java_java_lang_runtime_exec_sink"
+      ],
+      "id": "select_runtime_exec_sink",
+      "instruction": "Select exactly one abstraction for direct java.lang.Runtime.exec argument sinks.",
+      "output_shape": {
+        "selected": [
+          "candidate:<name>"
+        ]
+      },
+      "type": "helper_selection"
+    },
+    {
+      "expected": [
+        "candidate:java_method_names_execute_execute_query_execute_update_sink"
+      ],
+      "id": "select_statement_execute_sink",
+      "instruction": "Select exactly one abstraction for method-name based Statement execute/query/update argument sinks.",
+      "output_shape": {
+        "selected": [
+          "candidate:<name>"
+        ]
+      },
+      "type": "helper_selection"
+    },
+    {
+      "expected": [
+        "candidate:java_command_injection_sanitizer_barrier"
+      ],
+      "id": "select_command_sanitizer",
+      "instruction": "Select exactly one abstraction for a command-injection sanitizer or barrier.",
+      "output_shape": {
+        "selected": [
+          "candidate:<name>"
+        ]
+      },
+      "type": "helper_selection"
+    },
+    {
+      "expected": [
+        "candidate:java_remote_flow_source"
+      ],
+      "id": "rewrite_remote_source_reference",
+      "instruction": "Return a rewrite_candidate_reference_v1 proposal for the remote user-input source helper.",
+      "output_shape": {
+        "proposals": [
+          {
+            "candidate_ref": "candidate:<name>",
+            "schema": "rewrite_candidate_reference_v1"
+          }
+        ]
+      },
+      "type": "rewrite_reference"
+    },
+    {
+      "expected": [
+        "candidate:java_java_lang_runtime_exec_sink"
+      ],
+      "id": "reject_raw_codeql_for_runtime_exec",
+      "instruction": "Choose the existing helper for Runtime.exec sinks without writing any CodeQL, QL predicate body, import, or select clause.",
+      "output_shape": {
+        "no_raw_codeql": true,
+        "selected": [
+          "candidate:<name>"
+        ]
+      },
+      "type": "raw_codeql_rejection"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "proposals": [
+    {
+      "schema": "autodoc_v1",
+      "target_id": "candidate:java_remote_flow_source",
+      "display_name": "remote_flow_source",
+      "description": "Recognizes Java remote-flow source nodes used as user-controlled inputs in path queries.",
+      "rationale": "This documents a stable CodeQL source role while leaving executable QL generation to CyberSTITCH."
+    },
+    {
+      "schema": "rewrite_candidate_reference_v1",
+      "candidate_ref": "candidate:java_remote_flow_source",
+      "display_name": "remote_flow_source",
+      "description": "Preserve the existing provenance-backed RemoteFlowSource helper as a rewrite candidate.",
+      "rationale": "The candidate is already backed by repeated SQIR/FCIR source predicates and can pass the deterministic rewrite gates."
+    },
+    {
+      "schema": "candidate_grouping_v1",
+      "target_ids": [
+        "candidate:java_remote_flow_source",
+        "candidate:java_active_threat_model_source"
+      ],
+      "display_name": "remote_input_sources",
+      "description": "Groups CodeQL source concepts that represent remote or threat-model-controlled input.",
+      "rationale": "This grouping is useful for future query synthesis, but is not directly executable in this milestone."
+    },
+    {
+      "schema": "query_synthesis_hint_v1",
+      "target_ids": [
+        "candidate:java_remote_flow_source"
+      ],
+      "hint": "Future synthesis should combine a remote source abstraction with a vulnerability-family-specific sink abstraction and then require CodeQL syntax plus SARIF equivalence checks."
+    },
+    {
+      "schema": "raw_codeql_helper_v1",
+      "target_id": "candidate:java_remote_flow_source",
+      "body": "predicate unsafeGeneratedHelper(DataFlow::Node n) { any() }",
+      "display_name": "unsafe_raw_codeql",
+      "description": "This fixture entry should be rejected because raw LLM-authored CodeQL is not executable in this milestone."
+    }
+  ]
+}

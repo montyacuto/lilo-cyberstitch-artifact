@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_method_names_execute_execute_query_execute_update_sink",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_sink_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isMethodNamesExecuteExecuteQueryExecuteUpdateSink",
+        "display_name": "java_method_names_execute_execute_query_execute_update_sink",
+        "description": "Deterministically mined complete Java sink predicate semantics.",
+        "body": "predicate isMethodNamesExecuteExecuteQueryExecuteUpdateSink(DataFlow::Node sink) {\n  exists(MethodCall call | call.getMethod().hasName(\"execute\") and sink.asExpr() = call.getArgument(0) or call.getMethod().hasName(\"executeQuery\") and sink.asExpr() = call.getArgument(0) or call.getMethod().hasName(\"executeUpdate\") and sink.asExpr() = call.getArgument(0))\n}",
+        "use_sites": [
+          {
+            "query": "owasp-cwe089-sql.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q4:predicate:OwaspSqlInjectionConfig:isSink"
+          },
+          {
+            "query": "threat-cwe089-statement-execute.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q9:predicate:ThreatSqlStatementConfig:isSink"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "8086de3f59d7a93d47fd45d05cffb425fce11cf92ab6820ab352164ffd36c391",
+        "semantic_role": "Sink",
+        "semantic_target": "method-names:execute|executeQuery|executeUpdate",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q4:predicate:OwaspSqlInjectionConfig:isSink",
+            "role": "Sink",
+            "target": "method-names:execute|executeQuery|executeUpdate",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

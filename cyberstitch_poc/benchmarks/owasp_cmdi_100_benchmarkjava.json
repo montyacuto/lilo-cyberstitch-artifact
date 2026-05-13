@@ -1,0 +1,1213 @@
+{
+  "schema_version": "cyberstitch-owasp-curated-subset-v1",
+  "benchmark": {
+    "name": "OWASP Benchmark Java",
+    "release": "Benchmark v1.2",
+    "source": "https://github.com/OWASP-Benchmark/BenchmarkJava",
+    "commit": "b06d6efaebd577a327514364951916e7df3290b4",
+    "expected_results": "expectedresults-1.2.csv"
+  },
+  "selection_policy": "Balanced mechanical expansion for CWE-78 command injection: 100 cases selected from expectedresults order (50 vulnerable, 50 safe). This is a larger-scope stress test, not a hand-curated abstraction corpus.",
+  "cases": [
+    {
+      "test_id": "BenchmarkTest00006",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00006.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00007",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00007.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00015",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00015.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00017",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00017.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00051",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00051.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00077",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00077.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00090",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00090.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00091",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00091.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00092",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00092.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00093",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00093.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00158",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00158.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00159",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00159.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00171",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00171.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00172",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00172.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00173",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00173.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00174",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00174.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00175",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00175.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00176",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00176.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00177",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00177.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00293",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00293.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00294",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00294.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00295",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00295.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00302",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00302.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00303",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00303.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00304",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00304.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00305",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00305.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00306",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00306.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00307",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00307.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00308",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00308.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00309",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00309.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00310",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00310.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00311",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00311.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00396",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00396.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00406",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00406.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00407",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00407.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00408",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00408.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00409",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00409.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00410",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00410.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00411",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00411.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00412",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00412.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00480",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00480.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00481",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00481.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00494",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00494.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00495",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00495.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00496",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00496.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00497",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00497.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00498",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00498.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00499",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00499.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00500",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00500.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00558",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00558.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00559",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00559.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00567",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00567.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00568",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00568.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00569",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00569.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00570",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00570.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00571",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00571.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00572",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00572.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00573",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00573.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00574",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00574.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00575",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00575.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00576",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00576.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00657",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00657.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00658",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00658.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00659",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00659.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00731",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00731.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00732",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00732.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00738",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00738.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00739",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00739.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00740",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00740.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00741",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00741.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00742",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00742.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00743",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00743.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00814",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00814.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00815",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00815.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00816",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00816.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00823",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00823.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00824",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00824.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00825",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00825.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00826",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00826.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00827",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00827.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00895",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00895.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00896",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00896.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00897",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00897.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00905",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00905.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00906",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00906.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00907",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00907.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00908",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00908.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00909",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00909.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00910",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00910.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00968",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00968.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00969",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00969.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00970",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00970.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00978",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00978.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": false,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00979",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00979.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00981",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00981.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest00983",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00983.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest01064",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest01064.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest01066",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest01066.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest01190",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest01190.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    },
+    {
+      "test_id": "BenchmarkTest01191",
+      "file": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest01191.java",
+      "cwe": 78,
+      "category": "cmdi",
+      "expected_vulnerable": true,
+      "expected_rule_ids": [
+        "java/cyberstitch/owasp-cwe078-command"
+      ],
+      "rationale": "Balanced 100-case CWE-78 expansion selected from OWASP expectedresults order; used to stress-test command-injection scoring and CodeQL semantic equivalence.",
+      "abstraction_target": "RemoteFlowSource plus Runtime.exec argument sink"
+    }
+  ]
+}

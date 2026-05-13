@@ -1,0 +1,434 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T12:32:48Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 104,
+    "messages": [
+      {
+        "content": "You are an expert programmer working in a language based on lambda calculus.\nYour goal is to write programs that accomplish the tasks specified by the user.\nThis is a domain-specific language for regular expressions that specify string transformations.\n\nWrite programs using the available functions:\n\n'.' :: tsubstr\n\nempty_string :: tsubstr\n\n'a' :: tsubstr\n\n'b' :: tsubstr\n\n'c' :: tsubstr\n\n'd' :: tsubstr\n\n'e' :: tsubstr\n\n'f' :: tsubstr\n\n'g' :: tsubstr\n\n'h' :: tsubstr\n\n'i' :: tsubstr\n\n'j' :: tsubstr\n\n'k' :: tsubstr\n\n'l' :: tsubstr\n\n'm' :: tsubstr\n\n'n' :: tsubstr\n\n'o' :: tsubstr\n\n'p' :: tsubstr\n\n'q' :: tsubstr\n\n'r' :: tsubstr\n\n's' :: tsubstr\n\n't' :: tsubstr\n\n'u' :: tsubstr\n\n'v' :: tsubstr\n\n'w' :: tsubstr\n\n'x' :: tsubstr\n\n'y' :: tsubstr\n\n'z' :: tsubstr\n\nregex_not :: tsubstr -> tsubstr\n\nregex_or :: tsubstr -> tsubstr -> tsubstr\n\nregex_concat :: tsubstr -> tsubstr -> tsubstr\n\nregex_match :: tsubstr -> tsubstr -> bool\n\nregex_split :: tsubstr -> tfullstr -> list(tsubstr)\n\nregex_flatten :: list(tsubstr) -> tfullstr\n\nregex_tail :: list(tsubstr) -> tsubstr\n\nregex_append :: t0 -> list(t0) -> list(t0)\n\nregex_reverse_cdr :: list(t0) -> list(t0)\n\nregex_if :: bool -> t0 -> t0 -> t0\n\nregex_cons :: t0 -> list(t0) -> list(t0)\n\nregex_car :: list(t0) -> t0\n\nregex_cdr :: list(t0) -> list(t0)\n\nregex_map :: (t0 -> t1) -> list(t0) -> list(t1)\n\nreplace_if_match :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that replaces a substring in a full string if a match is found based on a given condition.\n\nreplace_first_letter :: tfullstr -> tsubstr -> tfullstr\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\ndescription: A function that replaces the first letter of a full string with a specified substring.\n\nreplace_end_with_substring :: tfullstr -> tsubstr -> tfullstr\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\ndescription: A function that replaces the end of a full string with a specified substring.\n\nreplace_with_transform :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that replaces substrings in a full string based on a transformation function applied to each substring.\n\nreplace_if_p_found :: tfullstr -> tsubstr -> tfullstr\n(lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match 'p' $0) $1 $0)) (regex_split empty_string $1)))))\ndescription: A function that replaces occurrences of 'p' with a specified substring in a full string.\n\nreplace_if_match_with_concatenated_suffix :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n(lambda (lambda (lambda (replace_if_match $0 (regex_concat 'a' $1) $2))))\ndescription: A function that replaces a substring in a full string with a concatenated suffix if a match is found based on a given condition.\n\nreplace_first_letter_with_suffix :: tsubstr -> tfullstr -> tfullstr\n(lambda (lambda (replace_first_letter $0 (regex_concat $1 'a'))))\ndescription: A function that replaces the first letter of a full string with a specified substring concatenated as a suffix.\n\nappend_split_empty :: tfullstr -> tsubstr -> tfullstr\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\ndescription: A function that appends the first argument to the full string after splitting the second argument by an empty string.\n\nreplace_if_match_with_condition :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n(lambda (lambda (lambda (replace_with_transform $0 (lambda (regex_if (regex_match $0 $2) $3 $0))))))\ndescription: A function that replaces a substring in a full string based on a condition specified by a transformation function.\n\nreplace_if_match_with_concatenated_character :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n(lambda (lambda (lambda (replace_if_match $0 (regex_concat 'c' $1) $2))))\ndescription: A function that replaces a substring in a full string with a concatenated character if a match is found based on a given condition.\n\n",
+        "role": "system"
+      },
+      {
+        "content": "Here are some example programs:",
+        "role": "user"
+      },
+      {
+        "content": "-- if the word ends with any letter add d after that",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (append_split_empty $0 'd'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is t replace that with f v",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 (regex_concat 'f' 'v') 't'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is g replace that with u f",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 (regex_concat 'u' 'f') 'g'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word ends with any letter replace that with f",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_end_with_substring $0 'f'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word ends with any letter add q after that",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (append_split_empty $0 'q'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is any letter add v after that",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_with_transform $0 (lambda (regex_concat $0 'v'))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with any letter replace that with b",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_first_letter $0 'b'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is p replace that with f w",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_p_found $0 (regex_concat 'f' 'w')))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is d replace that with c t",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match_with_concatenated_character 'd' 't' $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is t replace that with n",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 'n' 't'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with any letter replace that with a w",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match_with_concatenated_suffix 'j' 'w' (replace_first_letter $0 'j')))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is i replace that with k t",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 (regex_concat 'k' 't') 'i'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is b replace that with q",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 'q' 'b'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word ends with any letter replace that with r",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_end_with_substring $0 'r'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is i replace that with m",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match_with_condition 'm' 'i' $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is any letter replace that with w t",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_with_transform $0 (lambda (regex_concat 'w' 't'))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word ends with consonant replace that with i",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_end_with_substring $0 'i'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is o replace that with l",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 'l' 'o'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with any letter replace that with i r",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_first_letter $0 (regex_concat 'i' 'r')))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is t replace that with i",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 'i' 't'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is d replace that with a v",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match_with_concatenated_suffix 'd' 'v' $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is vowel replace that with a c",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match_with_concatenated_suffix (regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u')))) 'c' $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with any letter replace that with w i",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_first_letter $0 (regex_concat 'w' 'i')))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is any letter replace that with r v",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_with_transform $0 (lambda (regex_concat 'r' 'v'))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is o replace that with c g",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match_with_concatenated_character 'o' 'g' $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is a replace that with u c",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 (regex_concat 'u' 'c') 'a'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with any letter replace that with q a",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_first_letter_with_suffix 'q' $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is p replace that with g",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_p_found $0 'g'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is s replace that with r a",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 (regex_concat 'r' 'a') 's'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with consonant any letter replace that with e a",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_first_letter_with_suffix 'e' (replace_first_letter $0 empty_string)))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word ends with any letter add k after that",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (append_split_empty $0 'k'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is t replace that with a x",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match_with_concatenated_suffix 't' 'x' $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with any letter add v before that",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (regex_flatten (regex_cons 'v' (regex_split '.' $0))))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is g add q before that",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match_with_condition (regex_concat 'q' 'g') 'g' $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if there is h replace that with y",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_if_match $0 'y' 'h'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with any letter replace that with n a",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_first_letter_with_suffix 'n' $0))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with any letter replace that with e s",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_first_letter $0 (regex_concat 'e' 's')))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word ends with any letter any letter replace that with b j",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (append_split_empty (regex_flatten (regex_append 'b' (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $0))))) 'j'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with any letter replace that with x e",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (replace_first_letter $0 (regex_concat 'x' 'e')))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word ends with consonant replace that with a o",
+        "role": "user"
+      },
+      {
+        "content": "(lambda (append_split_empty (replace_end_with_substring $0 'a') 'o'))",
+        "role": "assistant"
+      },
+      {
+        "content": "-- if the word starts with vowel replace that with g p",
+        "role": "user"
+      }
+    ],
+    "n": 4,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": "\n",
+    "temperature": 0.9,
+    "top_p": null
+  },
+  "request_hash": "43f1c77d8bfde1320bad3c97a2b4a2cf13ef52ab40716debfe4086bbaf80b498",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (replace_if_match_with_concatenated_suffix (regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u')))) 'p' $0))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (replace_if_match_with_concatenated_suffix (regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u')))) 'p' $0))"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (replace_if_match_with_concatenated_suffix (regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u')))) 'p' $0))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (replace_if_match_with_concatenated_suffix (regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u')))) 'p' $0))"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (replace_if_match_with_concatenated_suffix (regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u')))) 'p' $0))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (replace_if_match_with_concatenated_suffix (regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u')))) 'p' $0))"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "(lambda (replace_if_match_with_concatenated_suffix (regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u')))) 'p' $0))",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "(lambda (replace_if_match_with_concatenated_suffix (regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u')))) 'p' $0))"
+      }
+    ],
+    "created": 1778157166,
+    "id": "chatcmpl-DcsCEvmS4ZP89y8OMjgQrvNBjH7TR",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 176,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 2559,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 2735
+    }
+  }
+}

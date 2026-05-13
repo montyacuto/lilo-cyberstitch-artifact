@@ -1,0 +1,159 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-environment-env-sink.ql",
+  "language": "java",
+  "metadata": {
+    "name": "Environment source label reaches environment-injection sink",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/bounded/source-node-environment-env-sink",
+    "tags": "security external/cwe/cwe-078"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources",
+    "semmle.code.java.dataflow.ExternalFlow",
+    "semmle.code.java.security.CommandLineQuery",
+    "semmle.code.java.security.ExternalProcess",
+    "semmle.code.java.security.QueryInjection",
+    "semmle.code.java.security.SqlInjectionQuery",
+    "semmle.code.java.security.Sanitizers",
+    "semmle.code.java.security.TaintedEnvironmentVariableQuery"
+  ],
+  "config_modules": [
+    {
+      "name": "SourceNodeEnvironmentEnvSinkConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "sourceNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "source"
+              },
+              {
+                "kind": "string",
+                "value": "environment"
+              }
+            ]
+          },
+          "source_hash": "965fe7020881f3970c63ab4bdff6d207725e45310f733f88d2f6579ac92a3c04"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "predicate_call",
+            "name": "sinkNode",
+            "args": [
+              {
+                "kind": "var",
+                "name": "sink"
+              },
+              {
+                "kind": "string",
+                "value": "environment-injection"
+              }
+            ]
+          },
+          "source_hash": "da1bc10008dcd591c8ad2a650dc6c8621d2aa605028562980b9521f8e19e6e0b"
+        },
+        {
+          "name": "isBarrier",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "node"
+            }
+          ],
+          "role": "Barrier",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "ExecTaintedEnvironmentSanitizer",
+                "name": "sanitizer"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "node"
+              },
+              "right": {
+                "kind": "var",
+                "name": "sanitizer"
+              }
+            }
+          },
+          "source_hash": "67c6907251a9e22a94a5f278818591dba78cbb55c02bcd14daf9ac88f47b42d9"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "SourceNodeEnvironmentEnvSinkFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "SourceNodeEnvironmentEnvSinkConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "SourceNodeEnvironmentEnvSinkFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "SourceNodeEnvironmentEnvSinkFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "SourceNodeEnvironmentEnvSinkFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "sourceNode:environment source reaches sinkNode:environment-injection sink."
+    },
+    "message": "sourceNode:environment source reaches sinkNode:environment-injection sink."
+  },
+  "provenance_hash": "380cddf4519c602084b7990785e37542fdd313b14534311fe5949d0941e2f1ad",
+  "version": "sqir-v2"
+}

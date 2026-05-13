@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T09:41:10Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nfn_42 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\n\nfn_43 :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\n\nfn_44 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\n\nfn_45 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_46 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_47 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (fn_42 $0 (regex_concat $1 $2) (regex_not fn_43)))))\n\nfn_48 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nfn_49 :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (fn_46 $0 (lambda (regex_if (regex_match fn_43 $0) (regex_concat $0 $2) $0)))))\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (fn_42 $0 (regex_concat $1 $2) fn_43))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_42 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\n\nHere are some examples of its usage:\n\n-- if there is d replace that with a v\n(lambda (fn_42 $0 (regex_concat 'a' 'v') 'd'))\n\n-- if there is p add o after that\n(lambda (fn_42 $0 (regex_concat 'p' 'o') 'p'))\n\n-- if there is b replace that with y a\n(lambda (fn_42 $0 (regex_concat 'y' 'a') 'b'))\n\n-- if there is s replace that with p t\n(lambda (fn_42 $0 (regex_concat 'p' 't') 's'))\n\n-- if there is t replace that with f v\n(lambda (fn_42 $0 (regex_concat 'f' 'v') 't'))\n\n-- if there is p replace that with a w\n(lambda (fn_42 $0 (regex_concat 'a' 'w') 'p'))\n\n-- if there is s replace that with h\n(lambda (fn_42 $0 'h' 's'))\n\n-- if there is g replace that with c\n(lambda (fn_42 $0 'c' 'g'))\n\n-- if there is l replace that with v q\n(lambda (fn_42 $0 (regex_concat 'v' 'q') 'l'))\n\n-- if there is e replace that with i m\n(lambda (fn_42 $0 (regex_concat 'i' 'm') 'e'))\n\nPlease write a human-readable name and description for `fn_42` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "9d0454a1365ff1f2bfaf738e167d1e4db1691d8a46c87e18db3a19600c711ca1",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_or_add_characters\",\n    \"description\": \"A function that takes a full string, a substring to replace or add, and another substring. It checks if the second substring exists in the full string and replaces it with the first substring if found, otherwise adds the first substring after the second substring in the full string.\"\n}"
+      }
+    ],
+    "created": 1778233269,
+    "id": "chatcmpl-DdBzh73ksa88qbixXPvgv4qzSmHa7",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 415,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 934,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1349
+    }
+  }
+}

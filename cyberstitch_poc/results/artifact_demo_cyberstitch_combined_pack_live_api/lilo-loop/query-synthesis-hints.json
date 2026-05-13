@@ -1,0 +1,25 @@
+[
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "concept:codeql_lib5:concept:0:ThreatModel"
+    ],
+    "hint": "future query-synthesis guidance; not executable in this milestone"
+  },
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "concept:codeql_lib5:concept:1:ModeledSinkType"
+    ],
+    "hint": "Provides future query-synthesis guidance for ModeledSinkType related to CommandInjectionSink.",
+    "rationale": "This hint helps guide future query synthesis efforts for CommandInjectionSink related queries."
+  },
+  {
+    "schema": "query_synthesis_hint_v1",
+    "target_ids": [
+      "concept:codeql_lib5:concept:2:BarrierKind"
+    ],
+    "hint": "Provides future query-synthesis guidance for BarrierKind concepts related to CommandInjectionSanitizer.",
+    "rationale": "This hint offers guidance for synthesizing queries related to BarrierKind concepts for CommandInjectionSanitizer."
+  }
+]

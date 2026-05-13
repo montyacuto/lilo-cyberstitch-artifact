@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T02:12:04Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nfn_42 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\n\nfn_43 :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\n\nfn_44 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\n\nfn_45 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_46 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_47 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nfn_48 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (fn_42 $0 (regex_concat $1 $2) (regex_not fn_43)))))\n\nfn_49 :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (fn_46 $0 (lambda (regex_if (regex_match fn_43 $0) (regex_concat $0 $2) $0)))))\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_51 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (fn_42 $0 (regex_concat $1 $2) $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_42 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\n\nHere are some examples of its usage:\n\n-- if there is vowel replace that with a f\n(lambda (fn_42 $0 (regex_concat 'a' 'f') fn_43))\n\n-- if there is d replace that with c t\n(lambda (fn_42 $0 (regex_concat 'c' 't') 'd'))\n\n-- if there is o replace that with c g\n(lambda (fn_42 $0 (regex_concat 'c' 'g') 'o'))\n\n-- if there is s add x after that\n(lambda (fn_42 $0 (regex_concat 's' 'x') 's'))\n\n-- if there is c add e after that\n(lambda (fn_42 $0 (regex_concat 'c' 'e') 'c'))\n\n-- if there is t add y after that\n(lambda (fn_42 $0 (regex_concat 't' 'y') 't'))\n\n-- if there is i replace that with v\n(lambda (fn_42 $0 'v' 'i'))\n\n-- if there is t replace that with l p\n(lambda (fn_42 $0 (regex_concat 'l' 'p') 't'))\n\n-- if there is p replace that with a w\n(lambda (fn_42 $0 (regex_concat 'a' 'w') 'p'))\n\n-- if there is i replace that with k t\n(lambda (fn_42 $0 (regex_concat 'k' 't') 'i'))\n\nPlease write a human-readable name and description for `fn_42` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "c63da1a3703d5d4a24fb074b6895b77ee401d2b2a11d547cdf3751f1f0604619",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_42\",\n    \"readable_name\": \"replace_vowels_and_characters\",\n    \"description\": \"A function that takes a full string and two substrings, and replaces vowels and specific characters in the full string based on the rules defined in the lambda expressions. It then flattens the result and maps the replacements according to the split '.' in the full string.\"\n}"
+      }
+    ],
+    "created": 1778206322,
+    "id": "chatcmpl-Dd4z4GDEUBd3ouS7ojBAt4mvOSXkD",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 415,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 939,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1354
+    }
+  }
+}

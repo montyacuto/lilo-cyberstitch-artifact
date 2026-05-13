@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-08T22:15:20Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nmove_pen_forward_with_angle_and_length :: turtle -> int -> tlength -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $1 (lambda (lambda (logo_move_pen_forward_rotate $2 (logo_divide_angle logo_unit_angle $3) $0))) $2))))\ndescription: Moves the turtle's pen forward by a specified angle and length within a for loop\n\ncreate_snowflake_with_variable_arms :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop 9 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle $2) (logo_get_set_function_pen (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_divide_angle logo_unit_angle $4) (logo_for_loop $4 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line (logo_subtract_angles (logo_divide_angle logo_unit_angle $6) logo_zero_angle) $0))) $0))) $0)))) $2))))\ndescription: Creates a snowflake pattern with variable arms based on the specified number of sides for the arms and the total number of sides for the snowflake\n\ncreate_spiral_pattern :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop logo_IFTY (lambda (lambda (logo_move_pen_forward_rotate (logo_multiply_line logo_epsilon_line $2) logo_epsilon_angle $0))) $1)))\ndescription: Creates a spiral pattern by moving the turtle forward and rotating it based on the specified number of iterations and angle\n\nmove_pen_forward_in_loop :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0))) $1)))\ndescription: Moves the turtle's pen forward in a loop for a specified number of iterations\n\nmove_pen_forward_with_double_length :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_with_angle_and_length $0 $1 (logo_multiply_line logo_unit_line 2))))\ndescription: Moves the turtle's pen forward with double the length specified by the input integer\n\ncreate_polygon_pattern_with_variable_sides :: turtle -> int -> int -> turtle\n\n(lambda (lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_with_angle_and_length (logo_move_pen_forward_rotate logo_unit_line logo_zero_angle $0) $3 logo_unit_line))) $2))))\ndescription: Creates a polygon pattern with variable sides based on the specified number of sides for each polygon and the total number of polygons\n\ncreate_concentric_squares :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop $0 (lambda (lambda (move_pen_forward_with_angle_and_length $0 4 (logo_multiply_line logo_unit_line $1)))) $1)))\ndescription: Creates a series of concentric squares with the specified number of squares and size increment\n\nmove_pen_forward_with_unit_line :: int -> turtle -> turtle\n\n(lambda (lambda (move_pen_forward_with_angle_and_length $0 $1 logo_unit_line)))\ndescription: Moves the turtle's pen forward by a specified integer distance equivalent to the unit line length\n\ncreate_spiral_pattern_with_multiple_iterations :: turtle -> int -> turtle\n\n(lambda (lambda (logo_for_loop 4 (lambda (lambda (create_spiral_pattern $0 $2))) $1)))\ndescription: Creates a spiral pattern with multiple iterations based on the specified turtle and integer input\n\nfn_36 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 7 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 6) (logo_get_set_function_pen $2 $0)))) $1)))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_36 :: turtle -> (turtle -> turtle) -> turtle\n\n(lambda (lambda (logo_for_loop 7 (lambda (lambda (logo_move_pen_forward_rotate logo_zero_line (logo_divide_angle logo_unit_angle 6) (logo_get_set_function_pen $2 $0)))) $1)))\n\nHere are some examples of its usage:\n\n-- 6 sided snowflake with a small semicircle as arms\n(lambda (fn_36 $0 (lambda (create_spiral_pattern $0 1))))\n\n-- 6 sided snowflake with a short line as arms\n(lambda (fn_36 $0 (lambda (logo_move_pen_forward_rotate logo_unit_line logo_unit_angle $0))))\n\n-- 6 sided snowflake with a medium triangle as arms\n(lambda (fn_36 $0 (lambda (move_pen_forward_with_double_length 3 $0))))\n\n-- 6 sided snowflake with a short line and a small semicircle as arms\n(lambda (fn_36 $0 (lambda (logo_move_pen_forward_rotate logo_unit_line logo_unit_angle (create_spiral_pattern $0 1)))))\n\nPlease write a human-readable name and description for `fn_36` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "91ab01963711d10970c74243c3a3c3a882ef6f52997b8c58b2118a02d0bbddb3",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_36\",\n    \"readable_name\": \"create_snowflake_with_custom_arms\",\n    \"description\": \"Creates a snowflake pattern with custom arms based on the provided function\"\n}"
+      }
+    ],
+    "created": 1778278519,
+    "id": "chatcmpl-DdNlXnxlso60tTTjk1W5EvKgg0YMu",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 235,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1126,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1361
+    }
+  }
+}

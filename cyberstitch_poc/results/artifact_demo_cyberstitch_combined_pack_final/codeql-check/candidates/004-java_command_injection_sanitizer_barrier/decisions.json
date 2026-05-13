@@ -1,0 +1,54 @@
+{
+  "decisions": [
+    {
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_command_injection_sanitizer_barrier",
+        "kind": "codeql_helper",
+        "origin": "semantic-mine",
+        "schema": "java_barrier_predicate_helper_v1",
+        "language": "java",
+        "helper_module": "CyberStitchJavaHelpers",
+        "predicate": "isCommandInjectionSanitizerBarrier",
+        "display_name": "java_command_injection_sanitizer_barrier",
+        "description": "Deterministically mined complete Java barrier predicate semantics.",
+        "body": "predicate isCommandInjectionSanitizerBarrier(DataFlow::Node node) {\n  exists(CommandInjectionSanitizer sanitizer | node = sanitizer)\n}",
+        "use_sites": [
+          {
+            "query": "official-cwe078-command-flow.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isBarrier"
+          },
+          {
+            "query": "remote-cwe078-command-model.ql",
+            "predicate": "isBarrier",
+            "semantic_node_id": "q5:predicate:RemoteCommandModelConfig:isBarrier"
+          }
+        ],
+        "rewrite_eligible": true,
+        "semantic_hash": "9ba0d6c35dcf55322e3a1c7bc2f9cf8af1156b4ab355865e770a700c45ca8111",
+        "semantic_role": "Barrier",
+        "semantic_target": "CommandInjectionSanitizer",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "semantic_node_id": "q0:predicate:CyberStitchOfficialCommandConfig:isBarrier",
+            "role": "Barrier",
+            "target": "CommandInjectionSanitizer",
+            "num_exact_matches": 2
+          }
+        },
+        "mapping_status": "semantic-mine-exact-predicate",
+        "stitch": {
+          "name": "semantic_mine"
+        },
+        "semantic_usefulness": "semantic"
+      },
+      "accepted": true,
+      "reasons": [],
+      "accepted_for_lilo": true,
+      "lilo_reasons": []
+    }
+  ]
+}

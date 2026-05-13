@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T11:29:28Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_if_match_split :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: A function that replaces a substring in a full string based on a condition. It checks if the substring matches a pattern in the full string, and if it does, replaces it with another substring. It then splits the full string by a delimiter.\n\nreplace_substring_based_on_condition :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\ndescription: A function that replaces substrings in a full string based on a condition. It maps over the substrings split by '.' in the full string and applies a transformation function to each substring.\n\nreplace_first_letter_with_given_substring :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\ndescription: A function that replaces the first letter of each word in a full string with a specified substring. It splits the full string by '.' and replaces the first character of each word with the given substring.\n\nreplace_substrings_based_on_function :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split empty_string $1)))))\ndescription: A function that replaces substrings in a full string based on a provided transformation function. It splits the full string into substrings and applies the transformation function to each substring.\n\nappend_reversed_substrings_after_split :: tfullstr -> tsubstr -> list(tsubstr)\n\n(lambda (lambda (regex_append $0 (regex_reverse_cdr (regex_split '.' $1)))))\ndescription: A function that appends reversed substrings after splitting a full string by '.'\n\nconcat_with_w_prefix :: tsubstr -> tsubstr\n\n(lambda (regex_concat 'w' $0))\ndescription: A function that concatenates a given substring with a 'w' prefix.\n\nappend_list_of_substrings_to_given_string :: list(tsubstr) -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 $1))))\ndescription: A function that appends a list of substrings to a given string, flattening the list and appending each substring to the end of the given string.\n\nfn_49 :: tfullstr -> list(tsubstr)\n\n(lambda (regex_split empty_string $0))\n\nfn_50 :: tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (replace_substring_based_on_condition $0 (lambda $2))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_49 :: tfullstr -> list(tsubstr)\n\n(lambda (regex_split empty_string $0))\n\nHere are some examples of its usage:\n\n-- if the word ends with any letter add d after that\n(lambda (append_list_of_substrings_to_given_string (fn_49 $0) 'd'))\n\nPlease write a human-readable name and description for `fn_49` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "3116550be4e4b3cae90cf750e0449ef866db31188183d6960a80c34766484454",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_49\",\n    \"readable_name\": \"split_string_into_list\",\n    \"description\": \"A function that splits a full string into a list of substrings based on an empty string delimiter.\"\n}"
+      }
+    ],
+    "created": 1778153366,
+    "id": "chatcmpl-DcrCwOnUnEkUpdniukPsZpEiT4POa",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 245,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 767,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1012
+    }
+  }
+}

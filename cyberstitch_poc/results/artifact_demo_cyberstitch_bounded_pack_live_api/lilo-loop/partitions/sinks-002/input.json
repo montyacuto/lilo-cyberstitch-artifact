@@ -1,0 +1,1933 @@
+{
+  "format": "cyberstitch-lilo-loop-input-v1",
+  "created_at": "2026-05-12T14:55:38.280265+00:00",
+  "domain": "codeql-java-security",
+  "backend": "cyberstitch-codeql",
+  "strategy": {
+    "lilo_role": "LLM search, grouping, naming, and autodoc over semantic abstraction objects.",
+    "cyberstitch_role": "SQIR/FCIR semantics, deterministic CodeQL rewrites, syntax checks, and SARIF equivalence gates.",
+    "raw_codeql_policy": "LLM-authored raw CodeQL is not executable in this milestone."
+  },
+  "source_files": {
+    "provenance": [
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/fcir/provenance.json",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/fcir/codeql-pack/provenance.json"
+    ],
+    "candidates": [
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json",
+      "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/semantic/candidates.json"
+    ],
+    "decisions": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/validation/decisions.json"
+  },
+  "partition": {
+    "id": "sinks-002",
+    "role_family": "sinks",
+    "role_family_label": "Sinks"
+  },
+  "prompt_options": {
+    "max_use_site_examples": 2,
+    "compact_fields_only": true
+  },
+  "summary": {
+    "programs": 50,
+    "semantic_nodes": 561,
+    "concepts": 59,
+    "library_items": 7,
+    "rewrite_eligible_items": 0,
+    "accepted_items": 0,
+    "accepted_for_lilo_items": 7,
+    "rejected_items": 99
+  },
+  "scores": {},
+  "comparisons": {},
+  "library_items": [
+    {
+      "id": "candidate:java_method_call_sink_method_names_execute_query_486e5c11",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_method_call_sink_method_names_execute_query_486e5c11",
+      "display_name": "java_method_call_sink_method_names_execute_query_486e5c11",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_modeled_sink_helper_v1",
+      "language": "java",
+      "semantic_hash": "486e5c11d2f8e7f1295227748c20f40a386e5320fdf31d8733cdee8c0d0fd0eb",
+      "semantic_role": "MethodCallSink",
+      "semantic_target": "method-names:executeQuery",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "remote-sql-execute-query.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q5:concept:2:MethodCallSink",
+          "concept_kind": "MethodCallSink",
+          "target": "method-names:executeQuery",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-execute-query.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q26:concept:2:MethodCallSink",
+          "concept_kind": "MethodCallSink",
+          "target": "method-names:executeQuery",
+          "official_codeql": false
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 2,
+          "official_codeql_backing": false,
+          "concept_kind": "MethodCallSink",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_method_call_sink_method_names_execute_query_486e5c11",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_modeled_sink_helper_v1",
+        "language": "java",
+        "display_name": "java_method_call_sink_method_names_execute_query_486e5c11",
+        "description": "Recognizes Java CodeQL MethodCallSink semantics for method-names:executeQuery.",
+        "body": "(SemanticConcept MethodCallSink (Target method_names_executeQuery) (Uses (Use remote_sql_execute_query_ql q5_concept_2_MethodCallSink) (Use threat_sql_execute_query_ql q26_concept_2_MethodCallSink)))",
+        "use_sites": [
+          {
+            "query": "remote-sql-execute-query.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q5:concept:2:MethodCallSink",
+            "concept_kind": "MethodCallSink",
+            "target": "method-names:executeQuery",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-sql-execute-query.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q26:concept:2:MethodCallSink",
+            "concept_kind": "MethodCallSink",
+            "target": "method-names:executeQuery",
+            "official_codeql": false
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "486e5c11d2f8e7f1295227748c20f40a386e5320fdf31d8733cdee8c0d0fd0eb",
+        "semantic_role": "MethodCallSink",
+        "semantic_target": "method-names:executeQuery",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 2,
+            "official_codeql_backing": false,
+            "concept_kind": "MethodCallSink",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_method_call_sink_method_names_execute_update_f78d58ad",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_method_call_sink_method_names_execute_update_f78d58ad",
+      "display_name": "java_method_call_sink_method_names_execute_update_f78d58ad",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_modeled_sink_helper_v1",
+      "language": "java",
+      "semantic_hash": "f78d58ada2d006454f016c36dff72cfec15d9d1cae69c3c74ee7bf085798cffa",
+      "semantic_role": "MethodCallSink",
+      "semantic_target": "method-names:executeUpdate",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL MethodCallSink semantics for method-names:executeUpdate.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "remote-sql-execute-update.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q6:concept:2:MethodCallSink",
+          "concept_kind": "MethodCallSink",
+          "target": "method-names:executeUpdate",
+          "official_codeql": false
+        },
+        {
+          "query": "threat-sql-execute-update.ql",
+          "predicate": "isSink",
+          "semantic_node_id": "q27:concept:2:MethodCallSink",
+          "concept_kind": "MethodCallSink",
+          "target": "method-names:executeUpdate",
+          "official_codeql": false
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 2,
+          "official_codeql_backing": false,
+          "concept_kind": "MethodCallSink",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_method_call_sink_method_names_execute_update_f78d58ad",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_modeled_sink_helper_v1",
+        "language": "java",
+        "display_name": "java_method_call_sink_method_names_execute_update_f78d58ad",
+        "description": "Recognizes Java CodeQL MethodCallSink semantics for method-names:executeUpdate.",
+        "body": "(SemanticConcept MethodCallSink (Target method_names_executeUpdate) (Uses (Use remote_sql_execute_update_ql q6_concept_2_MethodCallSink) (Use threat_sql_execute_update_ql q27_concept_2_MethodCallSink)))",
+        "use_sites": [
+          {
+            "query": "remote-sql-execute-update.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q6:concept:2:MethodCallSink",
+            "concept_kind": "MethodCallSink",
+            "target": "method-names:executeUpdate",
+            "official_codeql": false
+          },
+          {
+            "query": "threat-sql-execute-update.ql",
+            "predicate": "isSink",
+            "semantic_node_id": "q27:concept:2:MethodCallSink",
+            "concept_kind": "MethodCallSink",
+            "target": "method-names:executeUpdate",
+            "official_codeql": false
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "f78d58ada2d006454f016c36dff72cfec15d9d1cae69c3c74ee7bf085798cffa",
+        "semantic_role": "MethodCallSink",
+        "semantic_target": "method-names:executeUpdate",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 2,
+            "official_codeql_backing": false,
+            "concept_kind": "MethodCallSink",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "display_name": "java_modeled_sink_type_default_command_injection_sink_c9373329",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_modeled_sink_helper_v1",
+      "language": "java",
+      "semantic_hash": "c937332945b56a75ae64db5c1748cfaff4b3cc369522b5e25b24c92f80c0609b",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "DefaultCommandInjectionSink",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for DefaultCommandInjectionSink.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "CommandLineQuery.qll",
+          "predicate": "DefaultCommandInjectionSink",
+          "semantic_node_id": "codeql_lib5:concept:8:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "DefaultCommandInjectionSink",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "ModeledSinkType",
+          "cwe": 78
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_modeled_sink_type_default_command_injection_sink_c9373329",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_modeled_sink_helper_v1",
+        "language": "java",
+        "display_name": "java_modeled_sink_type_default_command_injection_sink_c9373329",
+        "description": "Recognizes Java CodeQL ModeledSinkType semantics for DefaultCommandInjectionSink.",
+        "body": "(SemanticConcept ModeledSinkType (Target DefaultCommandInjectionSink) (Uses (Use CommandLineQuery_qll codeql_lib5_concept_8_ModeledSinkType)))",
+        "use_sites": [
+          {
+            "query": "CommandLineQuery.qll",
+            "predicate": "DefaultCommandInjectionSink",
+            "semantic_node_id": "codeql_lib5:concept:8:ModeledSinkType",
+            "concept_kind": "ModeledSinkType",
+            "target": "DefaultCommandInjectionSink",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "c937332945b56a75ae64db5c1748cfaff4b3cc369522b5e25b24c92f80c0609b",
+        "semantic_role": "ModeledSinkType",
+        "semantic_target": "DefaultCommandInjectionSink",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "ModeledSinkType",
+            "cwe": 78
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "display_name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_modeled_sink_helper_v1",
+      "language": "java",
+      "semantic_hash": "c48499964302254ef174cd1a0f3fe1f2b302479df84dc7c4dd71a581136a9e75",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "MongoDbInjectionSink",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for MongoDbInjectionSink.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "QueryInjection.qll",
+          "predicate": "MongoDbInjectionSink",
+          "semantic_node_id": "codeql_lib16:concept:3:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "MongoDbInjectionSink",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "ModeledSinkType",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_modeled_sink_helper_v1",
+        "language": "java",
+        "display_name": "java_modeled_sink_type_mongo_db_injection_sink_c4849996",
+        "description": "Recognizes Java CodeQL ModeledSinkType semantics for MongoDbInjectionSink.",
+        "body": "(SemanticConcept ModeledSinkType (Target MongoDbInjectionSink) (Uses (Use QueryInjection_qll codeql_lib16_concept_3_ModeledSinkType)))",
+        "use_sites": [
+          {
+            "query": "QueryInjection.qll",
+            "predicate": "MongoDbInjectionSink",
+            "semantic_node_id": "codeql_lib16:concept:3:ModeledSinkType",
+            "concept_kind": "ModeledSinkType",
+            "target": "MongoDbInjectionSink",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "c48499964302254ef174cd1a0f3fe1f2b302479df84dc7c4dd71a581136a9e75",
+        "semantic_role": "ModeledSinkType",
+        "semantic_target": "MongoDbInjectionSink",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "ModeledSinkType",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "display_name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_modeled_sink_helper_v1",
+      "language": "java",
+      "semantic_hash": "41d858c805c096a6438dfc2e28a34ac510b580aca8b0343907dacd87320a9856",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "PersistenceQueryInjectionSink",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for PersistenceQueryInjectionSink.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "QueryInjection.qll",
+          "predicate": "PersistenceQueryInjectionSink",
+          "semantic_node_id": "codeql_lib16:concept:2:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "PersistenceQueryInjectionSink",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "ModeledSinkType",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_modeled_sink_helper_v1",
+        "language": "java",
+        "display_name": "java_modeled_sink_type_persistence_query_injection_sink_41d858c8",
+        "description": "Recognizes Java CodeQL ModeledSinkType semantics for PersistenceQueryInjectionSink.",
+        "body": "(SemanticConcept ModeledSinkType (Target PersistenceQueryInjectionSink) (Uses (Use QueryInjection_qll codeql_lib16_concept_2_ModeledSinkType)))",
+        "use_sites": [
+          {
+            "query": "QueryInjection.qll",
+            "predicate": "PersistenceQueryInjectionSink",
+            "semantic_node_id": "codeql_lib16:concept:2:ModeledSinkType",
+            "concept_kind": "ModeledSinkType",
+            "target": "PersistenceQueryInjectionSink",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "41d858c805c096a6438dfc2e28a34ac510b580aca8b0343907dacd87320a9856",
+        "semantic_role": "ModeledSinkType",
+        "semantic_target": "PersistenceQueryInjectionSink",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "ModeledSinkType",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_query_injection_sink_fba18fca",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_modeled_sink_type_query_injection_sink_fba18fca",
+      "display_name": "java_modeled_sink_type_query_injection_sink_fba18fca",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_modeled_sink_helper_v1",
+      "language": "java",
+      "semantic_hash": "fba18fcafd5cd37eca6c1ec13a0d7e32bd7cfe30f6c345ad36b2bf5fbf5cbc66",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "QueryInjectionSink",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for QueryInjectionSink.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "SqlConcatenatedQuery.qll",
+          "predicate": "isSink",
+          "semantic_node_id": "codeql_lib12:concept:1:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "QueryInjectionSink",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "ModeledSinkType",
+          "cwe": null
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_modeled_sink_type_query_injection_sink_fba18fca",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_modeled_sink_helper_v1",
+        "language": "java",
+        "display_name": "java_modeled_sink_type_query_injection_sink_fba18fca",
+        "description": "Recognizes Java CodeQL ModeledSinkType semantics for QueryInjectionSink.",
+        "body": "(SemanticConcept ModeledSinkType (Target QueryInjectionSink) (Uses (Use SqlConcatenatedQuery_qll codeql_lib12_concept_1_ModeledSinkType)))",
+        "use_sites": [
+          {
+            "query": "SqlConcatenatedQuery.qll",
+            "predicate": "isSink",
+            "semantic_node_id": "codeql_lib12:concept:1:ModeledSinkType",
+            "concept_kind": "ModeledSinkType",
+            "target": "QueryInjectionSink",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "fba18fcafd5cd37eca6c1ec13a0d7e32bd7cfe30f6c345ad36b2bf5fbf5cbc66",
+        "semantic_role": "ModeledSinkType",
+        "semantic_target": "QueryInjectionSink",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "ModeledSinkType",
+            "cwe": null
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    },
+    {
+      "id": "candidate:java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "type": "semantic_abstraction_candidate",
+      "name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "display_name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+      "kind": "semantic_template",
+      "origin": "semantic-mine",
+      "schema": "java_modeled_sink_helper_v1",
+      "language": "java",
+      "semantic_hash": "a7f7cdd4ded49cb51962f608d78f361fd585e672a87ce508cfc70e7d6291b13a",
+      "semantic_role": "ModeledSinkType",
+      "semantic_target": "SqlInjectionSink",
+      "semantic_usefulness": "semantic",
+      "rewrite_eligible": false,
+      "validation": {
+        "accepted": false,
+        "reasons": [
+          "unsupported kind",
+          "not rewrite eligible",
+          "unsupported rewrite schema",
+          "requires at least two use sites",
+          "helper body must be a CodeQL predicate"
+        ],
+        "accepted_for_lilo": true,
+        "lilo_reasons": []
+      },
+      "description": "Recognizes Java CodeQL ModeledSinkType semantics for SqlInjectionSink.",
+      "predicate": "",
+      "helper_module": "",
+      "use_sites": [
+        {
+          "query": "QueryInjection.qll",
+          "predicate": "SqlInjectionSink",
+          "semantic_node_id": "codeql_lib16:concept:1:ModeledSinkType",
+          "concept_kind": "ModeledSinkType",
+          "target": "SqlInjectionSink",
+          "official_codeql": true
+        }
+      ],
+      "semantic_validation": {
+        "ok": true,
+        "reasons": [],
+        "evidence": {
+          "num_uses": 1,
+          "official_codeql_backing": true,
+          "concept_kind": "ModeledSinkType",
+          "cwe": 89
+        }
+      },
+      "candidate": {
+        "candidate_version": "cyberstitch-candidate-v2",
+        "name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+        "kind": "semantic_template",
+        "origin": "semantic-mine",
+        "schema": "java_modeled_sink_helper_v1",
+        "language": "java",
+        "display_name": "java_modeled_sink_type_sql_injection_sink_a7f7cdd4",
+        "description": "Recognizes Java CodeQL ModeledSinkType semantics for SqlInjectionSink.",
+        "body": "(SemanticConcept ModeledSinkType (Target SqlInjectionSink) (Uses (Use QueryInjection_qll codeql_lib16_concept_1_ModeledSinkType)))",
+        "use_sites": [
+          {
+            "query": "QueryInjection.qll",
+            "predicate": "SqlInjectionSink",
+            "semantic_node_id": "codeql_lib16:concept:1:ModeledSinkType",
+            "concept_kind": "ModeledSinkType",
+            "target": "SqlInjectionSink",
+            "official_codeql": true
+          }
+        ],
+        "rewrite_eligible": false,
+        "semantic_hash": "a7f7cdd4ded49cb51962f608d78f361fd585e672a87ce508cfc70e7d6291b13a",
+        "semantic_role": "ModeledSinkType",
+        "semantic_target": "SqlInjectionSink",
+        "semantic_usefulness": "semantic",
+        "semantic_validation": {
+          "ok": true,
+          "reasons": [],
+          "evidence": {
+            "num_uses": 1,
+            "official_codeql_backing": true,
+            "concept_kind": "ModeledSinkType",
+            "cwe": 89
+          }
+        },
+        "mapping_status": "semantic-concept-template",
+        "_source_file": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/stitch/candidates.json"
+      }
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:codeql_lib5:concept:1:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "InputToArgumentToExecFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib5:concept:5:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "LocalUserInputToArgumentToExecFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib5:concept:8:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "DefaultCommandInjectionSink",
+      "name": "DefaultCommandInjectionSink",
+      "attributes": {
+        "extends": "CommandInjectionSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib5:concept:9:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib5",
+      "query": "CommandLineQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "CommandLineQuery",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:command-injection",
+      "name": "sinkNode:command-injection",
+      "attributes": {
+        "model_kind": "command-injection"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/CommandLineQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib16:concept:3:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib16",
+      "query": "QueryInjection.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "QueryInjection",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "MongoDbInjectionSink",
+      "name": "MongoDbInjectionSink",
+      "attributes": {
+        "extends": "QueryInjectionSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/QueryInjection.qll"
+    },
+    {
+      "id": "concept:codeql_lib16:concept:5:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib16",
+      "query": "QueryInjection.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "QueryInjection",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "MyBatisSqlInjectionSink",
+      "name": "MyBatisSqlInjectionSink",
+      "attributes": {
+        "extends": "QueryInjectionSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/QueryInjection.qll"
+    },
+    {
+      "id": "concept:codeql_lib16:concept:6:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib16",
+      "query": "QueryInjection.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "QueryInjection",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "MyBatisSqlInjectionSink",
+      "name": "MyBatisSqlInjectionSink",
+      "attributes": {
+        "extends": "MyBatisInjectionSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/QueryInjection.qll"
+    },
+    {
+      "id": "concept:codeql_lib16:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib16",
+      "query": "QueryInjection.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "QueryInjection",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "PersistenceQueryInjectionSink",
+      "name": "PersistenceQueryInjectionSink",
+      "attributes": {
+        "extends": "QueryInjectionSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/QueryInjection.qll"
+    },
+    {
+      "id": "concept:codeql_lib16:concept:0:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib16",
+      "query": "QueryInjection.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "QueryInjection",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "name": "QueryInjectionSink",
+      "attributes": {
+        "extends": "ApiSinkNode"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/QueryInjection.qll"
+    },
+    {
+      "id": "concept:codeql_lib16:concept:1:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib16",
+      "query": "QueryInjection.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "QueryInjection",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "SqlInjectionSink",
+      "name": "SqlInjectionSink",
+      "attributes": {
+        "extends": "QueryInjectionSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/QueryInjection.qll"
+    },
+    {
+      "id": "concept:codeql_lib16:concept:7:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib16",
+      "query": "QueryInjection.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "QueryInjection",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "name": "sinkNode:sql-injection",
+      "attributes": {
+        "model_kind": "sql-injection"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/QueryInjection.qll"
+    },
+    {
+      "id": "concept:codeql_lib12:concept:1:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib12",
+      "query": "SqlConcatenatedQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": null,
+      "rule_id": "SqlConcatenatedQuery",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "UncontrolledStringBuilderSourceFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlConcatenatedQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib11:concept:1:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib11",
+      "query": "SqlInjectionQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "SqlInjectionQuery",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "QueryInjectionFlowConfig",
+        "signature": "DataFlow::ConfigSig",
+        "predicate": "isSink"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/SqlInjectionQuery.qll"
+    },
+    {
+      "id": "concept:codeql_lib7:concept:4:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "codeql_lib7",
+      "query": "TaintedEnvironmentVariableQuery.qll",
+      "program_kind": "CodeQLPackLibrary",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "TaintedEnvironmentVariableQuery",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:environment-injection",
+      "name": "sinkNode:environment-injection",
+      "attributes": {
+        "model_kind": "environment-injection"
+      },
+      "official_codeql": true,
+      "source_path": "<original-workspace>/codeql/qlpacks/codeql/java-queries/1.11.1/.codeql/libraries/codeql/java-all/9.0.4/semmle/code/java/security/TaintedEnvironmentVariableQuery.qll"
+    },
+    {
+      "id": "concept:q0:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q0",
+      "query": "remote-command-argument-to-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-argument-to-exec",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "RemoteCommandArgumentToExecConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-argument-to-exec.ql"
+    },
+    {
+      "id": "concept:q1:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q1",
+      "query": "remote-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-modeled",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "RemoteCommandModeledConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-modeled.ql"
+    },
+    {
+      "id": "concept:q2:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q2",
+      "query": "remote-command-runtime-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-runtime-exec",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "java.lang.Runtime.exec",
+      "name": "isSink",
+      "attributes": {
+        "config": "RemoteCommandRuntimeExecConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-runtime-exec.ql"
+    },
+    {
+      "id": "concept:q3:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q3",
+      "query": "remote-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-sink-node",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:command-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "RemoteCommandSinkNodeConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q4:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q4",
+      "query": "remote-environment-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-environment-sink-node",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:environment-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "RemoteEnvironmentSinkNodeConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-environment-sink-node.ql"
+    },
+    {
+      "id": "concept:q5:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q5",
+      "query": "remote-sql-execute-query.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-execute-query",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:executeQuery",
+      "name": "isSink",
+      "attributes": {
+        "method_names": "executeQuery",
+        "config": "RemoteSqlExecuteQueryConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute-query.ql"
+    },
+    {
+      "id": "concept:q6:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q6",
+      "query": "remote-sql-execute-update.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-execute-update",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:executeUpdate",
+      "name": "isSink",
+      "attributes": {
+        "method_names": "executeUpdate",
+        "config": "RemoteSqlExecuteUpdateConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute-update.ql"
+    },
+    {
+      "id": "concept:q7:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q7",
+      "query": "remote-sql-execute.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-execute",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:execute",
+      "name": "isSink",
+      "attributes": {
+        "method_names": "execute",
+        "config": "RemoteSqlExecuteConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-execute.ql"
+    },
+    {
+      "id": "concept:q8:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q8",
+      "query": "remote-sql-mongo-parse.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-mongo-parse",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "com.mongodb.BasicDBObject.parse",
+      "name": "isSink",
+      "attributes": {
+        "config": "RemoteSqlMongoParseConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-mongo-parse.ql"
+    },
+    {
+      "id": "concept:q9:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q9",
+      "query": "remote-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-query-model",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "RemoteSqlQueryModelConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q10:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q10",
+      "query": "remote-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-sink-node",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "RemoteSqlSinkNodeConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q11:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q11",
+      "query": "remote-sql-statement-execute-all.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-statement-execute-all",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:execute|executeQuery|executeUpdate",
+      "name": "isSink",
+      "attributes": {
+        "method_names": "execute|executeQuery|executeUpdate",
+        "config": "RemoteSqlStatementExecuteAllConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-statement-execute-all.ql"
+    },
+    {
+      "id": "concept:q12:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q12",
+      "query": "source-node-database-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-query-model",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "SourceNodeDatabaseSqlQueryModelConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q13:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q13",
+      "query": "source-node-database-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-database-sql-sink-node",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "SourceNodeDatabaseSqlSinkNodeConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-database-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q14:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q14",
+      "query": "source-node-environment-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-command-modeled",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "SourceNodeEnvironmentCommandModeledConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-environment-command-modeled.ql"
+    },
+    {
+      "id": "concept:q15:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q15",
+      "query": "source-node-environment-env-sink.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-environment-env-sink",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:environment-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "SourceNodeEnvironmentEnvSinkConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-environment-env-sink.ql"
+    },
+    {
+      "id": "concept:q16:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q16",
+      "query": "source-node-remote-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-modeled",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "SourceNodeRemoteCommandModeledConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-modeled.ql"
+    },
+    {
+      "id": "concept:q17:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q17",
+      "query": "source-node-remote-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-command-sink-node",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:command-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "SourceNodeRemoteCommandSinkNodeConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q18:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q18",
+      "query": "source-node-remote-sql-mongo-parse.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-mongo-parse",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "com.mongodb.BasicDBObject.parse",
+      "name": "isSink",
+      "attributes": {
+        "config": "SourceNodeRemoteSqlMongoParseConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-mongo-parse.ql"
+    },
+    {
+      "id": "concept:q19:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q19",
+      "query": "source-node-remote-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-query-model",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "SourceNodeRemoteSqlQueryModelConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q20:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q20",
+      "query": "source-node-remote-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/source-node-remote-sql-sink-node",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "SourceNodeRemoteSqlSinkNodeConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/source-node-remote-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q21:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q21",
+      "query": "threat-command-argument-to-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-argument-to-exec",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "ThreatCommandArgumentToExecConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-argument-to-exec.ql"
+    },
+    {
+      "id": "concept:q22:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q22",
+      "query": "threat-command-modeled.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-modeled",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "CommandInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "ThreatCommandModeledConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-modeled.ql"
+    },
+    {
+      "id": "concept:q23:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q23",
+      "query": "threat-command-runtime-exec.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-runtime-exec",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "java.lang.Runtime.exec",
+      "name": "isSink",
+      "attributes": {
+        "config": "ThreatCommandRuntimeExecConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-runtime-exec.ql"
+    },
+    {
+      "id": "concept:q24:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q24",
+      "query": "threat-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-sink-node",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:command-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "ThreatCommandSinkNodeConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q25:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q25",
+      "query": "threat-environment-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-environment-sink-node",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:environment-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "ThreatEnvironmentSinkNodeConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-environment-sink-node.ql"
+    },
+    {
+      "id": "concept:q26:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q26",
+      "query": "threat-sql-execute-query.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-execute-query",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:executeQuery",
+      "name": "isSink",
+      "attributes": {
+        "method_names": "executeQuery",
+        "config": "ThreatSqlExecuteQueryConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-execute-query.ql"
+    },
+    {
+      "id": "concept:q27:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q27",
+      "query": "threat-sql-execute-update.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-execute-update",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:executeUpdate",
+      "name": "isSink",
+      "attributes": {
+        "method_names": "executeUpdate",
+        "config": "ThreatSqlExecuteUpdateConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-execute-update.ql"
+    },
+    {
+      "id": "concept:q28:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q28",
+      "query": "threat-sql-execute.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-execute",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:execute",
+      "name": "isSink",
+      "attributes": {
+        "method_names": "execute",
+        "config": "ThreatSqlExecuteConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-execute.ql"
+    },
+    {
+      "id": "concept:q29:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q29",
+      "query": "threat-sql-mongo-parse.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-mongo-parse",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "com.mongodb.BasicDBObject.parse",
+      "name": "isSink",
+      "attributes": {
+        "config": "ThreatSqlMongoParseConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-mongo-parse.ql"
+    },
+    {
+      "id": "concept:q30:concept:2:ModeledSinkType",
+      "type": "semantic_concept",
+      "program_id": "q30",
+      "query": "threat-sql-query-model.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-query-model",
+      "concept_kind": "ModeledSinkType",
+      "semantic_role": "Sink",
+      "target": "QueryInjectionSink",
+      "name": "isSink",
+      "attributes": {
+        "config": "ThreatSqlQueryModelConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-query-model.ql"
+    },
+    {
+      "id": "concept:q31:concept:2:SinkKind",
+      "type": "semantic_concept",
+      "program_id": "q31",
+      "query": "threat-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-sink-node",
+      "concept_kind": "SinkKind",
+      "semantic_role": "Sink",
+      "target": "sinkNode:sql-injection",
+      "name": "isSink",
+      "attributes": {
+        "config": "ThreatSqlSinkNodeConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q32:concept:2:MethodCallSink",
+      "type": "semantic_concept",
+      "program_id": "q32",
+      "query": "threat-sql-statement-execute-all.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-statement-execute-all",
+      "concept_kind": "MethodCallSink",
+      "semantic_role": "Sink",
+      "target": "method-names:execute|executeQuery|executeUpdate",
+      "name": "isSink",
+      "attributes": {
+        "method_names": "execute|executeQuery|executeUpdate",
+        "config": "ThreatSqlStatementExecuteAllConfig",
+        "predicate": "isSink",
+        "signature": "DataFlow::ConfigSig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-statement-execute-all.ql"
+    },
+    {
+      "id": "concept:q3:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q3",
+      "query": "remote-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "RemoteCommandSinkNodeConfig",
+      "attributes": {
+        "source_targets": "RemoteFlowSource",
+        "sink_targets": "sinkNode:command-injection",
+        "barrier_targets": "barrierNode:command-injection",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q3:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q3",
+      "query": "remote-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-command-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<RemoteCommandSinkNodeConfig>",
+      "name": "RemoteCommandSinkNodeFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "RemoteCommandSinkNodeConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q4:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q4",
+      "query": "remote-environment-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-environment-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "RemoteEnvironmentSinkNodeConfig",
+      "attributes": {
+        "source_targets": "RemoteFlowSource",
+        "sink_targets": "sinkNode:environment-injection",
+        "barrier_targets": "ExecTaintedEnvironmentSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-environment-sink-node.ql"
+    },
+    {
+      "id": "concept:q4:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q4",
+      "query": "remote-environment-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/remote-environment-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<RemoteEnvironmentSinkNodeConfig>",
+      "name": "RemoteEnvironmentSinkNodeFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "RemoteEnvironmentSinkNodeConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-environment-sink-node.ql"
+    },
+    {
+      "id": "concept:q10:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q10",
+      "query": "remote-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "RemoteSqlSinkNodeConfig",
+      "attributes": {
+        "source_targets": "RemoteFlowSource",
+        "sink_targets": "sinkNode:sql-injection",
+        "barrier_targets": "barrierNode:sql-injection",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q10:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q10",
+      "query": "remote-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/remote-sql-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<RemoteSqlSinkNodeConfig>",
+      "name": "RemoteSqlSinkNodeFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "RemoteSqlSinkNodeConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/remote-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q24:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q24",
+      "query": "threat-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "ThreatCommandSinkNodeConfig",
+      "attributes": {
+        "source_targets": "ActiveThreatModelSource",
+        "sink_targets": "sinkNode:command-injection",
+        "barrier_targets": "barrierNode:command-injection",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q24:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q24",
+      "query": "threat-command-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-command-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<ThreatCommandSinkNodeConfig>",
+      "name": "ThreatCommandSinkNodeFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "ThreatCommandSinkNodeConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-command-sink-node.ql"
+    },
+    {
+      "id": "concept:q25:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q25",
+      "query": "threat-environment-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-environment-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "ThreatEnvironmentSinkNodeConfig",
+      "attributes": {
+        "source_targets": "ActiveThreatModelSource",
+        "sink_targets": "sinkNode:environment-injection",
+        "barrier_targets": "ExecTaintedEnvironmentSanitizer",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-environment-sink-node.ql"
+    },
+    {
+      "id": "concept:q25:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q25",
+      "query": "threat-environment-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 78,
+      "rule_id": "java/cyberstitch/bounded/threat-environment-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<ThreatEnvironmentSinkNodeConfig>",
+      "name": "ThreatEnvironmentSinkNodeFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "ThreatEnvironmentSinkNodeConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-environment-sink-node.ql"
+    },
+    {
+      "id": "concept:q31:concept:4:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q31",
+      "query": "threat-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "FlowConfig",
+      "target": "DataFlow::ConfigSig",
+      "name": "ThreatSqlSinkNodeConfig",
+      "attributes": {
+        "source_targets": "ActiveThreatModelSource",
+        "sink_targets": "sinkNode:sql-injection",
+        "barrier_targets": "barrierNode:sql-injection",
+        "additional_flow_step_targets": ""
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-sink-node.ql"
+    },
+    {
+      "id": "concept:q31:concept:0:FlowConfigTemplate",
+      "type": "semantic_concept",
+      "program_id": "q31",
+      "query": "threat-sql-sink-node.ql",
+      "program_kind": "SQIRQuery",
+      "language": "java",
+      "cwe": 89,
+      "rule_id": "java/cyberstitch/bounded/threat-sql-sink-node",
+      "concept_kind": "FlowConfigTemplate",
+      "semantic_role": "Flow",
+      "target": "TaintTracking::Global<ThreatSqlSinkNodeConfig>",
+      "name": "ThreatSqlSinkNodeFlow",
+      "attributes": {
+        "framework": "TaintTracking",
+        "kind": "Global",
+        "config": "ThreatSqlSinkNodeConfig"
+      },
+      "official_codeql": false,
+      "source_path": "<original-workspace>/cyberstitch_poc/results/benchmarkjava_lilo_full_bounded_java_pack_live_api_partitioned_record_20260512/generated-query-profiles/bounded-java/java/threat-sql-sink-node.ql"
+    }
+  ],
+  "validation_gates": [
+    "cyberstitch candidate schema validation",
+    "SQIR/FCIR semantic validation",
+    "deterministic CodeQL rewrite",
+    "CodeQL syntax check",
+    "SARIF equivalence against baseline unless explicitly marked as a delta experiment"
+  ]
+}

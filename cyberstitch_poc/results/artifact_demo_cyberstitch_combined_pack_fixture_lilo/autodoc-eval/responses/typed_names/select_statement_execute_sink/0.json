@@ -1,0 +1,10 @@
+{
+  "data": {
+    "no_raw_codeql": true,
+    "selected": [
+      "candidate:java_method_names_execute_execute_query_execute_update_sink"
+    ]
+  },
+  "source": "fixture",
+  "text": "{\n  \"selected\": [\n    \"candidate:java_method_names_execute_execute_query_execute_update_sink\"\n  ],\n  \"no_raw_codeql\": true\n}"
+}

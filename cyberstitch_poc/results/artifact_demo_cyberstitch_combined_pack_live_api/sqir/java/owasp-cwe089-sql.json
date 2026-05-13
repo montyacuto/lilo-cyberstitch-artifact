@@ -1,0 +1,259 @@
+{
+  "source_path": "<original-workspace>/cyberstitch_poc/query_profiles/combined/java/owasp-cwe089-sql.ql",
+  "language": "java",
+  "metadata": {
+    "name": "OWASP remote input reaches SQL execution",
+    "kind": "path-problem",
+    "problem.severity": "error",
+    "id": "java/cyberstitch/owasp-cwe089-sql",
+    "tags": "security external/cwe/cwe-089"
+  },
+  "imports": [
+    "java",
+    "semmle.code.java.dataflow.TaintTracking",
+    "semmle.code.java.dataflow.FlowSources"
+  ],
+  "config_modules": [
+    {
+      "name": "OwaspSqlInjectionConfig",
+      "signature": "DataFlow::ConfigSig",
+      "predicates": [
+        {
+          "name": "isSource",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "source"
+            }
+          ],
+          "role": "Source",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "RemoteFlowSource",
+                "name": "remote"
+              }
+            ],
+            "body": {
+              "kind": "eq",
+              "left": {
+                "kind": "var",
+                "name": "source"
+              },
+              "right": {
+                "kind": "var",
+                "name": "remote"
+              }
+            }
+          },
+          "source_hash": "77d5e6e4442609be97c0a6cfec158c7c77905df7e6d3359e203ff8b110762256"
+        },
+        {
+          "name": "isSink",
+          "params": [
+            {
+              "type": "DataFlow::Node",
+              "name": "sink"
+            }
+          ],
+          "role": "Sink",
+          "expression": {
+            "kind": "exists",
+            "vars": [
+              {
+                "type": "MethodCall",
+                "name": "call"
+              }
+            ],
+            "body": {
+              "kind": "or",
+              "terms": [
+                {
+                  "kind": "and",
+                  "terms": [
+                    {
+                      "kind": "method_call",
+                      "receiver": {
+                        "kind": "method_call",
+                        "receiver": {
+                          "kind": "var",
+                          "name": "call"
+                        },
+                        "method": "getMethod",
+                        "args": []
+                      },
+                      "method": "hasName",
+                      "args": [
+                        {
+                          "kind": "string",
+                          "value": "execute"
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "eq",
+                      "left": {
+                        "kind": "method_call",
+                        "receiver": {
+                          "kind": "var",
+                          "name": "sink"
+                        },
+                        "method": "asExpr",
+                        "args": []
+                      },
+                      "right": {
+                        "kind": "argument_selection",
+                        "receiver": {
+                          "kind": "var",
+                          "name": "call"
+                        },
+                        "index": 0
+                      }
+                    }
+                  ]
+                },
+                {
+                  "kind": "and",
+                  "terms": [
+                    {
+                      "kind": "method_call",
+                      "receiver": {
+                        "kind": "method_call",
+                        "receiver": {
+                          "kind": "var",
+                          "name": "call"
+                        },
+                        "method": "getMethod",
+                        "args": []
+                      },
+                      "method": "hasName",
+                      "args": [
+                        {
+                          "kind": "string",
+                          "value": "executeQuery"
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "eq",
+                      "left": {
+                        "kind": "method_call",
+                        "receiver": {
+                          "kind": "var",
+                          "name": "sink"
+                        },
+                        "method": "asExpr",
+                        "args": []
+                      },
+                      "right": {
+                        "kind": "argument_selection",
+                        "receiver": {
+                          "kind": "var",
+                          "name": "call"
+                        },
+                        "index": 0
+                      }
+                    }
+                  ]
+                },
+                {
+                  "kind": "and",
+                  "terms": [
+                    {
+                      "kind": "method_call",
+                      "receiver": {
+                        "kind": "method_call",
+                        "receiver": {
+                          "kind": "var",
+                          "name": "call"
+                        },
+                        "method": "getMethod",
+                        "args": []
+                      },
+                      "method": "hasName",
+                      "args": [
+                        {
+                          "kind": "string",
+                          "value": "executeUpdate"
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "eq",
+                      "left": {
+                        "kind": "method_call",
+                        "receiver": {
+                          "kind": "var",
+                          "name": "sink"
+                        },
+                        "method": "asExpr",
+                        "args": []
+                      },
+                      "right": {
+                        "kind": "argument_selection",
+                        "receiver": {
+                          "kind": "var",
+                          "name": "call"
+                        },
+                        "index": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "source_hash": "d9b8b4a165ad8dae568e03782f23d3bdbb7f147e26bf65ea58df33f5538dc0a5"
+        }
+      ]
+    }
+  ],
+  "flow_modules": [
+    {
+      "name": "OwaspSqlInjectionFlow",
+      "framework": "TaintTracking",
+      "kind": "Global",
+      "config": "OwaspSqlInjectionConfig"
+    }
+  ],
+  "path_query": {
+    "variables": [
+      {
+        "type": "OwaspSqlInjectionFlow::PathNode",
+        "name": "source"
+      },
+      {
+        "type": "OwaspSqlInjectionFlow::PathNode",
+        "name": "sink"
+      }
+    ],
+    "flow_module": "OwaspSqlInjectionFlow",
+    "source_var": "source",
+    "sink_var": "sink",
+    "select": {
+      "kind": "path_select",
+      "node": {
+        "kind": "method_call",
+        "receiver": {
+          "kind": "var",
+          "name": "sink"
+        },
+        "method": "getNode",
+        "args": []
+      },
+      "source": {
+        "kind": "var",
+        "name": "source"
+      },
+      "sink": {
+        "kind": "var",
+        "name": "sink"
+      },
+      "message": "Remote input reaches java.sql.Statement execution."
+    },
+    "message": "Remote input reaches java.sql.Statement execution."
+  },
+  "provenance_hash": "135656676bb379a9a2241ff4fd55d08b290107e403ddec9aa84b1256b96f147e",
+  "version": "sqir-v2"
+}

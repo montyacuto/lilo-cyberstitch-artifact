@@ -1,0 +1,124 @@
+{
+  "cache_version": 1,
+  "created_at": "2026-05-07T21:09:19Z",
+  "kind": "completion",
+  "request": {
+    "best_of": 1,
+    "is_chat": true,
+    "kind": "completion",
+    "logprobs": null,
+    "max_tokens": 256,
+    "messages": [
+      {
+        "content": "You are writing software documentation. Your goal is to write human-readable names for the following library functions:\n\nreplace_or_add_characters_based_on_conditions :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match $1 $0) $2 $0)) (regex_split '.' $2))))))\ndescription: This function takes a full string, a substring to add or replace, and a substring to search for. It checks each character in the full string and performs the following actions based on conditions: if the search substring is found, it replaces it with the specified substring; if not found, it adds the specified substring before the search substring.\n\nfn_43 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\n\nfn_44 :: tsubstr\n\n(regex_or 'a' (regex_or 'e' (regex_or 'i' (regex_or 'o' 'u'))))\n\nfn_45 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_append (regex_concat $0 $1) (regex_reverse_cdr (regex_reverse_cdr (regex_split empty_string $2))))))))\n\nfn_46 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_reverse_cdr (regex_split '.' $1))))))\n\nfn_47 :: tfullstr -> (tsubstr -> tsubstr) -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map $0 (regex_split '.' $1)))))\n\nfn_48 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_append $0 (regex_split empty_string $1)))))\n\nfn_49 :: tsubstr -> tsubstr -> tfullstr -> tfullstr\n\n(lambda (lambda (lambda (replace_or_add_characters_based_on_conditions $0 (regex_concat 'a' $1) $2))))\n\nfn_50 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_map (lambda (regex_if (regex_match 'p' $0) $1 $0)) (regex_split empty_string $1)))))\n\nfn_51 :: tfullstr -> tsubstr -> tfullstr\n\n(lambda (lambda (regex_flatten (regex_cons $0 (regex_cdr (regex_split '.' $1))))))\n",
+        "role": "user"
+      },
+      {
+        "content": "Consider the following anonymous function:\n\nfn_43 :: tfullstr -> tsubstr -> tsubstr -> tfullstr\n\n(lambda (lambda (lambda (regex_flatten (regex_cons (regex_concat $0 $1) (regex_cdr (regex_split '.' $2)))))))\n\nHere are some examples of its usage:\n\n-- if the word starts with any letter add o after that\n(lambda (fn_43 $0 'o' (regex_car (regex_split empty_string $0))))\n\n-- if the word starts with any letter replace that with r m\n(lambda (fn_43 $0 'm' 'r'))\n\n-- if the word starts with any letter replace that with i r\n(lambda (fn_43 $0 'r' 'i'))\n\n-- if the word starts with any letter replace that with x e\n(lambda (fn_43 $0 'e' 'x'))\n\n-- if the word starts with any letter replace that with j o\n(lambda (fn_43 $0 'o' 'j'))\n\n-- if the word starts with any letter replace that with b w\n(lambda (fn_43 $0 'w' 'b'))\n\n-- if the word starts with any letter replace that with y w\n(lambda (fn_43 $0 'w' 'y'))\n\n-- if the word starts with any letter replace that with q a\n(lambda (fn_43 $0 'a' 'q'))\n\n-- if the word starts with any letter replace that with w i\n(lambda (fn_43 $0 'i' 'w'))\n\n-- if the word starts with any letter replace that with a w\n(lambda (fn_43 $0 'w' 'a'))\n\nPlease write a human-readable name and description for `fn_43` in the JSON format shown below.\nYour `readable_name` should be underscore-separated and should not contain any spaces.\nIt should also be unique (not existing in the function library above).\nIf you cannot come up with a good name, please set `readable_name` to `null`.\n\n{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": TODO,\n    \"description\": TODO\n}",
+        "role": "user"
+      }
+    ],
+    "n": 5,
+    "prompt": null,
+    "requested_model": "gpt-3.5-turbo",
+    "resolved_model": "gpt-3.5-turbo",
+    "stop": null,
+    "temperature": null,
+    "top_p": 0.1
+  },
+  "request_hash": "1339793526c9a08d42e8d58a1034464e0899a5cb2295368abb9fb7be6800cb99",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}"
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "message": {
+          "annotations": [],
+          "content": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}",
+          "provider_specific_fields": {
+            "refusal": null
+          },
+          "role": "assistant"
+        },
+        "provider_specific_fields": {},
+        "text": "{\n    \"anonymous_name\": \"fn_43\",\n    \"readable_name\": \"add_or_replace_characters_after_first_letter\",\n    \"description\": \"This function takes a full string, a substring to add or replace, and a substring to search for. It concatenates the first letter of the full string with the specified substring, and then appends the rest of the full string after splitting it by '.'.\"\n}"
+      }
+    ],
+    "created": 1778188158,
+    "id": "chatcmpl-Dd0G6pF5N5zm5G3ooguaydGEv56Vy",
+    "model": "gpt-3.5-turbo",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 420,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 994,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "total_tokens": 1414
+    }
+  }
+}

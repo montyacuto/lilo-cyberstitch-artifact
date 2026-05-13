@@ -1,0 +1,12 @@
+[
+  {
+    "schema": "candidate_grouping_v1",
+    "target_ids": [
+      "candidate:java_remote_flow_source",
+      "candidate:java_active_threat_model_source"
+    ],
+    "display_name": "remote_input_sources",
+    "description": "Groups CodeQL source concepts that represent remote or threat-model-controlled input.",
+    "rationale": "This grouping is useful for future query synthesis, but is not directly executable in this milestone."
+  }
+]

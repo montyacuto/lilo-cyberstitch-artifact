@@ -1,0 +1,76 @@
+{
+  "candidates": [
+    {
+      "name": "remote_request_source",
+      "kind": "codeql_helper",
+      "language": "javascript",
+      "helper_module": "CyberStitchHelpers",
+      "predicate": "isRemoteRequestSource",
+      "description": "Recognizes Express request objects used as taint sources.",
+      "body": "predicate isRemoteRequestSource(DataFlow::Node source) {\n  exists(Express::RouteHandler rh | source = rh.getARequest())\n}",
+      "use_sites": [
+        {
+          "query": "remote-to-exec.ql",
+          "predicate": "isSource"
+        },
+        {
+          "query": "remote-to-exec-sync.ql",
+          "predicate": "isSource"
+        },
+        {
+          "query": "remote-to-eval.ql",
+          "predicate": "isSource"
+        }
+      ]
+    },
+    {
+      "name": "java_remote_flow_source",
+      "kind": "codeql_helper",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isRemoteFlowSource",
+      "description": "Recognizes Java remote flow sources used by OWASP Benchmark servlet cases.",
+      "body": "predicate isRemoteFlowSource(DataFlow::Node source) {\n  exists(RemoteFlowSource remote | source = remote)\n}",
+      "use_sites": [
+        {
+          "query": "java/owasp-cwe078-command.ql",
+          "predicate": "isSource"
+        },
+        {
+          "query": "java/owasp-cwe089-sql.ql",
+          "predicate": "isSource"
+        }
+      ]
+    },
+    {
+      "name": "single_eval_sink",
+      "kind": "codeql_helper",
+      "language": "javascript",
+      "helper_module": "CyberStitchHelpers",
+      "predicate": "isEvalSink",
+      "description": "Rejected fixture: only appears once in the seed corpus.",
+      "body": "predicate isEvalSink(DataFlow::Node sink) {\n  exists(DataFlow::CallNode call | call = DataFlow::globalVarRef(\"eval\").getACall() and sink = call.getArgument(0))\n}",
+      "use_sites": [
+        {
+          "query": "remote-to-eval.ql",
+          "predicate": "isSink"
+        }
+      ]
+    },
+    {
+      "name": "single_sql_sink",
+      "kind": "codeql_helper",
+      "language": "java",
+      "helper_module": "CyberStitchJavaHelpers",
+      "predicate": "isStatementExecuteSink",
+      "description": "Rejected fixture: only appears once in the Java seed corpus.",
+      "body": "predicate isStatementExecuteSink(DataFlow::Node sink) {\n  exists(MethodCall call | call.getMethod().hasName(\"execute\") and sink.asExpr() = call.getArgument(0))\n}",
+      "use_sites": [
+        {
+          "query": "java/owasp-cwe089-sql.ql",
+          "predicate": "isSink"
+        }
+      ]
+    }
+  ]
+}
